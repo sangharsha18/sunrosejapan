@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNROSE — インドレストラン 品川 東京</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+
+    <!-- LOGO -->
+    <a href="#home" class="logo">
+        SUNROSE<span>Seaside</span>
+    </a>
+
+    <!-- NAVIGATION -->
+    <ul class="nav" id="nav">
+
+        <li>
+            <a href="#home"
+               data-ja="ホーム"
+               data-en="Home"
+               data-hi="होम"
+               data-ko="홈"
+               data-es="Inicio">
+               ホーム
+            </a>
+        </li>
+
+        <li>
+            <a href="#menus"
+               data-ja="メニュー"
+               data-en="Menus"
+               data-hi="मेनू"
+               data-ko="메뉴"
+               data-es="Menús">
+               メニュー
+            </a>
+        </li>
+
+        <li>
+            <a href="#about"
+               data-ja="私たちについて"
+               data-en="About"
+               data-hi="हमारे बारे में"
+               data-ko="소개"
+               data-es="Acerca de">
+               私たちについて
+            </a>
+        </li>
+
+        <li>
+            <a href="#access"
+               data-ja="アクセス"
+               data-en="Access"
+               data-hi="पता"
+               data-ko="오시는 길"
+               data-es="Acceso">
+               アクセス
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact"
+               data-ja="お問い合わせ"
+               data-en="Contact"
+               data-hi="संपर्क"
+               data-ko="연락처"
+               data-es="Contacto">
+               お問い合わせ
+            </a>
+        </li>
+
+        <!-- CTA -->
+        <li>
+            <a href="#reservation"
+               class="nav-cta"
+               data-ja="ご予約"
+               data-en="Reservation"
+               data-hi="आरक्षण"
+               data-ko="예약"
+               data-es="Reservación">
+               ご予約
+            </a>
+        </li>
+
+        <!-- LANGUAGE -->
+        <li class="lang-dropdown">
+
+            <button class="lang-btn" id="langBtn">
+                🌐 <span>Language</span>
+            </button>
+
+            <div class="lang-menu" id="langMenu">
+
+                <button onclick="setLang('ja')">
+                    🇯🇵 日本語
+                </button>
+
+                <button onclick="setLang('en')">
+                    🇬🇧 English
+                </button>
+
+                <button onclick="setLang('hi')">
+                    🇮🇳 हिंदी
+                </button>
+
+                <button onclick="setLang('ko')">
+                    🇰🇷 한국어
+                </button>
+
+                <button onclick="setLang('es')">
+                    🇪🇸 Español
+                </button>
+
+            </div>
+
+        </li>
+
+    </ul>
+
+    <!-- HAMBURGER -->
+    <button class="hamburger"
+            id="hamburger"
+            aria-label="Toggle Menu">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>. 
+
+</header>
+
+<a href="order.html" class="fab-order"><span class="scooter">🛵</span> <span data-ja="今すぐ注文" data-en="Order Now" data-hi="अभी ऑर्डर" data-ko="지금 주문" data-es="Ordenar">今すぐ注文</span></a>
+
+<!-- =================== HERO =================== -->
+<section id="home" class="hero">
+    <div class="hero-slider">
+        <div class="slide active" style="background-image: url('images/interior.jpg')"></div>
+        <div class="slide" style="background-image: url('images/slide1.jpg')"></div>
+        <div class="slide" style="background-image: url('images/interior.jpg')"></div>
+        <div class="slide" style="background-image: url('images/slide4.jpg')"></div>
+        <div class="slide" style="background-image: url('images/slide5.jpg')"></div>
+    </div> 
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="hero-tag" data-ja="インドレストラン 品川 東京" data-en="Indian Restaurant · Shinagawa Tokyo" data-hi="इंडियन रेस्टोरेंट · ओमोरी टोक्यो" data-ko="인도 레스토랑 · 오모리 도쿄" data-es="Restaurante Indio · Omori Tokio">インドレストラン・ 大森 東京</span>
+        <h1 class="hero-title">
+        <span>SUNROSE Seaside</span>
+        <em data-ja="味の世界へ" data-en="Where Flavor Lives" data-hi="स्वाद की दुनिया में" data-ko="맛의 세계로" data-es="Donde Vive el Sabor">味の世界へ</em>
+        </h1> 
+         <p class="hero-subtitle" data-ja="品川で予約・テイクアウト・デリバリー対応の本格インド料理" data-en="Authentic Indian cuisine crafted with traditional spices in the heart of Shinagawa" data-hi="शिनागावा के केंद्र में पारंपरिक मसालों से तैयार प्रामाणिक भारतीय व्यंजन" data-ko="시나가와 중심부에서 전통 향신료로 만든 정통 인도 요리" data-es="Cocina india auténtica elaborada con especias tradicionales en el corazón de Shinagawa">Authentic Indian cuisine crafted with traditional spices in the heart of Shinagawa</p>
+        <div class="hero-btns">
+            <a href="#reservation" class="btn-gold" data-ja="テーブルを予約" data-en="Reserve a Table" data-hi="टेबल बुक करें" data-ko="테이블 예약" data-es="Reservar Mesa">テーブルを予約</a>
+            <a href="order.html" class="btn-outline" data-ja="今すぐ注文" data-en="Order Now" data-hi="अभी ऑर्डर करें" data-ko="지금 주문" data-es="Ordenar Ahora">今すぐ注文</a>
+        </div>
+    </div>
+    <div class="slider-dots" id="sliderDots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+        <div class="dot" data-index="3"></div>
+        <div class="dot" data-index="4"></div>
+    </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section id="about" class="section-about">
+    <div class="section-inner">
+        <div class="about-layout">
+            <div class="about-text reveal">
+                <span class="section-label" data-ja="私たちについて" data-en="Our Story" data-hi="हमारी कहानी" data-ko="우리 이야기" data-es="Nuestra Historia">私たちについて</span>
+                <div class="gold-line"></div>
+                <h2 class="section-title"><span data-ja="サンローズに" data-en="About" data-hi="हमारे" data-ko="우리에" data-es="Acerca de">サンローズに</span> <span data-ja="ついて" data-en="Us" data-hi="बारे में" data-ko="대해서" data-es="Nosotros">ついて</span></h2>
+                <p data-ja="サンローズでは、インド料理の豊かな魅力を品川の中心にお届けしています。すべての料理は、インドから直輸入した本格スパイスを使い、長年受け継がれてきた料理の伝統を大切に作り上げています。" data-en="At SUNROSE, we bring the vibrant soul of Indian cuisine to the heart of Shinagawa. Every dish is crafted with authentic spices sourced directly from India, honoring generations of culinary tradition." data-hi="सनरोज़ में हम शिनागावा के केंद्र में भारतीय व्यंजनों की जीवंत आत्मा लेकर आते हैं।" data-ko="선로즈에서는 인도 요리의 활기찬 매력을 시나가와 중심부에 전달합니다." data-es="En SUNROSE, traemos el alma vibrante de la cocina india al corazón de Shinagawa. Cada plato se elabora con especias auténticas importadas directamente de la India.">サンローズでは、インド料理の豊かな魅力を品川の中心にお届けしています。すべての料理は、インドから直輸入した本格スパイスを使い、長年受け継がれてきた料理の伝統を大切に作り上げています。</p>
+                <p data-ja="温かく落ち着いた店内は最 25名様まで対応可能で、ゆっくりとしたランチから特別なお祝いの席まで幅広くお使いいただけます。素晴らしい料理をいつでもお楽しみいただけるよう、年中無休で皆様をお待ちしております。" data-en="Our warm, inviting space seats up to 25 guests and is perfect for everything from a quiet lunch to a memorable celebration. We are open every day of the year, because great food should never wait." data-hi="हमारा गर्मजोशी भरा माहौल 25 मेहमानों तक की मेजबानी कर सकता है। हम साल के हर दिन खुले रहते हैं।" data-ko="따뜻하고 아늑한 공간에서 최대 25명을 모실 수 있으며, 연중무휴로 운영합니다." data-es="Nuestro espacio cálido y acogedor tiene capacidad para 25 personas. Estamos abiertos todos los días del año, porque la gran comida no debe esperar.">温かく落ち着いた店内は最大 25 名様まで対応可能で、ゆっくりとしたランチから特別なお祝いの席まで幅広くお使いいただけます。素晴らしい料理をいつでもお楽しみいただけるよう、年中無休で皆様をお待ちしております。</p>
+                <div class="about-features">
+                    <div class="about-feature" data-ja="本格スパイスブレンド" data-en="Traditional spice blends" data-hi="पारंपरिक मसाला मिश्रण" data-ko="전통 향신료 블렌드" data-es="Mezclas de especias tradicionales">本格スパイスブレンド</div>
+                    <div class="about-feature" data-ja="毎日新鮮な食材を使用" data-en="Fresh daily ingredients" data-hi="प्रतिदिन ताज़ी सामग्री" data-ko="매일 신선한 재료 사용" data-es="Ingredientes frescos diarios">毎日新鮮な食材を使用</div>
+                    <div class="about-feature" data-ja="ベジタリアン対応メニューあり" data-en="Vegetarian-friendly menu" data-hi="शाकाहारी अनुकूल मेनू" data-ko="채식주의자 친화적 메뉴" data-es="Menú vegetariano">ベジタリアン対応メニューあり</div>
+                    <div class="about-feature" data-ja="ハラール対応メニューあり" data-en="Halal options available" data-hi="हलाल विकल्प उपलब्ध" data-ko="할랄 옵션 제공" data-es="Opciones Halal disponibles">ハラール対応メニューあり</div>
+                    <div class="about-feature" data-ja="貸し切りご予約承ります" data-en="Private dining available" data-hi="प्राइवेट डाइनिंग उपलब्ध" data-ko="프라이빗 다이닝 가능" data-es="Comedor privado disponible">貸し切りご予約承ります</div>
+                    <div class="about-feature" data-ja="年中無休営業" data-en="Open 365 days a year" data-hi="साल के 365 दिन खुला" data-ko="연중무휴 365일 운영" data-es="Abierto 365 días al año">年中無休営業</div>
+                </div>
+                <a href="#reservation" class="btn-gold" style="display:inline-block;" data-ja="ご予約はこちら" data-en="Make a Reservation" data-hi="आरक्षण करें" data-ko="예약하기" data-es="Hacer una Reservación">ご予約はこちら</a>
+            </div>
+            <div class="about-img-wrap reveal reveal-delay-2">
+                <img src="images/interior.jpg" alt="SUNROSE restaurant interior">
+                <div class="about-img-badge">
+                    <strong>365</strong>
+                    <span data-ja="日間営業" data-en="Days Open" data-hi="दिन खुला" data-ko="일 영업" data-es="Días Abiertos">日間営業</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =================== MENUS =================== -->
+<section id="menus" class="section-menus">
+    <div class="section-inner">
+        <div class="menus-header reveal">
+            <span class="section-label" data-ja="探す" data-en="Explore" data-hi="खोजें" data-ko="탐색" data-es="Explorar">探す</span>
+            <div class="gold-line"></div>
+            <h2 class="section-title">私たちの <span data-ja="メニュー" data-en="Menus" data-hi="मेनू" data-ko="메뉴" data-es="Menús">メニュー</span></h2>
+            <p class="section-desc" data-ja="デリバリー・予約・テイクアウトをご利用いただけます。お客様のご満足が私たちの最優先です。" data-en="We are pleased to offer delivery, reservations, and takeout services. Your satisfaction is our priority." data-hi="हम डिलीवरी, आरक्षण और टेकआउट सेवाएं प्रदान करते हैं। आपकी संतुष्टि हमारी प्राथमिकता है।" data-ko="배달, 예약, 테이크아웃 서비스를 제공합니다. 고객님의 만족이 최우선입니다." data-es="Ofrecemos servicios de entrega, reservaciones y para llevar. Su satisfacción es nuestra prioridad.">デリバリー・予約・テイクアウトをご利用いただけます。お客様のご満足が私たちの最優先です。</p>
+        </div>
+        <div class="menus-grid">
+            <a href="lunch_menu.html#lunch" class="menu-card reveal reveal-delay-1">
+                <img src="images/lunch.jpg" alt="Lunch menu">
+                <div class="menu-card-overlay"></div>
+                <div class="menu-card-body">
+                    <span class="menu-card-label" data-ja="毎日 11:00–15:00" data-en="Daily 11:00–15:00" data-hi="प्रतिदिन 11:00–15:00" data-ko="매일 11:00–15:00" data-es="Diario 11:00–15:00">毎日 11:00–15:00</span>
+                    <div class="menu-card-title"><span data-ja="ランチ" data-en="Lunch" data-hi="लंच" data-ko="런치" data-es="Almuerzo">ランチ</span><div class="menu-card-arrow">›</div></div>
+                </div>
+            </a>
+            <a href="dinner.html" class="menu-card reveal reveal-delay-2">
+                <img src="images/dinner.jpg" alt="Dinner menu">
+                <div class="menu-card-overlay"></div>
+                <div class="menu-card-body">
+                    <span class="menu-card-label" data-ja="毎日 17:00–22:00" data-en="Daily 17:00–22:00" data-hi="प्रतिदिन 17:00–22:00" data-ko="매일 17:00–22:00" data-es="Diario 17:00–22:00">毎日 17:00–22:00</span>
+                    <div class="menu-card-title"><span data-ja="ディナー" data-en="Dinner" data-hi="डिनर" data-ko="디너" data-es="Cena">ディナー</span><div class="menu-card-arrow">›</div></div>
+                </div>
+            </a>
+            <a href="takeout.html#takeout" class="menu-card reveal reveal-delay-3">
+                <img src="images/party.jpg" alt="Takeout menu">
+                <div class="menu-card-overlay"></div>
+                <div class="menu-card-body">
+                <span class="menu-card-label" data-ja="ランチ＆ディナー" data-en="Lunch &amp; Dinner" data-hi="लंच और डिनर" data-ko="런치 &amp; 디너" data-es="Almuerzo y Cena">ランチ＆ディナー</span>                    <div class="menu-card-title"><span data-ja="テイクアウト" data-en="Takeout" data-hi="टेकआउट" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</span><div class="menu-card-arrow">›</div></div>
+                </div>
+            </a>
+            <a href="course.html" class="menu-card reveal reveal-delay-4">
+                <img src="images/top-view-table-full-food.jpg" alt="Course menu">
+                <div class="menu-card-overlay"></div>
+                <div class="menu-card-body">
+                    <span class="menu-card-label" data-ja="グループ・イベント" data-en="Groups & Events" data-hi="समूह और कार्यक्रम" data-ko="그룹 및 이벤트" data-es="Grupos y Eventos">グループ・イベント</span>
+                    <div class="menu-card-title"><span data-ja="コース" data-en="Course" data-hi="कोर्स" data-ko="코스" data-es="Curso">コース</span><div class="menu-card-arrow">›</div></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =================== OFFERS =================== -->
+<section id="offers" class="section-offers">
+    <div class="section-inner">
+        <div class="reveal">
+            <span class="section-label" data-ja="お得情報" data-en="Promotions" data-hi="प्रमोशन" data-ko="프로모션" data-es="Promociones">お得情報</span>
+            <div class="gold-line"></div>
+            <h2 class="section-title"><span data-ja="特典" data-en="Offers" data-hi="ऑफर" data-ko="혜택" data-es="Ofertas">特典</span> <span>&amp; </span><span data-ja="クーポン" data-en="Coupons" data-hi="कूपन" data-ko="쿠폰" data-es="Cupones">クーポン</span></h2>
+        </div>
+        <div class="offers-flex">
+            <div class="offer-card reveal reveal-delay-1">
+                <span class="offer-badge" data-ja="期間限定" data-en="Limited Offer" data-hi="सीमित ऑफर" data-ko="한정 혜택" data-es="Oferta Limitada">期間限定</span>
+                <div class="offer-amount" data-ja="お会計<br>10%オフ" data-en="10% Off<br>Your Bill" data-hi="बिल पर<br>10% छूट" data-ko="청구서에서<br>10% 할인" data-es="10% Descuento<br>en su Cuenta">お会計<br>10%オフ</div>
+                <p class="offer-desc" data-ja="特別割引で本格インド料理をお楽しみください。店内でのお食事のみ対象。スタッフにクーポンをご提示ください。" data-en="Enjoy authentic Indian dining with a special discount. Available for dine-in guests only. Show this coupon to your server." data-hi="विशेष छूट के साथ प्रामाणिक भारतीय भोजन का आनंद लें। केवल डाइन-इन मेहमानों के लिए।" data-ko="특별 할인으로 정통 인도 요리를 즐기세요. 매장 이용 고객만 해당됩니다." data-es="Disfrute de la auténtica cocina india con descuento especial. Solo para comensales.">特別割引で本格インド料理をお楽しみください。店内でのお食事のみ対象。スタッフにクーポンをご提示ください。</p>
+                <a href="coupon.html" target="_blank" class="btn-offer" data-ja="クーポンを見る" data-en="View Coupon" data-hi="कूपन देखें" data-ko="쿠폰 보기" data-es="Ver Cupón">クーポンを見る</a>
+            </div>
+            <div class="offer-card reveal reveal-delay-2">
+                <span class="offer-badge" data-ja="新着情報" data-en="New Offers" data-hi="नए ऑफर" data-ko="새로운 혜택" data-es="Nuevas Ofertas">新着情報</span>
+                <div class="offer-amount" data-ja="お得な<br>スペシャルセット" data-en="Deals &amp;<br>Special Sets" data-hi="डील और<br>स्पेशल सेट" data-ko="딜 &amp;<br>스페셜 세트" data-es="Ofertas y<br>Sets Especiales">お得な<br>スペシャルセット</div>
+                <p class="offer-desc" data-ja="ビリヤニランチセット、ちょい飲みコース、二次会セットなど — 最新のお得情報をご覧ください。" data-en="Biryani Lunch Set, ちょい飲みコース, 二次会セット and more — explore our latest offers and curated dining plans." data-hi="बिरयानी लंच सेट और अधिक — हमारे नवीनतम ऑफर देखें।" data-ko="비리야니 런치 세트 등 — 최신 혜택을 확인하세요." data-es="Set de Almuerzo Biryani y más — explore nuestras últimas ofertas.">ビリヤニランチセット、ちょい飲みコース、二次会セットなど — 最新のお得情報をご覧ください。</p>
+                <a href="special deals.html" class="btn-offer" data-ja="全ての特典を見る" data-en="View All Offers" data-hi="सभी ऑफर देखें" data-ko="모든 혜택 보기" data-es="Ver Todas las Ofertas">全ての特典を見る</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =================== ACCESS =================== -->
+<section id="access" class="section-access">
+    <div class="section-inner">
+        <div class="reveal">
+            <span class="section-label" data-ja="アクセス" data-en="Find Us" data-hi="हमें खोजें" data-ko="찾아오시는 길" data-es="Encuéntrenos">アクセス</span>
+            <div class="gold-line"></div>
+            <h2 class="section-title"><span data-ja="アクセス" data-en="Access" data-hi="पता" data-ko="오시는 길" data-es="Acceso">アクセス</span> <span>&amp; </span><span data-ja="店舗情報" data-en="Info" data-hi="जानकारी" data-ko="정보" data-es="Información">店舗情報</span></h2>
+        </div>
+        <div class="access-layout">
+            <div class="access-table reveal reveal-delay-1">
+                <div class="access-row">
+                    <div class="access-label" data-ja="店舗名" data-en="Store" data-hi="स्टोर" data-ko="매장명" data-es="Tienda">店舗名</div>
+                    <div class="access-value" data-ja="インドレストラン サンローズ 品川シーサイド店" data-en="Indian Restaurant SUNROSE Shinagawa Seaside" data-hi="इंडियन रेस्टोरेंट सनरोज़ शिनागावा सीसाइड" data-ko="인도 레스토랑 선로즈 시나가와 씨사이드점" data-es="Restaurante Indio SUNROSE Shinagawa Seaside">インドレストラン サンローズ 品川シーサイド店</div>
+                </div>
+                <div class="access-row">
+                    <div class="access-label" data-ja="住所" data-en="Address" data-hi="पता" data-ko="주소" data-es="Dirección">住所</div>
+                    <div class="access-value">1F Shinagawa Seaside East Tower<br>4-12-8 Higashi-Shinagawa, Shinagawa-ku<br>Tokyo 140-0002, Japan</div>
+                </div>
+                <div class="access-row">
+                    <div class="access-label" data-ja="電話番号" data-en="Phone" data-hi="फ़ोन" data-ko="전화번호" data-es="Teléfono">電話番号</div>
+                    <div class="access-value">03-6718-4433</div>
+                </div>
+                <div class="access-row">
+                    <div class="access-label" data-ja="営業時間" data-en="Hours" data-hi="समय" data-ko="영업시간" data-es="Horario">営業時間</div>
+                    <div class="access-value" data-ja="ランチ：11:00〜15:00（毎日）<br>ディナー：17:00〜22:00（毎日）" data-en="Lunch: 11:00 – 15:00 (Daily)<br>Dinner: 17:00 – 22:00 (Daily)" data-hi="लंच: 11:00 – 3:00 (प्रतिदिन)<br>डिनर: 5:00 – 10:00 (प्रतिदिन)" data-ko="런치: 11:00 – 15:00 (매일)<br>디너: 17:00 – 22:00 (매일)" data-es="Almuerzo: 11:00 – 15:00 (Diario)<br>Cena: 17:00 – 22:00 (Diario)">ランチ：11:00〜15:00（毎日）<br>ディナー：17:00〜22:00（毎日）</div>
+                </div>
+                <div class="access-row">
+                    <div class="access-label" data-ja="定休日" data-en="Holidays" data-hi="छुट्टियां" data-ko="휴무일" data-es="Festivos">定休日</div>
+                    <div class="access-value" data-ja="年中無休でご営業しております" data-en="Open all year — no holidays" data-hi="पूरे साल खुला — कोई छुट्टी नहीं" data-ko="연중무휴 — 휴일 없이 운영합니다" data-es="Abierto todo el año — sin festivos">年中無休でご営業しております</div>
+                </div>
+                <div class="access-row">
+                    <div class="access-label" data-ja="席数" data-en="Seats" data-hi="सीटें" data-ko="좌석수" data-es="Asientos">席数</div>
+                    <div class="access-value" data-ja="約70〜80席・貸し切りもお気軽にご相談ください" data-en="Approx. 70–80 seats · Private booking available" data-hi="लगभग 70-80 सीटें · प्राइवेट बुकिंग उपलब्ध" data-ko="약 70~80석 · 단체 예약 가능" data-es="Aprox. 70-80 asientos · Reserva privada disponible">約70〜80席・貸し切りもお気軽にご相談ください</div>
+                </div>
+                <div class="access-row">
+                    <div class="access-label" data-ja="カード" data-en="Cards" data-hi="कार्ड" data-ko="카드" data-es="Tarjetas">カード</div>
+                    <div class="access-value">VISA · MASTER · JCB · AMEX</div>
+                </div>
+            </div>
+            <div class="access-info-cards reveal reveal-delay-2">
+                <div class="info-card">
+                    <div class="info-card-icon">🚃</div>
+                    <div class="info-card-title" data-ja="電車でお越しの方" data-en="By Train" data-hi="ट्रेन से" data-ko="전철 이용 시" data-es="En Tren">電車でお越しの方</div>
+                    <p class="info-card-body" data-ja="🚉 りんかい線「品川シーサイド駅」B出口より徒歩1〜2分<br>🚉 東京モノレール「天王洲アイル駅」より徒歩約10分<br>🚉 京急線「青物横丁駅」より徒歩約8分" data-en="🚉 Rinkai Line 'Shinagawa Seaside' — Exit B, 1–2 min walk<br>🚉 Tokyo Monorail 'Tennozu Isle' — approx. 10 min walk<br>🚉 Keikyu Line 'Aomono-yokocho' — approx. 8 min walk" data-hi="🚉 रिंकाई लाइन 'शिनागावा सीसाइड' — निकास B, 1-2 मिनट<br>🚉 टोक्यो मोनोरेल 'टेन्नोज़ु आइल' — लगभग 10 मिनट<br>🚉 केइक्यू लाइन 'आओमोनो-योकोचो' — लगभग 8 मिनट" data-ko="🚉 린카이선 '시나가와 씨사이드역' — B출구 도보 1~2분<br>🚉 도쿄 모노레일 '덴노즈 아일역' — 도보 약 10분<br>🚉 케이큐선 '아오모노요코초역' — 도보 약 8분" data-es="🚉 Línea Rinkai 'Shinagawa Seaside' — Salida B, 1-2 min<br>🚉 Monorraíl de Tokio 'Tennozu Isle' — aprox. 10 min<br>🚉 Línea Keikyu 'Aomono-yokocho' — aprox. 8 min">🚉 りんかい線「品川シーサイド駅」B出口より徒歩1〜2分<br>🚉 東京モノレール「天王洲アイル駅」より徒歩約10分<br>🚉 京急線「青物横丁駅」より徒歩約8分</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🚗</div>
+                    <div class="info-card-title" data-ja="お車でお越しの方" data-en="By Car" data-hi="कार से" data-ko="자동차 이용 시" data-es="En Auto">お車でお越しの方</div>
+                    <p class="info-card-body" data-ja="品川シーサイドイーストタワーに有料駐車場がございます" data-en="Paid parking available at Shinagawa Seaside East Tower" data-hi="शिनागावा सीसाइड ईस्ट टावर में सशुल्क पार्किंग उपलब्ध" data-ko="시나가와 씨사이드 이스트 타워에 유료 주차장이 있습니다" data-es="Estacionamiento de pago disponible en Shinagawa Seaside East Tower">品川シーサイドイーストタワーに有料駐車場がございます</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🚌</div>
+                    <div class="info-card-title" data-ja="バスでお越しの方" data-en="By Bus" data-hi="बस से" data-ko="버스 이용 시" data-es="En Autobús">バスでお越しの方</div>
+                    <p class="info-card-body" data-ja="都営バス「東品川4丁目」停留所より徒歩数分" data-en="Toei Bus 'Higashi-Shinagawa 4-chome' stop — a few minutes walk" data-hi="तोई बस 'हिगाशी-शिनागावा 4-चोमे' स्टॉप से कुछ मिनट" data-ko="도에이 버스 '히가시 시나가와 4초메' 정류장에서 도보 수 분" data-es="Bus Toei 'Higashi-Shinagawa 4-chome' — pocos minutos a pie">都営バス「東品川4丁目」停留所より徒歩数分</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =================== RESERVATION =================== -->
+<section id="reservation" class="section-reservation">
+    <div class="section-inner">
+        <div class="reveal">
+            <span class="section-label" data-ja="ご予約はこちら" data-en="Book Your Table" data-hi="टेबल बुक करें" data-ko="테이블 예약" data-es="Reserve su Mesa">ご予約はこちら</span>
+            <h2 class="section-title" data-ja="ご予約" data-en="Reservation" data-hi="आरक्षण" data-ko="예약" data-es="Reservación">ご予約</h2>
+            <p class="section-desc" data-ja="ご希望の予約方法をお選びください。皆様のご来店を心よりお待ちしております。" data-en="Choose your preferred booking method. We look forward to welcoming you." data-hi="अपनी पसंदीदा बुकिंग विधि चुनें। हम आपका स्वागत करने के लिए उत्सुक हैं।" data-ko="원하시는 예약 방법을 선택하세요. 여러분의 방문을 기다리겠습니다." data-es="Elija su método de reservación preferido. Esperamos darle la bienvenida.">ご希望の予約方法をお選びください。皆様のご来店を心よりお待ちしております。</p>
+        </div>
+        <div class="reservation-cards">
+           <a href="https://foodbooking.com/api/res/1dj_r_x" class="res-card reveal reveal-delay-1">
+             <span class="res-card-icon">🌐</span>
+                <div class="res-card-title" data-ja="公式サイト" data-en="Official Website" data-hi="आधिकारिक वेबसाइट" data-ko="공식 웹사이트" data-es="Sitio Web Oficial">公式サイト</div>
+                <p class="res-card-sub" data-ja="直接ご予約 — 最速で確認が取れます" data-en="Direct booking — fastest confirmation" data-hi="सीधी बुकिंग — सबसे तेज़ पुष्टि" data-ko="직접 예약 — 가장 빠른 확인" data-es="Reserva directa — confirmación más rápida">直接ご予約 — 最速で確認が取れます</p>
+                <span class="res-card-btn" data-ja="今すぐ予約" data-en="Book Now" data-hi="अभी बुक करें" data-ko="지금 예약" data-es="Reservar Ahora">今すぐ予約</span>
+            </a>
+            <a href="https://tabelog.com/en/tokyo/A1315/A131501/13245866/" class="res-card reveal reveal-delay-2">
+                <span class="res-card-icon">🍽️</span>
+                <div class="res-card-title" data-ja="食べログ" data-en="Tabelog" data-hi="टेबलॉग" data-ko="타베로그" data-es="Tabelog">食べログ</div>
+                <p class="res-card-sub" data-ja="日本最大のグルメ予約サイト" data-en="Japan's leading restaurant platform" data-hi="जापान का सबसे बड़ा रेस्टोरेंट प्लेटफॉर्म" data-ko="일본 최대의 맛집 예약 플랫폼" data-es="La plataforma de restaurantes líder en Japón">日本最大のグルメ予約サイト</p>
+                <span class="res-card-btn" data-ja="食べログで予約" data-en="Book via Tabelog" data-hi="टेबलॉग से बुक करें" data-ko="타베로그로 예약" data-es="Reservar en Tabelog">食べログで予約</span>
+            </a>
+            <a href="https://r.gnavi.co.jp/637n25x20000/" class="res-card reveal reveal-delay-3">
+                <span class="res-card-icon">📖</span>
+                <div class="res-card-title" data-ja="ぐるなび" data-en="Gurunavi" data-hi="गुरुनवी" data-ko="구루나비" data-es="Gurunavi">ぐるなび</div>
+                <p class="res-card-sub" data-ja="人気のグルメ予約サービス" data-en="Popular dining reservation service" data-hi="लोकप्रिय डाइनिंग आरक्षण सेवा" data-ko="인기 있는 레스토랑 예약 서비스" data-es="Servicio popular de reservaciones">人気のグルメ予約サービス</p>
+                <span class="res-card-btn" data-ja="ぐるなびで予約" data-en="Book via Gurunavi" data-hi="गुरुनवी से बुक करें" data-ko="구루나비로 예약" data-es="Reservar en Gurunavi">ぐるなびで予約</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- =================== MAP =================== -->
+<section id="contact" class="section-map">
+    <div class="map-wrap">
+<iframe src="https://www.google.com/maps?q=Plage+Kirameki,+3-34-5+Minami-Oi,+Shinagawa-ku,+Tokyo&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo">SUN<span>ROSE</span></div>
+        <div class="footer-info">
+            <div class="footer-divider"><span>✦</span></div>
+            <p data-ja="株式会社BAL BISHNU<br>品川シーサイド、東京 140-0013<br>TEL 03-6423-1163" data-en="BAL BISHNU Co., Ltd.<br>Omori, Tokyo 140-0013<br>TEL 03-6423-1163" data-hi="BAL BISHNU कं., लि.<br>ओमोरी , टोक्यो 140-0013<br>TEL 03-6423-1163 " data-ko="주식회사 BAL BISHNU<br> 오모리, 도쿄 140-0002<br>TEL 03-6718-4433" data-es="BAL BISHNU Co., Ltd.<br>Omori, Tokio 140-0002<br>TEL 03-6718-4433">株式会社BAL BISHNU<br> 大森、東京 140-0002<br>TEL 03-6423-1163</p>
+        </div>
+        <div class="footer-links-col">
+            <a href="company.html" target="_blank" class="footer-link" data-ja="会社概要" data-en="Company" data-hi="कंपनी" data-ko="회사 소개" data-es="Empresa">会社概要</a>
+            <a href="privacy.html" target="_blank" class="footer-link" data-ja="プライバシーポリシー" data-en="Privacy Policy" data-hi="गोपनीयता नीति" data-ko="개인정보 처리방침" data-es="Política de Privacidad">プライバシーポリシー</a>
+        </div>
+    </div>
+    <p class="footer-bottom" data-ja="インドレストラン 大森、東京" data-en="Indian Restaurant Omori, Tokyo" data-hi="इंडियन रेस्टोरेंट सनरोज़ ओमोरी " data-ko="인도 레스토랑 선로즈 오모리 지점" data-es="Restaurante Indio SUNROSE Omori , Tokio">インドレストラン 大森、東京</p>
+    <p class="footer-bottom">© 2025 Sunrose Japan · 株式会社BAL BISHNU · All Rights Reserved.</p>
+</footer>
+
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;justify-content:center;align-items:center;" onclick="this.style.display='none'"><img id="lightbox-img" style="max-width:90%;max-height:90%;border-radius:8px;"></div>
+
+<script>
+(function(){const header=document.getElementById('header');const hamburger=document.getElementById('hamburger');const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':''});nav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');nav.classList.remove('open');document.body.style.overflow=''})});const slides=document.querySelectorAll('.slide');const dots=document.querySelectorAll('.dot');let current=0;function goTo(index){slides[current].classList.remove('active');dots[current].classList.remove('active');current=index;slides[current].classList.add('active');dots[current].classList.add('active')}dots.forEach(dot=>{dot.addEventListener('click',()=>goTo(parseInt(dot.dataset.index)))});setInterval(()=>goTo((current+1)%slides.length),2000);const observer=new IntersectionObserver((entries)=>{entries.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');observer.unobserve(el.target)}})},{threshold:0.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));header.classList.toggle('scrolled',window.scrollY>40)})();
+function openImage(src){document.getElementById('lightbox').style.display='flex';document.getElementById('lightbox-img').src=src}
+</script>
+<script src="lang.js"></script>
+</body>
+</html>

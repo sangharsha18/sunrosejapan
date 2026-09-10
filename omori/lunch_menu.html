@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ランチメニュー — SUNROSE インドレストラン 品川</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lunch_menu.css">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="menu-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-deco"></div>
+  <div class="menu-hero-content">
+    <div class="hero-eyebrow"
+      data-ja="サンローズ・品川"
+      data-en="Sunrose Japan · Shinagawa"
+      data-hi="सनरोज़ जापान · शिनागावा"
+      data-ko="선로즈 재팬 · 시나가와"
+      data-es="Sunrose Japón · Shinagawa">
+      サンローズ・品川
+    </div>
+    <h2>
+      <span data-ja="本格" data-en="Authentic" data-hi="प्रामाणिक" data-ko="정통" data-es="Auténtica">本格</span>
+      <em data-ja="インド" data-en="Indian" data-hi="भारतीय" data-ko="인도" data-es="India">インド</em><br>
+      <span data-ja="ランチ体験" data-en="Lunch Experience" data-hi="लंच अनुभव" data-ko="런치 체험" data-es="Experiencia de Almuerzo">ランチ体験</span>
+    </h2>
+    <p data-ja="手作りカレー、焼きたてナン、最高のスパイス — 品川の中心で毎日ご提供。"
+      data-en="Handcrafted curries, fresh-baked naan and the finest spices — served daily in the heart of Shinagawa."
+      data-hi="हस्तनिर्मित करी, ताज़ा नान और बेहतरीन मसाले — शिनागावा में प्रतिदिन परोसा जाता है।"
+      data-ko="수제 커리, 갓 구운 난, 최고의 향신료 — 시나가와 중심에서 매일 제공됩니다."
+      data-es="Currys artesanales, naan recién horneado y las mejores especias — servidos diariamente en Shinagawa.">
+      手作りカレー、焼きたてナン、最高のスパイス — 品川の中心で毎日ご提供。
+    </p>
+    <div class="hours-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span data-ja="ランチタイム · 11:00 — 15:00" data-en="Lunch Time · 11:00 — 15:00" data-hi="लंच टाइम · 11:00 — 15:00" data-ko="런치 타임 · 11:00 — 15:00" data-es="Hora del Almuerzo · 11:00 — 15:00">ランチタイム · 11:00 — 15:00</span>
+    </div><br>
+    <p style="font-size:13px;color:var(--gold-dim);letter-spacing:0.06em;margin-bottom:12px;">
+      <span data-ja="全セットにナンまたはライスが付きます · 辛さ調整可能"
+        data-en="Every set includes Naan or Rice · Spice level adjustable"
+        data-hi="हर सेट में नान या चावल शामिल · मसाला स्तर समायोज्य"
+        data-ko="모든 세트에 난 또는 라이스 포함 · 매운맛 조절 가능"
+        data-es="Todos los sets incluyen Naan o Arroz · Nivel de picante ajustable">
+        全セットにナンまたはライスが付きます · 辛さ調整可能
+      </span>
+    </p>
+    <p style="font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:0.04em;margin-bottom:32px;">
+      <span data-ja="店内飲食 · テイクアウト · デリバリー対応"
+        data-en="Dine-in · Takeout · Delivery available"
+        data-hi="डाइन-इन · टेकआउट · डिलीवरी उपलब्ध"
+        data-ko="매장 식사 · 테이크아웃 · 배달 가능"
+        data-es="Comer aquí · Para llevar · Entrega disponible">
+        店内飲食 · テイクアウト · デリバリー対応
+      </span>
+    </p>
+    <a href="#menu" class="menu-hero-btn"
+      data-ja="メニューを見る"
+      data-en="Explore the Menu"
+      data-hi="मेनू देखें"
+      data-ko="메뉴 보기"
+      data-es="Ver el Menú">
+      メニューを見る
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<div class="section-header">
+  <div class="section-eyebrow"
+    data-ja="ランチメニュー"
+    data-en="Lunch Menu"
+    data-hi="लंच मेनू"
+    data-ko="런치 메뉴"
+    data-es="Menú de Almuerzo">
+    ランチメニュー
+  </div>
+  <h1 data-ja="ランチメニュー" data-en="Lunch Menu" data-hi="लंच मेनू" data-ko="런치 메뉴" data-es="Menú de Almuerzo">ランチメニュー</h1>
+  <p data-ja="すべての料理はインドから直輸入したスパイスで毎日新鮮に作られています。お好みの付け合わせをお選びください。"
+    data-en="Each dish is prepared fresh with authentic spices imported from India, served with your choice of accompaniments."
+    data-hi="हर व्यंजन भारत से आयातित असली मसालों से ताज़ा तैयार किया जाता है।"
+    data-ko="모든 요리는 인도에서 수입한 정통 향신료로 매일 신선하게 준비됩니다."
+    data-es="Cada plato se prepara fresco con auténticas especias importadas de la India.">
+    すべての料理はインドから直輸入したスパイスで毎日新鮮に作られています。お好みの付け合わせをお選びください。
+  </p>
+</div>
+
+<!-- ═══════════════════ OFFICIAL OMORI MENU PHOTO ═══════════════════ -->
+<section style="max-width:700px;margin:0 auto 50px;padding:0 20px;text-align:center;">
+  <p style="font-family:var(--sans);font-size:13px;letter-spacing:.06em;color:var(--text-muted);margin-bottom:16px;text-transform:uppercase;">
+    <span data-ja="サンローズ大森店・公式ランチメニュー（タップで拡大）" data-en="Official Omori Branch Lunch Menu (tap to enlarge)" data-hi="सनरोज़ ओमोरी शाखा · आधिकारिक लंच मेनू" data-ko="선로즈 오모리점 · 공식 런치 메뉴" data-es="Menú de Almuerzo Oficial · Sucursal Omori">サンローズ大森店・公式ランチメニュー（タップで拡大）</span>
+  </p>
+  <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/sunrose_oomori_lunch_2026_nogizaka46-scaled.webp"
+       alt="Sunrose Omori official lunch menu"
+       loading="lazy"
+       style="width:100%;border-radius:8px;box-shadow:0 12px 32px rgba(0,0,0,0.18);cursor:zoom-in;"
+       onclick="openImage(this.src)">
+</section>
+
+<div class="gold-divider"><div class="gold-divider-gem"></div></div>
+
+<!-- ═══════════════════════════ MENU GRID ═══════════════════════════ -->
+<section id="menu" class="menu-container">
+
+  <!-- 1. Child Set -->
+  <div class="menu-item is-children">
+    <figure><img src="child-set.jpg" alt="Child Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="お子様セット" data-en="Child Set" data-hi="Child Set" data-ko="Child Set" data-es="Child Set">お子様セット</h2>
+      <p class="desc" data-ja="カレー1種 + ミニナン + ミニライス + サラダ + デザート + ドリンク。12歳以下のお子様限定。" data-en="1 curry + mini naan + mini rice + salad + dessert + drink. Exclusively for children 12 and under." data-hi="1 curry + mini naan + mini rice + salad + dessert + drink. Exclusively for children 12 and under." data-ko="1 curry + mini naan + mini rice + salad + dessert + drink. Exclusively for children 12 and under." data-es="1 curry + mini naan + mini rice + salad + dessert + drink. Exclusively for children 12 and under.">カレー1種 + ミニナン + ミニライス + サラダ + デザート + ドリンク。12歳以下のお子様限定。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥900</span>
+        <span class="includes-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Cheese Naan Set -->
+  <div class="menu-item">
+    <figure><img src="cheese-nan-set.jpg" alt="Cheese Naan Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="チーズナンセット" data-en="Cheese Naan Set" data-hi="Cheese Naan Set" data-ko="Cheese Naan Set" data-es="Cheese Naan Set">チーズナンセット</h2>
+      <p class="desc" data-ja="カレー2種 + チーズナン + サラダ + ハーフライス + デザート + ドリンク。" data-en="2 curries + cheese naan + salad + half rice + dessert + drink." data-hi="2 curries + cheese naan + salad + half rice + dessert + drink." data-ko="2 curries + cheese naan + salad + half rice + dessert + drink." data-es="2 curries + cheese naan + salad + half rice + dessert + drink.">カレー2種 + チーズナン + サラダ + ハーフライス + デザート + ドリンク。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,650</span>
+        <span class="includes-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Special Set -->
+  <div class="menu-item is-special">
+    <figure><img src="special-set.jpg" alt="Special Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="スペシャルセット" data-en="Special Set" data-hi="Special Set" data-ko="Special Set" data-es="Special Set">スペシャルセット</h2>
+      <p class="desc" data-ja="カレー2種 + サラダ + チキンティッカ + ナン + ハーフライス + ドリンク。" data-en="2 curries + salad + chicken tikka + naan + half rice + drink." data-hi="2 curries + salad + chicken tikka + naan + half rice + drink." data-ko="2 curries + salad + chicken tikka + naan + half rice + drink." data-es="2 curries + salad + chicken tikka + naan + half rice + drink.">カレー2種 + サラダ + チキンティッカ + ナン + ハーフライス + ドリンク。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,390</span>
+        <span class="includes-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-ja="ドリンク付き" data-en="Drink Included" data-hi="Drink Included" data-ko="음료 포함" data-es="Bebida Incluida">ドリンク付き</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Ladies Set -->
+  <div class="menu-item">
+    <figure><img src="ladies-set.jpg" alt="Ladies Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="レディースセット" data-en="Ladies Set" data-hi="Ladies Set" data-ko="Ladies Set" data-es="Ladies Set">レディースセット</h2>
+      <p class="desc" data-ja="カレー2種 + サラダ + ナン + ハーフライス + デザート + ドリンク。バランスの良い軽めのセット。" data-en="2 curries + salad + naan + half rice + dessert + drink. A lighter, balanced combination." data-hi="2 curries + salad + naan + half rice + dessert + drink. A lighter, balanced combination." data-ko="2 curries + salad + naan + half rice + dessert + drink. A lighter, balanced combination." data-es="2 curries + salad + naan + half rice + dessert + drink. A lighter, balanced combination.">カレー2種 + サラダ + ナン + ハーフライス + デザート + ドリンク。バランスの良い軽めのセット。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,390</span>
+        <span class="includes-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Double Curry Set -->
+  <div class="menu-item">
+    <figure><img src="double-curry-set.jpg" alt="Double Curry Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="ダブルカレーセット" data-en="Double Curry Set" data-hi="Double Curry Set" data-ko="Double Curry Set" data-es="Double Curry Set">ダブルカレーセット</h2>
+      <p class="desc" data-ja="インドの国旗をイメージ — ターメリックライスに2種のカレーを添えて。" data-en="Inspired by the Indian flag — turmeric-golden rice paired with two vibrant curries side by side." data-hi="Inspired by the Indian flag — turmeric-golden rice paired with two vibrant curries side by side." data-ko="Inspired by the Indian flag — turmeric-golden rice paired with two vibrant curries side by side." data-es="Inspired by the Indian flag — turmeric-golden rice paired with two vibrant curries side by side.">インドの国旗をイメージ — ターメリックライスに2種のカレーを添えて。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,290</span>
+        <span class="includes-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Turmeric Rice
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Shrimp Curry -->
+  <div class="menu-item">
+    <figure><img src="seafood-set.jpg" alt="Shrimp Curry Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="エビカレー" data-en="Shrimp Curry" data-hi="Shrimp Curry" data-ko="Shrimp Curry" data-es="Shrimp Curry">エビカレー</h2>
+      <p class="desc" data-ja="エビ・イカ・アサリをトマト、玉ねぎ、ピーマン、生姜ガーリックで仕上げ、カシューナッツとココナッツで甘くクリーミーに。" data-en="Shrimp, squid &amp; clams with tomato, onion, bell pepper and ginger-garlic — finished with cashew and coconut for a sweet, creamy curry." data-hi="Shrimp, squid &amp; clams with tomato, onion, bell pepper and ginger-garlic — finished with cashew and coconut for a sweet, creamy curry." data-ko="Shrimp, squid &amp; clams with tomato, onion, bell pepper and ginger-garlic — finished with cashew and coconut for a sweet, creamy curry." data-es="Shrimp, squid &amp; clams with tomato, onion, bell pepper and ginger-garlic — finished with cashew and coconut for a sweet, creamy curry.">エビ・イカ・アサリをトマト、玉ねぎ、ピーマン、生姜ガーリックで仕上げ、カシューナッツとココナッツで甘くクリーミーに。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,290</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Seafood</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Saag Chicken -->
+  <div class="menu-item">
+    <figure><img src="sag-chicken-set.jpg" alt="Saag Chicken Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="サグチキンセット" data-en="Saag Chicken Set" data-hi="Saag Chicken Set" data-ko="Saag Chicken Set" data-es="Saag Chicken Set">サグチキンセット</h2>
+      <p class="desc" data-ja="鶏もも肉を生姜、玉ねぎ、ガーリック、新鮮なほうれん草でソテー。栄養たっぷりの緑のカレー。" data-en="Tender chicken thigh sautéed with ginger, onion, garlic and fresh spinach — a wholesome and vibrant green curry." data-hi="Tender chicken thigh sautéed with ginger, onion, garlic and fresh spinach — a wholesome and vibrant green curry." data-ko="Tender chicken thigh sautéed with ginger, onion, garlic and fresh spinach — a wholesome and vibrant green curry." data-es="Tender chicken thigh sautéed with ginger, onion, garlic and fresh spinach — a wholesome and vibrant green curry.">鶏もも肉を生姜、玉ねぎ、ガーリック、新鮮なほうれん草でソテー。栄養たっぷりの緑のカレー。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,290</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Chicken</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Butter Chicken -->
+  <div class="menu-item">
+    <figure><img src="butter-chicken.jpg" alt="Butter Chicken Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="バターチキンセット" data-en="Butter Chicken Set" data-hi="Butter Chicken Set" data-ko="Butter Chicken Set" data-es="Butter Chicken Set">バターチキンセット</h2>
+      <p class="desc" data-ja="カシューナッツ、バター、生クリームを使ったリッチなトマトベースのカレー。なめらかで深い味わい。" data-en="A rich tomato-based curry with cashew nuts, butter and heavy cream — luxuriously smooth and deeply flavoured." data-hi="A rich tomato-based curry with cashew nuts, butter and heavy cream — luxuriously smooth and deeply flavoured." data-ko="A rich tomato-based curry with cashew nuts, butter and heavy cream — luxuriously smooth and deeply flavoured." data-es="A rich tomato-based curry with cashew nuts, butter and heavy cream — luxuriously smooth and deeply flavoured.">カシューナッツ、バター、生クリームを使ったリッチなトマトベースのカレー。なめらかで深い味わい。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,290</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Chicken</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Mutton Set -->
+  <div class="menu-item">
+    <figure><img src="mutton-set.jpg" alt="Mutton Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="マトンセット" data-en="Mutton Set" data-hi="Mutton Set" data-ko="Mutton Set" data-es="Mutton Set">マトンセット</h2>
+      <p class="desc" data-ja="骨なしラムを細かくカットし、生姜と玉ねぎでじっくりソテー。程よいスパイスの風味豊かなカレー。" data-en="Boneless lamb, finely cut and slow-sautéed with ginger and onion into a mildly spicy, flavourful curry." data-hi="Boneless lamb, finely cut and slow-sautéed with ginger and onion into a mildly spicy, flavourful curry." data-ko="Boneless lamb, finely cut and slow-sautéed with ginger and onion into a mildly spicy, flavourful curry." data-es="Boneless lamb, finely cut and slow-sautéed with ginger and onion into a mildly spicy, flavourful curry.">骨なしラムを細かくカットし、生姜と玉ねぎでじっくりソテー。程よいスパイスの風味豊かなカレー。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,290</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Lamb</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Today's Special -->
+  <div class="menu-item is-special">
+    <figure><img src="today-special-set.jpg" alt="Today's Special Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="日替わりスペシャルセット" data-en="Today's Special Set" data-hi="Today's Special Set" data-ko="Today's Special Set" data-es="Today's Special Set">日替わりスペシャルセット</h2>
+      <p class="desc" data-ja="シェフが旬の食材とオリジナルスパイスで仕上げる日替わりカレー。ベジ・ノンベジから選べます。" data-en="A daily rotating selection of veg and non-veg curries — crafted by the chef with seasonal produce and house spices." data-hi="A daily rotating selection of veg and non-veg curries — crafted by the chef with seasonal produce and house spices." data-ko="A daily rotating selection of veg and non-veg curries — crafted by the chef with seasonal produce and house spices." data-es="A daily rotating selection of veg and non-veg curries — crafted by the chef with seasonal produce and house spices.">シェフが旬の食材とオリジナルスパイスで仕上げる日替わりカレー。ベジ・ノンベジから選べます。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,190</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-ja="日替わり" data-en="Changes Daily" data-hi="Changes Daily" data-ko="매일 변경" data-es="Cambia Diariamente">日替わり</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Dal Set -->
+  <div class="menu-item">
+    <figure><img src="dal-set.jpg" alt="Dal Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="ダルセット" data-en="Dal Set" data-hi="Dal Set" data-ko="Dal Set" data-es="Dal Set">ダルセット</h2>
+      <p class="desc" data-ja="チャナダル、ラジマ、ロビア、ウラドを玉ねぎ、ピーマン、生姜ガーリックでじっくり煮込みました。" data-en="Chana dal, rajma, lobia and urad black split — soaked and slow-simmered with onion, bell pepper and ginger-garlic paste." data-hi="Chana dal, rajma, lobia and urad black split — soaked and slow-simmered with onion, bell pepper and ginger-garlic paste." data-ko="Chana dal, rajma, lobia and urad black split — soaked and slow-simmered with onion, bell pepper and ginger-garlic paste." data-es="Chana dal, rajma, lobia and urad black split — soaked and slow-simmered with onion, bell pepper and ginger-garlic paste.">チャナダル、ラジマ、ロビア、ウラドを玉ねぎ、ピーマン、生姜ガーリックでじっくり煮込みました。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,090</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Veg</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. Pork Set -->
+  <div class="menu-item">
+    <figure><img src="pork-set.jpg" alt="Pork Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="ポークセット" data-en="Pork Set" data-hi="Pork Set" data-ko="Pork Set" data-es="Pork Set">ポークセット</h2>
+      <p class="desc" data-ja="骨なし豚肉を玉ねぎベースにトマトと生姜ガーリックで軽くソテー。スパイシーで力強いカレー。" data-en="Boneless pork lightly sautéed with an onion base, tomato and ginger-garlic paste — a bold, spicy curry." data-hi="Boneless pork lightly sautéed with an onion base, tomato and ginger-garlic paste — a bold, spicy curry." data-ko="Boneless pork lightly sautéed with an onion base, tomato and ginger-garlic paste — a bold, spicy curry." data-es="Boneless pork lightly sautéed with an onion base, tomato and ginger-garlic paste — a bold, spicy curry.">骨なし豚肉を玉ねぎベースにトマトと生姜ガーリックで軽くソテー。スパイシーで力強いカレー。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,190</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Pork</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. Keema Set -->
+  <div class="menu-item">
+    <figure><img src="keema-set.jpg" alt="Keema Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="キーマセット" data-en="Keema Set" data-hi="Keema Set" data-ko="Keema Set" data-es="Keema Set">キーマセット</h2>
+      <p class="desc" data-ja="鶏ひき肉を玉ねぎとスパイスで炒めた、軽い辛さで満足感のあるカレー。" data-en="Minced chicken sautéed with onion and aromatic spices into a lightly spiced, deeply satisfying curry." data-hi="Minced chicken sautéed with onion and aromatic spices into a lightly spiced, deeply satisfying curry." data-ko="Minced chicken sautéed with onion and aromatic spices into a lightly spiced, deeply satisfying curry." data-es="Minced chicken sautéed with onion and aromatic spices into a lightly spiced, deeply satisfying curry.">鶏ひき肉を玉ねぎとスパイスで炒めた、軽い辛さで満足感のあるカレー。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,190</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Chicken</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 14. Chicken Set -->
+  <div class="menu-item">
+    <figure><img src="chicken-set.jpg" alt="Chicken Set"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="チキンセット" data-en="Chicken Set" data-hi="Chicken Set" data-ko="Chicken Set" data-es="Chicken Set">チキンセット</h2>
+      <p class="desc" data-ja="鶏もも肉を細かくカットし、生姜・玉ねぎ・ガーリックでソテー。オリジナルスパイスで仕上げた本格インドカレー。" data-en="Chicken thigh in fine cuts, sautéed with ginger, onion and garlic paste — a healthy, authentic Indian curry seasoned with house spices." data-hi="Chicken thigh in fine cuts, sautéed with ginger, onion and garlic paste — a healthy, authentic Indian curry seasoned with house spices." data-ko="Chicken thigh in fine cuts, sautéed with ginger, onion and garlic paste — a healthy, authentic Indian curry seasoned with house spices." data-es="Chicken thigh in fine cuts, sautéed with ginger, onion and garlic paste — a healthy, authentic Indian curry seasoned with house spices.">鶏もも肉を細かくカットし、生姜・玉ねぎ・ガーリックでソテー。オリジナルスパイスで仕上げた本格インドカレー。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,190</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Chicken</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15. Indian Spice Curry -->
+  <div class="menu-item">
+    <figure><img src="indian-spicy.jpg" alt="Indian Spice Curry"></figure>
+    <div class="menu-item-body">
+      <h2 data-ja="インドスパイスカレー" data-en="Indian Spice Curry" data-hi="Indian Spice Curry" data-ko="Indian Spice Curry" data-es="Indian Spice Curry">インドスパイスカレー</h2>
+      <p class="desc" data-ja="パプリカ、アスパラガス、カリフラワーをクミン、ガーリック、玉ねぎでソテー。伝統的なインドスパイスで仕上げた本格野菜カレー。" data-en="Paprika, asparagus and cauliflower sautéed with cumin, garlic and onion — a genuine vegetable curry seasoned with traditional Indian spices." data-hi="Paprika, asparagus and cauliflower sautéed with cumin, garlic and onion — a genuine vegetable curry seasoned with traditional Indian spices." data-ko="Paprika, asparagus and cauliflower sautéed with cumin, garlic and onion — a genuine vegetable curry seasoned with traditional Indian spices." data-es="Paprika, asparagus and cauliflower sautéed with cumin, garlic and onion — a genuine vegetable curry seasoned with traditional Indian spices.">パプリカ、アスパラガス、カリフラワーをクミン、ガーリック、玉ねぎでソテー。伝統的なインドスパイスで仕上げた本格野菜カレー。</p>
+      <div class="menu-item-footer">
+        <span class="price">¥1,290</span>
+        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Veg</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════ SPICE NOTE ═══════════════════════════ -->
+<div class="spice-note">
+  <div class="spice-note-inner">
+    <div class="spice-icon">🌶</div>
+    <div class="spice-text">
+      <strong data-ja="辛さの調整について" data-en="Spice Level Customisation" data-hi="मसाला स्तर अनुकूलन" data-ko="매운맛 조절" data-es="Personalización del Nivel de Picante">Spice Level Customisation</strong>
+      <p>🍬 Mild 🌶️ Medium 🌶️🌶️ Spicy 🌶️🌶️🌶️ Hot 🌶️🌶️🌶️🌶️ Super Hot</p>
+      <p data-ja="すべてのカレーはマイルドから激辛まで調整可能です。ご注文時にスタッフにお申し付けください。" data-en="All curries can be adjusted from mild to extra hot. Please inform your server of your preference when ordering." data-hi="सभी करी को हल्के से बहुत तीखे तक समायोजित किया जा सकता है। ऑर्डर करते समय बताएं।" data-ko="모든 커리는 순한 맛부터 매운 맛까지 조절 가능합니다. 주문 시 말씀해 주세요." data-es="Todos los currys se pueden ajustar de suave a extra picante. Informe a su camarero al ordenar.">All curries can be adjusted from mild to extra hot. Please inform your server of your preference when ordering.</p>
+    </div>
+    <div style="font-size:13px;color:var(--text-muted);font-weight:300;max-width:260px;line-height:1.7;">
+      <span data-ja="全セットにナンまたはライスが付きます（特記がない限り）" data-en="All sets include your choice of NAAN or RICE unless otherwise noted." data-hi="सभी सेट में नान या चावल शामिल है।" data-ko="별도 표기가 없는 한 모든 세트에 난 또는 라이스가 포함됩니다." data-es="Todos los sets incluyen Naan o Arroz a menos que se indique lo contrario.">All sets include your choice of NAAN or RICE unless otherwise noted.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ DRINK NOTE ═══════════════════════════ -->
+<div class="drink-note">
+  <div class="drink-note-inner">
+    <div class="drink-icon">🍹</div>
+    <div class="drink-text">
+      <strong data-ja="ドリンクメニュー" data-en="Drink Options" data-hi="पेय विकल्प" data-ko="음료 옵션" data-es="Opciones de Bebida">Drink Options</strong>
+      <p data-ja="以下からお好きなドリンクを1つお選びください。" data-en="You can choose any one of the drinks." data-hi="आप कोई भी एक पेय चुन सकते हैं।" data-ko="음료 중 하나를 선택할 수 있습니다." data-es="Puede elegir cualquiera de las bebidas.">You can choose any one of the drinks.</p>
+    </div>
+    <div style="font-size:13px;color:var(--text-muted);font-weight:300;max-width:260px;line-height:1.7;">
+      <div class="drink-options">
+        <strong style="color:var(--text-mid);font-weight:500;">LASSI, MANGO LASSI, APPLE JUICE, CHAI (HOT/ICE), ORANGE MANGO, ORANGE JUICE, COFFEE (HOT/ICE), OOLONG TEA</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ BACK TO TOP ═══════════════════════════ -->
+<button id="backToTop" title="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="footer">
+  <p>© 2025 <a href="index.html">Sunrose Japan</a> &nbsp;·&nbsp; 株式会社BAL BISHNU &nbsp;·&nbsp; All Rights Reserved.</p>
+</footer>
+
+<!-- ═══════════════════════════ HOME + LANG ═══════════════════════════ -->
+<a href="index.html" class="home-btn">← SUNROSE</a>
+
+<script>
+  const btn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "flex" : "none";
+  });
+  btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+</script>
+<script src="lang.js"></script>
+
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;justify-content:center;align-items:center;" onclick="this.style.display='none'"><img id="lightbox-img" style="max-width:90%;max-height:90%;border-radius:8px;"></div>
+<script>
+function openImage(src){document.getElementById('lightbox').style.display='flex';document.getElementById('lightbox-img').src=src}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+:root {
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+/* ===================== HOME BUTTON ===================== */
+.home-btn
+{
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26,18,8,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: #E8C97A;
+  font-family: var(--sans);
+   font-size: 30px; 
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.home-btn:hover
+{
+  background: #eaad06;
+  color: #1A1208;
+  border-color: #eaad06;
+  transform: translateY(-2px);
+}
+
+
+/* ====== HOME BUTTON ====== */
+.home-btn
+{
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26,18,8,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: #E8C97A;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.home-btn:hover
+{
+  background: #eaad06;
+  color: #1A1208;
+  border-color: #eaad06;
+  transform: translateY(-2px);
+}
+
+/* Hide on pages that have their own navbar */
+.has-navbar .home-btn
+{
+  display: none;
+}
+
+
+/* ====== TRANSLATE IN NAV ====== */
+#google_translate_element
+{
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.goog-te-gadget-simple
+{
+  background: transparent !important;
+  border: 1px solid rgba(201,168,76,0.4) !important;
+  border-radius: 30px !important;
+  padding: 7px 14px !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+}
+
+.goog-te-gadget-simple span,
+.goog-te-gadget-simple .goog-te-menu-value span
+{
+  color: rgba(255,255,255,0.88) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.header.scrolled .goog-te-gadget-simple span,
+.header.scrolled .goog-te-gadget-simple .goog-te-menu-value span
+{
+  color: var(--text-mid) !important;
+}
+
+.goog-te-gadget-simple img
+{
+  display: none !important;
+}
+
+.goog-te-banner-frame
+{
+  display: none !important;
+}
+
+body
+{
+  font-size: 18px;
+  padding: 0 24px;
+  top: 0 !important;
+}
