@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/sunrosej/new.sunrosejapan.com/
+    - /bin/cp -R index.html landing.html landing.css lang.js logo.jpeg $DEPLOYPATH
