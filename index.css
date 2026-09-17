@@ -179,7 +179,8 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(72px, 12vh, 128px) 24px 40px;
+  padding: clamp(10px, 1.2vh, 16px) 24px 40px;
+  
   width: 100%;
 }
 
@@ -284,19 +285,60 @@ body{
 
 .branch-card__top{
   position: relative;
-  height: 108px;
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 18px 22px 0;
-  background:
-    radial-gradient(circle at 85% 0%, rgba(230,161,7,.25), transparent 60%),
-    linear-gradient(135deg, #1B1B1B 0%, #111111 100%);
+  overflow: hidden;
+}
+
+.branch-card__photo{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.branch-card__top::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,.55) 0%, rgba(17,17,17,0) 30%, rgba(17,17,17,0) 70%, rgba(17,17,17,.75) 100%);
+  pointer-events: none;
+}
+
+.branch-card__top > .branch-card__pin,
+.branch-card__top > .branch-card__badge,
+.branch-card__top > .branch-card__photo-caption{
+  position: absolute;
+  z-index: 1;
+}
+
+.branch-card__top > .branch-card__pin,
+.branch-card__top > .branch-card__badge{
+  top: 18px;
+}
+
+.branch-card__top > .branch-card__pin{
+  right: 22px;
+}
+
+.branch-card__top > .branch-card__badge{
+  left: 22px;
+}
+
+.branch-card__photo-caption{
+  left: 22px;
+  bottom: 10px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--white-warm);
+  text-shadow: 0 2px 8px rgba(0,0,0,.7);
 }
 
 .branch-card__pin{
-  margin-left: auto;
   font-size: 20px;
   filter: grayscale(1) brightness(1.6);
   opacity: .85;
@@ -313,7 +355,7 @@ body{
 }
 
 .branch-card__body{
-  padding: 22px 24px 6px;
+  padding: 16px 24px 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -336,15 +378,6 @@ body{
   line-height: 1.08;
   margin: 0 0 12px;
   color: var(--ink);
-}
-
-.branch-card__desc{
-  margin: 0;
-  padding-bottom: 12px;
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--ink-soft);
-  max-width: 32ch;
 }
 
 .branch-card__address{
