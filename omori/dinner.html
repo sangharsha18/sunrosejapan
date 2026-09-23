@@ -1,400 +1,731 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ディナーメニュー — SUNROSE インドレストラン 品川</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dinner.css">
-  <link rel="stylesheet" href="shared.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ディナーメニュー — SUNROSE 大森</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="dinner.css" rel="stylesheet"/>
+<link href="shared.css" rel="stylesheet"/>
+<style>
+    /* Scoped refresh for the new Omori menu. Existing dinner.css/shared.css remain untouched. */
+    .menu-reference-note{max-width:920px;margin:0 auto 34px;padding:18px 22px;border:1px solid rgba(155,110,44,.22);border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(247,238,216,.62));box-shadow:0 8px 24px rgba(55,35,12,.07);text-align:center}
+    .menu-reference-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#9a6a25;font-weight:600;margin-bottom:7px}
+    .menu-reference-note p{margin:0;color:var(--text-muted,#6e655a);font-size:14px;line-height:1.75}
+    .drink-bar{max-width:1080px;margin:58px auto 70px;padding:0 20px}
+    .drink-bar-card{position:relative;overflow:hidden;border:1px solid rgba(155,110,44,.28);border-radius:22px;background:linear-gradient(135deg,#fffdf7 0%,#f5ead2 48%,#fffaf0 100%);box-shadow:0 18px 45px rgba(48,30,8,.11)}
+    .drink-bar-card:before{content:"";position:absolute;inset:10px;border:1px solid rgba(155,110,44,.16);border-radius:16px;pointer-events:none}
+    .drink-bar-head{display:flex;align-items:center;gap:16px;padding:28px 30px 18px}
+    .drink-bar-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#8f2525;color:#fff;font-size:24px;box-shadow:0 8px 18px rgba(90,25,25,.18)}
+    .drink-bar-head h2{margin:0;font-family:var(--serif,"Cormorant Garamond",serif);font-size:30px;font-weight:500;color:var(--text,#30271f)}
+    .drink-bar-head p{margin:3px 0 0;color:var(--text-muted,#74695d);font-size:13px}
+    .drink-bar-price{margin-left:auto;font-family:var(--serif,"Cormorant Garamond",serif);font-size:27px;color:#8f2525;font-weight:600;white-space:nowrap}
+    .drink-bar-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:8px 30px 30px}
+    .drink-choice{display:flex;align-items:center;gap:10px;min-height:58px;padding:12px 14px;border:1px solid rgba(155,110,44,.14);border-radius:13px;background:rgba(255,255,255,.62);color:var(--text,#30271f);font-size:14px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .drink-choice:hover{transform:translateY(-2px);border-color:rgba(155,110,44,.35);box-shadow:0 8px 18px rgba(48,30,8,.08)}
+    .drink-choice-mark{width:9px;height:9px;border-radius:50%;background:#9f2c2c;box-shadow:0 0 0 4px rgba(159,44,44,.10);flex:0 0 auto}
+    .drink-bar-foot{padding:0 30px 25px;color:var(--text-muted,#74695d);font-size:12px;line-height:1.6}
+    .set-note{font-size:12px;color:var(--text-muted,#74695d);margin-top:7px;line-height:1.55}
+    .curry-select-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    @media(max-width:800px){.drink-bar-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding-left:20px;padding-right:20px}.drink-bar-head{padding-left:20px;padding-right:20px}.drink-bar-foot{padding-left:20px;padding-right:20px}.drink-bar-price{font-size:23px}.curry-select-row{grid-template-columns:1fr}}
+    @media(max-width:520px){.drink-bar-grid{grid-template-columns:1fr}.drink-bar-head{align-items:flex-start;flex-wrap:wrap}.drink-bar-price{margin-left:68px;margin-top:-8px}.drink-bar-head h2{font-size:26px}}
+    /* Eye-catching drink menu + 3-plate set refresh */
+.three-plate-section{margin-top:20px}.three-plate-grid{margin-bottom:34px}.three-plate-item .price{color:#9d3f22}.three-plate-item figure{background:linear-gradient(135deg,#fff8e7,#f4e0b4)}
+.drink-showcase{max-width:1120px;margin:54px auto 80px;padding:0 18px;color:#2c2119}.drink-hero{position:relative;overflow:hidden;border-radius:28px;padding:54px 34px 48px;text-align:center;background:radial-gradient(circle at 18% 20%,rgba(255,221,148,.45),transparent 34%),radial-gradient(circle at 85% 80%,rgba(145,44,20,.20),transparent 38%),linear-gradient(135deg,#4a1710,#8e2f1d 54%,#c27935);color:#fff;box-shadow:0 22px 55px rgba(69,31,12,.20)}.drink-hero:after{content:"✦ SUNROSE ✦";position:absolute;right:22px;top:18px;font-size:10px;letter-spacing:.24em;opacity:.55}.drink-hero-kicker{font-size:11px;letter-spacing:.28em;font-weight:700;opacity:.8}.drink-hero h2{font-family:Georgia,serif;font-size:clamp(30px,5vw,56px);line-height:1.05;margin:12px auto 14px;max-width:780px}.drink-hero p{max-width:690px;margin:auto;font-size:14px;line-height:1.8;opacity:.9}
+.drink-highlight-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:-26px 22px 30px;position:relative;z-index:2}.drink-highlight{display:flex;align-items:center;gap:14px;padding:18px;border-radius:18px;background:rgba(255,252,244,.96);box-shadow:0 14px 30px rgba(58,29,10,.13);border:1px solid rgba(130,80,25,.13)}.drink-art{font-size:34px}.drink-highlight strong{display:block;font-size:15px}.drink-highlight small{display:block;margin-top:4px;font-weight:800;color:#a23b1f}.drink-mini-label,.drink-kicker{font-size:9px;letter-spacing:.18em;font-weight:800;color:#9a6a25}.drink-section-card{background:#fffdf8;border:1px solid rgba(122,77,27,.14);border-radius:22px;padding:25px;box-shadow:0 10px 30px rgba(59,34,12,.07);margin-bottom:18px}.drink-section-heading{display:flex;align-items:center;gap:13px;padding-bottom:16px;margin-bottom:10px;border-bottom:1px dashed rgba(139,88,35,.25)}.drink-section-heading>div{flex:1}.drink-section-icon{font-size:30px}.drink-section-heading h3{font-family:Georgia,serif;margin:3px 0 0;font-size:25px}.drink-section-heading>b{font-size:15px;color:#9d3f22;white-space:nowrap}.drink-two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.compact-card{margin-bottom:18px}.drink-list>div{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:12px 3px;border-bottom:1px solid rgba(100,70,35,.08)}.drink-list>div:last-child{border-bottom:0}.drink-list strong{font-size:14px}.drink-list em{font-style:normal;font-size:11px;opacity:.55}.drink-list span{font-weight:800;color:#9d3f22;white-space:nowrap}
+.cocktail-card{background:linear-gradient(135deg,#fffdf8,#fff7ea)}.cocktail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.cocktail-grid div{padding:13px 12px;border-radius:13px;background:linear-gradient(135deg,#fff,#faf0dc);border:1px solid rgba(130,80,25,.08)}.cocktail-grid strong{display:block;font-size:12px}.cocktail-grid span{display:block;font-size:10px;opacity:.55;margin-top:4px}.wine-picks{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wine-picks>div{display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:center;padding:12px;border-radius:14px;background:#f7efe3}.wine-glass{font-size:25px}.wine-picks strong{font-size:12px}.wine-picks small{grid-column:2;color:#9d3f22;font-weight:800}.soft-card{background:linear-gradient(135deg,#fbfff7,#f1f7e7)}.soft-card .drink-section-heading b{color:#5e7f35}.soft-pill-grid{display:flex;flex-wrap:wrap;gap:8px}.soft-pill-grid span{padding:9px 11px;border-radius:999px;background:#fff;border:1px solid rgba(87,116,50,.15);font-size:11px;box-shadow:0 3px 9px rgba(50,70,20,.04)}
+.nomihodai-banner{position:relative;overflow:hidden;margin-top:25px;padding:28px;border-radius:24px;color:#fff;background:linear-gradient(135deg,#24130e,#5b2015 55%,#9a5424);box-shadow:0 18px 40px rgba(46,21,10,.22)}.nomihodai-banner:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-80px;top:-120px;background:rgba(255,213,118,.13)}.nomi-top{display:flex;align-items:center;gap:13px}.nomi-top>span{font-size:38px}.nomi-top small{font-size:9px;letter-spacing:.2em;opacity:.72}.nomi-top h3{font-family:Georgia,serif;font-size:27px;margin:3px 0 0}.nomi-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 16px}.nomi-prices>div{padding:16px 12px;text-align:center;border-radius:15px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13)}.nomi-prices .nomi-featured{background:linear-gradient(135deg,rgba(238,177,70,.28),rgba(255,235,172,.12));border-color:rgba(255,216,126,.45);transform:translateY(-4px)}.nomi-prices strong{display:block;font-size:23px;color:#ffe0a0}.nomi-prices span{display:block;font-size:11px;margin-top:4px;opacity:.82}.nomi-notes{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.nomi-notes span{font-size:10px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.08);opacity:.86}
+@media(max-width:760px){.drink-showcase{padding:0 12px}.drink-hero{padding:42px 20px 38px;border-radius:22px}.drink-highlight-row{grid-template-columns:1fr;margin:-18px 10px 22px}.drink-two-col{grid-template-columns:1fr;gap:0}.cocktail-grid{grid-template-columns:repeat(2,1fr)}.drink-section-card{padding:19px;border-radius:18px}.nomihodai-banner{padding:22px 17px}.nomi-prices{grid-template-columns:1fr}.nomi-prices .nomi-featured{transform:none}.three-plate-grid{grid-template-columns:1fr!important}}
+</style>
 </head>
 <body>
-
-<a href="index.html" class="home-btn">← SUNROSE</a>
-
-<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<a class="home-btn" href="index.html">← SUNROSE</a>
 <section class="menu-hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grain"></div>
-  <div class="hero-deco"></div>
-  <div class="menu-hero-content">
-    <div class="hero-eyebrow" data-ja="サンローズ・品川" data-en="Sunrose Japan · Shinagawa" data-hi="सनरोज़ जापान · शिनागावा" data-ko="선로즈 재팬 · 시나가와" data-es="Sunrose Japón · Shinagawa">サンローズ・品川</div>
-    <h2>
-      <span data-ja="本格インドの" data-en="An Evening of" data-hi="एक शाम" data-ko="정통 인도의" data-es="Una Noche de">本格インドの</span><br>
-      <em data-ja="ディナー体験" data-en="Authentic Indian" data-hi="प्रामाणिक भारतीय" data-ko="디너 체험" data-es="Auténtica India">ディナー体験</em><br>
-      <span data-ja="" data-en="Cuisine" data-hi="व्यंजन" data-ko="" data-es="Cocina"></span>
-    </h2>
-    <p data-ja="タンドールからあなたのテーブルへ — 情熱と伝統、最高のスパイスで。" data-en="From the tandoor to your table — crafted with passion, tradition, and the finest spices." data-hi="तंदूर से आपकी मेज तक — जुनून, परंपरा और बेहतरीन मसालों से तैयार।" data-ko="탄두르에서 당신의 테이블까지 — 열정과 전통, 최고의 향신료로." data-es="Del tandoor a su mesa — elaborado con pasión, tradición y las mejores especias.">タンドールからあなたのテーブルへ — 情熱と伝統、最高のスパイスで。</p>
-    <div class="hours-badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span data-ja="ディナータイム · 17:00 — 22:00" data-en="Dinner Time · 17:00 — 22:00" data-hi="डिनर टाइम · 17:00 — 22:00" data-ko="디너 타임 · 17:00 — 22:00" data-es="Hora de Cena · 17:00 — 22:00">ディナータイム · 17:00 — 22:00</span>
-    </div><br>
-    <a href="#dinner-sets" class="menu-hero-btn" data-ja="メニューを見る" data-en="Explore the Menu" data-hi="मेनू देखें" data-ko="메뉴 보기" data-es="Ver el Menú">メニューを見る</a>
-  </div>
+<div class="hero-bg"></div><div class="hero-grain"></div><div class="hero-deco"></div>
+<div class="menu-hero-content">
+<div class="hero-eyebrow" data-en="Sunrose Japan · Omori" data-es="Sunrose Japón · Omori" data-hi="सनरोज़ जापान · ओमोरी" data-ja="サンローズ・大森" data-ko="선로즈 재팬 · 오모리">サンローズ・大森</div>
+<h2><span data-en="An Evening of" data-es="Una Noche de" data-hi="एक शाम" data-ja="本格インドの" data-ko="정통 인도의">本格インドの</span><br/><em data-en="Authentic Indian" data-es="Auténtica India" data-hi="प्रामाणिक भारतीय" data-ja="ディナー体験" data-ko="정통 인도">ディナー体験</em><br/><span data-en="Cuisine" data-es="Cocina" data-hi="व्यंजन" data-ja="" data-ko=""></span></h2>
+<p data-en="From the tandoor to your table — crafted with passion, tradition, and the finest spices." data-es="Del tandoor a su mesa — elaborado con pasión, tradición y las mejores especias." data-hi="तंदूर से आपकी मेज तक — जुनून, परंपरा और बेहतरीन मसालों से तैयार।" data-ja="タンドールからあなたのテーブルへ — 情熱と伝統、最高のスパイスで。" data-ko="탄두르에서 당신의 테이블까지 — 열정과 전통, 최고의 향신료로.">タンドールからあなたのテーブルへ — 情熱と伝統、最高のスパイスで。</p>
+<div class="hours-badge"><svg fill="none" height="14" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span data-en="Dinner Time · 17:00 — 22:00" data-es="Hora de Cena · 17:00 — 22:00" data-hi="डिनर टाइम · 17:00 — 22:00" data-ja="ディナータイム · 17:00 — 22:00" data-ko="디너 타임 · 17:00 — 22:00">ディナータイム · 17:00 — 22:00</span></div><br/>
+<a class="menu-hero-btn" data-en="Explore the Menu" data-es="Ver el Menú" data-hi="मेनू देखें" data-ja="メニューを見る" data-ko="메뉴 보기" href="#dinner-sets">メニューを見る</a>
+</div>
 </section>
-
-<!-- ═══════════════════════════ STICKY NAV ═══════════════════════════ -->
 <nav class="menu-nav">
-  <a href="#dinner-sets" data-ja="ディナーセット" data-en="Dinner Sets" data-hi="डिनर सेट" data-ko="디너 세트" data-es="Sets de Cena">ディナーセット</a>
-  <a href="#salad" data-ja="サラダ" data-en="Salad" data-hi="सलाद" data-ko="샐러드" data-es="Ensalada">サラダ</a>
-  <a href="#tandoori" data-ja="タンドリー" data-en="Tandoori" data-hi="तंदूरी" data-ko="탄두리" data-es="Tandoori">タンドリー</a>
-  <a href="#snacks" data-ja="おつまみ" data-en="Snacks" data-hi="स्नैक्स" data-ko="안주" data-es="Aperitivos">おつまみ</a>
-  <a href="#naan" data-ja="ナン" data-en="Naan" data-hi="नान" data-ko="난" data-es="Naan">ナン</a>
-  <a href="#curry" data-ja="カレー" data-en="Curry" data-hi="करी" data-ko="커리" data-es="Curry">カレー</a>
-  <a href="#rice" data-ja="ビリヤニ＆ライス" data-en="Biryani &amp; Rice" data-hi="बिरयानी और चावल" data-ko="비리야니 &amp; 라이스" data-es="Biryani y Arroz">ビリヤニ＆ライス</a>
-  <a href="#soup" data-ja="スープ" data-en="Soup" data-hi="सूप" data-ko="수프" data-es="Sopa">スープ</a>
-</nav>
-
-<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
-<div class="section-header">
-  <br>
-  <div class="section-eyebrow" data-ja="ディナーメニュー" data-en="Dinner Menu" data-hi="डिनर मेनू" data-ko="디너 메뉴" data-es="Menú de Cena">ディナーメニュー</div>
-  <h1 data-ja="ディナーメニュー" data-en="Dinner Menu" data-hi="डिनर मेनू" data-ko="디너 메뉴" data-es="Menú de Cena">ディナーメニュー</h1>
-  <p data-ja="すべての料理はインドから直輸入したスパイスで毎日新鮮に作られています。お好みの辛さをお申し付けください。" data-en="Every dish is prepared fresh with authentic spices imported from India. Tell us your spice preference and we will craft it perfectly for you." data-hi="हर व्यंजन भारत से आयातित असली मसालों से ताज़ा तैयार किया जाता है।" data-ko="모든 요리는 인도에서 수입한 정통 향신료로 매일 신선하게 준비됩니다." data-es="Cada plato se prepara fresco con especias auténticas importadas de la India.">すべての料理はインドから直輸入したスパイスで毎日新鮮に作られています。お好みの辛さをお申し付けください。</p>
+<a data-en="3-Plate Sets" data-es="Sets de 3 platos" data-hi="3-प्लेट सेट" data-ja="3種盛り合わせ" data-ko="3종 세트" href="#three-plate">3種盛り合わせ</a><a data-en="Dinner Sets" data-es="Sets de Cena" data-hi="डिनर सेट" data-ja="ディナーセット" data-ko="디너 세트" href="#dinner-sets">ディナーセット</a>
+<a data-en="Salad" data-es="Ensalada" data-hi="सलाद" data-ja="サラダ" data-ko="샐러드" href="#salad">サラダ</a>
+<a data-en="Tandoori" data-es="Tandoori" data-hi="तंदूरी" data-ja="タンドリー" data-ko="탄두리" href="#tandoori">タンドリー</a>
+<a data-en="Snacks" data-es="Aperitivos" data-hi="स्नैक्स" data-ja="おつまみ" data-ko="안주" href="#snacks">おつまみ</a>
+<a data-en="Naan" data-es="Naan" data-hi="नान" data-ja="ナン" data-ko="난" href="#naan">ナン</a>
+<a data-en="Curry" data-es="Curry" data-hi="करी" data-ja="カレー" data-ko="커리" href="#curry">カレー</a>
+<a data-en="Rice" data-es="Arroz" data-hi="चावल" data-ja="ライス" data-ko="라이스" href="#rice">ライス</a>
+<a data-en="Soup" data-es="Sopa" data-hi="सूप" data-ja="スープ" data-ko="수프" href="#soup">スープ</a>
+<a data-en="Drinks" data-es="Bebidas" data-hi="पेय" data-ja="ドリンク" data-ko="음료" href="#drink-bar">ドリンク</a></nav>
+<div class="section-header"><br/><div class="section-eyebrow" data-en="Omori · Dinner Menu" data-es="Omori · Menú de Cena" data-hi="ओमोरी · डिनर मेनू" data-ja="大森店・ディナーメニュー" data-ko="오모리 · 디너 메뉴">大森店・ディナーメニュー</div><h1 data-en="Dinner Menu" data-es="Menú de Cena" data-hi="डिनर मेनू" data-ja="ディナーメニュー" data-ko="디너 메뉴">ディナーメニュー</h1><p data-en="Updated to match the latest printed menu. Choose your preferred spice level for any curry." data-es="Actualizado según el menú impreso más reciente. Elija el nivel de picante de cada curry." data-hi="नवीनतम प्रिंटेड मेनू के अनुसार अपडेट किया गया है। हर करी के लिए अपनी पसंद का तीखापन चुनें।" data-ja="最新の店頭メニューに合わせて、料理・価格を更新しました。カレーはお好みの辛さをお選びいただけます。" data-ko="최신 인쇄 메뉴에 맞춰 업데이트했습니다. 모든 커리의 매운맛을 선택할 수 있습니다.">最新の店頭メニューに合わせて、料理・価格を更新しました。カレーはお好みの辛さをお選びいただけます。</p></div>
+<div class="menu-reference-note">
+<div class="menu-reference-kicker" data-en="Updated for the Omori dinner menu" data-es="Actualizado con el menú de cena de Omori" data-hi="ओमोरी डिनर मेनू के अनुसार अपडेट किया गया" data-ja="新しい大森店ディナーメニューを反映" data-ko="오모리 디너 메뉴 기준으로 업데이트">新しい大森店ディナーメニューを反映</div>
+<p data-en="Prices and dishes below have been updated from the latest printed menu provided by the Omori branch." data-es="Los platos y precios se han actualizado según el menú impreso más reciente de la sucursal Omori." data-hi="नीचे दिए गए व्यंजन और कीमतें ओमोरी शाखा के नवीनतम प्रिंटेड मेनू के अनुसार अपडेट की गई हैं।" data-ja="下のメニューは店頭の最新メニュー写真をもとに価格・料理内容を更新しています。" data-ko="아래 메뉴와 가격은 오모리점의 최신 인쇄 메뉴를 기준으로 업데이트했습니다.">下のメニューは店頭の最新メニュー写真をもとに価格・料理内容を更新しています。</p>
 </div>
-<!-- ═══════════════════ OFFICIAL OMORI MENU PHOTOS ═══════════════════ -->
-<section style="max-width:1000px;margin:0 auto 50px;padding:0 20px;text-align:center;">
-  <p style="font-family:var(--sans);font-size:13px;letter-spacing:.06em;color:var(--text-muted);margin-bottom:16px;text-transform:uppercase;">
-    <span data-ja="サンローズ大森店・公式ディナーメニュー（タップで拡大）" data-en="Official Omori Branch Dinner Menu (tap to enlarge)" data-hi="सनरोज़ ओमोरी शाखा · आधिकारिक डिनर मेनू" data-ko="선로즈 오모리점 · 공식 디너 메뉴" data-es="Menú de Cena Oficial · Sucursal Omori">サンローズ大森店・公式ディナーメニュー（タップで拡大）</span>
-  </p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-01.webp" alt="Omori dinner menu page 1" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-02.webp" alt="Omori dinner menu page 2" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-03.webp" alt="Omori dinner menu page 3" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-04.webp" alt="Omori dinner menu page 4" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-05.webp" alt="Omori dinner menu page 5" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-06.webp" alt="Omori dinner menu page 6" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-07.webp" alt="Omori dinner menu page 7" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-08.webp" alt="Omori dinner menu page 8" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-    <img src="https://sunrosejapan.com/wp-content/uploads/2026/08/dinner-menu-09.webp" alt="Omori dinner menu page 9" loading="lazy" style="width:100%;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.15);cursor:zoom-in;" onclick="openImage(this.src)">
-  </div>
-</section>
-
 <div class="gold-divider"><div class="gold-divider-gem"></div></div>
-
-<!-- ════════════════════════ DINNER SETS ════════════════════════ -->
-<div class="category-section" id="dinner-sets">
-  <div class="category-title">
-    <h2><span data-ja="ディナー" data-en="Dinner" data-hi="डिनर" data-ko="디너" data-es="Cena">ディナー</span> <em data-ja="セット" data-en="Sets" data-hi="सेट" data-ko="세트" data-es="Sets">セット</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="8品" data-en="8 Items" data-hi="8 आइटम" data-ko="8 품목" data-es="8 Artículos">8品</span>
-  </div>
-</div>
+<div class="category-section" id="dinner-sets"><div class="category-title"><h2><span data-en="Dinner" data-es="Cena" data-hi="डिनर" data-ja="ディナー" data-ko="디너">ディナー</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="9 Items" data-es="9 artículos" data-hi="9 आइटम" data-ja="9品" data-ko="9개">9品</span></div></div>
 <div class="menu-grid">
-  <div class="menu-item is-special">
-    <figure><img src="image/special_set.jpg" alt="Special Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="スペシャルセット" data-en="Special Set" data-hi="Special Set" data-ko="Special Set" data-es="Special Set">スペシャルセット</h2>
-      <p class="desc">Salad · Tandoori Chicken · Naan · Half Rice · Dessert · Soft Drink</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーをお選びください" data-en="Choose Your Curry" data-hi="अपनी करी चुनें" data-ko="커리를 선택하세요" data-es="Elija su Curry">カレーをお選びください</span>
-        <select class="curry-select"><option value="">Select Curry</option><option>Chicken Curry</option><option>Pork Curry</option><option>Dal Curry</option><option>Mutton Curry</option><option>Saag Pork Curry</option><option>Seafood Curry</option><option>Mixed Vegetable Curry</option><option>Saag Paneer Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥1,880</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="menu-item">
-    <figure><img src="image/garlic_naan_set.jpg" alt="Garlic Naan Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="ガーリックナンセット" data-en="Garlic Naan Set" data-hi="Garlic Naan Set" data-ko="Garlic Naan Set" data-es="Garlic Naan Set">ガーリックナンセット</h2>
-      <p class="desc">Garlic Naan · Salad · Fried Egg · Half Rice · Dessert · Soft Drink</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーをお選びください" data-en="Choose Your Curry" data-hi="अपनी करी चुनें" data-ko="커리를 선택하세요" data-es="Elija su Curry">カレーをお選びください</span>
-        <select class="curry-select"><option value="">Select Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Pork Curry</option><option>Dal Curry</option><option>Mutton Curry</option><option>Saag Pork Curry</option><option>Seafood Curry</option><option>Mixed Vegetable Curry</option><option>Saag Paneer Curry</option><option>Aloo Baingan Curry</option><option>Keema Curry</option><option>Saag Mutton Curry</option><option>Prawn Curry</option><option>Chana Masala Curry</option><option>Mutton Masala Curry</option><option>Butter Paneer Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥2,180</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="menu-item">
-    <figure><img src="image/cheese_naan_set.jpg" alt="Cheese Naan Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="チーズナンセット" data-en="Cheese Naan Set" data-hi="Cheese Naan Set" data-ko="Cheese Naan Set" data-es="Cheese Naan Set">チーズナンセット</h2>
-      <p class="desc">Cheese Naan · Salad · Fried Egg · Half Rice · Dessert · Soft Drink</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーをお選びください" data-en="Choose Your Curry" data-hi="अपनी करी चुनें" data-ko="커리를 선택하세요" data-es="Elija su Curry">カレーをお選びください</span>
-        <select class="curry-select"><option value="">Select Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Pork Curry</option><option>Dal Curry</option><option>Mutton Curry</option><option>Saag Pork Curry</option><option>Seafood Curry</option><option>Mixed Vegetable Curry</option><option>Saag Paneer Curry</option><option>Aloo Baingan Curry</option><option>Keema Curry</option><option>Saag Mutton Curry</option><option>Prawn Curry</option><option>Chana Masala Curry</option><option>Mutton Masala Curry</option><option>Butter Paneer Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥2,280</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="menu-item">
-    <figure><img src="image/ladies_set.jpg" alt="Ladies Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="レディースセット" data-en="Ladies' Set" data-hi="Ladies' Set" data-ko="Ladies' Set" data-es="Ladies' Set">レディースセット</h2>
-      <p class="desc">Salad · Chicken Tikka · Naan · Dessert · Soft Drink</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーをお選びください" data-en="Choose Your Curry" data-hi="अपनी करी चुनें" data-ko="커리를 선택하세요" data-es="Elija su Curry">カレーをお選びください</span>
-        <select class="curry-select"><option value="">Select Curry</option><option>Chicken Curry</option><option>Keema Curry</option><option>Aloo Gobi Curry</option><option>Aloo Baingan Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥1,780</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="menu-item is-special">
-    <figure><img src="image/sunrose_special.jpg" alt="Sunrose Special Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="サンローズスペシャルセット" data-en="Sunrose Special Set" data-hi="Sunrose Special Set" data-ko="Sunrose Special Set" data-es="Sunrose Special Set">サンローズスペシャルセット</h2>
-      <p class="desc">Salad · Tandoori Chicken · Roast Pork · Naan · Rice · Dessert · Soft Drink</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーをお選びください" data-en="Choose Your Curry" data-hi="अपनी करी चुनें" data-ko="커리를 선택하세요" data-es="Elija su Curry">カレーをお選びください</span>
-        <select class="curry-select"><option value="">Select Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Pork Curry</option><option>Dal Curry</option><option>Mutton Curry</option><option>Saag Pork Curry</option><option>Seafood Curry</option><option>Mixed Vegetable Curry</option><option>Saag Paneer Curry</option><option>Aloo Baingan Curry</option><option>Keema Curry</option><option>Saag Mutton Curry</option><option>Prawn Curry</option><option>Chana Masala Curry</option><option>Mutton Masala Curry</option><option>Butter Paneer Curry</option><option>Saag Chicken Curry</option><option>Saag Prawn Curry</option><option>Chicken Bharta Curry</option><option>Saag Keema Curry</option><option>Daily Special Curry</option><option>Saag Seafood Curry</option><option>Kadai Paneer Curry</option><option>Aloo Gobi Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥2,080</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="menu-item">
-    <figure><img src="image/recommended_set.jpg" alt="Recommended Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="おすすめセット" data-en="Recommended Set" data-hi="Recommended Set" data-ko="Recommended Set" data-es="Recommended Set">おすすめセット</h2>
-      <p class="desc">Salad · Tandoori Chicken · Roast Pork · Fried Egg · Rice · Cheese Naan · Dessert · Soft Drink</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーを2種お選びください" data-en="Choose Any 2 Curries" data-hi="कोई भी 2 करी चुनें" data-ko="커리 2종을 선택하세요" data-es="Elija 2 Currys">カレーを2種お選びください</span>
-        <select class="curry-select"><option value="">Select 1st Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Pork Curry</option><option>Dal Curry</option><option>Mutton Curry</option><option>Saag Pork Curry</option><option>Seafood Curry</option><option>Mixed Vegetable Curry</option><option>Saag Paneer Curry</option><option>Aloo Baingan Curry</option><option>Keema Curry</option><option>Saag Mutton Curry</option><option>Prawn Curry</option><option>Chana Masala Curry</option><option>Mutton Masala Curry</option><option>Butter Paneer Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥2,680</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="menu-item is-couple">
-    <figure><img src="image/couple_set.jpg" alt="Couple Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="カップルセット" data-en="Couple Set" data-hi="Couple Set" data-ko="Couple Set" data-es="Couple Set">カップルセット</h2>
-      <p class="desc">2 Salads · Tandoori Chicken · Tandoori Prawn · 2 Naan · 2 Rice · Dessert · 2 Soft Drinks</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーを2種お選びください" data-en="Choose Any 2 Curries" data-hi="कोई भी 2 करी चुनें" data-ko="커리 2종을 선택하세요" data-es="Elija 2 Currys">カレーを2種お選びください</span>
-        <select class="curry-select"><option value="">Select Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Pork Curry</option><option>Dal Curry</option><option>Mutton Curry</option><option>Saag Pork Curry</option><option>Seafood Curry</option><option>Mixed Vegetable Curry</option><option>Saag Paneer Curry</option><option>Prawn Curry</option><option>Chana Masala Curry</option><option>Mutton Masala Curry</option><option>Butter Paneer Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥5,080</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="2名様用" data-en="For Two" data-hi="For Two" data-ko="2인용" data-es="Para Dos">2名様用</span></span>
-      </div>
-    </div>
-  </div>
-  <div class="menu-item is-kids">
-    <figure><img src="image/kids_set.jpg" alt="Kids Set"></figure>
-    <div class="menu-item-body">
-      <h2 data-ja="お子様セット" data-en="Kids' Set" data-hi="Kids' Set" data-ko="Kids' Set" data-es="Kids' Set">お子様セット</h2>
-      <p class="desc">Salad · Mini Naan · Half Rice · Dessert · Soft Drink. For children 12 and under.</p>
-      <div class="curry-select-wrap">
-        <span class="curry-select-label" data-ja="カレーをお選びください" data-en="Choose Your Curry" data-hi="अपनी करी चुनें" data-ko="커리를 선택하세요" data-es="Elija su Curry">カレーをお選びください</span>
-        <select class="curry-select"><option value="">Select Curry</option><option>Chicken Curry</option><option>Keema Curry</option><option>Butter Chicken Curry</option></select>
-      </div>
-      <div class="menu-item-footer">
-        <div><div class="price">¥1,090</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div>
-        <span class="includes-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-ja="デザート＆ドリンク" data-en="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ko="디저트 &amp; 음료" data-es="Postre y Bebida">デザート＆ドリンク</span></span>
-      </div>
-    </div>
-  </div>
+<div class="menu-item">
+<figure><img alt="Cheese Naan Set" loading="lazy" src="images/Dcheesenan-set copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Cheese Naan Set" data-es="Set de Naan con Queso" data-hi="चीज़ नान सेट" data-ja="チーズナンセット" data-ko="치즈 난 세트">チーズナンセット</h2>
+<p class="desc">Cheese Naan · 2 Curries · Salad · Fried Egg · Half Rice · Dessert · Soft Drink</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose 2 Curries" data-es="Elija 2 currys" data-hi="2 करी चुनें" data-ja="カレーを2種お選びください" data-ko="커리 2종을 선택하세요">カレーを2種お選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">Select 1st Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select><select class="curry-select"><option value="">Select 2nd Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥1,990</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Recommended Set" loading="lazy" src="images/Dosusume-set copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Recommended Set" data-es="Set Recomendado" data-hi="सिफारिश सेट" data-ja="おすすめセット" data-ko="추천 세트">おすすめセット</h2>
+<p class="desc">2 Curries · Salad · Tandoori Chicken · Roast Pork Atsugiri · Fried Egg · Half Rice · Cheese Naan · Dessert · Soft Drink</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose 2 Curries" data-es="Elija 2 currys" data-hi="2 करी चुनें" data-ja="カレーを2種お選びください" data-ko="커리 2종을 선택하세요">カレーを2種お選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">Select 1st Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select><select class="curry-select"><option value="">Select 2nd Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥2,190</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
+<div class="menu-item is-special">
+<figure><img alt="Ladies' Set" loading="lazy" src="images/Dladies-set copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Ladies' Set" data-es="Set para Damas" data-hi="लेडीज़ सेट" data-ja="レディースセット" data-ko="레이디스 세트">レディースセット</h2>
+<p class="desc">Curry · Salad · Chicken Tikka · Naan · Dessert · Soft Drink · Women only</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose Your Curry" data-es="Elija su curry" data-hi="अपनी करी चुनें" data-ja="カレーをお選びください" data-ko="커리를 선택하세요">カレーをお選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">カレーを選択</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥1,590</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Child Set" loading="lazy" src="images/Dchild-set copy.jpg "/></figure>
+<div class="menu-item-body">
+<h2 data-en="Child Set" data-es="Set Infantil" data-hi="बच्चों का सेट" data-ja="お子さまセット" data-ko="어린이 세트">お子さまセット</h2>
+<p class="desc">Curry · Salad · Half Rice · Mini Naan · Dessert · Soft Drink · Under 12</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose Your Curry" data-es="Elija su curry" data-hi="अपनी करी चुनें" data-ja="カレーをお選びください" data-ko="커리를 선택하세요">カレーをお選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">カレーを選択</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Under 12" data-es="Under 12" data-hi="Under 12" data-ja="Under 12" data-ko="Under 12">Under 12</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Special Set" loading="lazy" src="images/Dspecial-set copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Special Set" data-es="Set Especial" data-hi="स्पेशल सेट" data-ja="スペシャルセット" data-ko="스페셜 세트">スペシャルセット</h2>
+<p class="desc">Curry · Salad · Tandoori Chicken · Half Rice · Naan · Dessert · Soft Drink</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose Your Curry" data-es="Elija su curry" data-hi="अपनी करी चुनें" data-ja="カレーをお選びください" data-ko="커리를 선택하세요">カレーをお選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">カレーを選択</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥1,690</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Sun Set" loading="lazy" src="images/Dsun-set.jpeg "/></figure>
+<div class="menu-item-body">
+<h2 data-en="Sun Set" data-es="Set Sol" data-hi="सन सेट" data-ja="サンセット" data-ko="선 세트">サンセット</h2>
+<p class="desc">2 Curries · Salad · Naan · Half Rice · Dessert · Soft Drink</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose 2 Curries" data-es="Elija 2 currys" data-hi="2 करी चुनें" data-ja="カレーを2種お選びください" data-ko="커리 2종을 선택하세요">カレーを2種お選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">Select 1st Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select><select class="curry-select"><option value="">Select 2nd Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥1,790</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Rose Set" loading="lazy" src="images/Drose-set.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Rose Set" data-es="Set Rosa" data-hi="रोज़ सेट" data-ja="ローズセット" data-ko="로즈 세트">ローズセット</h2>
+<p class="desc">2 Curries · Salad · Chicken Tikka · Naan · Half Rice · Soft Drink</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose 2 Curries" data-es="Elija 2 currys" data-hi="2 करी चुनें" data-ja="カレーを2種お選びください" data-ko="커리 2종을 선택하세요">カレーを2種お選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">Select 1st Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select><select class="curry-select"><option value="">Select 2nd Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥1,890</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Sun Rose Special Set" loading="lazy" src="images/Dsunrosespecial-set copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Sun Rose Special Set" data-es="Set Especial Sun Rose" data-hi="सन रोज़ स्पेशल सेट" data-ja="サンローズスペシャルセット" data-ko="선로즈 스페셜 세트">サンローズスペシャルセット</h2>
+<p class="desc">Curry · Salad · Tandoori Chicken · Roast Pork Atsugiri · Naan · Rice · Dessert · Soft Drink</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose Your Curry" data-es="Elija su curry" data-hi="अपनी करी चुनें" data-ja="カレーをお選びください" data-ko="커리를 선택하세요">カレーをお選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">カレーを選択</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥1,990</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Garlic Naan Set" loading="lazy" src="images/garlicnan-set copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Garlic Naan Set" data-es="Set de Naan con Ajo" data-hi="गार्लिक नान सेट" data-ja="ガーリックナンセット" data-ko="갈릭 난 세트">ガーリックナンセット</h2>
+<p class="desc">Garlic Naan · 2 Curries · Salad · Fried Egg · Half Rice · Dessert · Soft Drink</p>
+<div class="curry-select-wrap"><span class="curry-select-label" data-en="Choose 2 Curries" data-es="Elija 2 currys" data-hi="2 करी चुनें" data-ja="カレーを2種お選びください" data-ko="커리 2종을 선택하세요">カレーを2種お選びください</span><div class="curry-select-row"><select class="curry-select"><option value="">Select 1st Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select><select class="curry-select"><option value="">Select 2nd Curry</option><option>Chicken Curry</option><option>Butter Chicken Curry</option><option>Chicken Bharta</option><option>Saag Chicken</option><option>Chicken Tikka Masala</option><option>Kadai Chicken (Boneless)</option><option>Kadai Chicken (Bone-in)</option><option>Keema Curry</option><option>Saag Keema</option><option>Pork Curry</option><option>Saag Pork</option><option>Mutton Curry</option><option>Saag Mutton</option><option>Seafood Curry</option><option>Saag Seafood</option><option>Prawn Curry</option><option>Saag Prawn</option><option>Mix Vegetable Curry</option><option>Aloo Baigan</option><option>Saag Paneer</option><option>Chana Masala</option><option>Butter Paneer</option><option>Dal Curry</option></select></div></div>
+<div class="menu-item-footer"><div><div class="price">¥1,990</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div><span class="includes-tag" data-en="Dessert &amp; Drink" data-es="Dessert &amp; Drink" data-hi="Dessert &amp; Drink" data-ja="Dessert &amp; Drink" data-ko="Dessert &amp; Drink">Dessert &amp; Drink</span></div>
+</div>
+</div>
 </div>
 
-<!-- ════════════════════════ SALAD ════════════════════════ -->
-<div class="category-section" id="salad">
-  <div class="category-title">
-    <h2><em data-ja="サラダ" data-en="Salad" data-hi="सलाद" data-ko="샐러드" data-es="Ensalada">サラダ</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="6品" data-en="6 Items" data-hi="6 आइटम" data-ko="6 품목" data-es="6 Artículos">6品</span>
-  </div>
-</div>
+
+
+
+
+
+<div class="category-section three-plate-section" id="three-plate"><div class="category-title"><h2><span data-en="3-Plate Sharing Sets" data-es="Sets de 3 platos" data-hi="3-प्लेट सेट" data-ja="3種盛り合わせ" data-ko="3종 모둠 세트">3種盛り合わせ</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="6 Sets" data-es="6 sets" data-hi="6 सेट" data-ja="6品" data-ko="6개">6品</span></div><div class="menu-grid three-plate-grid"><div class="menu-item three-plate-item"><figure><img alt="A Set" loading="lazy" src="images/A-set.jpeg"/></figure><div class="menu-item-body"><h2 data-en="A Set" data-es="Set A" data-hi="A सेट" data-ja="Aセット" data-ko="A 세트">Aセット</h2><p class="desc" data-en="Egg Pooja · Chicken Tikka · Fried Potato" data-es="Egg Pooja · Pollo Tikka · Patatas Fritas" data-hi="एग पूजा · चिकन टिक्का · फ्राइड पोटेटो" data-ja="エッグプージャ・チキンティッカ・フライドポテト" data-ko="에그 푸자 · 치킨 티카 · 프라이드 포테이토">エッグプージャ・チキンティッカ・フライドポテト</p><div class="menu-item-footer"><div><div class="price">¥900</div></div></div></div></div><div class="menu-item three-plate-item"><figure><img alt="B Set" loading="lazy" src="images/B-set.jpeg"/></figure><div class="menu-item-body"><h2 data-en="B Set" data-es="Set B" data-hi="B सेट" data-ja="Bセット" data-ko="B 세트">Bセット</h2><p class="desc" data-en="Fried Potato · Seekh Kebab · Edamame" data-es="Patatas Fritas · Seekh Kebab · Edamame" data-hi="फ्राइड पोटेटो · सीख कबाब · एडामामे" data-ja="フライドポテト・シークカバブ・枝豆" data-ko="프라이드 포테이토 · 시크 케밥 · 에다마메">フライドポテト・シークカバブ・枝豆</p><div class="menu-item-footer"><div><div class="price">¥900</div></div></div></div></div><div class="menu-item three-plate-item"><figure><img alt="C Set" loading="lazy" src="images/C-set.jpeg"/></figure><div class="menu-item-body"><h2 data-en="C Set" data-es="Set C" data-hi="C सेट" data-ja="Cセット" data-ko="C 세트">Cセット</h2><p class="desc" data-en="Chana Chaat · Seekh Kebab · Fried Potato" data-es="Chana Chaat · Seekh Kebab · Patatas Fritas" data-hi="चना चाट · सीख कबाब · फ्राइड पोटेटो" data-ja="チャナチャット・シークカバブ・フライドポテト" data-ko="차나 차트 · 시크 케밥 · 프라이드 포테이토">チャナチャット・シークカバブ・フライドポテト</p><div class="menu-item-footer"><div><div class="price">¥900</div></div></div></div></div><div class="menu-item three-plate-item"><figure><img alt="D Set" loading="lazy" src="images/D-set.jpeg"/></figure><div class="menu-item-body"><h2 data-en="D Set" data-es="Set D" data-hi="D सेट" data-ja="Dセット" data-ko="D 세트">Dセット</h2><p class="desc" data-en="Spicy Sesame Cucumber · Chicken Tikka · Fried Potato" data-es="Pepino con Sésamo Picante · Pollo Tikka · Patatas Fritas" data-hi="स्पाइसी तिल खीरा · चिकन टिक्का · फ्राइड पोटेटो" data-ja="スパイシーごまきゅうり・チキンティッカ・フライドポテト" data-ko="스파이시 참깨 오이 · 치킨 티카 · 프라이드 포테이토">スパイシーごまきゅうり・チキンティッカ・フライドポテト</p><div class="menu-item-footer"><div><div class="price">¥900</div></div></div></div></div><div class="menu-item three-plate-item"><figure><img alt="E Set" loading="lazy" src="images/E-set.jpeg"/></figure><div class="menu-item-body"><h2 data-en="E Set" data-es="Set E" data-hi="E सेट" data-ja="Eセット" data-ko="E 세트">Eセット</h2><p class="desc" data-en="Sappari Negi · Roast Pork · Fried Potato" data-es="Negi Fresco · Cerdo Asado · Patatas Fritas" data-hi="साप्पारी नेगी · रोस्ट पोर्क · फ्राइड पोटेटो" data-ja="さっぱりネギ・ローストポーク・フライドポテト" data-ko="산파리 네기 · 로스트 포크 · 프라이드 포테이토">さっぱりネギ・ローストポーク・フライドポテト</p><div class="menu-item-footer"><div><div class="price">¥900</div></div></div></div></div><div class="menu-item three-plate-item"><figure><img alt="F Set" loading="lazy" src="images/F-set.jpeg"/></figure><div class="menu-item-body"><h2 data-en="F Set" data-es="Set F" data-hi="F सेट" data-ja="Fセット" data-ko="F 세트">Fセット</h2><p class="desc" data-en="Edamame · Roast Pork · Fried Potato" data-es="Edamame · Cerdo Asado · Patatas Fritas" data-hi="एडामामे · रोस्ट पोर्क · फ्राइड पोटेटो" data-ja="枝豆・ローストポーク・フライドポテト" data-ko="에다마메 · 로스트 포크 · 프라이드 포테이토">枝豆・ローストポーク・フライドポテト</p><div class="menu-item-footer"><div><div class="price">¥900</div></div></div></div></div></div></div><div class="category-section" id="salad"><div class="category-title"><h2><span data-en="Salad" data-es="Ensalada" data-hi="सलाद" data-ja="サラダ" data-ko="샐러드">サラダ</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="4 Items" data-es="4 artículos" data-hi="4 आइटम" data-ja="4品" data-ko="4개">4品</span></div></div>
+
+
+
+
+
+
 <div class="menu-grid">
-  <div class="menu-item"><figure><img src="image/rose_salad.jpg" alt="Rose Salad"></figure><div class="menu-item-body"><h2>Rose Salad</h2><p class="desc">Fresh vegetables topped with shrimp, egg, sweet corn, and Parmesan cheese.</p><div class="menu-item-footer"><div><div class="price">¥880</div></div><span class="includes-tag" data-ja="おすすめ" data-en="Signature" data-hi="Signature" data-ko="시그니처" data-es="Firma">おすすめ</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/broccoli_salad.jpg" alt="Broccoli Salad"></figure><div class="menu-item-body"><h2>Broccoli Salad</h2><p class="desc">Fresh broccoli with a light house dressing.</p><div class="menu-item-footer"><div><div class="price">¥650</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/tuna_salad.jpg" alt="Tuna Salad"></figure><div class="menu-item-body"><h2>Tuna Salad</h2><p class="desc">Healthy greens topped generously with tuna.</p><div class="menu-item-footer"><div><div class="price">¥880</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/green_salad.jpg" alt="Green Salad"></figure><div class="menu-item-body"><h2>Green Salad</h2><p class="desc">Plain salad served with our signature Indian dressing.</p><div class="menu-item-footer"><div><div class="price">¥680</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/caesar_salad.jpg" alt="Caesar Salad"></figure><div class="menu-item-body"><h2>Caesar Salad</h2><p class="desc">Classic salad with a rich, creamy Caesar dressing.</p><div class="menu-item-footer"><div><div class="price">¥850</div></div></div></div></div>
-  <div class="menu-item is-special"><figure><img src="image/special_salad.jpg" alt="Sunrose Special Salad"></figure><div class="menu-item-body"><h2>Sunrose Special Salad</h2><p class="desc">Chef's exclusive salad — a daily changing combination of fresh, seasonal ingredients.</p><div class="menu-item-footer"><div><div class="price">¥890</div></div><span class="includes-tag" data-ja="シェフのおすすめ" data-en="Chef's Pick" data-hi="Chef's Pick" data-ko="셰프 추천" data-es="Elección del Chef">シェフのおすすめ</span></div></div></div>
+<div class="menu-item">
+<figure><img alt="Sun Rose Special Salad" loading="lazy" src="images/sunrosesp-salad.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Sun Rose Special Salad" data-es="Ensalada Especial Sun Rose" data-hi="सन रोज़ स्पेशल सलाद" data-ja="サンローズスペシャルサラダ" data-ko="선로즈 스페셜 샐러드">サンローズスペシャルサラダ</h2>
+<p class="desc" data-en="Chef-style special salad." data-es="Chef-style special salad." data-hi="Chef-style special salad." data-ja="Chef-style special salad." data-ko="Chef-style special salad.">Chef-style special salad.</p>
+<div class="menu-item-footer"><div><div class="price">¥690</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Rose Salad" loading="lazy" src="images/rose-salad.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Rose Salad" data-es="Ensalada Rosa" data-hi="रोज़ सलाद" data-ja="ローズサラダ" data-ko="로즈 샐러드">ローズサラダ</h2>
+<p class="desc" data-en="Fresh vegetables with shrimp, egg, sweet corn and Parmesan cheese." data-es="Fresh vegetables with shrimp, egg, sweet corn and Parmesan cheese." data-hi="Fresh vegetables with shrimp, egg, sweet corn and Parmesan cheese." data-ja="Fresh vegetables with shrimp, egg, sweet corn and Parmesan cheese." data-ko="Fresh vegetables with shrimp, egg, sweet corn and Parmesan cheese.">Fresh vegetables with shrimp, egg, sweet corn and Parmesan cheese.</p>
+<div class="menu-item-footer"><div><div class="price">¥650</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Green Salad" loading="lazy" src="images/green-salad.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Green Salad" data-es="Ensalada Verde" data-hi="ग्रीन सलाद" data-ja="グリーンサラダ" data-ko="그린 샐러드">グリーンサラダ</h2>
+<p class="desc" data-en="Fresh seasonal vegetables." data-es="Fresh seasonal vegetables." data-hi="Fresh seasonal vegetables." data-ja="Fresh seasonal vegetables." data-ko="Fresh seasonal vegetables.">Fresh seasonal vegetables.</p>
+<div class="menu-item-footer"><div><div class="price">¥550</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Broccoli Salad" loading="lazy" src="images/brocoli-salad.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Broccoli Salad" data-es="Ensalada de Brócoli" data-hi="ब्रोकोली सलाद" data-ja="ブロッコリーサラダ" data-ko="브로콜리 샐러드">ブロッコリーサラダ</h2>
+<p class="desc" data-en="Fresh broccoli with Indian-style sauce." data-es="Fresh broccoli with Indian-style sauce." data-hi="Fresh broccoli with Indian-style sauce." data-ja="Fresh broccoli with Indian-style sauce." data-ko="Fresh broccoli with Indian-style sauce.">Fresh broccoli with Indian-style sauce.</p>
+<div class="menu-item-footer"><div><div class="price">¥500</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
 </div>
 
-<!-- ════════════════════════ TANDOORI ════════════════════════ -->
-<div class="category-section" id="tandoori">
-  <div class="category-title">
-    <h2><span data-ja="タンドリー" data-en="Tandoori" data-hi="तंदूरी" data-ko="탄두리" data-es="Tandoori">タンドリー</span> <em data-ja="料理" data-en="Cuisine" data-hi="व्यंजन" data-ko="요리" data-es="Cocina">料理</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="8品" data-en="8 Items" data-hi="8 आइटम" data-ko="8 품목" data-es="8 Artículos">8品</span>
-  </div>
-</div>
+
+
+
+
+
+<div class="category-section" id="tandoori"><div class="category-title"><h2><span data-en="Tandoori" data-es="Tandoori" data-hi="तंदूरी" data-ja="タンドリー" data-ko="탄두리">タンドリー</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="6 Items" data-es="6 artículos" data-hi="6 आइटम" data-ja="6品" data-ko="6개">6品</span></div></div>
 <div class="menu-grid">
-  <div class="menu-item is-special"><figure><img src="image/mixed_grill.jpg" alt="Mixed Grill"></figure><div class="menu-item-body"><h2>Mixed Grill</h2><p class="desc">A grand selection of our finest tandoori dishes — the perfect way to explore the tandoor.</p><div class="menu-item-footer"><div><div class="price">¥2,790</div></div><span class="includes-tag" data-ja="盛り合わせ" data-en="Assorted" data-hi="Assorted" data-ko="모듬" data-es="Surtido">盛り合わせ</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/tandoori_chicken.jpg" alt="Tandoori Chicken"></figure><div class="menu-item-body"><h2>Tandoori Chicken</h2><p class="desc">Marinated chicken roasted to perfection in a traditional clay tandoor oven.</p><div class="menu-item-footer"><div><div class="price">¥800</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chicken_tikka.jpg" alt="Chicken Tikka"></figure><div class="menu-item-body"><h2>Chicken Tikka</h2><p class="desc">Boneless chicken marinated in yogurt and spices, roasted until charred and succulent.</p><div class="menu-item-footer"><div><div class="price">¥890</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/tandoori_prawn.jpg" alt="Tandoori Prawn"></figure><div class="menu-item-body"><h2>Tandoori Prawn</h2><p class="desc">Shrimp marinated with chickpea flour and aromatic Indian spices, fired in the tandoor.</p><div class="menu-item-footer"><div><div class="price">¥1,490</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/seekh_kebab.jpg" alt="Seekh Kebab"></figure><div class="menu-item-body"><h2>Seekh Kebab</h2><p class="desc">Minced chicken blended with spices and herbs, skewered and baked in the tandoor oven.</p><div class="menu-item-footer"><div><div class="price">¥880</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/lamb_chops.jpg" alt="Lamb Chops"></figure><div class="menu-item-body"><h2>Lamb Chops</h2><p class="desc">Marinated in lemon, ginger and garlic, then roasted in the tandoor for a smoky finish.</p><div class="menu-item-footer"><div><div class="price">¥1,490</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/tandoori_sausage.jpg" alt="Tandoori Sausage"></figure><div class="menu-item-body"><h2>Tandoori Sausage</h2><p class="desc">House sausage made with Indian spices and baked in the clay tandoor oven.</p><div class="menu-item-footer"><div><div class="price">¥790</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/roast_pork.jpg" alt="Thick-cut Roast Pork"></figure><div class="menu-item-body"><h2>Thick-cut Roast Pork</h2><p class="desc">Pork marinated with mustard, ginger and lemon, then slow-roasted to perfection.</p><div class="menu-item-footer"><div><div class="price">¥1,000</div></div></div></div></div>
+<div class="menu-item">
+<figure><img alt="Roast Pork Atsugiri" loading="lazy" src="images/roastpork.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Roast Pork Atsugiri" data-es="Cerdo Asado Grueso" data-hi="रोस्ट पोर्क मोटा कटा" data-ja="ローストポーク厚切り" data-ko="두꺼운 로스트 포크">ローストポーク厚切り</h2>
+<p class="desc" data-en="Thick-cut pork marinated with ginger, mustard and lemon, then roasted in the tandoor." data-es="Thick-cut pork marinated with ginger, mustard and lemon, then roasted in the tandoor." data-hi="Thick-cut pork marinated with ginger, mustard and lemon, then roasted in the tandoor." data-ja="Thick-cut pork marinated with ginger, mustard and lemon, then roasted in the tandoor." data-ko="Thick-cut pork marinated with ginger, mustard and lemon, then roasted in the tandoor.">Thick-cut pork marinated with ginger, mustard and lemon, then roasted in the tandoor.</p>
+<div class="menu-item-footer"><div><div class="price">¥850</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
 </div>
-
-<!-- ════════════════════════ SNACKS ════════════════════════ -->
-<div class="category-section" id="snacks">
-  <div class="category-title">
-    <h2><em data-ja="おつまみ" data-en="Snacks" data-hi="स्नैक्स" data-ko="안주" data-es="Aperitivos">おつまみ</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="16品" data-en="16 Items" data-hi="16 आइटम" data-ko="16 품목" data-es="16 Artículos">16品</span>
-  </div>
 </div>
+<div class="menu-item">
+<figure><img alt="Chicken Tikka" loading="lazy" src="images/chickentikka.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Tikka" data-es="Pollo Tikka" data-hi="चिकन टिक्का" data-ja="チキンティッカ" data-ko="치킨 티카">チキンティッカ</h2>
+<p class="desc" data-en="Boneless chicken marinated with ginger, garlic, lemon, paprika and spices." data-es="Boneless chicken marinated with ginger, garlic, lemon, paprika and spices." data-hi="Boneless chicken marinated with ginger, garlic, lemon, paprika and spices." data-ja="Boneless chicken marinated with ginger, garlic, lemon, paprika and spices." data-ko="Boneless chicken marinated with ginger, garlic, lemon, paprika and spices.">Boneless chicken marinated with ginger, garlic, lemon, paprika and spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥650</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Tandoori Chicken" loading="lazy" src="images/tandorichicken.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Tandoori Chicken" data-es="Pollo Tandoori" data-hi="तंदूरी चिकन" data-ja="タンドーリチキン" data-ko="탄두리 치킨">タンドーリチキン</h2>
+<p class="desc" data-en="Chicken marinated with ginger, lemon, paprika and spices, then roasted in the tandoor." data-es="Chicken marinated with ginger, lemon, paprika and spices, then roasted in the tandoor." data-hi="Chicken marinated with ginger, lemon, paprika and spices, then roasted in the tandoor." data-ja="Chicken marinated with ginger, lemon, paprika and spices, then roasted in the tandoor." data-ko="Chicken marinated with ginger, lemon, paprika and spices, then roasted in the tandoor.">Chicken marinated with ginger, lemon, paprika and spices, then roasted in the tandoor.</p>
+<div class="menu-item-footer"><div><div class="price">¥730</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Sheekh Kebab" loading="lazy" src="images/sheekhkabab.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Sheekh Kebab" data-es="Seekh Kebab" data-hi="सीख कबाब" data-ja="シークカバブ" data-ko="시크 케밥">シークカバブ</h2>
+<p class="desc" data-en="Minced chicken mixed with ginger, onion, coriander and spices, grilled in the tandoor." data-es="Minced chicken mixed with ginger, onion, coriander and spices, grilled in the tandoor." data-hi="Minced chicken mixed with ginger, onion, coriander and spices, grilled in the tandoor." data-ja="Minced chicken mixed with ginger, onion, coriander and spices, grilled in the tandoor." data-ko="Minced chicken mixed with ginger, onion, coriander and spices, grilled in the tandoor.">Minced chicken mixed with ginger, onion, coriander and spices, grilled in the tandoor.</p>
+<div class="menu-item-footer"><div><div class="price">¥730</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Tandoori Prawn" loading="lazy" src="images/tandoriprown.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Tandoori Prawn" data-es="Langostino Tandoori" data-hi="तंदूरी प्रॉन" data-ja="タンドーリプラウン" data-ko="탄두리 새우">タンドーリプラウン</h2>
+<p class="desc" data-en="Prawns marinated with Indian spices and chickpea flour, then cooked in the tandoor." data-es="Prawns marinated with Indian spices and chickpea flour, then cooked in the tandoor." data-hi="Prawns marinated with Indian spices and chickpea flour, then cooked in the tandoor." data-ja="Prawns marinated with Indian spices and chickpea flour, then cooked in the tandoor." data-ko="Prawns marinated with Indian spices and chickpea flour, then cooked in the tandoor.">Prawns marinated with Indian spices and chickpea flour, then cooked in the tandoor.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,340</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Tandoori Sausage" loading="lazy" src="images/tandorisausage.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Tandoori Sausage" data-es="Salchicha Tandoori" data-hi="तंदूरी सॉसेज" data-ja="タンドーリソーセージ" data-ko="탄두리 소시지">タンドーリソーセージ</h2>
+<p class="desc" data-en="Juicy sausage seasoned with Indian spices and baked in the tandoor." data-es="Juicy sausage seasoned with Indian spices and baked in the tandoor." data-hi="Juicy sausage seasoned with Indian spices and baked in the tandoor." data-ja="Juicy sausage seasoned with Indian spices and baked in the tandoor." data-ko="Juicy sausage seasoned with Indian spices and baked in the tandoor.">Juicy sausage seasoned with Indian spices and baked in the tandoor.</p>
+<div class="menu-item-footer"><div><div class="price">¥640</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+</div>
+<div class="category-section" id="snacks"><div class="category-title"><h2><span data-en="Snacks" data-es="Aperitivos" data-hi="स्नैक्स" data-ja="おつまみ" data-ko="안주">おつまみ</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="16 Items" data-es="16 artículos" data-hi="16 आइटम" data-ja="16品" data-ko="16개">16品</span></div></div>
 <div class="menu-grid">
-  <div class="menu-item"><figure><img src="image/samosa.jpg" alt="Samosa"></figure><div class="menu-item-body"><h2>Samosa (2P)</h2><p class="desc">Golden-fried pastry filled with spiced potatoes and peas — a timeless Indian classic.</p><div class="menu-item-footer"><div><div class="price">¥800</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/momo.jpg" alt="Momo"></figure><div class="menu-item-body"><h2>Momo (6P)</h2><p class="desc">Nepalese-style steamed dumplings with a chicken filling and house dipping sauce.</p><div class="menu-item-footer"><div><div class="price">¥880</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chili_momo.jpg" alt="Chili Momo"></figure><div class="menu-item-body"><h2>Chili Momo (4P)</h2><p class="desc">Fried dumplings tossed in a bold, spicy chili sauce with onions and peppers.</p><div class="menu-item-footer"><div><div class="price">¥880</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chana_chaat.jpg" alt="Spicy Chana Chaat"></figure><div class="menu-item-body"><h2>Spicy Chana Chaat</h2><p class="desc">Chickpeas with onions, tomatoes and tangy tamarind spices — a street food favourite.</p><div class="menu-item-footer"><div><div class="price">¥730</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chicken_sadeco.jpg" alt="Chicken Sadeco"></figure><div class="menu-item-body"><h2>Chicken Sadeco</h2><p class="desc">Lemon-flavored stir-fried chicken with aromatic herbs and house spices.</p><div class="menu-item-footer"><div><div class="price">¥880</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chili_items.jpg" alt="Chili Items"></figure><div class="menu-item-body"><h2>Chili Items</h2><p class="desc">Crispy chili-tossed potatoes, chicken, or prawns with bell pepper and onions.</p><div class="menu-item-footer"><div><div class="price">¥780</div><div class="price-note">Potato · Chicken ¥910 · Prawn ¥990</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/yakitori.jpg" alt="Yakitori"></figure><div class="menu-item-body"><h2>Yakitori</h2><p class="desc">Chicken roasted on skewers with garlic, ginger and Indian spices.</p><div class="menu-item-footer"><div><div class="price">¥830</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chow_mein_chicken.jpg" alt="Chicken Chow Mein"></figure><div class="menu-item-body"><h2>Chicken Chow Mein</h2><p class="desc">Nepalese-style stir-fried noodles with tender chicken strips and vegetables.</p><div class="menu-item-footer"><div><div class="price">¥990</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chow_mein_veg.jpg" alt="Vegetable Chow Mein"></figure><div class="menu-item-body"><h2>Vegetable Chow Mein</h2><p class="desc">Stir-fried noodles with a colourful medley of fresh vegetables.</p><div class="menu-item-footer"><div><div class="price">¥890</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/egg_achar.jpg" alt="Egg Achar"></figure><div class="menu-item-body"><h2>Egg Achar</h2><p class="desc">Eggs marinated in mustard oil and a tangy blend of pickling spices.</p><div class="menu-item-footer"><div><div class="price">¥790</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/edamame.jpg" alt="Grilled Edamame"></figure><div class="menu-item-body"><h2>Grilled Edamame</h2><p class="desc">Stir-fried edamame with sesame oil and a touch of Indian spice.</p><div class="menu-item-footer"><div><div class="price">¥790</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/aljira.jpg" alt="Aljira"></figure><div class="menu-item-body"><h2>Aljira</h2><p class="desc">Tender boiled potatoes delicately seasoned with aromatic cumin.</p><div class="menu-item-footer"><div><div class="price">¥600</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/spicy_cucumber.jpg" alt="Spicy Sesame Cucumber"></figure><div class="menu-item-body"><h2>Spicy Sesame Cucumber</h2><p class="desc">Crisp cucumber tossed in sesame oil, lemon juice and chili spices.</p><div class="menu-item-footer"><div><div class="price">¥690</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/spicy_olives.jpg" alt="Spicy Olives"></figure><div class="menu-item-body"><h2>Spicy Olives</h2><p class="desc">Olives and vegetables seasoned with Indian spices and herbs.</p><div class="menu-item-footer"><div><div class="price">¥780</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/green_onion.jpg" alt="Refreshing Green Onions"></figure><div class="menu-item-body"><h2>Refreshing Green Onions</h2><p class="desc">Green onions dressed with sesame oil and a hint of spice.</p><div class="menu-item-footer"><div><div class="price">¥690</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/french_fries.jpg" alt="French Fries"></figure><div class="menu-item-body"><h2>French Fries</h2><p class="desc">Crispy golden fries — the perfect accompaniment for everyone at the table.</p><div class="menu-item-footer"><div><div class="price">¥680</div></div></div></div></div>
+<div class="menu-item">
+<figure><img alt="Yaki Edamame" loading="lazy" src="images/edamame.jpeg "/></figure>
+<div class="menu-item-body">
+<h2 data-en="Yaki Edamame" data-es="Edamame a la Parrilla" data-hi="याकी एडामामे" data-ja="焼き枝豆" data-ko="구운 에다마메">焼き枝豆</h2>
+<p class="desc" data-en="Edamame stir-fried with sesame oil and spices." data-es="Edamame stir-fried with sesame oil and spices." data-hi="Edamame stir-fried with sesame oil and spices." data-ja="Edamame stir-fried with sesame oil and spices." data-ko="Edamame stir-fried with sesame oil and spices.">Edamame stir-fried with sesame oil and spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥640</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
 </div>
-
-<!-- ════════════════════════ NAAN ════════════════════════ -->
-<div class="category-section" id="naan">
-  <div class="category-title">
-    <h2><em data-ja="ナン" data-en="Naan" data-hi="नान" data-ko="난" data-es="Naan">ナン</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="5品" data-en="5 Items" data-hi="5 आइटम" data-ko="5 품목" data-es="5 Artículos">5品</span>
-  </div>
 </div>
+<div class="menu-item">
+<figure><img alt="Soramame &amp; Funwari Tamago Itame" loading="lazy" src="images/soramame.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Soramame &amp; Funwari Tamago Itame" data-es="Habas y Huevo Salteados" data-hi="सोयाबीन और फूला अंडा स्टर-फ्राय" data-ja="そら豆とふんわり卵炒め" data-ko="잠두콩과 부드러운 계란볶음">そら豆とふんわり卵炒め</h2>
+<p class="desc" data-en="Broad beans and fluffy egg gently stir-fried with spices." data-es="Broad beans and fluffy egg gently stir-fried with spices." data-hi="Broad beans and fluffy egg gently stir-fried with spices." data-ja="Broad beans and fluffy egg gently stir-fried with spices." data-ko="Broad beans and fluffy egg gently stir-fried with spices.">Broad beans and fluffy egg gently stir-fried with spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥740</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Tori Nankotsu (Spicy Fry)" loading="lazy" src="images/chickensadeko copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Tori Nankotsu (Spicy Fry)" data-es="Cartílago de Pollo Picante" data-hi="चिकन कार्टिलेज स्पाइसी फ्राई" data-ja="鳥軟骨（スパイシーフライ）" data-ko="닭 연골 스파이시 튀김">鳥軟骨（スパイシーフライ）</h2>
+<p class="desc" data-en="Chicken cartilage marinated with spices and fried until crisp." data-es="Chicken cartilage marinated with spices and fried until crisp." data-hi="Chicken cartilage marinated with spices and fried until crisp." data-ja="Chicken cartilage marinated with spices and fried until crisp." data-ko="Chicken cartilage marinated with spices and fried until crisp.">Chicken cartilage marinated with spices and fried until crisp.</p>
+<div class="menu-item-footer"><div><div class="price">¥740</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Fried Potato" loading="lazy" src="images/potato.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Fried Potato" data-es="Patatas Fritas" data-hi="फ्रेंच फ्राइज़" data-ja="フライドポテト" data-ko="감자튀김">フライドポテト</h2>
+<p class="desc" data-en="Crispy fried potatoes." data-es="Crispy fried potatoes." data-hi="Crispy fried potatoes." data-ja="Crispy fried potatoes." data-ko="Crispy fried potatoes.">Crispy fried potatoes.</p>
+<div class="menu-item-footer"><div><div class="price">¥530</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Tebasaki (Spicy Grill)" loading="lazy" src="images/chillichicken copy 2.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Tebasaki (Spicy Grill)" data-es="Alitas de Pollo Picantes" data-hi="तेबासाकी स्पाइसी ग्रिल" data-ja="手羽先（スパイシーグリル）" data-ko="닭날개 스파이시 그릴">手羽先（スパイシーグリル）</h2>
+<p class="desc" data-en="Chicken wings grilled with Indian spices." data-es="Chicken wings grilled with Indian spices." data-hi="Chicken wings grilled with Indian spices." data-ja="Chicken wings grilled with Indian spices." data-ko="Chicken wings grilled with Indian spices.">Chicken wings grilled with Indian spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥850</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Torimomo Grill" loading="lazy" src="images/torimomo.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Torimomo Grill" data-es="Muslo de Pollo a la Parrilla" data-hi="चिकन थाई ग्रिल" data-ja="鶏モモグリル" data-ko="닭다리살 그릴">鶏モモグリル</h2>
+<p class="desc" data-en="Juicy chicken thigh marinated with spices and grilled." data-es="Juicy chicken thigh marinated with spices and grilled." data-hi="Juicy chicken thigh marinated with spices and grilled." data-ja="Juicy chicken thigh marinated with spices and grilled." data-ko="Juicy chicken thigh marinated with spices and grilled.">Juicy chicken thigh marinated with spices and grilled.</p>
+<div class="menu-item-footer"><div><div class="price">¥850</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Butabara Grill" loading="lazy" src="images/butabara.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Butabara Grill" data-es="Panceta de Cerdo a la Parrilla" data-hi="पोर्क बेली ग्रिल" data-ja="豚バラグリル" data-ko="삼겹살 그릴">豚バラグリル</h2>
+<p class="desc" data-en="Pork belly grilled with aromatic spices." data-es="Pork belly grilled with aromatic spices." data-hi="Pork belly grilled with aromatic spices." data-ja="Pork belly grilled with aromatic spices." data-ko="Pork belly grilled with aromatic spices.">Pork belly grilled with aromatic spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥850</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Sausage Grill" loading="lazy" src="images/sausagegrill.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Sausage Grill" data-es="Salchicha a la Parrilla" data-hi="सॉसेज ग्रिल" data-ja="ソーセージグリル" data-ko="소시지 그릴">ソーセージグリル</h2>
+<p class="desc" data-en="Juicy sausage grilled and finished with a rich sauce." data-es="Juicy sausage grilled and finished with a rich sauce." data-hi="Juicy sausage grilled and finished with a rich sauce." data-ja="Juicy sausage grilled and finished with a rich sauce." data-ko="Juicy sausage grilled and finished with a rich sauce.">Juicy sausage grilled and finished with a rich sauce.</p>
+<div class="menu-item-footer"><div><div class="price">¥740</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chili Potato" loading="lazy" src="images/chillipotato.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chili Potato" data-es="Patata Chili" data-hi="चिली पोटैटो" data-ja="チリポテト" data-ko="칠리 포테이토">チリポテト</h2>
+<p class="desc" data-en="Potatoes tossed in a sweet and spicy chili sauce." data-es="Potatoes tossed in a sweet and spicy chili sauce." data-hi="Potatoes tossed in a sweet and spicy chili sauce." data-ja="Potatoes tossed in a sweet and spicy chili sauce." data-ko="Potatoes tossed in a sweet and spicy chili sauce.">Potatoes tossed in a sweet and spicy chili sauce.</p>
+<div class="menu-item-footer"><div><div class="price">¥630</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chili Chicken" loading="lazy" src="images/chillipotato copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chili Chicken" data-es="Pollo Chili" data-hi="चिली चिकन" data-ja="チリチキン" data-ko="칠리 치킨">チリチキン</h2>
+<p class="desc" data-en="Chicken tossed in a sweet and spicy chili sauce." data-es="Chicken tossed in a sweet and spicy chili sauce." data-hi="Chicken tossed in a sweet and spicy chili sauce." data-ja="Chicken tossed in a sweet and spicy chili sauce." data-ko="Chicken tossed in a sweet and spicy chili sauce.">Chicken tossed in a sweet and spicy chili sauce.</p>
+<div class="menu-item-footer"><div><div class="price">¥760</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chili Momo (4P)" loading="lazy" src="images/chillimomo.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chili Momo (4P)" data-es="Chili Momo 4P" data-hi="चिली मोमो 4P" data-ja="チリモモ 4P" data-ko="칠리 모모 4P">チリモモ 4P</h2>
+<p class="desc" data-en="Momo tossed in chili sauce." data-es="Momo tossed in chili sauce." data-hi="Momo tossed in chili sauce." data-ja="Momo tossed in chili sauce." data-ko="Momo tossed in chili sauce.">Momo tossed in chili sauce.</p>
+<div class="menu-item-footer"><div><div class="price">¥730</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Momo (6P)" loading="lazy" src="images/momo.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Momo (6P)" data-es="Momo 6P" data-hi="मोमो 6P" data-ja="モモ 6P" data-ko="모모 6P">モモ 6P</h2>
+<p class="desc" data-en="Handmade steamed chicken dumplings." data-es="Handmade steamed chicken dumplings." data-hi="Handmade steamed chicken dumplings." data-ja="Handmade steamed chicken dumplings." data-ko="Handmade steamed chicken dumplings.">Handmade steamed chicken dumplings.</p>
+<div class="menu-item-footer"><div><div class="price">¥730</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Spicy Chana Chaat" loading="lazy" src="images/chanachat copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Spicy Chana Chaat" data-es="Chana Chaat Picante" data-hi="स्पाइसी चना चाट" data-ja="スパイシーチャナチャット" data-ko="스파이시 차나 차트">スパイシーチャナチャット</h2>
+<p class="desc" data-en="Boiled chickpeas with onion, carrot and Indian spices." data-es="Boiled chickpeas with onion, carrot and Indian spices." data-hi="Boiled chickpeas with onion, carrot and Indian spices." data-ja="Boiled chickpeas with onion, carrot and Indian spices." data-ko="Boiled chickpeas with onion, carrot and Indian spices.">Boiled chickpeas with onion, carrot and Indian spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥580</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Samosa (2P)" loading="lazy" src="images/samosa.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Samosa (2P)" data-es="Samosa 2P" data-hi="समोसा 2P" data-ja="サモサ 2P" data-ko="사모사 2P">サモサ 2P</h2>
+<p class="desc" data-en="Pastry filled with potato, green peas, cashew and ginger." data-es="Pastry filled with potato, green peas, cashew and ginger." data-hi="Pastry filled with potato, green peas, cashew and ginger." data-ja="Pastry filled with potato, green peas, cashew and ginger." data-ko="Pastry filled with potato, green peas, cashew and ginger.">Pastry filled with potato, green peas, cashew and ginger.</p>
+<div class="menu-item-footer"><div><div class="price">¥650</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Vegetable Chowmein" loading="lazy" src="images/vegchwomin copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Vegetable Chowmein" data-es="Chow Mein de Verduras" data-hi="वेजिटेबल चाउमिन" data-ja="ベジタブルチョウメン" data-ko="야채 차우멘">ベジタブルチョウメン</h2>
+<p class="desc" data-en="Nepalese-style stir-fried noodles with vegetables." data-es="Nepalese-style stir-fried noodles with vegetables." data-hi="Nepalese-style stir-fried noodles with vegetables." data-ja="Nepalese-style stir-fried noodles with vegetables." data-ko="Nepalese-style stir-fried noodles with vegetables.">Nepalese-style stir-fried noodles with vegetables.</p>
+<div class="menu-item-footer"><div><div class="price">¥740</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chicken Chowmein" loading="lazy" src="images/chicken-chowmin copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Chowmein" data-es="Chow Mein de Pollo" data-hi="चिकन चाउमिन" data-ja="チキンチョウメン" data-ko="치킨 차우멘">チキンチョウメン</h2>
+<p class="desc" data-en="Nepalese-style stir-fried noodles with chicken." data-es="Nepalese-style stir-fried noodles with chicken." data-hi="Nepalese-style stir-fried noodles with chicken." data-ja="Nepalese-style stir-fried noodles with chicken." data-ko="Nepalese-style stir-fried noodles with chicken.">Nepalese-style stir-fried noodles with chicken.</p>
+<div class="menu-item-footer"><div><div class="price">¥840</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+</div>
+<div class="category-section" id="naan"><div class="category-title"><h2><span data-en="Naan" data-es="Naan" data-hi="नान" data-ja="ナン" data-ko="난">ナン</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="5 Items" data-es="5 artículos" data-hi="5 आइटम" data-ja="5品" data-ko="5개">5品</span></div></div>
 <div class="menu-grid">
-  <div class="menu-item"><figure><img src="image/plain_naan.jpg" alt="Plain Naan"></figure><div class="menu-item-body"><h2>Plain Naan</h2><p class="desc">Fluffy naan made with milk and eggs, baked fresh in the clay tandoor oven.</p><div class="menu-item-footer"><div><div class="price">¥390</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/garlic_naan.jpg" alt="Garlic Naan"></figure><div class="menu-item-body"><h2>Garlic Naan</h2><p class="desc">Pillowy naan topped with fragrant garlic and baked to golden perfection.</p><div class="menu-item-footer"><div><div class="price">¥650</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/cheese_naan.jpg" alt="Cheese Naan"></figure><div class="menu-item-body"><h2>Cheese Naan</h2><p class="desc">Soft, freshly baked naan generously stuffed with rich, melted cheese.</p><div class="menu-item-footer"><div><div class="price">¥750</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/keema_naan.jpg" alt="Keema Naan"></figure><div class="menu-item-body"><h2>Keema Naan</h2><p class="desc">Naan stuffed with spiced minced meat and cheese — hearty and full of flavour.</p><div class="menu-item-footer"><div><div class="price">¥790</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chocolate_naan.jpg" alt="Chocolate Naan"></figure><div class="menu-item-body"><h2>Chocolate Naan</h2><p class="desc">A sweet indulgence — tender naan filled with rich, melted chocolate.</p><div class="menu-item-footer"><div><div class="price">¥690</div></div><span class="includes-tag" data-ja="デザート" data-en="Dessert" data-hi="Dessert" data-ko="디저트" data-es="Postre">デザート</span></div></div></div>
+<div class="menu-item">
+<figure><img alt="Naan" loading="lazy" src="images/nan copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Naan" data-es="Naan" data-hi="नान" data-ja="ナン" data-ko="난">ナン</h2>
+<p class="desc" data-en="Soft naan baked fresh in the tandoor." data-es="Soft naan baked fresh in the tandoor." data-hi="Soft naan baked fresh in the tandoor." data-ja="Soft naan baked fresh in the tandoor." data-ko="Soft naan baked fresh in the tandoor.">Soft naan baked fresh in the tandoor.</p>
+<div class="menu-item-footer"><div><div class="price">¥330</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Cheese Naan" loading="lazy" src="images/cheese-nan copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Cheese Naan" data-es="Naan de Queso" data-hi="चीज़ नान" data-ja="チーズナン" data-ko="치즈 난">チーズナン</h2>
+<p class="desc" data-en="Naan filled with melted cheese." data-es="Naan filled with melted cheese." data-hi="Naan filled with melted cheese." data-ja="Naan filled with melted cheese." data-ko="Naan filled with melted cheese.">Naan filled with melted cheese.</p>
+<div class="menu-item-footer"><div><div class="price">¥600</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Garlic Naan" loading="lazy" src="images/garlic-nan copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Garlic Naan" data-es="Naan de Ajo" data-hi="गार्लिक नान" data-ja="ガーリックナン" data-ko="갈릭 난">ガーリックナン</h2>
+<p class="desc" data-en="Naan topped with garlic and baked in the tandoor." data-es="Naan topped with garlic and baked in the tandoor." data-hi="Naan topped with garlic and baked in the tandoor." data-ja="Naan topped with garlic and baked in the tandoor." data-ko="Naan topped with garlic and baked in the tandoor.">Naan topped with garlic and baked in the tandoor.</p>
+<div class="menu-item-footer"><div><div class="price">¥500</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Keema Naan" loading="lazy" src="images/keema-nan.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Keema Naan" data-es="Naan de Keema" data-hi="कीमा नान" data-ja="キーマナン" data-ko="키마 난">キーマナン</h2>
+<p class="desc" data-en="Naan filled with keema and cheese." data-es="Naan filled with keema and cheese." data-hi="Naan filled with keema and cheese." data-ja="Naan filled with keema and cheese." data-ko="Naan filled with keema and cheese.">Naan filled with keema and cheese.</p>
+<div class="menu-item-footer"><div><div class="price">¥640</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chocolate Naan" loading="lazy" src="images/choco-nan copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chocolate Naan" data-es="Naan de Chocolate" data-hi="चॉकलेट नान" data-ja="チョコレートナン" data-ko="초콜릿 난">チョコレートナン</h2>
+<p class="desc" data-en="Sweet naan filled with chocolate." data-es="Sweet naan filled with chocolate." data-hi="Sweet naan filled with chocolate." data-ja="Sweet naan filled with chocolate." data-ko="Sweet naan filled with chocolate.">Sweet naan filled with chocolate.</p>
+<div class="menu-item-footer"><div><div class="price">¥540</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
 </div>
 
-<!-- ════════════════════════ CURRY ════════════════════════ -->
-<div class="category-section" id="curry">
-  <div class="category-title">
-    <h2><em data-ja="カレー" data-en="Curry" data-hi="करी" data-ko="커리" data-es="Curry">カレー</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="20品" data-en="20 Items" data-hi="20 आइटम" data-ko="20 품목" data-es="20 Artículos">20品</span>
-  </div>
-</div>
-<div class="spice-note">
-  <div class="spice-note-inner">
-    <div class="spice-icon">🌶</div>
-    <div class="spice-text">
-      <strong data-ja="辛さの調整について" data-en="Spice Level Customisation" data-hi="मसाला स्तर अनुकूलन" data-ko="매운맛 조절" data-es="Nivel de Picante">辛さの調整について</strong>
-      <p data-ja="すべてのカレーはお好みの辛さに調整可能です。ご注文時にスタッフにお申し付けください。" data-en="All curries can be adjusted to your preferred heat level. Please inform your server when ordering." data-hi="सभी करी आपकी पसंद के अनुसार। ऑर्डर करते समय बताएं।" data-ko="모든 커리는 원하시는 맛으로 조절 가능합니다." data-es="Todos los currys se pueden ajustar. Informe a su camarero.">すべてのカレーはお好みの辛さに調整可能です。ご注文時にスタッフにお申し付けください。</p>
-    </div>
-    <div class="spice-levels"><span class="spice-level">🍬 Mild</span><span class="spice-level">🌶️ Medium</span><span class="spice-level">🌶️🌶️ Spicy</span><span class="spice-level">🌶️🌶️🌶️ Hot</span><span class="spice-level">🌶️🌶️🌶️🌶️ Super Hot</span></div>
-  </div>
-</div>
+
+
+<div class="category-section" id="curry"><div class="category-title"><h2><span data-en="Curry" data-es="Curry" data-hi="करी" data-ja="カレー" data-ko="커리">カレー</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="23 Items" data-es="23 artículos" data-hi="23 आइटम" data-ja="23品" data-ko="23개">23品</span></div></div>
+<div class="spice-note"><div class="spice-note-inner"><div class="spice-icon">🌶</div><div class="spice-text"><strong data-en="Choose Your Spice Level" data-es="Elija el nivel de picante" data-hi="अपना मसाला स्तर चुनें" data-ja="辛さの調整について" data-ko="매운맛 선택">辛さの調整について</strong><p data-en="Choose Mild, Medium, Spicy, Hot or Super Hot when ordering." data-es="Elija entre suave, medio, picante, muy picante o súper picante." data-hi="माइल्ड, मीडियम, स्पाइसी, हॉट या सुपर हॉट चुनें।" data-ja="カレーはマイルド・中辛・辛口・激辛からお選びいただけます。" data-ko="마일드, 보통, 중간 매운맛, 매운맛, 아주 매운맛 중에서 선택하세요.">カレーはマイルド・中辛・辛口・激辛からお選びいただけます。</p></div><div class="spice-levels"><span class="spice-level">Mild</span><span class="spice-level">Medium</span><span class="spice-level">Spicy</span><span class="spice-level">Hot</span><span class="spice-level">Super Hot</span></div></div></div>
 <div class="menu-grid">
-  <div class="menu-item"><figure><img src="image/butter_chicken.jpg" alt="Butter Chicken Curry"></figure><div class="menu-item-body"><h2>Butter Chicken Curry</h2><p class="desc">A rich tomato-cashew sauce with butter and cream — India's most beloved curry.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Chicken</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/chicken_curry.jpg" alt="Chicken Curry"></figure><div class="menu-item-body"><h2>Chicken Curry</h2><p class="desc">Chicken thigh cooked with ginger, onion and garlic paste in a wholesome house spice blend.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Chicken</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/saag_chicken.jpg" alt="Saag Chicken Curry"></figure><div class="menu-item-body"><h2>Saag Chicken Curry</h2><p class="desc">Tender chicken cooked with vibrant spinach, ginger and aromatic spices.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Chicken</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/keema_curry.jpg" alt="Keema Curry"></figure><div class="menu-item-body"><h2>Keema Curry</h2><p class="desc">Minced chicken curry with aromatic spices and a satisfying depth of flavour.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Chicken</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/saag_keema.jpg" alt="Saag Keema Curry"></figure><div class="menu-item-body"><h2>Saag Keema Curry</h2><p class="desc">Minced chicken with fresh spinach in a warmly spiced, nourishing curry.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Chicken</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/chicken_bharta.jpg" alt="Chicken Bharta Curry"></figure><div class="menu-item-body"><h2>Chicken Bharta Curry</h2><p class="desc">Slow-cooked chicken with roasted ingredients in a smoky, layered curry.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Chicken</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/pork_curry.jpg" alt="Pork Curry"></figure><div class="menu-item-body"><h2>Pork Curry</h2><p class="desc">Boneless pork with onion, tomato and ginger-garlic paste — bold and satisfying.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Pork</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/saag_pork.jpg" alt="Saag Pork Curry"></figure><div class="menu-item-body"><h2>Saag Pork Curry</h2><p class="desc">Tender pork in a lush spinach-based curry with warming spices.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Pork</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/mutton_curry.jpg" alt="Mutton Curry"></figure><div class="menu-item-body"><h2>Mutton Curry</h2><p class="desc">Boneless lamb slow-cooked with ginger and onion into a mildly spiced, flavourful curry.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Lamb</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/mutton_masala.jpg" alt="Mutton Masala Curry"></figure><div class="menu-item-body"><h2>Mutton Masala Curry</h2><p class="desc">Dry spicy lamb curry cooked with caramelised onions and roasted peppers.</p><div class="menu-item-footer"><div><div class="price">¥1,390</div></div><span class="includes-tag">Lamb</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/saag_mutton.jpg" alt="Saag Mutton Curry"></figure><div class="menu-item-body"><h2>Saag Mutton Curry</h2><p class="desc">Spinach curry with tender lamb and a fragrant blend of Indian spices.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Lamb</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/prawn_curry.jpg" alt="Prawn Curry"></figure><div class="menu-item-body"><h2>Prawn Curry</h2><p class="desc">Shrimp in a rich tomato and coconut-based curry — sweet, creamy and aromatic.</p><div class="menu-item-footer"><div><div class="price">¥1,390</div></div><span class="includes-tag">Seafood</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/saag_prawn.jpg" alt="Saag Prawn Curry"></figure><div class="menu-item-body"><h2>Saag Prawn Curry</h2><p class="desc">Succulent shrimp in a vibrant spinach curry with warming Indian spices.</p><div class="menu-item-footer"><div><div class="price">¥1,390</div></div><span class="includes-tag">Seafood</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/seafood_curry.jpg" alt="Seafood Curry"></figure><div class="menu-item-body"><h2>Seafood Curry</h2><p class="desc">Shrimp, squid and clams in a cashew-coconut curry base — luxurious and aromatic.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Seafood</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/dal_curry.jpg" alt="Dal Curry"></figure><div class="menu-item-body"><h2>Dal Curry</h2><p class="desc">Mixed lentils slow-simmered with onion, tomato and traditional spices.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Veg</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/chana_masala.jpg" alt="Chana Masala Curry"></figure><div class="menu-item-body"><h2>Chana Masala Curry</h2><p class="desc">Chickpeas slow-cooked with tomato, onion and a bold masala spice base.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Veg</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/saag_paneer.jpg" alt="Saag Paneer"></figure><div class="menu-item-body"><h2>Saag Paneer</h2><p class="desc">Fresh paneer cubes in a lush, aromatic spinach curry — a vegetarian classic.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Veg</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/butter_paneer.jpg" alt="Butter Paneer"></figure><div class="menu-item-body"><h2>Butter Paneer</h2><p class="desc">Paneer cooked in a velvety tomato-cashew butter sauce — rich and indulgent.</p><div class="menu-item-footer"><div><div class="price">¥1,290</div></div><span class="includes-tag">Veg</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/aloo_baingan.jpg" alt="Aloo Baingan Curry"></figure><div class="menu-item-body"><h2>Aloo Baingan Curry</h2><p class="desc">Potato and eggplant cooked together in a spiced tomato-onion gravy.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Veg</span></div></div></div>
-  <div class="menu-item"><figure><img src="image/aloo_gobi.jpg" alt="Aloo Gobi Curry"></figure><div class="menu-item-body"><h2>Aloo Gobi Curry</h2><p class="desc">Potato and cauliflower dry curry — subtly spiced and deeply comforting.</p><div class="menu-item-footer"><div><div class="price">¥1,190</div></div><span class="includes-tag">Veg</span></div></div></div>
+<div class="menu-item">
+<figure><img alt="Chicken Curry" loading="lazy" src="images/chicken-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Curry" data-es="Curry de Pollo" data-hi="चिकन करी" data-ja="チキンカレー" data-ko="치킨 커리">チキンカレー</h2>
+<p class="desc" data-en="Chicken cooked in a classic Indian curry sauce." data-es="Chicken cooked in a classic Indian curry sauce." data-hi="Chicken cooked in a classic Indian curry sauce." data-ja="Chicken cooked in a classic Indian curry sauce." data-ko="Chicken cooked in a classic Indian curry sauce.">Chicken cooked in a classic Indian curry sauce.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Butter Chicken Curry" loading="lazy" src="images/butterchicken-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Butter Chicken Curry" data-es="Curry de Pollo con Mantequilla" data-hi="बटर चिकन करी" data-ja="バターチキンカレー" data-ko="버터 치킨 커리">バターチキンカレー</h2>
+<p class="desc" data-en="Mild tomato curry finished with plenty of butter." data-es="Mild tomato curry finished with plenty of butter." data-hi="Mild tomato curry finished with plenty of butter." data-ja="Mild tomato curry finished with plenty of butter." data-ko="Mild tomato curry finished with plenty of butter.">Mild tomato curry finished with plenty of butter.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chicken Bharta" loading="lazy" src="images/chickenbharta-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Bharta" data-es="Chicken Bharta" data-hi="चिकन भर्ता" data-ja="チキンバルタ" data-ko="치킨 바르타">チキンバルタ</h2>
+<p class="desc" data-en="Chicken with onion, tomato, cashew and spices." data-es="Chicken with onion, tomato, cashew and spices." data-hi="Chicken with onion, tomato, cashew and spices." data-ja="Chicken with onion, tomato, cashew and spices." data-ko="Chicken with onion, tomato, cashew and spices.">Chicken with onion, tomato, cashew and spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Chicken" loading="lazy" src="images/sagchicken-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Saag Chicken" data-es="Pollo Saag" data-hi="साग चिकन" data-ja="サグチキン" data-ko="사그 치킨">サグチキン</h2>
+<p class="desc" data-en="Chicken cooked with spinach." data-es="Chicken cooked with spinach." data-hi="Chicken cooked with spinach." data-ja="Chicken cooked with spinach." data-ko="Chicken cooked with spinach.">Chicken cooked with spinach.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chicken Tikka Masala" loading="lazy" src="images/chickenbharta-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Tikka Masala" data-es="Pollo Tikka Masala" data-hi="चिकन टिक्का मसाला" data-ja="チキンティッカマサラ" data-ko="치킨 티카 마살라">チキンティッカマサラ</h2>
+<p class="desc" data-en="Spiced curry with chicken tikka." data-es="Spiced curry with chicken tikka." data-hi="Spiced curry with chicken tikka." data-ja="Spiced curry with chicken tikka." data-ko="Spiced curry with chicken tikka.">Spiced curry with chicken tikka.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Kadai Chicken " loading="lazy" src="images/chickensadeko copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Kadai Chicken " data-es="Pollo Kadai (sin hueso)" data-hi="कड़ाही चिकन (बोनलेस)" data-ja="カダイチキン）" data-ko="카다이 치킨 (뼈 없음)">カダイチキン</h2>
+<p class="desc" data-en="Dry-style tandoor-roasted chicken curry." data-es="Dry-style tandoor-roasted chicken curry." data-hi="Dry-style tandoor-roasted chicken curry." data-ja="Dry-style tandoor-roasted chicken curry." data-ko="Dry-style tandoor-roasted chicken curry.">Dry-style tandoor-roasted chicken curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
 </div>
 
-<!-- ════════════════════════ BIRYANI & RICE ════════════════════════ -->
-<div class="category-section" id="rice">
-  <div class="category-title">
-    <h2><span data-ja="ビリヤニ" data-en="Biryani" data-hi="बिरयानी" data-ko="비리야니" data-es="Biryani">ビリヤニ</span> <em data-ja="＆ ライス" data-en="&amp; Rice" data-hi="और चावल" data-ko="&amp; 라이스" data-es="y Arroz">＆ ライス</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="6品" data-en="6 Items" data-hi="6 आइटम" data-ko="6 품목" data-es="6 Artículos">6品</span>
-  </div>
+<div class="menu-item">
+<figure><img alt="Keema Curry" loading="lazy" src="images/keeam-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Keema Curry" data-es="Curry de Keema" data-hi="कीमा करी" data-ja="キーマカレー" data-ko="키마 커리">キーマカレー</h2>
+<p class="desc" data-en="Chicken mince curry." data-es="Chicken mince curry." data-hi="Chicken mince curry." data-ja="Chicken mince curry." data-ko="Chicken mince curry.">Chicken mince curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
 </div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Keema" loading="lazy" src="images/sagkeema-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Saag Keema" data-es="Keema Saag" data-hi="साग कीमा" data-ja="サグキーマ" data-ko="사그 키마">サグキーマ</h2>
+<p class="desc" data-en="Chicken mince with spinach." data-es="Chicken mince with spinach." data-hi="Chicken mince with spinach." data-ja="Chicken mince with spinach." data-ko="Chicken mince with spinach.">Chicken mince with spinach.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,140</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Pork Curry" loading="lazy" src="images/pork-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Pork Curry" data-es="Curry de Cerdo" data-hi="पोर्क करी" data-ja="ポークカレー" data-ko="포크 커리">ポークカレー</h2>
+<p class="desc" data-en="Spicy pork curry." data-es="Spicy pork curry." data-hi="Spicy pork curry." data-ja="Spicy pork curry." data-ko="Spicy pork curry.">Spicy pork curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Pork" loading="lazy" src="images/sagpork-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Saag Pork" data-es="Cerdo Saag" data-hi="साग पोर्क" data-ja="サグポーク" data-ko="사그 포크">サグポーク</h2>
+<p class="desc" data-en="Pork cooked with spinach." data-es="Pork cooked with spinach." data-hi="Pork cooked with spinach." data-ja="Pork cooked with spinach." data-ko="Pork cooked with spinach.">Pork cooked with spinach.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,140</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Mutton Curry" loading="lazy" src="images/mutton-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Mutton Curry" data-es="Curry de Cordero" data-hi="मटन करी" data-ja="マトンカレー" data-ko="머튼 커리">マトンカレー</h2>
+<p class="desc" data-en="Indian-style mutton curry." data-es="Indian-style mutton curry." data-hi="Indian-style mutton curry." data-ja="Indian-style mutton curry." data-ko="Indian-style mutton curry.">Indian-style mutton curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,140</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Mutton" loading="lazy" src="images/sagmutton-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Saag Mutton" data-es="Cordero Saag" data-hi="साग मटन" data-ja="サグマトン" data-ko="사그 머튼">サグマトン</h2>
+<p class="desc" data-en="Mutton cooked with spinach." data-es="Mutton cooked with spinach." data-hi="Mutton cooked with spinach." data-ja="Mutton cooked with spinach." data-ko="Mutton cooked with spinach.">Mutton cooked with spinach.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Seafood Curry" loading="lazy" src="images/seafood-curry.jpeg "/></figure>
+<div class="menu-item-body">
+<h2 data-en="Seafood Curry" data-es="Curry de Mariscos" data-hi="सीफूड करी" data-ja="シーフードカレー" data-ko="해산물 커리">シーフードカレー</h2>
+<p class="desc" data-en="Curry with shrimp, squid and seafood." data-es="Curry with shrimp, squid and seafood." data-hi="Curry with shrimp, squid and seafood." data-ja="Curry with shrimp, squid and seafood." data-ko="Curry with shrimp, squid and seafood.">Curry with shrimp, squid and seafood.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,140</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Seafood" loading="lazy" src="images/sagsee-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Saag Seafood" data-es="Mariscos Saag" data-hi="साग सीफूड" data-ja="サグシーフード" data-ko="사그 해산물">サグシーフード</h2>
+<p class="desc" data-en="Mixed seafood with spinach." data-es="Mixed seafood with spinach." data-hi="Mixed seafood with spinach." data-ja="Mixed seafood with spinach." data-ko="Mixed seafood with spinach.">Mixed seafood with spinach.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Prawn Curry" loading="lazy" src="images/prawn_curry_2020 copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Prawn Curry" data-es="Curry de Langostinos" data-hi="प्रॉन करी" data-ja="プラウンカレー" data-ko="새우 커리">プラウンカレー</h2>
+<p class="desc" data-en="Mild curry with prawns." data-es="Mild curry with prawns." data-hi="Mild curry with prawns." data-ja="Mild curry with prawns." data-ko="Mild curry with prawns.">Mild curry with prawns.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Prawn" loading="lazy" src="images/saagprown-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Saag Prawn" data-es="Langostinos Saag" data-hi="साग प्रॉन" data-ja="サグプラウン" data-ko="사그 새우">サグプラウン</h2>
+<p class="desc" data-en="Prawns cooked with spinach." data-es="Prawns cooked with spinach." data-hi="Prawns cooked with spinach." data-ja="Prawns cooked with spinach." data-ko="Prawns cooked with spinach.">Prawns cooked with spinach.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,240</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Mix Vegetable Curry" loading="lazy" src="images/mixvegetable-curry.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Mix Vegetable Curry" data-es="Curry de Verduras Mixtas" data-hi="मिक्स वेजिटेबल करी" data-ja="ミックスベジタブルカレー" data-ko="믹스 베지터블 커리">ミックスベジタブルカレー</h2>
+<p class="desc" data-en="Curry with mixed vegetables." data-es="Curry with mixed vegetables." data-hi="Curry with mixed vegetables." data-ja="Curry with mixed vegetables." data-ko="Curry with mixed vegetables.">Curry with mixed vegetables.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Aloo Baigan" loading="lazy" src="images/aalubagan-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Aloo Baigan" data-es="Aloo Baingan" data-hi="आलू बैंगन" data-ja="アルベーガン" data-ko="알루 베이건">アルベーガン</h2>
+<p class="desc" data-en="Potato and fried eggplant curry." data-es="Potato and fried eggplant curry." data-hi="Potato and fried eggplant curry." data-ja="Potato and fried eggplant curry." data-ko="Potato and fried eggplant curry.">Potato and fried eggplant curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Paneer" loading="lazy" src="images/sagpaneer-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Saag Paneer" data-es="Saag Paneer" data-hi="साग पनीर" data-ja="サグパニール" data-ko="사그 파니르">サグパニール</h2>
+<p class="desc" data-en="Homemade cheese and spinach curry." data-es="Homemade cheese and spinach curry." data-hi="Homemade cheese and spinach curry." data-ja="Homemade cheese and spinach curry." data-ko="Homemade cheese and spinach curry.">Homemade cheese and spinach curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chana Masala" loading="lazy" src="images/chanamasal-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chana Masala" data-es="Chana Masala" data-hi="चना मसाला" data-ja="チャナマサラ" data-ko="차나 마살라">チャナマサラ</h2>
+<p class="desc" data-en="Chickpeas with onion, tomato, cumin and spices." data-es="Chickpeas with onion, tomato, cumin and spices." data-hi="Chickpeas with onion, tomato, cumin and spices." data-ja="Chickpeas with onion, tomato, cumin and spices." data-ko="Chickpeas with onion, tomato, cumin and spices.">Chickpeas with onion, tomato, cumin and spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Butter Paneer" loading="lazy" src="images/butterpaneer-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Butter Paneer" data-es="Butter Paneer" data-hi="बटर पनीर" data-ja="バターパニール" data-ko="버터 파니르">バターパニール</h2>
+<p class="desc" data-en="Homemade cheese and butter curry." data-es="Homemade cheese and butter curry." data-hi="Homemade cheese and butter curry." data-ja="Homemade cheese and butter curry." data-ko="Homemade cheese and butter curry.">Homemade cheese and butter curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,140</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Dal Curry" loading="lazy" src="images/dal-curry copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Dal Curry" data-es="Curry de Dal" data-hi="दाल करी" data-ja="ダルカレー" data-ko="달 커리">ダルカレー</h2>
+<p class="desc" data-en="Indian lentil curry." data-es="Indian lentil curry." data-hi="Indian lentil curry." data-ja="Indian lentil curry." data-ko="Indian lentil curry.">Indian lentil curry.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,040</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+</div>
+<div class="category-section" id="rice"><div class="category-title"><h2><span data-en="Rice" data-es="Arroz" data-hi="चावल" data-ja="ライス" data-ko="라이스">ライス</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="7 Items" data-es="7 artículos" data-hi="7 आइटम" data-ja="7品" data-ko="7개">7品</span></div></div>
 <div class="menu-grid">
-  <div class="menu-item"><figure><img src="image/chicken_biryani.jpg" alt="Chicken Biryani"></figure><div class="menu-item-body"><h2>Chicken Biryani</h2><p class="desc">Fragrant basmati rice layered with spiced chicken in the traditional Indian style.</p><div class="menu-item-footer"><div><div class="price">¥1,180</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/mutton_biryani.jpg" alt="Mutton Biryani"></figure><div class="menu-item-body"><h2>Mutton Biryani</h2><p class="desc">Slow-cooked lamb with aromatic basmati rice — a regal Indian classic.</p><div class="menu-item-footer"><div><div class="price">¥1,280</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/shrimp_biryani.jpg" alt="Shrimp Biryani"></figure><div class="menu-item-body"><h2>Shrimp Biryani</h2><p class="desc">Tender shrimp cooked into fragrant spiced basmati — a coastal Indian favourite.</p><div class="menu-item-footer"><div><div class="price">¥1,380</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/pork_biryani.jpg" alt="Pork Biryani"></figure><div class="menu-item-body"><h2>Pork Biryani</h2><p class="desc">Richly spiced pork with aromatic basmati rice in the Indian tradition.</p><div class="menu-item-footer"><div><div class="price">¥1,280</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/fried_rice.jpg" alt="Fried Rice"></figure><div class="menu-item-body"><h2>Fried Rice</h2><p class="desc">Indian-style stir-fried rice with vegetables or tender chicken pieces.</p><div class="menu-item-footer"><div><div class="price">¥1,090</div><div class="price-note">Veg ¥880 / Chicken ¥1,090</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/turmeric_rice.jpg" alt="Turmeric Rice"></figure><div class="menu-item-body"><h2>Turmeric Rice</h2><p class="desc">Rice cooked with golden turmeric, cloves, cardamom and a touch of butter.</p><div class="menu-item-footer"><div><div class="price">¥350</div></div></div></div></div>
+<div class="menu-item">
+<figure><img alt="Chicken Biryani" loading="lazy" src="images/chicken-biryani copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Biryani" data-es="Biryani de Pollo" data-hi="चिकन बिरयानी" data-ja="チキンビリヤニ" data-ko="치킨 비리야니">チキンビリヤニ</h2>
+<p class="desc" data-en="Fragrant basmati rice cooked with juicy chicken and spices." data-es="Fragrant basmati rice cooked with juicy chicken and spices." data-hi="Fragrant basmati rice cooked with juicy chicken and spices." data-ja="Fragrant basmati rice cooked with juicy chicken and spices." data-ko="Fragrant basmati rice cooked with juicy chicken and spices.">Fragrant basmati rice cooked with juicy chicken and spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,440</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Prawn Biryani" loading="lazy" src="images/ebi-biryani copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Prawn Biryani" data-es="Biryani de Langostinos" data-hi="प्रॉन बिरयानी" data-ja="プラウンビリヤニ" data-ko="새우 비리야니">プラウンビリヤニ</h2>
+<p class="desc" data-en="Basmati rice cooked with prawns and aromatic spices." data-es="Basmati rice cooked with prawns and aromatic spices." data-hi="Basmati rice cooked with prawns and aromatic spices." data-ja="Basmati rice cooked with prawns and aromatic spices." data-ko="Basmati rice cooked with prawns and aromatic spices.">Basmati rice cooked with prawns and aromatic spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,440</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Pork Biryani" loading="lazy" src="images/pork-biryani copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Pork Biryani" data-es="Biryani de Cerdo" data-hi="पोर्क बिरयानी" data-ja="ポークビリヤニ" data-ko="포크 비리야니">ポークビリヤニ</h2>
+<p class="desc" data-en="Basmati rice cooked with pork and aromatic spices." data-es="Basmati rice cooked with pork and aromatic spices." data-hi="Basmati rice cooked with pork and aromatic spices." data-ja="Basmati rice cooked with pork and aromatic spices." data-ko="Basmati rice cooked with pork and aromatic spices.">Basmati rice cooked with pork and aromatic spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,340</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Mutton Biryani" loading="lazy" src="images/mutton-biryani copy.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Mutton Biryani" data-es="Biryani de Cordero" data-hi="मटन बिरयानी" data-ja="マトンビリヤニ" data-ko="머튼 비리야니">マトンビリヤニ</h2>
+<p class="desc" data-en="Basmati rice cooked with mutton and aromatic spices." data-es="Basmati rice cooked with mutton and aromatic spices." data-hi="Basmati rice cooked with mutton and aromatic spices." data-ja="Basmati rice cooked with mutton and aromatic spices." data-ko="Basmati rice cooked with mutton and aromatic spices.">Basmati rice cooked with mutton and aromatic spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,440</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Vegetable Fried Rice" loading="lazy" src="images/vegfryrice.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Vegetable Fried Rice" data-es="Arroz Frito de Verduras" data-hi="वेज फ्राइड राइस" data-ja="ベジフライドライス" data-ko="야채 볶음밥">ベジフライドライス</h2>
+<p class="desc" data-en="Indian-style fried basmati rice with fresh vegetables." data-es="Indian-style fried basmati rice with fresh vegetables." data-hi="Indian-style fried basmati rice with fresh vegetables." data-ja="Indian-style fried basmati rice with fresh vegetables." data-ko="Indian-style fried basmati rice with fresh vegetables.">Indian-style fried basmati rice with fresh vegetables.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,140</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chicken Fried Rice" loading="lazy" src="images/chickenfryrice.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Fried Rice" data-es="Arroz Frito de Pollo" data-hi="चिकन फ्राइड राइस" data-ja="チキンフライドライス" data-ko="치킨 볶음밥">チキンフライドライス</h2>
+<p class="desc" data-en="Indian-style fried basmati rice with chicken." data-es="Indian-style fried basmati rice with chicken." data-hi="Indian-style fried basmati rice with chicken." data-ja="Indian-style fried basmati rice with chicken." data-ko="Indian-style fried basmati rice with chicken.">Indian-style fried basmati rice with chicken.</p>
+<div class="menu-item-footer"><div><div class="price">¥1,340</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Rice" loading="lazy" src="images/rice.jpg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Rice" data-es="Arroz" data-hi="चावल" data-ja="ライス" data-ko="밥">ライス</h2>
+<p class="desc" data-en="Basmati rice cooked with turmeric, cardamom, cloves and butter." data-es="Basmati rice cooked with turmeric, cardamom, cloves and butter." data-hi="Basmati rice cooked with turmeric, cardamom, cloves and butter." data-ja="Basmati rice cooked with turmeric, cardamom, cloves and butter." data-ko="Basmati rice cooked with turmeric, cardamom, cloves and butter.">Basmati rice cooked with turmeric, cardamom, cloves and butter.</p>
+<div class="menu-item-footer"><div><div class="price">¥330</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
 </div>
 
-<!-- ════════════════════════ SOUP & RAITA ════════════════════════ -->
-<div class="category-section" id="soup">
-  <div class="category-title">
-    <h2><span data-ja="スープ" data-en="Soup" data-hi="सूप" data-ko="수프" data-es="Sopa">スープ</span> <em data-ja="＆ ライタ" data-en="&amp; Raita" data-hi="और रायता" data-ko="&amp; 라이타" data-es="y Raita">＆ ライタ</em></h2>
-    <div class="category-title-line"></div>
-    <span class="category-title-count" data-ja="7品" data-en="7 Items" data-hi="7 आइटम" data-ko="7 품목" data-es="7 Artículos">7品</span>
-  </div>
-</div>
+
+<div class="category-section" id="soup"><div class="category-title"><h2><span data-en="Soup" data-es="Sopa" data-hi="सूप" data-ja="スープ" data-ko="수프">スープ</span></h2><div class="category-title-line"></div><span class="category-title-count" data-en="2 Items" data-es="2 artículos" data-hi="2 आइटम" data-ja="2品" data-ko="2개">2品</span></div></div>
 <div class="menu-grid">
-  <div class="menu-item"><figure><img src="image/tomato_soup.jpg" alt="Tomato Soup"></figure><div class="menu-item-body"><h2>Tomato Soup</h2><p class="desc">Creamy, house-made soup from fresh tomatoes and aromatic spices.</p><div class="menu-item-footer"><div><div class="price">¥580</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/chicken_soup.jpg" alt="Chicken Soup"></figure><div class="menu-item-body"><h2>Chicken Soup</h2><p class="desc">Warming and nourishing soup with tender chicken and seasonal vegetables.</p><div class="menu-item-footer"><div><div class="price">¥580</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/mixed_veg_soup.jpg" alt="Mixed Vegetable Soup"></figure><div class="menu-item-body"><h2>Mixed Vegetable Soup</h2><p class="desc">A wholesome soup brimming with a colourful selection of fresh vegetables.</p><div class="menu-item-footer"><div><div class="price">¥630</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/garlic_soup.jpg" alt="Garlic Soup"></figure><div class="menu-item-body"><h2>Garlic Soup</h2><p class="desc">Deeply aromatic roasted garlic soup with a rich, satisfying flavour.</p><div class="menu-item-footer"><div><div class="price">¥630</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/raita.jpg" alt="Vegetable Raita"></figure><div class="menu-item-body"><h2>Vegetable Raita</h2><p class="desc">Cool yogurt with finely chopped fresh vegetables and a hint of cumin spice.</p><div class="menu-item-footer"><div><div class="price">¥580</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/corn_raita.jpg" alt="Corn Raita"></figure><div class="menu-item-body"><h2>Corn Raita</h2><p class="desc">Creamy yogurt mixed with sweet corn and gently seasoned spices.</p><div class="menu-item-footer"><div><div class="price">¥680</div></div></div></div></div>
-  <div class="menu-item"><figure><img src="image/fruit_yogurt.jpg" alt="Yogurt Fruit"></figure><div class="menu-item-body"><h2>Yogurt Fruit</h2><p class="desc">Smooth yogurt served with seasonal fruits — peach, grape and pineapple.</p><div class="menu-item-footer"><div><div class="price">¥680</div></div><span class="includes-tag" data-ja="デザート" data-en="Dessert" data-hi="Dessert" data-ko="디저트" data-es="Postre">デザート</span></div></div></div>
+<div class="menu-item">
+<figure><img alt="Tomato Soup" loading="lazy" src="images/tomato-soup.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Tomato Soup" data-es="Sopa de Tomate" data-hi="टमाटर सूप" data-ja="トマトスープ" data-ko="토마토 수프">トマトスープ</h2>
+<p class="desc" data-en="Creamy soup made with fresh tomato and spices." data-es="Creamy soup made with fresh tomato and spices." data-hi="Creamy soup made with fresh tomato and spices." data-ja="Creamy soup made with fresh tomato and spices." data-ko="Creamy soup made with fresh tomato and spices.">Creamy soup made with fresh tomato and spices.</p>
+<div class="menu-item-footer"><div><div class="price">¥430</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
 </div>
-
-<!-- ═══════════════════════════ DRINK NOTE ═══════════════════════════ -->
-<div class="drink-note">
-  <div class="drink-note-inner">
-    <div class="drink-icon">🍹</div>
-    <div class="drink-text">
-      <strong data-ja="ソフトドリンク" data-en="Soft Drink Options" data-hi="सॉफ्ट ड्रिंक विकल्प" data-ko="소프트 드링크 옵션" data-es="Opciones de Bebida">ソフトドリンク</strong>
-      <p data-ja="セットメニューに含まれています。以下からお好きなものを1つお選びください。" data-en="Included with set meals. Please choose one from the selection below." data-hi="सेट भोजन के साथ शामिल। नीचे से एक चुनें।" data-ko="세트 메뉴에 포함됩니다. 아래에서 하나를 선택해 주세요." data-es="Incluido con los menús. Elija uno de la selección.">セットメニューに含まれています。以下からお好きなものを1つお選びください。</p>
-    </div>
-    <div class="drink-options">Lassi · Mango Lassi · Apple Juice · Chai (Hot / Ice) · Orange Mango · Orange Juice · Coffee (Hot / Ice) · Oolong Tea</div>
-  </div>
 </div>
-
-<!-- ═══════════════════════════ BACK TO TOP ═══════════════════════════ -->
-<button id="backToTop" title="Back to top">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-<footer class="footer">
-  <p>© 2025 <a href="index.html">Sunrose Japan</a> &nbsp;·&nbsp; 株式会社BAL BISHNU &nbsp;·&nbsp; All Rights Reserved.</p>
-</footer>
-
+<div class="menu-item">
+<figure><img alt="Chicken Soup" loading="lazy" src="images/chicken-soup.jpeg"/></figure>
+<div class="menu-item-body">
+<h2 data-en="Chicken Soup" data-es="Sopa de Pollo" data-hi="चिकन सूप" data-ja="チキンスープ" data-ko="치킨 수프">チキンスープ</h2>
+<p class="desc" data-en="Warming soup with chicken and vegetables." data-es="Warming soup with chicken and vegetables." data-hi="Warming soup with chicken and vegetables." data-ja="Warming soup with chicken and vegetables." data-ko="Warming soup with chicken and vegetables.">Warming soup with chicken and vegetables.</p>
+<div class="menu-item-footer"><div><div class="price">¥430</div><div class="price-note" data-en="Tax included" data-es="Impuestos incluidos" data-hi="कर सहित" data-ja="税込" data-ko="세금 포함">税込</div></div></div>
+</div>
+</div>
+</div>
+<section class="drink-showcase" id="drink-bar">
+<div class="drink-hero"><div class="drink-hero-kicker" data-en="DINNER DRINK MENU" data-es="MENÚ DE BEBIDAS DE CENA" data-hi="डिनर ड्रिंक मेन्यू"  data-ja="ディナードリンクメニュー" data-ko="디너 드링크 메뉴">ディナードリンクメニュー</div><h2 data-en="Make tonight's drink special." data-es="Haz especial tu bebida de esta noche." data-hi="आज की शाम को खास बनाएं।" data-ja="今夜の一杯を、もっと楽しく。" data-ko="오늘 밤의 한 잔을 특별하게.">今夜の一杯を、もっと楽しく。</h2><p data-en="From beer and cocktails to soft drinks — choose your perfect match for dinner." data-es="De cerveza y cócteles a bebidas sin alcohol — elige tu bebida ideal para la cena." data-hi="बीयर और कॉकटेल से लेकर सॉफ्ट ड्रिंक तक — अपने डिनर के लिए पसंदीदा पेय चुनें।" data-ja="ビールからカクテル、ソフトドリンクまで。お食事に合わせてお選びください。" data-ko="맥주와 칵테일부터 소프트 드링크까지 — 식사와 어울리는 음료를 골라보세요.">ビールからカクテル、ソフトドリンクまで。お食事に合わせてお選びください。</p></div>
+<div class="drink-highlight-row">
+<div class="drink-highlight"><div class="drink-art">🥃</div><div>
+<span class="drink-mini-label" data-en="HIGHBALL" data-es="HIGHBALL" data-hi="हाईबॉल" data-ja="ハイボール" data-ko="하이볼">ハイボール</span>
+<strong data-en="Jim Beam Highball" data-es="Highball Jim Beam" data-hi="जिम बीम हाईबॉल" data-ja="ジムビームハイボール" data-ko="짐빔 하이볼">ジムビームハイボール</strong><small>¥530</small>
+</div></div>
+<div class="drink-highlight"><div class="drink-art">🍋</div><div>
+<span class="drink-mini-label" data-en="GIN" data-es="GINEBRA" data-hi="जिन" data-ja="ジン" data-ko="진">ジン</span>
+<strong data-en="Roku Gin Soda" data-es="Roku Gin Soda" data-hi="Roku Gin Soda" data-ja="六ジンソーダ" data-ko="로쿠 진 소다">六ジンソーダ</strong><small>¥550</small>
+</div></div>
+<div class="drink-highlight"><div class="drink-art">🍹</div><div>
+<span class="drink-mini-label" data-en="SOUR" data-es="SOUR" data-hi="सावर" data-ja="サワー" data-ko="사워">サワー</span>
+<strong data-en="Lemon Sour" data-es="Sour de Limón" data-hi="लेमन सावर" data-ja="レモンサワー" data-ko="레몬 사워">レモンサワー</strong><small>¥550</small>
+</div></div>
+</div>
+<div class="drink-section-card beer-card"><div class="drink-section-heading"><span class="drink-section-icon">🍺</span><div><span class="drink-kicker" data-en="BEER" data-es="CERVEZA" data-hi="बीयर" data-ja="ビール" data-ko="맥주">ビール</span><h3 data-en="Beer" data-es="Cerveza" data-hi="बीयर" data-ja="ビール" data-ko="맥주">ビール</h3></div><b>¥570–¥750</b></div><div class="drink-list"><div><strong data-en="The Premium Malt's" data-es="The Premium Malt's" data-hi="プレミアムモルツ" data-ja="The Premium Malt's" data-ko="더 프리미엄 몰츠">The Premium Malt's</strong><span>¥570</span></div><div><strong>Kirin Beer <em data-en="(Bottle)" data-es="(Botella)" data-hi="(बोतल)" data-ja="（ボトル）" data-ko="(병)">（ボトル）</em></strong><span>¥750</span></div><div><strong>Ebisu Beer <em data-en="(Bottle)" data-es="(Botella)" data-hi="(बोतल)" data-ja="（ボトル）" data-ko="(병)">（ボトル）</em></strong><span>¥750</span></div><div><strong>Suntory Beer <em data-en="(Bottle)" data-es="(Botella)" data-hi="(बोतल)" data-ja="（ボトル）" data-ko="(병)">（ボトル）</em></strong><span>¥750</span></div><div><strong>Asahi Beer <em data-en="(Bottle)" data-es="(Botella)" data-hi="(बोतल)" data-ja="（ボトル）" data-ko="(병)">（ボトル）</em></strong><span>¥750</span></div></div></div>
+<div class="drink-two-col"><div class="drink-section-card compact-card"><div class="drink-section-heading"><span class="drink-section-icon">🍋</span><div><span class="drink-kicker" data-en="SOUR" data-es="SOUR" data-hi="सावर" data-ja="サワー" data-ko="사워">サワー</span><h3 data-en="Sour" data-es="Sour" data-hi="सावर" data-ja="サワー" data-ko="사워">サワー</h3></div><b>¥550</b></div><div class="drink-list"><div><strong data-en="Lemon Sour" data-es="Sour de Limón" data-hi="लेमन सावर" data-ja="Lemon Sour" data-ko="레몬 사워">Lemon Sour</strong><span>¥550</span></div><div><strong data-en="Tako High" data-es="Tako High" data-hi="ताको हाई" data-ja="こだわり酒場のタコハイ" data-ko="타코 하이">こだわり酒場のタコハイ</strong><span>¥550</span></div></div></div><div class="drink-section-card compact-card"><div class="drink-section-heading"><span class="drink-section-icon">🌿</span><div><span class="drink-kicker" data-en="GIN" data-es="GINEBRA" data-hi="जिन" data-ja="ジン" data-ko="진">ジン</span><h3 data-en="Gin" data-es="Gin" data-hi="जिन" data-ja="ジン" data-ko="진">ジン</h3></div><b>¥550</b></div><div class="drink-list"><div><strong data-en="Roku Gin Soda" data-es="Roku Gin Soda" data-hi="Roku Gin Soda" data-ja="Roku Gin Soda" data-ko="로쿠 진 소다">Roku Gin Soda</strong><span>¥550</span></div></div></div></div>
+<div class="drink-section-card cocktail-card"><div class="drink-section-heading"><span class="drink-section-icon">🍸</span><div><span class="drink-kicker" data-en="COCKTAILS" data-es="CÓCTELES" data-hi="कॉकटेल" data-ja="カクテル" data-ko="칵테일">カクテル</span><h3 data-en="Cocktails" data-es="Cócteles" data-hi="कॉकटेल" data-ja="カクテル" data-ko="칵테일">カクテル</h3></div><b data-en="ALL ¥550" data-es="TODO ¥550" data-hi="सभी ¥550" data-ja="すべて ¥550" data-ko="전체 ¥550">すべて ¥550</b></div><div class="cocktail-grid"><div><strong data-en="Kahlua Milk" data-es="Kahlúa con Leche" data-hi="कालुआ मिल्क" data-ja="Kahlua Milk" data-ko="칼루아 밀크">Kahlua Milk</strong><span>カルーアミルク</span></div><div><strong data-en="Cassis Orange" data-es="Cassis con Naranja" data-hi="कैसिस ऑरेंज" data-ja="Cassis Orange" data-ko="카시스 오렌지">Cassis Orange</strong><span>カシスオレンジ</span></div><div><strong data-en="Cassis Soda" data-es="Cassis con Soda" data-hi="कैसिस सोडा" data-ja="Cassis Soda" data-ko="카시스 소다">Cassis Soda</strong><span>カシスソーダ</span></div><div><strong data-en="Cassis Lassi" data-es="Cassis Lassi" data-hi="कैसिस लस्सी" data-ja="Cassis Lassi" data-ko="카시스 라씨">Cassis Lassi</strong><span>カシスラッシー</span></div><div><strong data-en="Paraiso Tonic" data-es="Paraiso Tónica" data-hi="पैराइसो टॉनिक" data-ja="Paraiso Tonic" data-ko="파라이소 토닉">Paraiso Tonic</strong><span>パライソトニック</span></div><div><strong data-en="Paraiso Orange" data-es="Paraiso Naranja" data-hi="पैराइसो ऑरेंज" data-ja="Paraiso Orange" data-ko="파라이소 오렌지">Paraiso Orange</strong><span>パライソオレンジ</span></div><div><strong data-en="Paraiso Apple" data-es="Paraiso Manzana" data-hi="पैराइसो एप्पल" data-ja="Paraiso Apple" data-ko="파라이소 애플">Paraiso Apple</strong><span>パライソアップル</span></div><div><strong data-en="Paraiso Lassi" data-es="Paraiso Lassi" data-hi="पैराइसो लस्सी" data-ja="Paraiso Lassi" data-ko="파라이소 라씨">Paraiso Lassi</strong><span>パライソラッシー</span></div><div><strong data-en="Gin Tonic" data-es="Gin Tónica" data-hi="जिन टॉनिक" data-ja="Gin Tonic" data-ko="진 토닉">Gin Tonic</strong><span>ジントニック</span></div><div><strong data-en="Gin Orange" data-es="Gin Naranja" data-hi="जिन ऑरेंज" data-ja="Gin Orange" data-ko="진 오렌지">Gin Orange</strong><span>ジンオレンジ</span></div><div><strong data-en="Gin Lassi" data-es="Gin Lassi" data-hi="जिन लस्सी" data-ja="Gin Lassi" data-ko="진 라씨">Gin Lassi</strong><span>ジンラッシー</span></div><div><strong data-en="Vodka Tonic" data-es="Vodka Tónica" data-hi="वोडका टॉनिक" data-ja="Vodka Tonic" data-ko="보드카 토닉">Vodka Tonic</strong><span>ウォッカトニック</span></div><div><strong data-en="Vodka Orange" data-es="Vodka Naranja" data-hi="वोडका ऑरेंज" data-ja="Vodka Orange" data-ko="보드카 오렌지">Vodka Orange</strong><span>ウォッカオレンジ</span></div><div><strong data-en="Vodka Apple" data-es="Vodka Manzana" data-hi="वोडका एप्पल" data-ja="Vodka Apple" data-ko="보드카 애플">Vodka Apple</strong><span>ウォッカアップル</span></div><div><strong data-en="Vodka Lassi" data-es="Vodka Lassi" data-hi="वोडका लस्सी" data-ja="Vodka Lassi" data-ko="보드카 라씨">Vodka Lassi</strong><span>ウォッカラッシー</span></div><div><strong>Rum &amp; Coke</strong><span>ラムコーク</span></div><div><strong data-en="Rum Tonic" data-es="Ron Tónica" data-hi="रम टॉनिक" data-ja="Rum Tonic" data-ko="럼 토닉">Rum Tonic</strong><span>ラムトニック</span></div><div><strong data-en="Rum Lassi" data-es="Ron Lassi" data-hi="रम लस्सी" data-ja="Rum Lassi" data-ko="럼 라씨">Rum Lassi</strong><span>ラムラッシー</span></div><div><strong data-en="Tequila Tonic" data-es="Tequila Tónica" data-hi="टकीला टॉनिक" data-ja="Tequila Tonic" data-ko="테킬라 토닉">Tequila Tonic</strong><span>テキーラトニック</span></div><div><strong data-en="Tequila Orange" data-es="Tequila Naranja" data-hi="टकीला ऑरेंज" data-ja="Tequila Orange" data-ko="테킬라 오렌지">Tequila Orange</strong><span>テキーラオレンジ</span></div><div><strong data-en="Tequila Lassi" data-es="Tequila Lassi" data-hi="टकीला लस्सी" data-ja="Tequila Lassi" data-ko="테킬라 라씨">Tequila Lassi</strong><span>テキーララッシー</span></div></div></div>
+<div class="drink-two-col"><div class="drink-section-card wine-card"><div class="drink-section-heading"><span class="drink-section-icon">🍷</span><div><span class="drink-kicker" data-en="WINE" data-es="VINO" data-hi="वाइन" data-ja="ワイン" data-ko="와인">ワイン</span><h3 data-en="Wine" data-es="Vino" data-hi="वाइन" data-ja="ワイン" data-ko="와인">ワイン</h3></div><b>¥550</b></div><div class="wine-picks"><div><span class="wine-glass">🍷</span><strong data-en="Carlo Rossi Red" data-es="Carlo Rossi Tinto" data-hi="कार्लो रॉसी रेड" data-ja="Carlo Rossi Red" data-ko="카를로 로시 레드">Carlo Rossi Red</strong><small>¥550</small></div><div><span class="wine-glass">🥂</span><strong data-en="Carlo Rossi White" data-es="Carlo Rossi Blanco" data-hi="कार्लो रॉसी व्हाइट" data-ja="Carlo Rossi White" data-ko="카를로 로시 화이트">Carlo Rossi White</strong><small>¥550</small></div></div></div><div class="drink-section-card soft-card"><div class="drink-section-heading"><span class="drink-section-icon">🥤</span><div><span class="drink-kicker" data-en="SOFT DRINK" data-es="BEBIDAS SIN ALCOHOL" data-hi="सॉफ्ट ड्रिंक" data-ja="ソフトドリンク" data-ko="소프트 드링크">ソフトドリンク</span><h3 data-en="Soft Drink Bar" data-es="Bar de Bebidas" data-hi="सॉफ्ट ड्रिंक बार" data-ja="ソフトドリンクバー" data-ko="소프트 드링크 바">ソフトドリンクバー</h3></div><b data-en="ALL ¥400" data-es="TODAS ¥400" data-hi="सभी ¥400" data-ja="すべて ¥400" data-ko="전체 ¥400">すべて ¥400</b></div><div class="soft-pill-grid"><span>Lassi</span><span>Mango Lassi</span><span>Coca-Cola</span><span>Ginger Ale</span><span>Orange Juice</span><span>Apple Juice</span><span>Hot Tea</span><span>Iced Tea</span><span>Hot Coffee</span><span>Iced Coffee</span><span>Oolong Tea</span></div></div></div>
+<div class="nomihodai-banner"><div class="nomi-top"><span>🍻</span><div><small data-en="2-HOUR ALL-YOU-CAN-DRINK" data-es="BEBIDAS ILIMITADAS 2 HORAS" data-hi="2 घंटे अनलिमिटेड ड्रिंक" data-ja="2時間飲み放題" data-ko="2시간 무제한 드링크">2時間飲み放題</small><h3 data-en="All-You-Can-Drink Course" data-es="Curso de bebidas ilimitadas" data-hi="अनलिमिटेड ड्रिंक कोर्स" data-ja="飲み放題コース" data-ko="무제한 드링크 코스">飲み放題コース</h3></div></div><div class="nomi-prices"><div><strong>¥1,000</strong><span data-en="No draft beer" data-es="Sin cerveza de barril" data-hi="ड्राफ्ट बीयरなし" data-ja="生ビールなし" data-ko="생맥주 없음">生ビールなし</span></div><div class="nomi-featured"><strong>¥1,590</strong><span data-en="Draft beer included" data-es="Con cerveza de barril" data-hi="ड्राफ्ट बीयर शामिल" data-ja="生ビールあり" data-ko="생맥주 포함">生ビールあり</span></div><div><strong>¥2,100</strong><span data-en="Draft beer unlimited" data-es="Cerveza de barril ilimitada" data-hi="ड्राफ्ट बीयर अनलिमिटेड" data-ja="生ビール無制限" data-ko="생맥주 무제한">生ビール無制限</span></div></div><div class="nomi-notes"><span data-en="Available for groups of 4 or more." data-es="Disponible para grupos de 4 o más." data-hi="4 या अधिक लोगों के समूह के लिए उपलब्ध।" data-ja="4名様よりご利用いただけます。" data-ko="4명 이상 이용 가능합니다.">4名様よりご利用いただけます。</span><span data-en="Food order required." data-es="Se requiere pedido de comida." data-hi="भोजन का ऑर्डर आवश्यक है।" data-ja="お料理のご注文をお願いいたします。" data-ko="음식 주문이 필요합니다.">お料理のご注文をお願いいたします。</span><span data-en="Last order: 30 minutes before the end." data-es="Último pedido: 30 minutos antes del final." data-hi="लास्ट ऑर्डर: समाप्ति से 30 मिनट पहले।" data-ja="ラストオーダーは終了30分前です。" data-ko="라스트 오더: 종료 30분前.">ラストオーダーは終了30分前です。</span></div></div>
+</section>
+<button id="backToTop" title="Back to top"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="16"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<footer class="footer"><p>© 2026 <a href="index.html">Sunrose Japan</a>  ·  株式会社BAL BISHNU  ·  All Rights Reserved.</p></footer>
 <script>
-  const btn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => { btn.style.display = window.scrollY > 300 ? "flex" : "none"; });
-  btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  const navLinks = document.querySelectorAll(".menu-nav a");
-  const sections = document.querySelectorAll(".category-section");
-  const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { const id = entry.target.id; navLinks.forEach(a => { a.classList.toggle("active", a.getAttribute("href") === "#" + id); }); } }); }, { rootMargin: "-30% 0px -60% 0px" });
-  sections.forEach(s => observer.observe(s));
+const btn=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>300?'flex':'none'});
+btn.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+const navLinks=document.querySelectorAll('.menu-nav a');
+const sections=document.querySelectorAll('.category-section');
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}})},{rootMargin:'-30% 0px -60% 0px'});
+sections.forEach(s=>observer.observe(s));
 </script>
 <script src="lang.js"></script>
-
-<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;justify-content:center;align-items:center;" onclick="this.style.display='none'"><img id="lightbox-img" style="max-width:90%;max-height:90%;border-radius:8px;"></div>
-<script>
-function openImage(src){document.getElementById('lightbox').style.display='flex';document.getElementById('lightbox-img').src=src}
-</script>
-
 </body>
 </html>

@@ -1314,103 +1314,227 @@
             opacity: 0.85; 
         }
  
+
+
+
+/* =========================================================
+   SUNROSE OMORI — FINAL MENU LAYOUT
+   3 TOP + 2 CENTERED BELOW
+========================================================= */
+
+.menus-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch;
+}
+
+.menus-grid .menu-card {
+    grid-column: span 2 !important;
+    min-height: 430px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menus-grid .menu-card:nth-child(1),
+.menus-grid .menu-card:nth-child(2),
+.menus-grid .menu-card:nth-child(3) {
+    grid-column: span 2 !important;
+}
+
+.menus-grid .menu-card:nth-child(4) {
+    grid-column: 2 / span 2 !important;
+}
+
+.menus-grid .menu-card:nth-child(5) {
+    grid-column: 4 / span 2 !important;
+}
+
+/* Full-image cards */
+.menus-grid .menu-card > img {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+    display: block;
+}
+
+.menus-grid .menu-card .menu-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.menus-grid .menu-card .menu-card-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+/* NEW / THIS MONTH'S SPECIAL */
+.menu-card-new {
+    border: 1px solid rgba(234,173,6,.55) !important;
+}
+
+.menu-new-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 4;
+    padding: 9px 15px;
+    background: #eaad06;
+    color: #1b140c;
+    border-radius: 999px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .20em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(20,14,7,.22);
+}
+
+/* Keep Offers & Promotions only for the two existing offers:
+   10% OFF + Special Sets. */
+.section-offers .offers-flex {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+
         /* ===================== MAP ===================== */
-        .section-map { padding: 40px 0 80px; margin-bottom: 40px; }
-        .map-wrap { position: relative; overflow: hidden; border-radius: 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-        .map-wrap iframe { width: 100%; height: 460px; display: block; border: none; filter: grayscale(15%); }
-        .map-cta 
-        {
-            position: absolute;
-            right: 28px; bottom: 28px;
-            background: var(--white);
-            color: var(--text-dark);
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: 500;
-            border: 1px solid var(--border-strong);
-            box-shadow: 0 10px 24px rgba(0,0,0,0.14);
-            transition: all var(--transition);
-            white-space: nowrap;
-            z-index: 1;
-        }
-        .map-cta:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
 
-        .section-reservation { padding-bottom: 48px; }
-        .section-map { padding-top: 60px; }
+.section-map {
+    padding: 40px 0 50px;
+    margin-bottom: 0;
+}
 
-        /* ===================== FOOTER ===================== */
-        .footer 
-        {
-            background: var(--text-dark);
-            color: rgba(255,255,255,0.6);
-            padding: 32px 40px 16px;
-            margin-top: auto;
-        }
+.map-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
 
-        .footer-inner 
-        {
-            max-width: var(--max);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 20px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid rgba(201,168,76,0.2);
-        }
+.map-wrap iframe {
+    width: 100%;
+    height: 380px;
+    display: block;
+    border: none;
+    filter: grayscale(15%);
+}
 
-        .footer-logo 
-        {
-            font-family: var(--serif);
-            font-size: 24px;
-            font-weight: 300;
-            color: var(--white);
-            letter-spacing: 4px;
-        }
-        .footer-logo span { color: var(--gold-light); }
- 
-        .footer-info { text-align: center; }
-        .footer-info p { font-size: 15px; line-height: 1.6; }
- 
-        .footer-links-col { display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; }
- 
-        .footer-link 
-        {
-            font-size: 14px;
-            color: rgba(255,255,255,0.55);
-            border: 1px solid rgba(201,168,76,0.2);
-            padding: 6px 14px;
-            border-radius: 20px;
-            transition: all var(--transition);
-        }
-        .footer-link:hover { border-color: var(--gold); color: var(--gold-light); }
- 
-        .footer-bottom 
-        {
-            max-width: var(--max);
-            margin: 12px auto 0;
-            text-align: center;
-            font-size: 14px;
-            color: rgba(255,255,255,0.3);
-        }
- 
-        .footer-divider 
-        {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin: 40px 0;
-        }
-        .footer-divider span { font-size: 20px; color: rgba(255,255,255,0.35); white-space: nowrap; }
-        .footer-divider::before, .footer-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: rgba(201,168,76,0.15);
-        }
- 
+.map-cta {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    transition: all var(--transition);
+    white-space: nowrap;
+    z-index: 1;
+}
 
+.map-cta:hover {
+    background: var(--gold);
+    color: var(--white);
+    border-color: var(--gold);
+}
+
+.section-reservation {
+    padding-bottom: 48px;
+
+}
+
+.section-map { padding-top: 60px; }
+        /* ===================== COMPACT FOOTER ===================== */
+
+.footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.6);
+    padding: 24px 40px 12px;
+    margin-top: auto;
+}
+
+.footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+
+.footer-logo {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 4px;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-links-col {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.footer-bottom {
+    max-width: var(--max);
+    margin: 8px auto 0;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+}
+
+.footer-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.footer-divider span {
+    font-size: 17px;
+    color: rgba(255,255,255,0.35);
+    white-space: nowrap;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,168,76,0.15);
+}
         /* ====== LANGUAGE BUTTON ====== */
         .lang-btn
         {
@@ -1570,3 +1694,333 @@
             .map-cta { right: 14px; bottom: 14px; }
             .fab-order { right: 16px; bottom: 80px; }
         }
+/* Mobile */
+@media (max-width: 900px) {
+    .menus-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .menus-grid .menu-card,
+    .menus-grid .menu-card:nth-child(1),
+    .menus-grid .menu-card:nth-child(2),
+    .menus-grid .menu-card:nth-child(3),
+    .menus-grid .menu-card:nth-child(4),
+    .menus-grid .menu-card:nth-child(5) {
+        grid-column: span 1 !important;
+    }
+
+    .menus-grid .menu-card:nth-child(4) {
+        grid-column: 1 !important;
+    }
+
+    .menus-grid .menu-card:nth-child(5) {
+        grid-column: 2 !important;
+    }
+
+    .menus-grid .menu-card,
+    .menus-grid .menu-card > img {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menus-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    .menus-grid .menu-card,
+    .menus-grid .menu-card:nth-child(1),
+    .menus-grid .menu-card:nth-child(2),
+    .menus-grid .menu-card:nth-child(3),
+    .menus-grid .menu-card:nth-child(4),
+    .menus-grid .menu-card:nth-child(5) {
+        grid-column: 1 !important;
+    }
+
+    .menus-grid .menu-card,
+    .menus-grid .menu-card > img {
+        min-height: 360px;
+    }
+}
+
+
+/* =========================================================
+   SUNROSE OMORI — FINAL MENU CARD FIX
+   Keeps the existing design and content.
+   Makes all menu cards equal height and keeps the
+   yellow title bar aligned at the bottom.
+========================================================= */
+
+/* ---------- DESKTOP / LARGE SCREENS ---------- */
+
+#menus .menus-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+    grid-auto-rows: 480px !important;
+}
+
+/* 3 cards on the first row */
+#menus .menus-grid .menu-card:nth-child(1),
+#menus .menus-grid .menu-card:nth-child(2),
+#menus .menus-grid .menu-card:nth-child(3) {
+    grid-column: span 2 !important;
+}
+
+/* 2 cards centered on the second row */
+#menus .menus-grid .menu-card:nth-child(4) {
+    grid-column: 2 / span 2 !important;
+}
+
+#menus .menus-grid .menu-card:nth-child(5) {
+    grid-column: 4 / span 2 !important;
+}
+
+/* Every card has exactly the same height */
+#menus .menus-grid .menu-card {
+    height: 480px !important;
+    min-height: 480px !important;
+    max-height: 480px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    border-radius: 16px !important;
+    background: var(--white) !important;
+    border: 1px solid rgba(0,0,0,0.06) !important;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.08) !important;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease !important;
+}
+
+#menus .menus-grid .menu-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 18px 38px rgba(0,0,0,0.12) !important;
+}
+
+/* Large image area */
+#menus .menus-grid .menu-card > img {
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+
+    flex-shrink: 0 !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    display: block !important;
+
+    transition: transform 0.45s ease !important;
+}
+
+#menus .menus-grid .menu-card:hover > img {
+    transform: scale(1.04) !important;
+}
+
+/* No dark overlay on the new white-card design */
+#menus .menus-grid .menu-card > .menu-card-overlay {
+    display: none !important;
+}
+
+/* White information area */
+#menus .menus-grid .menu-card .menu-card-body {
+    position: static !important;
+
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 100% !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+
+    z-index: 3 !important;
+}
+
+/* Opening-time / category text */
+#menus .menus-grid .menu-card .menu-card-label {
+    display: block !important;
+
+    padding: 20px 20px 6px !important;
+    margin: 0 !important;
+
+    font-family: var(--sans) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.4px !important;
+
+    color: var(--gold) !important;
+
+    text-transform: uppercase !important;
+}
+
+/* Description inside the white area */
+#menus .menus-grid .menu-card .menu-card-description {
+    display: block !important;
+
+    padding: 0 20px 18px !important;
+    margin: 0 !important;
+
+    font-family: var(--sans) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.55 !important;
+
+    color: #777 !important;
+}
+
+/* Yellow title bar is always at the bottom */
+#menus .menus-grid .menu-card .menu-card-title {
+    margin-top: auto !important;
+
+    width: 100% !important;
+
+    background: var(--gold) !important;
+    color: var(--white) !important;
+
+    padding: 17px 20px !important;
+
+    font-family: var(--serif) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+
+    text-transform: uppercase !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    border-radius: 0 0 16px 16px !important;
+
+    flex-shrink: 0 !important;
+}
+
+/* Arrow */
+#menus .menus-grid .menu-card .menu-card-arrow {
+    width: auto !important;
+    height: auto !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    color: var(--white) !important;
+
+    font-size: 18px !important;
+    opacity: 0.95 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Monthly Special */
+#menus .menus-grid .menu-card-new {
+    border: 1px solid rgba(234,173,6,.55) !important;
+}
+
+#menus .menus-grid .menu-card-new .menu-new-badge {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 5 !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    #menus .menus-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        grid-auto-rows: 480px !important;
+    }
+
+    #menus .menus-grid .menu-card,
+    #menus .menus-grid .menu-card:nth-child(1),
+    #menus .menus-grid .menu-card:nth-child(2),
+    #menus .menus-grid .menu-card:nth-child(3),
+    #menus .menus-grid .menu-card:nth-child(4),
+    #menus .menus-grid .menu-card:nth-child(5) {
+        grid-column: span 1 !important;
+
+        height: 480px !important;
+        min-height: 480px !important;
+        max-height: 480px !important;
+    }
+
+    #menus .menus-grid .menu-card > img {
+        height: 300px !important;
+        min-height: 300px !important;
+        max-height: 300px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #menus .menus-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        grid-auto-rows: 460px !important;
+    }
+
+    #menus .menus-grid .menu-card,
+    #menus .menus-grid .menu-card:nth-child(1),
+    #menus .menus-grid .menu-card:nth-child(2),
+    #menus .menus-grid .menu-card:nth-child(3),
+    #menus .menus-grid .menu-card:nth-child(4),
+    #menus .menus-grid .menu-card:nth-child(5) {
+        grid-column: 1 !important;
+
+        height: 460px !important;
+        min-height: 460px !important;
+        max-height: 460px !important;
+    }
+
+    #menus .menus-grid .menu-card > img {
+        height: 280px !important;
+        min-height: 280px !important;
+        max-height: 280px !important;
+    }
+
+    #menus .menus-grid .menu-card .menu-card-label {
+        padding: 18px 18px 6px !important;
+        font-size: 13px !important;
+    }
+
+    #menus .menus-grid .menu-card .menu-card-description {
+        padding: 0 18px 16px !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+
+    #menus .menus-grid .menu-card .menu-card-title {
+        padding: 16px 18px !important;
+        font-size: 19px !important;
+    }
+}
