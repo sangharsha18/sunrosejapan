@@ -28,5 +28,10 @@ document.addEventListener('click', (e) => {
 // Remember on reload
 window.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('lang');
-  if (saved) setLang(saved);
+  if (saved){
+    setLang(saved);
+  } else {
+    setLang('ja');
+  }
+
 });

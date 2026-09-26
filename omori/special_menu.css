@@ -13,7 +13,153 @@
     --sans: 'DM Sans', sans-serif;
 }
 
+/* ================= OMORI PAGE HEADER ================= */
+
+.omori-page-header {
+    position: relative;
+    width: 100%;
+    height: 84px;
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 66px;
+    box-sizing: border-box;
+
+    background: #1a1208;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.omori-brand {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+
+    color: #f5ead5;
+    text-decoration: none;
+
+    transition: opacity 0.25s ease;
+}
+
+.omori-brand:hover {
+    opacity: 0.8;
+}
+
+.omori-brand-name {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: 0.12em;
+}
+
+.omori-brand-branch {
+    margin-top: 8px;
+    margin-left: 74px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    line-height: 1;
+
+    color: #d7aa4b;
+}
+
+
+/* ================= TOP NAVIGATION ================= */
+
+.omori-main-nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.omori-main-nav a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+
+    transition: color 0.25s ease;
+}
+
+.omori-main-nav a:hover {
+    color: #e8c97a;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+    body {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .omori-page-header {
+        width: 100%;
+        height: 70px;
+        padding: 0 24px;
+    }
+
+    .omori-brand-name {
+        font-size: 25px;
+    }
+
+    .omori-brand-branch {
+        margin-top: 6px;
+        margin-left: 55px;
+        font-size: 7px;
+    }
+
+    .omori-main-nav {
+        gap: 14px;
+    }
+
+    .omori-main-nav a {
+        font-size: 10px;
+    }
+
+    .menu-container {
+        padding: 0;
+        gap: 12px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-hero-content h1 {
+        font-size: 28px;
+    }
+
+    .menu-hero-content p {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .section-desc {
+        font-size: 14px;
+    }
+
+    .header_title {
+        font-size: 20px;
+    }
+}
+
+
 /* BODY */
+
 body {
     font-family: var(--sans);
     background: #f8f8f8;
@@ -21,7 +167,9 @@ body {
     padding: 0rem;
 }
 
+
 /* HEADER */
+
 .header {
     background: white;
     padding: 20px;
@@ -38,7 +186,9 @@ body {
     color: var(--primary-color);
 }
 
+
 /* HERO */
+
 .menu-hero {
     min-height: 90vh;
     background-position: center;
@@ -48,16 +198,16 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    text-align: center; 
-   background: url('images/bar.jpg') center/cover no-repeat;
+    text-align: center;
 
+    background: url('images/bar.jpg') center/cover no-repeat;
 }
 
 .menu-hero::before {
     content: "";
     position: absolute;
     inset: 0;
-        background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .menu-hero-content {
@@ -93,13 +243,17 @@ body {
     transform: translateY(-2px);
 }
 
+
 /* SECTION */
+
 .section-gallery {
     padding: 60px 20px;
     text-align: center;
 }
 
+
 /* TITLE */
+
 .section-title {
     font-size: 32px;
     margin-bottom: 16px;
@@ -117,7 +271,9 @@ body {
     font-size: 17px;
 }
 
+
 /* GRID */
+
 .gallery-grid {
     max-width: 1000px;
     margin: auto;
@@ -126,7 +282,9 @@ body {
     gap: 30px;
 }
 
+
 /* ITEM */
+
 .gallery-item {
     cursor: pointer;
     transition: 0.3s;
@@ -142,16 +300,20 @@ body {
     font-weight: 600;
 }
 
+
 /* HOVER */
+
 .gallery-item:hover {
     transform: translateY(-5px);
 }
 
+
 /* LIGHTBOX */
+
 .lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0, 0, 0, 0.85);
     display: none;
     justify-content: center;
     align-items: center;
@@ -163,7 +325,9 @@ body {
     border-radius: 10px;
 }
 
+
 /* FOOTER */
+
 .footer {
     text-align: center;
     padding: 20px;
@@ -172,45 +336,72 @@ body {
     width: 100%;
 }
 
-  /* ===================== RESPONSIVE ===================== */
+
+/* ===================== RESPONSIVE ===================== */
+
 @media (max-width: 960px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
+
 @media (max-width: 600px) {
-     body {
-         padding-left: 20px!important;
-        padding-right: 20px!important;
+    body {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .menu-container {
         padding: 0;
         gap: 12px;
     }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
 
-  .menu-hero-content h1 {
-    font-size: 28px;
-  }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-  .menu-hero-content p {
-    font-size: 15px;
-  }
+    .menu-hero-content h1 {
+        font-size: 28px;
+    }
 
-  .section-title {
-    font-size: 22px;
-  }
+    .menu-hero-content p {
+        font-size: 15px;
+    }
 
-  .section-desc {
-    font-size: 14px;
-  }
+    .section-title {
+        font-size: 22px;
+    }
 
-  .header_title {
-    font-size: 20px;
-  }
+    .section-desc {
+        font-size: 14px;
+    }
+
+    .header_title {
+        font-size: 20px;
+    }
+}
+
+
+/* ===================== FULL WIDTH HEADER & FOOTER ===================== */
+
+.omori-page-header,
+.footer {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* ===================== MOBILE FOOTER ===================== */
+
+@media (max-width: 600px) {
+    .footer {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px 10px;
+    }
 }
