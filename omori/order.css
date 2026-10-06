@@ -788,6 +788,21 @@ img
     grid-template-columns: repeat(2, 1fr);
   }
 }
+  /* =========================================================
+   TAKEOUT
+   One large card centered
+========================================================= */
+
+.takeout-section .order-grid {
+    grid-template-columns: minmax(380px, 440px);
+    justify-content: center;
+}
+
+.takeout-section .order-card {
+    width: 100%;
+    min-height: 470px;
+    padding: 48px 42px 42px;
+}
 
 @media (max-width: 600px)
 {
