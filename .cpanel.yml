@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/sunrosej/new.sunrosejapan.com/
+    - export DEPLOYPATH=/home1/sunrosej/sunrosejapan.com/
     - /bin/cp -R index.html index.css lang.js logo.jpeg seaSide omori images videos $DEPLOYPATH
