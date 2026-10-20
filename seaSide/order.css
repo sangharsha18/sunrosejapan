@@ -53,120 +53,121 @@ a
 
 img
 {
+
   width: 100%;
   display: block;
 }
-
-/* ================================
-   SEASIDE MENU HEADER
-   ================================ */
+   /* ================= seaside PAGE HEADER ================= */
 
 .seaside-page-header {
+  position: relative;
   width: 100%;
-  height: 118px;
-  background: #171008;
-  border-bottom: 1px solid rgba(190, 150, 70, 0.25);
+  height: 84px;
+  z-index: 50;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 7%;
+  padding: 0 66px;
   box-sizing: border-box;
+
+  background: #1a1208;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.25);
 }
 
-/* Brand */
-
 .seaside-brand {
-  text-decoration: none;
-  display: flex;
+  position: relative;
+  display: inline-flex;
   flex-direction: column;
-  align-items: center;
-  line-height: 1;
+
+  color: #f5ead5;
+  text-decoration: none;
+
+  transition: opacity 0.25s ease;
+}
+
+.seaside-brand:hover {
+  opacity: 0.8;
 }
 
 .seaside-brand-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 43px;
-  font-weight: 400;
-  letter-spacing: 4px;
-  color: #f4ead8;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: 0.12em;
 }
 
 .seaside-brand-branch {
-  margin-top: 9px;
+  margin-top: 8px;
+  margin-left: 74px;
 
   font-family: "DM Sans", sans-serif;
-  font-size: 11px;
+  font-size: 8px;
   font-weight: 500;
-  letter-spacing: 4px;
-  color: #c89b3c;
+  letter-spacing: 0.28em;
+  line-height: 1;
+
+  color: #d7aa4b;
 }
 
-/* Navigation */
+
+/* ================= TOP NAVIGATION ================= */
 
 .seaside-main-nav {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 34px;
 }
 
 .seaside-main-nav a {
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
 
   font-family: "DM Sans", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 1px;
-
-  color: #e8e0d5;
+  letter-spacing: 0.08em;
 
   transition: color 0.25s ease;
 }
 
 .seaside-main-nav a:hover {
-  color: #c89b3c;
+  color: #e8c97a;
 }
 
 
-/* ================================
-   MOBILE
-   ================================ */
+/* ================= MOBILE ================= */
 
-@media (max-width: 1100px) {
-  .delivery-section .order-grid {
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
   .seaside-page-header {
-    height: 100px;
-    padding: 0 25px;
+    height: 70px;
+    padding: 0 24px;
   }
 
   .seaside-brand-name {
-    font-size: 34px;
+    font-size: 25px;
   }
 
   .seaside-brand-branch {
-    font-size: 9px;
-    letter-spacing: 3px;
+    margin-top: 6px;
+    margin-left: 55px;
+    font-size: 7px;
   }
 
   .seaside-main-nav {
-    gap: 20px;
+    gap: 14px;
   }
 
   .seaside-main-nav a {
-    font-size: 13px;
-  }
-
-  .delivery-section .order-grid {
-    grid-template-columns: 1fr;
+    font-size: 10px;
   }
 }
+
+
+
 /* ===================== HERO ===================== */
 .menu-hero
 {
@@ -435,26 +436,14 @@ img
   margin: 0 auto;
   padding: 0 40px 100px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 320px));
-  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-}
-
-.delivery-section .order-grid
-{
-  grid-template-columns: repeat(4, minmax(220px, 1fr));
-}
-
-.takeout-section .order-grid
-{
-  grid-template-columns: minmax(300px, 420px);
 }
 
 
 /* ===================== ORDER CARD ===================== */
 .order-card
 {
-  width: 100%;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -467,11 +456,6 @@ img
   position: relative;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   animation: fadeUp 0.6s ease both;
-}
-
-.takeout-section .order-card
-{
-  max-width: 420px;
 }
 
 .order-card::before
@@ -756,8 +740,14 @@ img
 {
   color: var(--gold);
 }
-
-
+.footer{  
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+ 
 /* ===================== ANIMATIONS ===================== */
 @keyframes fadeUp
 {
@@ -799,6 +789,74 @@ img
     grid-template-columns: repeat(2, 1fr);
   }
 }
+  /* =========================================================
+   TAKEOUT
+   One large card centered
+========================================================= */
+
+.takeout-section .order-grid {
+    grid-template-columns: minmax(380px, 440px);
+    justify-content: center;
+}
+
+.takeout-section .order-card {
+    width: 100%;
+    min-height: 470px;
+    padding: 48px 42px 42px;
+}
+
+
+/* =========================================================
+   DELIVERY
+   Cards centered in the middle of the page (bigger cards).
+   Uses flex so 3 cards stay centered, and if they wrap on a
+   smaller screen the leftover card is still centered.
+========================================================= */
+
+.delivery-section .order-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+    max-width: 1280px;
+}
+
+.delivery-section .order-card {
+    flex: 0 1 360px;
+    min-height: 560px;
+    padding: 52px 36px 44px;
+}
+
+.delivery-section .order-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 22px;
+    font-size: 2.4rem;
+    margin-bottom: 26px;
+}
+
+.delivery-section .order-name {
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+}
+
+.delivery-section .order-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+.delivery-section .order-tag {
+    font-size: 12px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+}
+
+.delivery-section .order-btn {
+    padding: 16px 24px;
+    font-size: 14px;
+}
 
 @media (max-width: 600px)
 {
@@ -806,6 +864,13 @@ img
   {
     grid-template-columns: 1fr;
     padding: 0 24px 80px;
+  }
+
+  .delivery-section .order-card
+  {
+    flex: 1 1 100%;
+    min-height: auto;
+    padding: 44px 28px 38px;
   }
 
   .section-header
