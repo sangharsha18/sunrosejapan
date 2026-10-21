@@ -1,682 +1,173 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>オンライン注文 — SUNROSE インドレストラン 品川</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="order.css">
+  <!-- shared.css first, order.css last, so order.css wins -->
   <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="order.css">
 </head>
+<body class="order-page">
 
-<body>
-
-
-  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
-
+  <!-- HEADER -->
   <header class="seaside-page-header">
-
     <a href="index.html" class="seaside-brand">
       <span class="seaside-brand-name">SUNROSE</span>
       <span class="seaside-brand-branch">Seaside</span>
     </a>
-
     <nav class="seaside-main-nav">
       <a href="index.html">HOME</a>
       <a href="index.html#menus">MENU</a>
       <a href="index.html#reservation">予約</a>
-
-      <!-- NEW: Gloria order button in navigation -->
-      <span
-        class="glf-button"
-        style="cursor:pointer;"
+      <span class="glf-button" style="cursor:pointer;"
         data-glf-cuid="6c1f116c-383f-40d3-8a31-cc3b4ed49a7d"
         data-glf-ruid="2ed272cc-7d51-4f42-bbae-b2866d3f5039"
-        data-ja="注文"
-        data-en="ORDER"
-        data-hi="ऑर्डर"
-        data-ko="주문"
-        data-es="PEDIR"
-      >注文</span>
+        data-ja="注文" data-en="ORDER" data-hi="ऑर्डर" data-ko="주문" data-es="PEDIR">注文</span>
     </nav>
-
   </header>
 
-
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-
-  <section class="menu-hero">
-
-    <div class="hero-bg"></div>
-    <div class="hero-grain"></div>
-    <div class="hero-deco"></div>
-
-    <div class="menu-hero-content">
-
-      <div
-        class="hero-eyebrow"
-        data-ja="サンローズ・品川"
-        data-en="Sunrose Japan · Shinagawa"
-        data-hi="सनरोज़ जापान · शिनागावा"
-        data-ko="선로즈 재팬 · 시나가와"
-        data-es="Sunrose Japón · Shinagawa"
-      >
-        サンローズ・品川
-      </div>
-
-      <h1>
-        <span
-          data-ja="オンライン"
-          data-en="Order"
-          data-hi="ऑर्डर"
-          data-ko="온라인"
-          data-es="Pedido"
-        >
-          オンライン
-        </span>
-
-        <em
-          data-ja="注文"
-          data-en="Online"
-          data-hi="ऑनलाइन"
-          data-ko="주문"
-          data-es="en Línea"
-        >
-          注文
-        </em>
-      </h1>
-
-      <p
-        data-ja="テイクアウトもデリバリーも、お好きな方法でサンローズの本格インド料理をお楽しみください。"
-        data-en="Enjoy authentic SUNROSE Indian cuisine your way — choose takeout or delivery."
-        data-hi="टेकआउट या डिलीवरी में अपनी पसंद का विकल्प चुनें और सनरोज़ के प्रामाणिक भारतीय व्यंजनों का आनंद लें।"
-        data-ko="테이크아웃 또는 배달 중 원하는 방법을 선택하여 선로즈의 정통 인도 요리를 즐겨보세요."
-        data-es="Disfrute de la auténtica cocina india de SUNROSE como prefiera — elija para llevar o entrega."
-      >
-        テイクアウトもデリバリーも、お好きな方法でサンローズの本格インド料理をお楽しみください。
-      </p>
-
-      <p style="font-size:13px;color:rgba(255,255,255,0.35);letter-spacing:0.05em;">
-        <span
-          data-ja="ランチ 11:00–15:00 · ディナー 17:00–22:00 · 年中無休"
-          data-en="Lunch 11:00–15:00 · Dinner 17:00–22:00 · Open 365 days"
-          data-hi="Lunch 11:00–15:00 · Dinner 17:00–22:00 · 365 दिन खुला"
-          data-ko="런치 11:00–15:00 · 디너 17:00–22:00 · 연중무휴"
-          data-es="Almuerzo 11:00–15:00 · Cena 17:00–22:00 · Abierto 365 días"
-        >
-          ランチ 11:00–15:00 · ディナー 17:00–22:00 · 年中無休
-        </span>
-      </p>
-
-
-      <div class="hero-badges">
-
-        <div
-          class="hero-badge"
-          data-ja="🥡 店頭受取・テイクアウト"
-          data-en="🥡 Takeout & Pickup"
-          data-hi="🥡 टेकआउट और पिकअप"
-          data-ko="🥡 테이크아웃 및 픽업"
-          data-es="🥡 Para Llevar y Recogida"
-        >
-          🥡 店頭受取・テイクアウト
-        </div>
-
-        <a
-          href="#delivery"
-          class="hero-badge"
-          style="cursor:pointer;text-decoration:none;"
-          data-ja="🛵 デリバリーサービス"
-          data-en="🛵 Delivery Services"
-          data-hi="🛵 डिलीवरी सेवाएं"
-          data-ko="🛵 배달 서비스"
-          data-es="🛵 Servicios de Entrega"
-        >
-          🛵 デリバリーサービス
-        </a>
-
-        <div
-          class="hero-badge"
-          data-ja="🌶 辛さ調整可能"
-          data-en="🌶 Spice Level Adjustable"
-          data-hi="🌶 Spice Level Adjustable"
-          data-ko="🌶 매운맛 조절 가능"
-          data-es="🌶 Nivel de Picante Ajustable"
-        >
-          🌶 辛さ調整可能
-        </div>
-
-      </div>
-
-
-      <a
-        href="#order-now"
-        class="hero-btn"
-        data-ja="注文方法を選ぶ"
-        data-en="Choose How to Order"
-        data-hi="ऑर्डर का तरीका चुनें"
-        data-ko="주문 방법 선택"
-        data-es="Elegir Cómo Pedir"
-      >
-        注文方法を選ぶ
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- ═══════════════════════════ SECTION HEADER ═══════════════════════════ -->
-
-  <div class="section-header" id="order-now">
-
-    <div
-      class="section-eyebrow"
-      data-ja="オンライン注文"
-      data-en="Order Online"
-      data-hi="ऑनलाइन ऑर्डर"
-      data-ko="온라인 주문"
-      data-es="Pedido en Línea"
-    >
-      オンライン注文
-    </div>
-
-    <h2>
-      <span
-        data-ja="ご注文方法を"
-        data-en="Choose How"
-        data-hi="अपना ऑर्डर"
-        data-ko="주문 방법을"
-        data-es="Elija cómo"
-      >
-        ご注文方法を
-      </span>
-
-      <em
-        data-ja="お選びください"
-        data-en="Order"
-        data-hi="चुनें"
-        data-ko="선택하세요"
-        data-es="Pedir"
-      >
-        お選びください
-      </em>
-    </h2>
-
-    <p
-      data-ja="テイクアウトまたはデリバリーから、ご希望の方法をお選びください。"
-      data-en="Choose your preferred way to enjoy SUNROSE — takeout or delivery."
-      data-hi="सनरोज़ का आनंद लेने के लिए टेकआउट या डिलीवरी में से अपना पसंदीदा विकल्प चुनें।"
-      data-ko="선로즈를 이용하실 방법으로 테이크아웃 또는 배달을 선택해 주세요."
-      data-es="Elija su forma preferida de disfrutar SUNROSE — para llevar o entrega."
-    >
-      テイクアウトまたはデリバリーから、ご希望の方法をお選びください。
-    </p>
-
-  </div>
-
-
-  <div class="gold-divider">
-    <div class="gold-divider-gem"></div>
-  </div>
-
-
-  <!-- ═══════════════════════════ TAKEOUT SECTION ═══════════════════════════ -->
-
+  <!-- TAKEOUT -->
   <section class="order-section takeout-section">
-
     <div class="section-header">
-
-      <div
-        class="section-eyebrow"
-        data-ja="🥡 テイクアウト"
-        data-en="🥡 Takeout"
-        data-hi="🥡 टेकआउट"
-        data-ko="🥡 테이크아웃"
-        data-es="🥡 Para Llevar"
-      >
-        🥡 テイクアウト
-      </div>
-
+      <div class="section-eyebrow"
+        data-ja="🥡 テイクアウト" data-en="🥡 Takeout" data-hi="🥡 टेकआउट" data-ko="🥡 테이크아웃" data-es="🥡 Para Llevar">🥡 テイクアウト</div>
       <h2>
-        <span
-          data-ja="店頭で"
-          data-en="Order Online"
-          data-hi="ऑनलाइन"
-          data-ko="온라인으로"
-          data-es="Pida en línea"
-        >
-          店頭で
-        </span>
-
-        <em
-          data-ja="お受け取り"
-          data-en="& Pick Up"
-          data-hi="और पिकअप"
-          data-ko="주문 후 픽업"
-          data-es="y recoja"
-        >
-          お受け取り
-        </em>
+        <span data-ja="店頭で" data-en="Order Online" data-hi="ऑनलाइन" data-ko="온라인으로" data-es="Pida en línea">店頭で</span>
+        <em data-ja="お受け取り" data-en="& Pick Up" data-hi="और पिकअप" data-ko="주문 후 픽업" data-es="y recoja">お受け取り</em>
       </h2>
-
       <p
-        data-ja="オンラインでご注文いただき、SUNROSE品川店でお気軽にお受け取りください。"
-        data-en="Order online and conveniently pick up your food at SUNROSE Shinagawa."
-        data-hi="ऑनलाइन ऑर्डर करें और SUNROSE शिनागावा में आसानी से अपना भोजन पिकअप करें।"
-        data-ko="온라인으로 주문하고 SUNROSE 시나가와 매장에서 편리하게 픽업하세요."
-        data-es="Haga su pedido en línea y recójalo cómodamente en SUNROSE Shinagawa."
-      >
-        オンラインでご注文いただき、SUNROSE品川店でお気軽にお受け取りください。
-      </p>
-
+        data-ja="オンラインでご注文いただき、SUNROSE品川店でお受け取りください。"
+        data-en="Order online and pick up your food at SUNROSE Shinagawa."
+        data-hi="ऑनलाइन ऑर्डर करें और SUNROSE शिनागावा में अपना भोजन पिकअप करें।"
+        data-ko="온라인으로 주문하고 SUNROSE 시나가와 매장에서 픽업하세요."
+        data-es="Haga su pedido en línea y recójalo en SUNROSE Shinagawa.">オンラインでご注文いただき、SUNROSE品川店でお受け取りください。</p>
     </div>
-
 
     <div class="order-grid">
-
-      <!-- Official Website / Takeout -->
-
       <div class="order-card is-official">
-
-        <div
-          class="order-badge"
-          data-ja="おすすめ"
-          data-en="Recommended"
-          data-hi="अनुशंसित"
-          data-ko="추천"
-          data-es="Recomendado"
-        >
-          おすすめ
-        </div>
-
+        <div class="order-badge"
+          data-ja="おすすめ" data-en="Recommended" data-hi="अनुशंसित" data-ko="추천" data-es="Recomendado">おすすめ</div>
         <div class="order-icon">🥡</div>
-
-        <div
-          class="order-name"
-          data-ja="公式サイト"
-          data-en="Official Website"
-          data-hi="आधिकारिक वेबसाइट"
-          data-ko="공식 웹사이트"
-          data-es="Sitio Web Oficial"
-        >
-          公式サイト
+        <div class="order-name"
+          data-ja="公式サイト" data-en="Official Website" data-hi="आधिकारिक वेबसाइट" data-ko="공식 웹사이트" data-es="Sitio Web Oficial">公式サイト</div>
+        <p class="order-desc"
+          data-ja="サンローズから直接テイクアウトをご注文いただけます。"
+          data-en="Order takeout directly from SUNROSE and pick it up at our restaurant."
+          data-hi="SUNROSE से सीधे टेकआउट ऑर्डर करें और रेस्टोरेंट से पिकअप करें।"
+          data-ko="SUNROSE에서 직접 테이크아웃을 주문하고 매장에서 픽업하세요."
+          data-es="Pida para llevar directamente a SUNROSE y recójalo en el restaurante.">サンローズから直接テイクアウトをご注文いただけます。</p>
+        <div class="order-points">
+          <div class="order-point" data-ja="🕒 ランチ 11:00–15:00 · ディナー 17:00–22:00（年中無休）" data-en="🕒 Lunch 11:00–15:00 · Dinner 17:00–22:00 (open daily)" data-hi="🕒 Lunch 11:00–15:00 · Dinner 17:00–22:00 (रोज़ खुला)" data-ko="🕒 런치 11:00–15:00 · 디너 17:00–22:00 (연중무휴)" data-es="🕒 Almuerzo 11:00–15:00 · Cena 17:00–22:00 (todos los días)">🕒 ランチ 11:00–15:00 · ディナー 17:00–22:00（年中無休）</div>
+          <div class="order-point" data-ja="📍 品川シーサイド駅 B出口より徒歩1〜2分" data-en="📍 1–2 min walk from Shinagawa Seaside Station, Exit B" data-hi="📍 शिनागावा सीसाइड स्टेशन, एग्ज़िट B से 1–2 मिनट पैदल" data-ko="📍 시나가와시사이드역 B출구에서 도보 1~2분" data-es="📍 A 1–2 min a pie de la salida B de la estación Shinagawa Seaside">📍 品川シーサイド駅 B出口より徒歩1〜2分</div>
         </div>
-
-        <p
-          class="order-desc"
-          data-ja="サンローズから直接テイクアウトをご注文いただけます。オンラインで注文して、店舗でスムーズにお受け取りください。"
-          data-en="Order takeout directly from SUNROSE. Place your order online and pick it up conveniently at our restaurant."
-          data-hi="SUNROSE से सीधे टेकआउट ऑर्डर करें। ऑनलाइन ऑर्डर करें और हमारे रेस्टोरेंट से आसानी से पिकअप करें।"
-          data-ko="SUNROSE에서 직접 테이크아웃을 주문하세요. 온라인으로 주문하고 매장에서 편리하게 픽업할 수 있습니다."
-          data-es="Pida para llevar directamente a SUNROSE. Haga su pedido en línea y recójalo cómodamente en nuestro restaurante."
-        >
-          サンローズから直接テイクアウトをご注文いただけます。オンラインで注文して、店舗でスムーズにお受け取りください。
-        </p>
-
-        <div
-          class="order-tag"
-          data-ja="✦ テイクアウト専用"
-          data-en="✦ Takeout"
-          data-hi="✦ टेकआउट"
-          data-ko="✦ 테이크아웃"
-          data-es="✦ Para Llevar"
-        >
-          ✦ テイクアウト専用
-        </div>
-
-        
-      <span
-        class="glf-button order-btn"
-        data-glf-cuid="6c1f116c-383f-40d3-8a31-cc3b4ed49a7d"
-        data-glf-ruid="2ed272cc-7d51-4f42-bbae-b2866d3f5039"
-        data-ja="テイクアウトを注文 →"
-        data-en="Order Takeout →"
-        data-hi="टेकआउट ऑर्डर करें →"
-        data-ko="테이크아웃 주문 →"
-        data-es="Pedir Para Llevar →"
-      >テイクアウトを注文 →</span>
-
-
+        <span class="glf-button order-btn"
+          data-glf-cuid="6c1f116c-383f-40d3-8a31-cc3b4ed49a7d"
+          data-glf-ruid="2ed272cc-7d51-4f42-bbae-b2866d3f5039"
+          data-ja="テイクアウトを注文" data-en="Order Takeout" data-hi="टेकआउट ऑर्डर करें" data-ko="테이크아웃 주문" data-es="Pedir Para Llevar">テイクアウトを注文</span>
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- ═══════════════════════════ DELIVERY SECTION ═══════════════════════════ -->
-
+  <!-- DELIVERY -->
   <section class="order-section delivery-section" id="delivery">
-
     <div class="section-header">
-
-      <div
-        class="section-eyebrow"
-        data-ja="🛵 デリバリー"
-        data-en="🛵 Delivery"
-        data-hi="🛵 डिलीवरी"
-        data-ko="🛵 배달"
-        data-es="🛵 Entrega"
-      >
-        🛵 デリバリー
-      </div>
-
+      <div class="section-eyebrow"
+        data-ja="🛵 デリバリー" data-en="🛵 Delivery" data-hi="🛵 डिलीवरी" data-ko="🛵 배달" data-es="🛵 Entrega">🛵 デリバリー</div>
       <h2>
-        <span
-          data-ja="ご自宅まで"
-          data-en="Delivered"
-          data-hi="आपके घर"
-          data-ko="집까지"
-          data-es="Hasta su"
-        >
-          ご自宅まで
-        </span>
-
-        <em
-          data-ja="お届け"
-          data-en="to You"
-          data-hi="डिलीवरी"
-          data-ko="배달"
-          data-es="hogar"
-        >
-          お届け
-        </em>
+        <span data-ja="ご自宅まで" data-en="Delivered" data-hi="आपके घर" data-ko="집까지" data-es="Hasta su">ご自宅まで</span>
+        <em data-ja="お届け" data-en="to You" data-hi="डिलीवरी" data-ko="배달" data-es="hogar">お届け</em>
       </h2>
-
       <p
-        data-ja="ご自宅やオフィスまで、本格インド料理をお届けします。お好きなデリバリーサービスからご注文ください。"
-        data-en="Enjoy authentic Indian cuisine delivered to your home or office. Choose your preferred delivery service below."
-        data-hi="अपने घर या ऑफिस तक प्रामाणिक भारतीय भोजन प्राप्त करें। नीचे अपनी पसंदीदा डिलीवरी सेवा चुनें।"
-        data-ko="집이나 사무실에서 정통 인도 요리를 즐겨보세요. 아래에서 원하는 배달 서비스를 선택하세요."
-        data-es="Disfrute de auténtica cocina india en casa o en la oficina. Elija su servicio de entrega preferido."
-      >
-        ご自宅やオフィスまで、本格インド料理をお届けします。お好きなデリバリーサービスからご注文ください。
-      </p>
-
+        data-ja="お好きなデリバリーサービスからご注文ください。"
+        data-en="Choose your preferred delivery service."
+        data-hi="अपनी पसंदीदा डिलीवरी सेवा चुनें।"
+        data-ko="원하는 배달 서비스를 선택하세요."
+        data-es="Elija su servicio de entrega preferido.">お好きなデリバリーサービスからご注文ください。</p>
     </div>
 
-
     <div class="order-grid">
-
-      <!-- Official Website -->
-      
-
-      <!-- Uber Eats -->
 
       <div class="order-card" id="uber">
-
         <div class="order-icon">🛵</div>
-
-        <div
-          class="order-name"
-          data-ja="Uber Eats"
-          data-en="Uber Eats"
-          data-hi="Uber Eats"
-          data-ko="우버 이츠"
-          data-es="Uber Eats"
-        >
-          Uber Eats
+        <div class="order-name" data-ja="Uber Eats" data-en="Uber Eats" data-hi="Uber Eats" data-ko="우버 이츠" data-es="Uber Eats">Uber Eats</div>
+        <p class="order-desc"
+          data-ja="品川エリアのご自宅やオフィスまでお届けします。"
+          data-en="Delivery to your home or office in the Shinagawa area."
+          data-hi="शिनागावा क्षेत्र में आपके घर या ऑफिस तक डिलीवरी।"
+          data-ko="시나가와 지역의 집이나 사무실까지 배달해 드립니다."
+          data-es="Entrega a su hogar u oficina en la zona de Shinagawa.">品川エリアのご自宅やオフィスまでお届けします。</p>
+        <div class="order-points">
+          <div class="order-point" data-ja="🕒 ランチ 11:00–15:00 · ディナー 17:00–22:00（年中無休）" data-en="🕒 Lunch 11:00–15:00 · Dinner 17:00–22:00 (open daily)" data-hi="🕒 Lunch 11:00–15:00 · Dinner 17:00–22:00 (रोज़ खुला)" data-ko="🕒 런치 11:00–15:00 · 디너 17:00–22:00 (연중무휴)" data-es="🕒 Almuerzo 11:00–15:00 · Cena 17:00–22:00 (todos los días)">🕒 ランチ 11:00–15:00 · ディナー 17:00–22:00（年中無休）</div>
+          <div class="order-point" data-ja="📱 配達料・お届け時間はアプリでご確認いただけます" data-en="📱 Delivery fee and time are shown in the app" data-hi="📱 डिलीवरी शुल्क और समय ऐप में दिखाए जाते हैं" data-ko="📱 배달비와 소요 시간은 앱에서 확인하세요" data-es="📱 La tarifa y el tiempo de entrega se muestran en la app">📱 配達料・お届け時間はアプリでご確認いただけます</div>
         </div>
-
-        <p
-          class="order-desc"
-          data-ja="Uber Eatsで品川エリアへスピーディーに配達。ご自宅やオフィスまで迅速にお届けします。"
-          data-en="Order via Uber Eats for fast and reliable delivery straight to your home or office in Shinagawa."
-          data-hi="Uber Eats से शिनागावा में अपने घर या ऑफिस तक तेज़ और भरोसेमंद डिलीवरी।"
-          data-ko="우버 이츠로 시나가와 지역의 집이나 사무실까지 빠르고 믿을 수 있게 배달됩니다."
-          data-es="Pida por Uber Eats para una entrega rápida y fiable directamente a su hogar u oficina en Shinagawa."
-        >
-          Uber Eatsで品川エリアへスピーディーに配達。ご自宅やオフィスまで迅速にお届けします。
-        </p>
-
-        <div
-          class="order-tag"
-          data-ja="🚀 スピード配達"
-          data-en="🚀 Fast Delivery"
-          data-hi="🚀 तेज़ डिलीवरी"
-          data-ko="🚀 빠른 배달"
-          data-es="🚀 Entrega Rápida"
-        >
-          🚀 スピード配達
-        </div>
-
-        <a
-          href="https://www.ubereats.com/jp-en/store/%E3%82%A4%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%BC%E5%B1%8B-%E3%82%B5%E3%83%B3%E3%83%AD%E3%83%BC%E3%82%B9-%E5%93%81%E5%B7%9D%E3%82%B7%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%88%E5%BA%97indian-curry-sunrose-shinagawa-seaside/8DUhG6HaT2Oxb5h4hgOAhg?diningMode=DELIVERY&sc=SEARCH_SUGGESTION"
-          target="_blank"
-          class="order-btn"
-          data-ja="Uber Eatsで注文 →"
-          data-en="Order on Uber Eats →"
-          data-hi="Uber Eats पर ऑर्डर →"
-          data-ko="우버 이츠로 주문 →"
-          data-es="Ordenar en Uber Eats →"
-        >
-          Uber Eatsで注文 →
-        </a>
-
+        <a href="https://www.ubereats.com/jp-en/store/%E3%82%A4%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%BC%E5%B1%8B-%E3%82%B5%E3%83%B3%E3%83%AD%E3%83%BC%E3%82%B9-%E5%93%81%E5%B7%9D%E3%82%B7%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%88%E5%BA%97indian-curry-sunrose-shinagawa-seaside/8DUhG6HaT2Oxb5h4hgOAhg?diningMode=DELIVERY&sc=SEARCH_SUGGESTION"
+          target="_blank" rel="noopener" class="order-btn"
+          data-ja="Uber Eatsで注文" data-en="Order on Uber Eats" data-hi="Uber Eats पर ऑर्डर" data-ko="우버 이츠로 주문" data-es="Ordenar en Uber Eats">Uber Eatsで注文</a>
       </div>
-
-
-      <!-- Demae-can -->
-
-      <div class="order-card" id="demae">
-
-        <div class="order-icon">🍱</div>
-
-        <div
-          class="order-name"
-          data-ja="出前館"
-          data-en="Demae-can"
-          data-hi="Demae-can"
-          data-ko="데마에칸"
-          data-es="Demae-can"
-        >
-          出前館
-        </div>
-
-        <p
-          class="order-desc"
-          data-ja="日本で人気のデリバリーサービス「出前館」からもご注文いただけます。気軽に本格インド料理をお楽しみください。"
-          data-en="Order through Japan's popular delivery platform Demae-can and enjoy authentic SUNROSE dishes with ease."
-          data-hi="जापान की लोकप्रिय डिलीवरी सेवा Demae-can से आसानी से SUNROSE का असली स्वाद लें।"
-          data-ko="일본에서 인기 있는 배달 플랫폼 데마에칸으로 간편하게 선로즈의 정통 인도 요리를 주문해보세요."
-          data-es="Ordene a través de la popular plataforma de entrega de Japón, Demae-can, y disfrute fácilmente de los auténticos sabores de SUNROSE."
-        >
-          日本で人気のデリバリーサービス「出前館」からもご注文いただけます。気軽に本格インド料理をお楽しみください。
-        </p>
-
-        <div
-          class="order-tag"
-          data-ja="🇯🇵 日本No.1プラットフォーム"
-          data-en="🇯🇵 Japan's #1 Platform"
-          data-hi="🇯🇵 जापान का #1 प्लेटफॉर्म"
-          data-ko="🇯🇵 일본 No.1 플랫폼"
-          data-es="🇯🇵 Plataforma #1 de Japón"
-        >
-          🇯🇵 日本No.1プラットフォーム
-        </div>
-
-        <a
-          href="https://www.ubereats.com/jp-en/store/%E3%82%A4%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%BC%E5%B1%8B-%E3%82%B5%E3%83%B3%E3%83%AD%E3%83%BC%E3%82%B9-%E5%93%81%E5%B7%9D%E3%82%B7%E3%83%BC%E3%82%B5%E3%82%A4%E3%83%88%E5%BA%97indian-curry-sunrose-shinagawa-seaside/8DUhG6HaT2Oxb5h4hgOAhg?diningMode=DELIVERY&sc=SEARCH_SUGGESTION"
-          target="_blank"
-          class="order-btn"
-          data-ja="出前館で注文 →"
-          data-en="Order on Demae-can →"
-          data-hi="Demae-can पर ऑर्डर →"
-          data-ko="데마에칸에서 주문 →"
-          data-es="Ordenar en Demae-can →"
-        >
-          出前館で注文 →
-        </a>
-
-      </div>
-
-
-      <!-- Rocket Now -->
 
       <div class="order-card">
-
         <div class="order-icon">🚀</div>
-
-        <div
-          class="order-name"
-          data-ja="ロケットNOW"
-          data-en="Rocket Now"
-          data-hi="Rocket Now"
-          data-ko="로켓 NOW"
-          data-es="Rocket Now"
-        >
-          ロケットNOW
+        <div class="order-name" data-ja="ロケットNOW" data-en="Rocket Now" data-hi="Rocket Now" data-ko="로켓 NOW" data-es="Rocket Now">ロケットNOW</div>
+        <p class="order-desc"
+          data-ja="ロケットNOWで、本格インド料理をご自宅までお届けします。"
+          data-en="Get authentic Indian dishes delivered to your door with Rocket Now."
+          data-hi="Rocket Now से प्रामाणिक भारतीय भोजन अपने दरवाज़े तक मंगवाएं।"
+          data-ko="로켓 NOW로 정통 인도 요리를 집까지 받아보세요."
+          data-es="Reciba comida india auténtica en su puerta con Rocket Now.">ロケットNOWで、本格インド料理をご自宅までお届けします。</p>
+        <div class="order-points">
+          <div class="order-point" data-ja="🕒 ランチ 11:00–15:00 · ディナー 17:00–22:00（年中無休）" data-en="🕒 Lunch 11:00–15:00 · Dinner 17:00–22:00 (open daily)" data-hi="🕒 Lunch 11:00–15:00 · Dinner 17:00–22:00 (रोज़ खुला)" data-ko="🕒 런치 11:00–15:00 · 디너 17:00–22:00 (연중무휴)" data-es="🕒 Almuerzo 11:00–15:00 · Cena 17:00–22:00 (todos los días)">🕒 ランチ 11:00–15:00 · ディナー 17:00–22:00（年中無休）</div>
+          <div class="order-point" data-ja="📱 配達料・お届け時間はアプリでご確認いただけます" data-en="📱 Delivery fee and time are shown in the app" data-hi="📱 डिलीवरी शुल्क और समय ऐप में दिखाए जाते हैं" data-ko="📱 배달비와 소요 시간은 앱에서 확인하세요" data-es="📱 La tarifa y el tiempo de entrega se muestran en la app">📱 配達料・お届け時間はアプリでご確認いただけます</div>
         </div>
-
-        <p
-          class="order-desc"
-          data-ja="ロケットNOWなら、最短で本格インド料理を手軽にご自宅までお届けできます。"
-          data-en="Rocket Now brings authentic Indian dishes to your door quickly, easily, and with a smooth ordering experience."
-          data-hi="Rocket Now के साथ तेज़, आसान और सुविधाजनक तरीके से प्रामाणिक भारतीय भोजन पाएं।"
-          data-ko="로켓 NOW로 빠르고 간편하게 정통 인도 요리를 집까지 받아보세요."
-          data-es="Rocket Now lleva comida india auténtica a tu puerta de forma rápida, fácil y cómoda."
-        >
-          ロケットNOWなら、最短で本格インド料理を手軽にご自宅までお届けできます。
-        </p>
-
-        <div
-          class="order-tag"
-          data-ja="⚡ いま人気No.1"
-          data-en="⚡ Trending Now"
-          data-hi="⚡ अभी ट्रेंडिंग"
-          data-ko="⚡ 지금 인기 급상승"
-          data-es="⚡ Muy Popular"
-        >
-          ⚡ いま人気No.1
-        </div>
-
-        <a
-          href="https://customer-web.rocketnow.co.jp/share?storeId=4024&dishId&key=c278deca-0f1b-49bc-844e-32f07e1eca39"
-          target="_blank"
-          class="order-btn"
-          data-ja="ロケットで注文 →"
-          data-en="Order on Rocket Now →"
-          data-hi="Rocket Now पर ऑर्डर →"
-          data-ko="로켓 NOW로 주문 →"
-          data-es="Ordenar en Rocket Now →"
-        >
-          ロケットで注文 →
-        </a>
-
+        <a href="https://customer-web.rocketnow.co.jp/share?storeId=4024&dishId&key=c278deca-0f1b-49bc-844e-32f07e1eca39"
+          target="_blank" rel="noopener" class="order-btn"
+          data-ja="ロケットNOWで注文" data-en="Order on Rocket Now" data-hi="Rocket Now पर ऑर्डर" data-ko="로켓 NOW로 주문" data-es="Ordenar en Rocket Now">ロケットNOWで注文</a>
       </div>
-
-
-      
-
-      </div>
-
 
     </div>
-
   </section>
 
-
-  <!-- ═══════════════════════════ INFO BANNER ═══════════════════════════ -->
-
+  <!-- PICKUP INFO -->
   <div class="info-banner">
-
     <div class="info-banner-inner">
-
       <div class="info-icon">📍</div>
-
       <div class="info-text">
-
-        <strong
-          data-ja="店頭受取・テイクアウトも対応"
-          data-en="Pickup & Takeout Available"
-          data-hi="पिकअप और टेकआउट भी उपलब्ध"
-          data-ko="픽업 및 테이크아웃도 가능"
-          data-es="Recogida y Para Llevar Disponible"
-        >
-          店頭受取・テイクアウトも対応
-        </strong>
-
+        <strong data-ja="店頭受取・テイクアウトも対応" data-en="Pickup & Takeout Available" data-hi="पिकअप और टेकआउट भी उपलब्ध" data-ko="픽업 및 테이크아웃도 가능" data-es="Recogida y Para Llevar Disponible">店頭受取・テイクアウトも対応</strong>
         <p
-          data-ja="店頭でのお受け取りもお気軽にどうぞ。品川シーサイドイーストタワー1F、東品川4-12-8、品川区、東京。りんかい線「品川シーサイド駅」B出口より徒歩1〜2分。TEL: 03-6718-4433"
-          data-en="Prefer to collect your order? Visit us at Shinagawa Seaside East Tower — 1F, 4-12-8 Higashi-Shinagawa, Shinagawa-ku, Tokyo. Rinkai Line 'Shinagawa Seaside Station' Exit B, 1–2 minute walk. TEL: 03-6718-4433"
-          data-hi="अपना ऑर्डर लेना चाहते हैं? हमसे मिलें: Shinagawa Seaside East Tower — 1F। TEL: 03-6718-4433"
-          data-ko="직접 수령하시겠습니까? 시나가와 씨사이드 이스트 타워 1F를 방문해 주세요. TEL: 03-6718-4433"
-          data-es="¿Prefiere recoger su pedido? Visítenos en Shinagawa Seaside East Tower — 1F. TEL: 03-6718-4433"
-        >
-          店頭でのお受け取りもお気軽にどうぞ。品川シーサイドイーストタワー1F、東品川4-12-8、品川区、東京。りんかい線「品川シーサイド駅」B出口より徒歩1〜2分。TEL: 03-6718-4433
-        </p>
-
+          data-ja="品川シーサイドイーストタワー1F（東京都品川区東品川4-12-8）"
+          data-en="Shinagawa Seaside East Tower 1F, 4-12-8 Higashi-Shinagawa, Shinagawa-ku, Tokyo"
+          data-hi="Shinagawa Seaside East Tower 1F, 4-12-8 Higashi-Shinagawa, Tokyo"
+          data-ko="시나가와 씨사이드 이스트 타워 1F, 도쿄 시나가와구 히가시시나가와 4-12-8"
+          data-es="Shinagawa Seaside East Tower 1F, 4-12-8 Higashi-Shinagawa, Tokio">品川シーサイドイーストタワー1F（東京都品川区東品川4-12-8）</p>
+        <p
+          data-ja="りんかい線「品川シーサイド駅」B出口より徒歩1〜2分"
+          data-en="1–2 min walk from Exit B, Shinagawa Seaside Station (Rinkai Line)"
+          data-hi="शिनागावा सीसाइड स्टेशन (रिंकाई लाइन) के एग्ज़िट B से 1–2 मिनट पैदल"
+          data-ko="린카이선 시나가와시사이드역 B출구에서 도보 1~2분"
+          data-es="A 1–2 minutos a pie de la salida B de la estación Shinagawa Seaside (línea Rinkai)">りんかい線「品川シーサイド駅」B出口より徒歩1〜2分</p>
       </div>
-
+      <!-- No data-* attributes here, so lang.js can't overwrite the number -->
+      <a class="info-call" href="tel:0367184433">📞 03-6718-4433</a>
     </div>
-
   </div>
 
-
-  <!-- ═══════════════════════════ BACK TO TOP ═══════════════════════════ -->
-
-  <button id="backToTop" title="Back to top">
-
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <polyline points="18 15 12 9 6 15"/>
-    </svg>
-
+  <button id="backToTop" title="Back to top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-
-  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-
   <footer class="footer">
-
-    <p>
-      © 2025
-      <a href="index.html">Sunrose Japan</a>
-      &nbsp;·&nbsp;
-      株式会社BAL BISHNU
-      &nbsp;·&nbsp;
-      All Rights Reserved.
-    </p>
-
+    <p>© 2025 <a href="index.html">Sunrose Japan</a> &nbsp;·&nbsp; 株式会社BAL BISHNU &nbsp;·&nbsp; All Rights Reserved.</p>
   </footer>
 
-
-  <!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
-
   <script>
-
     const btn = document.getElementById("backToTop");
-
     window.addEventListener("scroll", () => {
       btn.style.display = window.scrollY > 300 ? "flex" : "none";
     });
-
-    btn.onclick = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    };
-
+    btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
   </script>
-
   <script src="lang.js"></script>
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
-
-
-
 </body>
 </html>

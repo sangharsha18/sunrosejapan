@@ -1,23 +1,15 @@
 /* ===================== RESET & VARIABLES ===================== */
-*, *::before, *::after
-{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root
-{
+:root {
   --gold: #eaad06;
   --gold-light: #E8C97A;
   --gold-pale: #FAF3E0;
   --gold-dim: #d5c29e;
   --white: #FFFFFF;
   --off-white: #FDFBF7;
-  --cream: #F5EDD6;
   --text-dark: #111111;
-  --text-mid: #5A4A2A;
-  --text-muted: #9A8A6A;
+  --text-muted: #8a7a5a;
   --border: rgba(201, 168, 76, 0.2);
   --border-strong: rgba(201, 168, 76, 0.5);
   --serif: 'Cormorant Garamond', Georgia, serif;
@@ -26,73 +18,45 @@
   --radius: 4px;
   --radius-lg: 12px;
   --transition: 0.35s ease;
-    --text-size: 30px; 
 }
 
-html
-{
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-body
-{
+body {
   font-family: var(--sans);
   background: var(--off-white);
   color: var(--text-dark);
-  font-size: 30px;
+  font-size: 16px;            /* was 30px */
   line-height: 1.7;
   overflow-x: hidden;
-  padding: 0;
 }
 
-a
-{
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
-img
-{
-
-  width: 100%;
-  display: block;
-}
-   /* ================= seaside PAGE HEADER ================= */
-
+/* ===================== HEADER ===================== */
 .seaside-page-header {
   position: relative;
   width: 100%;
   height: 84px;
   z-index: 50;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 66px;
-  box-sizing: border-box;
-
   background: #1a1208;
   border-bottom: 1px solid rgba(201, 168, 76, 0.25);
 }
 
 .seaside-brand {
-  position: relative;
   display: inline-flex;
   flex-direction: column;
-
   color: #f5ead5;
-  text-decoration: none;
-
   transition: opacity 0.25s ease;
 }
-
-.seaside-brand:hover {
-  opacity: 0.8;
-}
+.seaside-brand:hover { opacity: 0.8; }
 
 .seaside-brand-name {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--serif);
   font-size: 32px;
   font-weight: 600;
   line-height: 0.9;
@@ -102,801 +66,372 @@ img
 .seaside-brand-branch {
   margin-top: 8px;
   margin-left: 74px;
-
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--sans);
   font-size: 8px;
   font-weight: 500;
   letter-spacing: 0.28em;
   line-height: 1;
-
   color: #d7aa4b;
 }
 
+.seaside-main-nav { display: flex; align-items: center; gap: 34px; }
 
-/* ================= TOP NAVIGATION ================= */
-
-.seaside-main-nav {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-}
-
-.seaside-main-nav a {
+.seaside-main-nav a,
+.seaside-main-nav .glf-button {
   color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--sans);
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.08em;
-
   transition: color 0.25s ease;
 }
-
-.seaside-main-nav a:hover {
-  color: #e8c97a;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 600px) {
-
-  .seaside-page-header {
-    height: 70px;
-    padding: 0 24px;
-  }
-
-  .seaside-brand-name {
-    font-size: 25px;
-  }
-
-  .seaside-brand-branch {
-    margin-top: 6px;
-    margin-left: 55px;
-    font-size: 7px;
-  }
-
-  .seaside-main-nav {
-    gap: 14px;
-  }
-
-  .seaside-main-nav a {
-    font-size: 10px;
-  }
-}
-
-
-
-/* ===================== HERO ===================== */
-.menu-hero
-{
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--text-dark);
-}
-
-.hero-bg
-{
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(234,173,6,0.14) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(234,173,6,0.07) 0%, transparent 60%),
-    linear-gradient(160deg, #1A1208 0%, #2e1c06 50%, #1A1208 100%);
-}
-
-.hero-grain
-{
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.5;
-}
-
-.hero-deco
-{
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-deco::before
-{
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  border: 1px solid rgba(234,173,6,0.07);
-  border-radius: 50%;
-}
-
-.hero-deco::after
-{
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 480px;
-  height: 480px;
-  border: 1px solid rgba(234,173,6,0.11);
-  border-radius: 50%;
-}
-
-.menu-hero-content
-{
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 80px 24px;
-  animation: fadeUp 1s ease both;
-}
-
-.hero-eyebrow
-{
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-
-.hero-eyebrow::before,
-.hero-eyebrow::after
-{
-  content: '';
-  width: 44px;
-  height: 1px;
-  background: var(--gold-dim);
-  opacity: 0.55;
-}
-
-.menu-hero-content h1
-{
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-
-.menu-hero-content h1 em
-{
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.menu-hero-content p
-{
-  font-size: 30px;
-  font-weight: 300;
-  color: var(--gold-dim);
-  letter-spacing: 0.04em;
-  max-width: 500px;
-  margin: 0 auto 16px;
-}
-
-.hero-badges
-{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 28px 0 44px;
-}
-
-.hero-badge
-{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(234,173,6,0.08);
-  border: 1px solid rgba(234,173,6,0.28);
-  border-radius: 40px;
-  padding: 8px 20px;
-  font-size: 12px;
-  color: var(--gold-light);
-  font-weight: 400;
-  letter-spacing: 0.06em;
-}
-
-.hero-btn
-{
-  display: inline-block;
-  padding: 14px 42px;
-  background: var(--gold);
-  color: var(--text-dark);
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  border-radius: var(--radius);
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-
-.hero-btn:hover
-{
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(234,173,6,0.28);
-}
-
+.seaside-main-nav a:hover,
+.seaside-main-nav .glf-button:hover { color: var(--gold-light); }
 
 /* ===================== SECTION HEADER ===================== */
-.section-header
-{
+.section-header {
   text-align: center;
-  padding: 80px 40px 56px;
   max-width: var(--max);
   margin: 0 auto;
+  padding: 40px 24px 24px;
 }
 
-.section-eyebrow
-{
-  font-size: 10.5px;
+.section-eyebrow {
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.38em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
 }
-
 .section-eyebrow::before,
-.section-eyebrow::after
-{
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--gold-dim);
-}
+.section-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--gold-dim); }
 
-.section-header h2
-{
+.section-header h2 {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
   font-weight: 400;
-  color: var(--text-dark);
-  margin-bottom: 14px;
+  line-height: 1.2;
+  margin-bottom: 8px;
 }
+.section-header h2 em { font-style: italic; color: var(--gold); }
 
-.section-header h2 em
-{
-  font-style: italic;
-  color: var(--gold);
-}
-
-.section-header p
-{
-  font-size: 30px;
+.section-header p {
+  font-size: 15px;
   color: var(--text-muted);
   font-weight: 300;
-  max-width: 500px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
-
-/* ===================== GOLD DIVIDER ===================== */
-.gold-divider
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 0 auto 64px;
-  max-width: 300px;
-}
-
-.gold-divider::before,
-.gold-divider::after
-{
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold-dim));
-}
-
-.gold-divider::after
-{
-  background: linear-gradient(to left, transparent, var(--gold-dim));
-}
-
-.gold-divider-gem
-{
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  border-radius: 1px;
-}
-
-
-/* ===================== ORDER CARDS GRID ===================== */
-.order-grid
-{
+/* ===================== ORDER CARDS ===================== */
+.order-grid {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 40px 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  padding: 16px 24px 48px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
 }
 
-
-/* ===================== ORDER CARD ===================== */
-.order-card
-{
+.order-card {
+  flex: 0 1 380px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 40px 28px 36px;
+  padding: 40px 32px 32px;
   position: relative;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-  animation: fadeUp 0.6s ease both;
 }
 
-.order-card::before
-{
+.order-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 30px;
-  right: 30px;
+  top: 0; left: 30px; right: 30px;
   height: 2px;
   background: linear-gradient(to right, transparent, var(--gold), transparent);
 }
 
-.order-card:hover
-{
-  transform: translateY(-8px);
+.order-card:hover {
+  transform: translateY(-6px);
   box-shadow: 0 24px 60px rgba(26,18,8,0.1), 0 0 0 1px var(--border-strong);
   border-color: var(--border-strong);
 }
 
-.order-card:nth-child(1) { animation-delay: 0.05s; }
-.order-card:nth-child(2) { animation-delay: 0.12s; }
-.order-card:nth-child(3) { animation-delay: 0.19s; }
-.order-card:nth-child(4) { animation-delay: 0.26s; }
+/* Official (takeout) card: dark */
+.order-card.is-official { background: var(--text-dark); border-color: rgba(201,168,76,0.4); }
+.order-card.is-official::before { background: linear-gradient(to right, transparent, var(--gold-light), transparent); }
+.order-card.is-official:hover { box-shadow: 0 24px 60px rgba(234,173,6,0.15), 0 0 0 1px var(--gold); border-color: var(--gold); }
 
-/* Official website card — dark highlight */
-.order-card.is-official
-{
-  background: var(--text-dark);
-  border-color: rgba(201,168,76,0.4);
-}
-
-.order-card.is-official::before
-{
-  background: linear-gradient(to right, transparent, var(--gold-light), transparent);
-}
-
-.order-card.is-official:hover
-{
-  box-shadow: 0 24px 60px rgba(234,173,6,0.15), 0 0 0 1px var(--gold);
-  border-color: var(--gold);
-}
-
-
-/* ── Recommended badge ── */
-.order-badge
-{
+.order-badge {
   position: absolute;
-  top: -13px;
-  left: 50%;
+  top: -13px; left: 50%;
   transform: translateX(-50%);
   background: var(--gold);
   color: var(--text-dark);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 16px;
+  letter-spacing: 0.1em;
+  padding: 4px 16px;
   border-radius: 20px;
   white-space: nowrap;
 }
 
-
-/* ── Platform icon ── */
-.order-icon
-{
-  width: 72px;
-  height: 72px;
+.order-icon {
+  width: 72px; height: 72px;
   border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   flex-shrink: 0;
-}
-
-.order-card.is-official .order-icon
-{
-  background: rgba(234,173,6,0.12);
-  border: 1px solid rgba(234,173,6,0.3);
-}
-
-.order-card:not(.is-official) .order-icon
-{
   background: var(--gold-pale);
   border: 1px solid var(--border);
 }
+.order-card.is-official .order-icon { background: rgba(234,173,6,0.12); border-color: rgba(234,173,6,0.3); }
 
-
-/* ── Platform name ── */
-.order-name
-{
+.order-name {
   font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: var(--text-dark);
-  margin-bottom: 8px;
+  font-size: 1.7rem;
+  font-weight: 400;
   line-height: 1.2;
+  margin-bottom: 8px;
 }
+.order-card.is-official .order-name { color: var(--white); }
 
-.order-card.is-official .order-name
-{
-  color: var(--white);
-}
-
-
-/* ── Platform description ── */
-.order-desc
-{
-  font-size: 13px;
+.order-desc {
+  font-size: 15px;
   color: var(--text-muted);
   font-weight: 300;
   line-height: 1.7;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   flex: 1;
 }
+.order-card.is-official .order-desc { color: rgba(255,255,255,0.6); }
 
-.order-card.is-official .order-desc
-{
-  color: rgba(255,255,255,0.5);
-}
-
-
-/* ── Delivery tag ── */
-.order-tag
-{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: var(--gold-pale);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 4px 12px;
-  margin-bottom: 24px;
-}
-
-.order-card.is-official .order-tag
-{
-  background: rgba(234,173,6,0.1);
-  border-color: rgba(234,173,6,0.25);
-  color: var(--gold-dim);
-}
-
-
-/* ── CTA Button ── */
-.order-btn
-{
+/* ===================== BUTTONS ===================== */
+.order-btn {
   display: inline-block;
   width: 100%;
-  padding: 13px 24px;
+  padding: 14px 24px;
   background: var(--gold);
   color: var(--text-dark);
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  cursor: pointer;
   border-radius: var(--radius);
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  text-align: center;
 }
+.order-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(234,173,6,0.3); }
 
-.order-btn:hover
-{
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(234,173,6,0.3);
-}
-
-.order-card:not(.is-official) .order-btn
-{
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-}
-
-.order-card:not(.is-official) .order-btn:hover
-{
-  background: var(--gold);
-  color: var(--text-dark);
-  border-color: var(--gold);
-}
-
+.order-card:not(.is-official) .order-btn { background: transparent; color: #9a6f00; border: 1px solid var(--gold); }
+.order-card:not(.is-official) .order-btn:hover { background: var(--gold); color: var(--text-dark); }
 
 /* ===================== INFO BANNER ===================== */
-.info-banner
-{
-  max-width: var(--max);
-  margin: 0 auto 80px;
-  padding: 0 40px;
-}
+.info-banner { max-width: var(--max); margin: 0 auto 64px; padding: 0 24px; }
 
-.info-banner-inner
-{
+.info-banner-inner {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, var(--gold-pale), var(--off-white));
-  padding: 28px 36px;
+  padding: 24px 32px;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.info-icon
-{
-  font-size: 1.8rem;
-}
+.info-icon { font-size: 1.8rem; }
+.info-text { flex: 1; min-width: 220px; }
 
-.info-text
-{
-  flex: 1;
-  min-width: 200px;
-}
-
-.info-text strong
-{
+.info-text strong {
   display: block;
   font-family: var(--serif);
-  font-size: 1.05rem;
-  color: var(--text-dark);
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 4px;
 }
 
-.info-text p
-{
-  font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 300;
-  line-height: 1.7;
-}
+.info-text p { font-size: 14px; color: var(--text-muted); font-weight: 400; line-height: 1.6; }
 
+.info-call {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--text-dark);
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+.info-call:hover { background: var(--gold); color: var(--text-dark); }
 
 /* ===================== BACK TO TOP ===================== */
-#backToTop
-{
+#backToTop {
   position: fixed;
-  bottom: 36px;
-  right: 36px;
-  width: 48px;
-  height: 48px;
+  bottom: 28px; right: 28px;
+  width: 48px; height: 48px;
   background: var(--gold);
   color: var(--text-dark);
   border: none;
   border-radius: 50%;
   cursor: pointer;
   display: none;
-  align-items: center;
-  justify-content: center;
+  align-items: center; justify-content: center;
   box-shadow: 0 4px 24px rgba(234,173,6,0.45);
-  transition: transform var(--transition), box-shadow var(--transition);
   z-index: 99;
 }
 
-#backToTop:hover
-{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(234,173,6,0.55);
-}
-
-
 /* ===================== FOOTER ===================== */
-.footer
-{
+.footer {
   background: var(--text-dark);
   color: var(--gold-dim);
   text-align: center;
-  padding: 40px;
+  padding: 32px 24px;
   font-size: 13px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   font-weight: 300;
   border-top: 1px solid rgba(234,173,6,0.15);
 }
+.footer a { color: var(--gold); }
 
-.footer a
-{
-  color: var(--gold);
+/* ===================== MOBILE ===================== */
+@media (max-width: 600px) {
+  .seaside-page-header { height: 70px; padding: 0 24px; }
+  .seaside-brand-name { font-size: 25px; }
+  .seaside-brand-branch { margin-top: 6px; margin-left: 55px; font-size: 7px; }
+  .seaside-main-nav { gap: 14px; }
+  .seaside-main-nav a, .seaside-main-nav .glf-button { font-size: 11px; }
+
+  .section-header { padding: 32px 20px 16px; }
+  .order-grid { padding: 12px 20px 36px; gap: 22px; }
+  .order-card { flex: 1 1 100%; padding: 34px 24px 28px; }
+  .info-banner { padding: 0 20px; }
+  .info-banner-inner { padding: 22px 20px; }
+  .info-call { width: 100%; text-align: center; }
 }
-.footer{  
-  width: 100vw;
+
+/* =====================================================================
+   OVERRIDES (win over shared.css; scoped with body.order-page)
+===================================================================== */
+
+/* --- Compact section headings (takeout + delivery) --- */
+body.order-page .section-header { padding: 20px 20px 4px; }
+body.order-page .section-eyebrow { font-size: 10px; margin-bottom: 6px; }
+body.order-page .section-header h2 {
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+body.order-page .section-header p {
+  font-size: 14px;
+  line-height: 1.5;
   max-width: none;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  box-sizing: border-box;
-}
- 
-/* ===================== ANIMATIONS ===================== */
-@keyframes fadeUp
-{
-  from
-  {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to
-  {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
+/* --- Cards: no forced height, tighter padding --- */
+body.order-page .order-grid { padding: 14px 20px 28px; gap: 24px; }
+body.order-page .takeout-section .order-card,
+body.order-page .delivery-section .order-card {
+  min-height: 0;
+  padding: 32px 28px 28px;
+}
+body.order-page .delivery-section .order-card { flex: 0 1 360px; }
+body.order-page .takeout-section .order-card { flex: 0 1 400px; }
 
-.order-badge
-{
-  position: relative;
-  z-index: 2;
-  background: var(--gold);
-  color: var(--text-dark);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  display: inline-block;
+body.order-page .order-icon,
+body.order-page .delivery-section .order-icon {
+  width: 60px; height: 60px; font-size: 1.7rem;
+  border-radius: 16px; margin-bottom: 14px;
+}
+body.order-page .order-name,
+body.order-page .delivery-section .order-name { font-size: 1.5rem; margin-bottom: 6px; }
+body.order-page .order-desc,
+body.order-page .delivery-section .order-desc {
+  font-size: 14px; line-height: 1.6; margin-bottom: 16px;
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 1024px)
-{
-  
-  .order-grid
-  {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-  /* =========================================================
-   TAKEOUT
-   One large card centered
-========================================================= */
-
-.takeout-section .order-grid {
-    grid-template-columns: minmax(380px, 440px);
-    justify-content: center;
+/* --- Buttons: normal case, no wide letter-spacing --- */
+body.order-page .order-btn,
+body.order-page .delivery-section .order-btn {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  padding: 13px 20px;
 }
 
-.takeout-section .order-card {
-    width: 100%;
-    min-height: 470px;
-    padding: 48px 42px 42px;
+/* --- Nav ORDER button: match HOME / MENU / 予約 (Gloria adds its own orange style) --- */
+body.order-page .seaside-main-nav .glf-button {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: none !important;
+}
+body.order-page .seaside-main-nav .glf-button:hover { color: var(--gold-light) !important; }
+
+/* --- Info banner --- */
+body.order-page .info-banner { margin-bottom: 40px; }
+body.order-page .info-call { font-size: 15px; padding: 11px 22px; }
+
+@media (max-width: 600px) {
+  body.order-page .section-header { padding: 16px 20px 0; }
+  body.order-page .order-grid { padding: 12px 16px 24px; gap: 18px; }
+  body.order-page .delivery-section .order-card,
+  body.order-page .takeout-section .order-card { flex: 1 1 100%; padding: 28px 22px 24px; }
 }
 
-
-/* =========================================================
-   DELIVERY
-   Cards centered in the middle of the page (bigger cards).
-   Uses flex so 3 cards stay centered, and if they wrap on a
-   smaller screen the leftover card is still centered.
-========================================================= */
-
-.delivery-section .order-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 32px;
-    max-width: 1280px;
+/* --- Info lines inside delivery cards (same look as the card description) --- */
+body.order-page .order-card .order-points {
+  width: 100% !important;
+  margin: 0 0 18px !important;
+  padding: 14px 0 0 !important;
+  border-top: 1px solid var(--border) !important;
+  text-align: center !important;
+  flex: 1;
 }
-
-.delivery-section .order-card {
-    flex: 0 1 360px;
-    min-height: 560px;
-    padding: 52px 36px 44px;
+body.order-page .order-card .order-points .order-point {
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  line-height: 1.6 !important;
+  color: var(--text-muted) !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
 }
+body.order-page .order-card .order-points .order-point:last-child { margin-bottom: 0 !important; }
 
-.delivery-section .order-icon {
-    width: 88px;
-    height: 88px;
-    border-radius: 22px;
-    font-size: 2.4rem;
-    margin-bottom: 26px;
+/* --- Takeout card: a bit taller, more breathing room --- */
+body.order-page .takeout-section .order-card {
+  flex: 0 1 420px;
+  min-height: 460px;
+  padding: 44px 36px 36px;
 }
-
-.delivery-section .order-name {
-    font-size: 1.9rem;
-    margin-bottom: 12px;
-}
-
-.delivery-section .order-desc {
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 32px;
-}
-
-.delivery-section .order-tag {
-    font-size: 12px;
-    padding: 6px 16px;
-    margin-bottom: 28px;
-}
-
-.delivery-section .order-btn {
-    padding: 16px 24px;
-    font-size: 14px;
-}
-
-@media (max-width: 600px)
-{
-  .order-grid
-  {
-    grid-template-columns: 1fr;
-    padding: 0 24px 80px;
-  }
-
-  .delivery-section .order-card
-  {
-    flex: 1 1 100%;
-    min-height: auto;
-    padding: 44px 28px 38px;
-  }
-
-  .section-header
-  {
-    padding: 60px 24px 40px;
-  }
-
-  .info-banner
-  {
-    padding: 0 24px;
-  }
-
-  body
-  {
-    padding: 0 !important;
-  }
-
-  .hero-deco::before
-  {
-    width: 320px;
-    height: 320px;
-  }
-
-  .hero-deco::after
-  {
-    width: 220px;
-    height: 220px;
-  }
-}
+body.order-page .takeout-section .order-icon { margin-bottom: 18px; }
+body.order-page .takeout-section .order-name { margin-bottom: 10px; }
+body.order-page .takeout-section .order-desc { margin-bottom: 20px; flex: 0 0 auto; }
+body.order-page .order-card.is-official .order-points { border-top-color: rgba(234,173,6,0.25) !important; }
+body.order-page .order-card.is-official .order-points .order-point { color: rgba(255,255,255,0.6) !important; }
