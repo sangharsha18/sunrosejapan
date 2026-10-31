@@ -14,7 +14,7 @@
     --text-muted: #070707;
     --border: rgba(201, 168, 76, 0.2);
     --border-strong: rgba(201, 168, 76, 0.5);
-    --serif: 'Cormorant Garamond', 'Noto Serif JP', Georgia, serif;
+    --serif: 'DM Sans', 'Noto Sans JP', sans-serif;   /* CHANGED: was Cormorant Garamond / Noto Serif JP. Now same font as the お得情報 label */
     --sans: 'DM Sans', 'Noto Sans JP', sans-serif;
     --section-pad: 80px 40px;
     --max: 1140px;
@@ -40,11 +40,17 @@ body {
     font-family: var(--sans);
     background: var(--white);
     color: var(--text-dark);
-    font-size: 30px;
+    font-size: 17px;                 /* CHANGED: was 30px */
+    font-variant-numeric: lining-nums;   /* NEW: clean, even numbers */
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
     padding: 0;
+
+    /* NEW: better Japanese line breaking */
+    word-break: auto-phrase;         /* Chrome/Edge; other browsers ignore it safely */
+    line-break: strict;
+    overflow-wrap: break-word;
 }
 
 img
@@ -772,7 +778,7 @@ a
     margin-bottom: 20px;
 }
 
-.hero-title span { color: var(--gold-light); font-style: italic; }
+.hero-title span { color: var(--gold-light); font-style: normal; }   /* CHANGED: was italic */
 .hero-title em
 {
     display: block;
@@ -873,13 +879,16 @@ section { padding: var(--section-pad); }
 .section-title
 {
     font-family: var(--serif);
-    font-size: clamp(35px, 4vw, 44px);
+    font-size: clamp(26px, 6vw, 44px);   /* CHANGED: was clamp(35px, 4vw, 44px) */
     font-weight: 300;
     color: var(--text-dark);
     line-height: 1.15;
     margin-bottom: 16px;
 }
-.section-title span { color: var(--gold); font-style: italic; }
+.section-title span { color: var(--gold); font-style: normal; }   /* CHANGED: was italic */
+
+/* NEW: use <span class="plain"> for title words that should stay dark, not gold/italic */
+.section-title .plain { color: var(--text-dark); font-style: normal; }
 
 .section-desc
 {
@@ -913,14 +922,24 @@ section { padding: var(--section-pad); }
 }
 
 /* Compact homepage menu card style (image on top, caption bar) */
+/* CHANGED: 6-column grid, every card spans 2 columns -> 3 cards per row.
+   The last row (4th + 5th card) is centred. */
 #menus .menus-grid {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 42px;
     align-items: start;
 }
 
+#menus .menus-grid .menu-card {
+    grid-column: span 2;
+}
+
 #menus .menus-grid .menu-card:nth-child(4) {
-    grid-column: 2 / 3;
+    grid-column: 2 / span 2;
+}
+
+#menus .menus-grid .menu-card:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
 #menus .menu-card {
@@ -1134,7 +1153,7 @@ section { padding: var(--section-pad); }
 {
     font-family: var(--serif);
     font-size: clamp(30px, 4vw, 44px);
-    font-weight: 300;
+    font-weight: 400;                /* CHANGED: was 300 */
     color: var(--text-dark);
     line-height: 1.15;
     margin-bottom: 14px;
@@ -1424,7 +1443,7 @@ section { padding: var(--section-pad); }
     display: block;
     font-family: var(--serif);
     font-size: 36px;
-    font-weight: 300;
+    font-weight: 500;                /* CHANGED: was 300 */
     line-height: 1;
 }
 .about-img-badge span
@@ -1664,10 +1683,152 @@ section { padding: var(--section-pad); }
 }
 
 
+/* ===================== NEW: JAPANESE LINE-BREAK FIXES ===================== */
+
+/* Keep each phrase together, so lines break between phrases, not inside a word */
+.section-title span {
+    display: inline-block;
+}
+
+/* Safari fallback: jp-wrap.js adds this class and puts <wbr> between Japanese words.
+   keep-all = only break at the <wbr> points; overflow-wrap = emergency break if one word is too long */
+.jp-wrap {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    line-break: strict;
+}
+
+/* Balanced lines for headings and short text */
+.section-title,
+.hero-title,
+.hero-subtitle,
+.section-desc,
+.offer-amount,
+.menu-card-description {
+    text-wrap: balance;
+}
+ /* ============================================================
+   SEASIDE — compact, responsive fix (paste at the BOTTOM of theme-cream.css)
+   ============================================================ */
+
+/* ---------- HEADER: one line, taller like before ---------- */
+.header{
+  padding: 22px clamp(16px, 3vw, 48px) !important;
+  gap: 16px;
+}
+.header.scrolled{ padding: 16px clamp(16px, 3vw, 48px) !important; }
+
+/* logo + "Seaside" always on ONE line */
+.logo{
+  display: inline-flex !important;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  margin-left: 0 !important;
+  padding: 8px 18px !important;
+  font-size: clamp(24px, 2.6vw, 36px) !important;
+  letter-spacing: 2px !important;
+  line-height: 1.1;
+}
+.logo span{
+  display: inline !important;
+  font-size: .6em;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+/* ---------- NAV: roomier ---------- */
+.nav{ gap: 8px !important; }
+.nav a,
+.nav .glf-button{
+  height: 50px !important;
+  padding: 0 clamp(12px, 1.3vw, 20px) !important;
+  font-size: clamp(14px, 1.2vw, 17px) !important;
+  letter-spacing: .4px !important;
+}
+.nav .glf-button{ padding: 0 clamp(16px, 1.6vw, 24px) !important; }
+
+/* language button */
+.lang-btn{
+  min-width: 0 !important;
+  height: 46px !important;
+  padding: 0 18px !important;
+  font-size: 16px !important;
+}
+.lang-btn:focus,
+.lang-btn:focus-visible{ outline: none; box-shadow: 0 0 0 2px var(--gold); }
+.lang-menu button{ font-size: 16px !important; padding: 11px 18px !important; }
+
+/* small laptops (981px to 1180px): tighten slightly so nothing wraps */
+@media (min-width: 981px) and (max-width: 1180px){
+  .header{ gap: 8px; }
+  .nav{ gap: 4px !important; }
+  .nav a{ padding: 0 10px !important; font-size: 14px !important; }
+  .logo{ font-size: 24px !important; padding: 6px 12px !important; }
+}
+
+/* ---------- PAGE TEXT: less "zoomed" ---------- */
+.section-label{ font-size: clamp(14px, 1.6vw, 18px) !important; letter-spacing: 3px !important; }
+.access-label{ font-size: 15px !important; min-width: 110px; }
+.access-value,
+.info-card-body{ font-size: 16px !important; }
+.info-card-title{ font-size: 17px !important; }
+.offer-badge{ font-size: 14px !important; }
+.btn-offer{ font-size: 16px !important; }
+.res-card-sub,
+.res-card-btn{ font-size: 16px !important; }
+.reservation-cards .res-card-title{ font-size: 28px !important; }
+.reservation-cards .res-card-btn{ font-size: 18px !important; }
+.about-img-badge span{ font-size: 14px !important; }
+.hero-tag{ font-size: clamp(12px, 1.4vw, 16px) !important; }
+.hero-subtitle{ font-size: clamp(15px, 1.8vw, 20px) !important; }
+.btn-gold,
+.btn-outline{ font-size: 16px !important; }
+
+/* floating ORDER NOW button */
+.fab-order{
+  font-size: 15px !important;
+  padding: 11px 20px !important;
+  bottom: 24px !important;
+  right: 20px !important;
+}
+
+/* menu cards: smaller text, flexible image height */
+#menus .menu-card img{ height: clamp(200px, 22vw, 280px) !important; }
+#menus .menu-card-label{ font-size: 13px !important; }
+#menus .menu-card-description{ font-size: 14px !important; }
+#menus .menu-card-title{ font-size: 18px !important; }
+
+/* ---------- MOBILE / TABLET ---------- */
+@media (max-width: 980px){
+  .header,
+  .header.scrolled{ padding: 14px 18px !important; }
+  .logo{ font-size: 24px !important; padding: 4px 12px !important; }
+  .nav a{ font-size: 24px !important; height: 52px !important; }
+  .nav .glf-button{ font-size: 24px !important; height: 54px !important; }
+  .lang-btn{ height: 44px !important; font-size: 17px !important; }
+}
+
+@media (max-width: 480px){
+  .logo{ font-size: 20px !important; letter-spacing: 1px !important; gap: 5px; }
+  .fab-order{ bottom: 16px !important; right: 14px !important; }
+}
+
+
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
     .menus-grid { grid-template-columns: repeat(2, 1fr); }
-    #menus .menus-grid { grid-template-columns: repeat(2, 1fr); }
+    /* CHANGED: 2 columns; the 5th card sits centred on its own row */
+    #menus .menus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #menus .menus-grid .menu-card,
+    #menus .menus-grid .menu-card:nth-child(4) { grid-column: auto; }
+    #menus .menus-grid .menu-card:nth-child(5) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 21px);
+    }
     .access-layout { grid-template-columns: 1fr; gap: 48px; }
     .about-layout { grid-template-columns: 1fr; }
     .about-text { padding-right: 0; }
@@ -1689,6 +1850,7 @@ section { padding: var(--section-pad); }
     .menus-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     #menus .menus-grid { grid-template-columns: 1fr 1fr; }
     #menus .menus-grid .menu-card:nth-child(4) { grid-column: auto; }
+    #menus .menus-grid .menu-card:nth-child(5) { width: calc(50% - 8px); }
     .offers-flex { grid-template-columns: 1fr; }
     .reservation-cards { grid-template-columns: 1fr; }
     .reservation-cards .res-card { padding: 40px 24px 36px; }
@@ -1704,6 +1866,7 @@ section { padding: var(--section-pad); }
     .menus-grid { grid-template-columns: 1fr; }
     #menus .menus-grid { grid-template-columns: 1fr; }
     #menus .menus-grid .menu-card:nth-child(4) { grid-column: auto; }
+    #menus .menus-grid .menu-card:nth-child(5) { grid-column: auto; justify-self: auto; width: 100%; }
     .hero-title { font-size: 28px; }
     .hero-title em { font-size: 18px; }
     .hero-subtitle { font-size: 16px; }

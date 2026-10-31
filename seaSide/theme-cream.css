@@ -1,0 +1,201 @@
+/* ============================================================
+   SUNROSE — cream / ivory + golden yellow theme
+   Load this AFTER style.css. Delete this file to go back to the old look.
+   Same palette as the landing page (index.css).
+   ============================================================ */
+
+:root {
+    --cream-bg:     #F8F3E8;   /* main page cream */
+    --cream-deep:   #F0E8D6;   /* deeper cream: access section, footer */
+    --ivory:        #FFFDF8;   /* cards */
+    --line-warm:    #E8DEC6;
+
+    --gold-deep:    #B87F05;   /* big gold text */
+    --gold-text:    #9A6A00;   /* small gold text (readable on cream) */
+    --gold-tint:    #FBEFCB;
+
+    /* soft ink instead of pure black text */
+    --text-dark:    #17130C;
+    --text-mid:     #3A352B;
+    --text-muted:   #5B564C;
+}
+
+/* ---------- page + sections ---------- */
+body { background: var(--cream-bg); color: var(--text-dark); }
+
+.section-about    { background: var(--ivory); }
+.section-menus    { background: var(--cream-bg); }
+.section-offers   { background: var(--ivory); }
+.section-access   { background: var(--cream-deep); }
+
+/* ---------- small gold text: darker so it is readable on cream ---------- */
+.section-label,
+.access-label,
+#menus .menu-card-label,
+.btn-offer { color: var(--gold-text); }
+
+.section-title span { color: var(--gold-deep); }
+
+/* ---------- gold buttons: dark text (white on yellow is hard to read) ---------- */
+.btn-gold,
+.res-card-btn,
+.about-img-badge,
+.offer-badge,
+#menus .menu-card-title,
+#menus .menu-card-arrow { color: var(--text-dark); }
+
+.nav-cta { color: var(--text-dark) !important; }
+
+.btn-gold:hover { background: var(--gold-light); }
+.btn-offer:hover { background: var(--gold); color: var(--text-dark); }
+.res-card:hover .res-card-btn { background: var(--gold-light); }
+
+/* ---------- header when scrolled ---------- */
+.header.scrolled {
+    background: rgba(248, 243, 232, 0.94);
+    box-shadow: 0 1px 0 rgba(201,168,76,0.25), 0 12px 36px rgba(60,40,0,0.08);
+}
+
+/* ---------- hero photo overlay: warm instead of near-black ---------- */
+.hero-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(40,26,6,0.32) 0%,
+        rgba(40,26,6,0.06) 35%,
+        rgba(40,26,6,0.50) 70%,
+        rgba(40,26,6,0.72) 100%
+    );
+}
+
+/* ---------- language dropdown: ivory instead of dark ---------- */
+.lang-menu {
+    background: var(--ivory);
+    border: 1px solid var(--line-warm);
+    box-shadow: 0 20px 44px -16px rgba(60,40,0,0.25);
+}
+.lang-menu button {
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--line-warm);
+}
+.lang-menu button:hover {
+    background: var(--gold-tint);
+    color: var(--gold-text);
+}
+
+/* ---------- menu cards ---------- */
+#menus .menu-card {
+    background: var(--ivory);
+    border: 1px solid var(--line-warm);
+    box-shadow: 0 1px 2px rgba(0,0,0,.03), 0 18px 40px -26px rgba(60,40,0,.28);
+}
+#menus .menu-card:hover {
+    border-color: var(--gold-light);
+    box-shadow: 0 26px 50px -24px rgba(230,161,7,.45);
+}
+#menus .menu-card-description { color: var(--text-muted); }
+
+/* ---------- offers + access cards ---------- */
+.offer-card {
+    background: var(--ivory);
+    border: 1px solid var(--line-warm);
+}
+.offer-card:hover { box-shadow: 0 26px 50px -24px rgba(230,161,7,.45); }
+
+.info-card {
+    background: var(--ivory);
+    border: 1px solid var(--line-warm);
+}
+.access-row { border-bottom: 1px solid var(--line-warm); }
+.access-row:first-child { border-top: 1px solid var(--line-warm); }
+
+/* ---------- reservation: light instead of black ---------- */
+.section-reservation {
+    background: linear-gradient(180deg, var(--cream-deep) 0%, var(--cream-bg) 100%);
+    color: var(--text-dark);
+}
+.section-reservation .section-label { color: var(--gold-text); }
+.section-reservation .section-title { color: var(--text-dark); }
+.section-reservation .section-desc  { color: var(--text-muted); }
+
+.res-card { color: var(--text-dark); }
+.res-card-title { color: var(--text-dark); }
+.res-card-sub,
+.reservation-cards .res-card-sub { color: var(--text-muted); }
+
+.reservation-cards .res-card {
+    background: var(--ivory);
+    border: 1px solid var(--gold-light);
+    box-shadow: 0 24px 60px -30px rgba(184,127,5,0.45);
+}
+.reservation-cards .res-card:hover {
+    box-shadow: 0 28px 70px -28px rgba(230,161,7,0.6);
+}
+.reservation-cards .res-card-icon {
+    background: var(--gold-tint);
+    border: 1px solid var(--gold-light);
+}
+
+/* ---------- footer: cream with a gold line instead of black ---------- */
+.footer {
+    background: var(--cream-deep);
+    border-top: 2px solid var(--gold);
+    color: var(--text-muted);
+}
+.footer-logo { color: var(--text-dark); }
+.footer-logo span { color: var(--gold-deep); }
+
+.footer-link {
+    color: var(--text-muted);
+    border: 1px solid var(--line-warm);
+}
+.footer-link:hover {
+    border-color: var(--gold);
+    color: var(--gold-text);
+}
+.footer-bottom { color: var(--text-muted); opacity: .75; }
+.footer-divider span { color: var(--gold); }
+.footer-divider::before,
+.footer-divider::after { background: var(--line-warm); }
+.footer-inner { border-bottom: 1px solid var(--line-warm); }
+
+/* ---------- mobile menu overlay: cream instead of black ---------- */
+@media (max-width: 980px) {
+
+    .nav {
+        background:
+            radial-gradient(circle at top, rgba(234,173,6,0.18), transparent 45%),
+            rgba(248, 243, 232, 0.98);
+    }
+
+    .nav a { color: var(--text-dark) !important; }
+
+    .nav a:hover {
+        color: var(--gold-text) !important;
+        background: var(--gold-tint) !important;
+    }
+
+    /* hamburger turns dark when the cream menu is open */
+    .hamburger.active span { background: var(--text-dark); }
+
+    /* language button must be readable on the cream overlay */
+    .nav .lang-btn {
+        color: var(--text-dark);
+        background: var(--ivory);
+        border-color: var(--gold-light);
+    }
+
+    .section-map { padding: 40px 14px 50px; text-align: center; }
+.map-wrap { background: var(--cream-deep); min-height: 320px; }
+.map-wrap iframe { width: 100%; height: 380px; }
+
+.map-open {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: var(--gold);
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 500;
+}
+}

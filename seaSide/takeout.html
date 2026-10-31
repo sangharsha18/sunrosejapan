@@ -1,395 +1,407 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>テイクアウトメニュー — SUNROSE インドレストラン 品川</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="takeout.css">
-  <link rel="stylesheet" href="shared.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-ja="テイクアウトメニュー — SUNROSE インドレストラン 品川" data-en="Takeout Menu — SUNROSE Indian Restaurant Shinagawa" data-hi="टेकआउट मेनू — SUNROSE भारतीय रेस्टोरेंट शिनागावा" data-ko="테이크아웃 메뉴 — SUNROSE 인도 레스토랑 시나가와" data-es="Menú Para Llevar — SUNROSE Restaurante Indio Shinagawa">テイクアウトメニュー — SUNROSE インドレストラン 品川</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;family=Noto+Sans+JP:wght@300;400;500;700&amp;family=Noto+Serif+JP:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme-cream.css">
+<link rel="stylesheet" href="takeout.css">
+<link rel="stylesheet" href="shared.css">
 </head>
 <body>
 
-<a href="index.html" class="home-btn">← SUNROSE</a>
+<header class="header" id="header">
+    <a href="index.html#home" class="logo">SUNROSE<span>Seaside</span></a>
+    <ul class="nav" id="nav">
+        <li><a href="index.html#home" data-ja="ホーム" data-en="Home" data-hi="होम" data-ko="홈" data-es="Inicio">ホーム</a></li>
+        <li><a href="index.html#menus" data-ja="メニュー" data-en="Menus" data-hi="मेनू" data-ko="메뉴" data-es="Menús">メニュー</a></li>
+        <li><a href="index.html#about" data-ja="私たちについて" data-en="About" data-hi="हमारे बारे में" data-ko="소개" data-es="Acerca de">私たちについて</a></li>
+        <li><a href="index.html#access" data-ja="アクセス" data-en="Access" data-hi="पता" data-ko="오시는 길" data-es="Acceso">アクセス</a></li>
+        <li><a href="index.html#contact" data-ja="お問い合わせ" data-en="Contact" data-hi="संपर्क" data-ko="연락처" data-es="Contacto">お問い合わせ</a></li>
+        <li><a href="index.html#reservation" class="nav-cta" data-ja="ご予約" data-en="Reservation" data-hi="आरक्षण" data-ko="예약" data-es="Reservación">ご予約</a></li>
+        <li>
+            <span class="glf-button" style="cursor:pointer;"
+                  data-glf-cuid="6c1f116c-383f-40d3-8a31-cc3b4ed49a7d"
+                  data-glf-ruid="2ed272cc-7d51-4f42-bbae-b2866d3f5039"
+                  data-ja="注文" data-en="Order" data-hi="ऑर्डर" data-ko="주문" data-es="Pedir">注文</span>
+        </li>
+        <li class="lang-dropdown" style="display:none" aria-hidden="true">
+            <button class="lang-btn" id="langBtn">🌐 <span>Language</span></button>
+            <div class="lang-menu" id="langMenu">
+                <button onclick="setLang('ja')">🇯🇵 日本語</button>
+                <button onclick="setLang('en')">🇬🇧 English</button>
+                <button onclick="setLang('hi')">🇮🇳 हिंदी</button>
+                <button onclick="setLang('ko')">🇰🇷 한국어</button>
+                <button onclick="setLang('es')">🇪🇸 Español</button>
+            </div>
+        </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+</header>
 
-<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-<section class="menu-hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grain"></div>
-  <div class="hero-deco"></div>
-  <div class="menu-hero-content">
-    <div class="hero-eyebrow" data-ja="サンローズ・品川" data-en="Sunrose Japan · Shinagawa" data-hi="सनरोज़ जापान · शिनागावा" data-ko="선로즈 재팬 · 시나가와" data-es="Sunrose Japón · Shinagawa">サンローズ・品川</div>
-    <h1>
-      <span data-ja="本格" data-en="Authentic" data-hi="प्रामाणिक" data-ko="정통" data-es="Auténtico">本格</span>
-      <em data-ja="インド" data-en="Indian" data-hi="भारतीय" data-ko="인도" data-es="Indio">インド</em><br>
-      <span data-ja="テイクアウト" data-en="Takeout" data-hi="Takeout" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</span>
-    </h1>
-    <p data-ja="手作りカレー、焼きたてナン、最高のスパイス — どこでもお楽しみいただけるよう丁寧にお包みします。" data-en="The same handcrafted curries, fresh naan and finest spices — packed with care to enjoy anywhere." data-hi="वही हस्तनिर्मित करी, ताज़ा नान और बेहतरीन मसाले — कहीं भी आनंद लेने के लिए।" data-ko="같은 수제 커리, 갓 구운 난, 최고의 향신료 — 어디서든 즐길 수 있도록 정성껏 포장합니다." data-es="Los mismos currys artesanales, naan fresco y las mejores especias — empacados con cuidado.">手作りカレー、焼きたてナン、最高のスパイス — どこでもお楽しみいただけるよう丁寧にお包みします。</p>
-    <p style="font-size:13px;color:rgba(255,255,255,0.35);letter-spacing:0.05em;">
-      <span data-ja="辛さ調整可能 · 全セットにナンまたはライス付き" data-en="Spice level adjustable · All sets include Naan or Rice" data-hi="मसाला स्तर समायोज्य · सभी सेट में नान या चावल" data-ko="매운맛 조절 가능 · 모든 세트에 난 또는 라이스 포함" data-es="Nivel de picante ajustable · Todos los sets incluyen Naan o Arroz">辛さ調整可能 · 全セットにナンまたはライス付き</span>
-    </p>
-    <div class="hero-info-row">
-      <div class="hours-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span data-ja="ランチ · 11:00 — 15:00" data-en="Lunch · 11:00 — 15:00" data-hi="Lunch · 11:00 — 15:00" data-ko="런치 · 11:00 — 15:00" data-es="Almuerzo · 11:00 — 15:00">ランチ · 11:00 — 15:00</span>
-      </div>
-      <div class="hours-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span data-ja="ディナー · 17:00 — 22:00" data-en="Dinner · 17:00 — 22:00" data-hi="Dinner · 17:00 — 22:00" data-ko="디너 · 17:00 — 22:00" data-es="Cena · 17:00 — 22:00">ディナー · 17:00 — 22:00</span>
-      </div>
+<!-- HEADING (same as Lunch / Dinner / Course / Coupon) -->
+<section class="lunch-head">
+  <div class="gold-line"></div>
+  <h1 data-ja="テイクアウト" data-en="Takeout" data-hi="टेकआउट" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</h1>
+  <p class="lunch-sub" data-ja="手作りカレー、焼きたてナン、最高のスパイス — どこでもお楽しみいただけるよう丁寧にお包みします。" data-en="The same handcrafted curries, fresh naan and finest spices — packed with care to enjoy anywhere." data-hi="वही हस्तनिर्मित करी, ताज़ा नान और बेहतरीन मसाले — कहीं भी आनंद लेने के लिए।" data-ko="같은 수제 커리, 갓 구운 난, 최고의 향신료 — 어디서든 즐길 수 있도록 정성껏 포장합니다." data-es="Los mismos currys artesanales, naan fresco y las mejores especias — empacados con cuidado.">手作りカレー、焼きたてナン、最高のスパイス — どこでもお楽しみいただけるよう丁寧にお包みします。</p>
+    <p class="lunch-note" data-ja="辛さ調整可能 · 全セットにナンまたはライス付き" data-en="Spice level adjustable · All sets include Naan or Rice" data-hi="मसाला स्तर समायोज्य · सभी सेट में नान या चावल" data-ko="매운맛 조절 가능 · 모든 세트에 난 또는 라이스 포함" data-es="Nivel de picante ajustable · Todos los sets incluyen Naan o Arroz">辛さ調整可能 · 全セットにナンまたはライス付き</p>
+
+  <div class="hero-info-row">
+    <div class="hours-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span data-ja="ランチ · 11:00 — 15:00" data-en="Lunch · 11:00 — 15:00" data-hi="दोपहर का भोजन · 11:00 — 15:00" data-ko="점심 · 11:00 — 15:00" data-es="Almuerzo · 11:00 — 15:00">ランチ · 11:00 — 15:00</span>
     </div>
-    <div class="hero-tabs">
-      <button class="hero-tab-btn" id="exploreBtn" data-ja="メニューを見る" data-en="EXPLORE THE MENU" data-hi="मेनू देखें" data-ko="메뉴 보기" data-es="VER EL MENÚ">メニューを見る</button>
+    <div class="hours-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span data-ja="ディナー · 17:00 — 22:00" data-en="Dinner · 17:00 — 22:00" data-hi="रात्रिभोज · 17:00 — 22:00" data-ko="저녁 · 17:00 — 22:00" data-es="Cena · 17:00 — 22:00">ディナー · 17:00 — 22:00</span>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════ STICKY TAB NAV ═══════════════════════════ -->
+<!-- STICKY TAB NAV -->
 <nav class="tab-nav">
-  <a href="#lunch-takeout" class="tab-nav-btn" data-ja="🌞 ランチ テイクアウト" data-en="🌞 Lunch Takeout" data-hi="🌞 Lunch Takeout" data-ko="🌞 런치 테이크아웃" data-es="🌞 Almuerzo Para Llevar">🌞 ランチ テイクアウト</a>
-  <a href="#curry-takeout" class="tab-nav-btn" data-ja="🍛 カレー テイクアウト" data-en="🍛 Curry Takeout" data-hi="🍛 Curry Takeout" data-ko="🍛 커리 테이크아웃" data-es="🍛 Curry Para Llevar">🍛 カレー テイクアウト</a>
-  <a href="#dinner-takeout" class="tab-nav-btn" data-ja="🌙 ディナー テイクアウト" data-en="🌙 Dinner Takeout" data-hi="🌙 Dinner Takeout" data-ko="🌙 디너 테이크아웃" data-es="🌙 Cena Para Llevar">🌙 ディナー テイクアウト</a>
+<a class="tab-nav-btn" href="#lunch-takeout" data-ja="🌞 ランチ テイクアウト" data-en="🌞 Lunch Takeout" data-hi="🌞 लंच टेकआउट" data-ko="🌞 런치 테이크아웃" data-es="🌞 Almuerzo Para Llevar">🌞 ランチ テイクアウト</a>
+<a class="tab-nav-btn" href="#curry-takeout" data-ja="🍛 カレー テイクアウト" data-en="🍛 Curry Takeout" data-hi="🍛 करी टेकआउट" data-ko="🍛 커리 테이크아웃" data-es="🍛 Curry Para Llevar">🍛 カレー テイクアウト</a>
+<a class="tab-nav-btn" href="#dinner-takeout" data-ja="🌙 ディナー テイクアウト" data-en="🌙 Dinner Takeout" data-hi="🌙 डिनर टेकआउट" data-ko="🌙 디너 테이크아웃" data-es="🌙 Cena Para Llevar">🌙 ディナー テイクアウト</a>
 </nav>
 
-<!-- ════════════════════════ TAB 1 — LUNCH TAKEOUT ════════════════════════ -->
+<!-- TAB 1 — LUNCH TAKEOUT -->
 <div class="tab-panel active" id="lunch-takeout">
-  <div class="section-header">
-    <div class="section-eyebrow" data-ja="ランチ テイクアウト" data-en="Lunch Takeout" data-hi="लंच टेकआउट" data-ko="런치 테이크아웃" data-es="Almuerzo Para Llevar">ランチ テイクアウト</div>
-    <h2><span data-ja="ランチ" data-en="Lunch" data-hi="Lunch" data-ko="런치" data-es="Almuerzo">ランチ</span> <em data-ja="テイクアウト" data-en="Takeout" data-hi="Takeout" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</em></h2>
-    <p data-ja="毎日11:00〜15:00にご利用いただけます。全セットにナンまたはライスが付き、辛さも調整可能です。" data-en="Available daily 11:00 – 15:00. All sets include your choice of Naan or Rice and can be adjusted to your preferred spice level." data-hi="प्रतिदिन 11:00 – 15:00 उपलब्ध। सभी सेट में नान या चावल शामिल।" data-ko="매일 11:00 – 15:00 이용 가능. 모든 세트에 난 또는 라이스 포함." data-es="Disponible diariamente 11:00 – 15:00. Todos los sets incluyen Naan o Arroz.">毎日11:00〜15:00にご利用いただけます。全セットにナンまたはライスが付き、辛さも調整可能です。</p>
-  </div>
-  <div class="gold-divider"><div class="gold-divider-gem"></div></div>
-  <div class="category-section">
-    <div class="category-title">
-      <h3><span data-ja="ランチ" data-en="Lunch" data-hi="Lunch" data-ko="런치" data-es="Almuerzo">ランチ</span> <em data-ja="セット" data-en="Sets" data-hi="Sets" data-ko="세트" data-es="Sets">セット</em></h3>
-      <div class="category-title-line"></div>
-      <span class="category-title-count" data-ja="4品" data-en="4 Items" data-hi="4 Items" data-ko="4 품목" data-es="4 Artículos">4品</span>
-    </div>
-  </div>
-  <div class="menu-grid">
-    <!-- Sunrose Special Set -->
-    <div class="menu-item is-special">
-      <figure><img src="images/Tsunrosesp-set.jpg" alt="Sunrose Special Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="サンローズスペシャル セット" data-en="Sunrose Special Set" data-hi="Sunrose Special Set" data-ko="Sunrose Special Set" data-es="Sunrose Special Set">サンローズスペシャル セット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Cheese Naan or Garlic Naan</li><li>Tandoori Chicken</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Naan + Chicken</span></div>
-      </div>
-    </div>
-    <!-- Sunrose Set -->
-    <div class="menu-item is-popular">
-      <figure><img src="images/Tsunrose-set.jpg" alt="Sunrose Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="サンローズセット" data-en="Sunrose Set" data-hi="Sunrose Set" data-ko="Sunrose Set" data-es="Sunrose Set">サンローズセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Naan or Rice</li><li>Tandoori Chicken</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,490</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Naan or Rice</span></div>
-      </div>
-    </div>
-    <!-- Office Set -->
-    <div class="menu-item">
-      <figure><img src="images/Toffice-set.jpg" alt="Office Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="オフィスセット" data-en="Office Set" data-hi="Office Set" data-ko="Office Set" data-es="Office Set">オフィスセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Naan</li><li>Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,090</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Naan + Rice</span></div>
-      </div>
-    </div>
-    <!-- Sun Set -->
-    <div class="menu-item">
-      <figure><img src="images/Tsun-set.jpg" alt="Sun Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="サンセット" data-en="Sun Set" data-hi="Sun Set" data-ko="Sun Set" data-es="Sun Set">サンセット</h4>
-        <ul class="includes"><li>Salad</li><li>Pickle (Tsukemono)</li><li>Naan or Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,090</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Naan or Rice</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="info-banner">
-    <div class="info-banner-inner">
-      <div class="info-icon">🌶</div>
-      <div class="info-text">
-        <strong data-ja="辛さの調整について" data-en="Spice Level Customisation" data-hi="मसाला स्तर अनुकूलन" data-ko="매운맛 조절" data-es="Nivel de Picante">辛さの調整について</strong>
-        <p data-ja="すべてのカレーはお好みの辛さに調整可能です。ご注文時にお申し付けください。" data-en="All curries adjusted to your preference. Tell us when ordering." data-hi="सभी करी आपकी पसंद के अनुसार। ऑर्डर करते समय बताएं।" data-ko="모든 커리는 원하시는 맛으로 조절 가능합니다." data-es="Todos los currys ajustados a su preferencia.">すべてのカレーはお好みの辛さに調整可能です。ご注文時にお申し付けください。</p>
-      </div>
-      <div class="spice-levels"><span class="spice-level">🍬 Mild</span><span class="spice-level">🌶️ Medium</span><span class="spice-level">🌶️🌶️ Spicy</span><span class="spice-level">🌶️🌶️🌶️ Hot</span><span class="spice-level">🌶️🌶️🌶️🌶️ Super Hot</span></div>
-    </div>
-  </div>
+<div class="section-header">
+<div class="section-eyebrow" data-ja="ランチ テイクアウト" data-en="Lunch Takeout" data-hi="लंच टेकआउट" data-ko="런치 테이크아웃" data-es="Almuerzo Para Llevar">ランチ テイクアウト</div>
+<h2><span data-ja="ランチ" data-en="Lunch" data-hi="दोपहर का भोजन" data-ko="점심" data-es="Almuerzo">ランチ</span> <em data-ja="テイクアウト" data-en="Takeout" data-hi="टेकआउट" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</em></h2>
+<p data-ja="毎日11:00〜15:00にご利用いただけます。全セットにナンまたはライスが付き、辛さも調整可能です。" data-en="Available daily 11:00 – 15:00. All sets include your choice of Naan or Rice and can be adjusted to your preferred spice level." data-hi="प्रतिदिन 11:00 – 15:00 उपलब्ध। सभी सेट में नान या चावल शामिल।" data-ko="매일 11:00 – 15:00 이용 가능. 모든 세트에 난 또는 라이스 포함." data-es="Disponible diariamente 11:00 – 15:00. Todos los sets incluyen Naan o Arroz.">毎日11:00〜15:00にご利用いただけます。全セットにナンまたはライスが付き、辛さも調整可能です。</p>
+</div>
+<div class="gold-divider"><div class="gold-divider-gem"></div></div>
+<div class="category-section">
+<div class="category-title">
+<h3><span data-ja="ランチ" data-en="Lunch" data-hi="दोपहर का भोजन" data-ko="점심" data-es="Almuerzo">ランチ</span> <em data-ja="セット" data-en="Sets" data-hi="सेट" data-ko="세트" data-es="Menús">セット</em></h3>
+<div class="category-title-line"></div>
+<span class="category-title-count" data-ja="4品" data-en="4 Items" data-hi="4 आइटम" data-ko="4개 메뉴" data-es="4 Artículos">4品</span>
+</div>
+</div>
+<div class="menu-grid">
+<div class="menu-item is-special">
+<figure><img alt="Sunrose Special Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tsunrosesp-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="サンローズスペシャル セット" data-en="Sunrose Special Set" data-hi="सनरोज़ स्पेशल सेट" data-ko="선로즈 스페셜 세트" data-es="Menú Especial Sunrose">サンローズスペシャル セット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="チーズナン または ガーリックナン" data-en="Cheese Naan or Garlic Naan" data-hi="चीज़ नान या गार्लिक नान" data-ko="치즈 난 또는 갈릭 난" data-es="Naan de Queso o Naan de Ajo">チーズナン または ガーリックナン</li><li data-ja="タンドリーチキン" data-en="Tandoori Chicken" data-hi="तंदूरी चिकन" data-ko="탄두리 치킨" data-es="Pollo Tandoori">タンドリーチキン</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ナン + チキン" data-en="Naan + Chicken" data-hi="नान + चिकन" data-ko="난 + 치킨" data-es="Naan + Pollo">ナン + チキン</span></div>
+</div>
+</div>
+<div class="menu-item is-popular">
+<figure><img alt="Sunrose Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tsunrose-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="サンローズセット" data-en="Sunrose Set" data-hi="सनरोज़ सेट" data-ko="선로즈 세트" data-es="Menú Sunrose">サンローズセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="ナン または ライス" data-en="Naan or Rice" data-hi="नान या चावल" data-ko="난 또는 라이스" data-es="Naan o Arroz">ナン または ライス</li><li data-ja="タンドリーチキン" data-en="Tandoori Chicken" data-hi="तंदूरी चिकन" data-ko="탄두리 치킨" data-es="Pollo Tandoori">タンドリーチキン</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,490</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ナン または ライス" data-en="Naan or Rice" data-hi="नान या चावल" data-ko="난 또는 라이스" data-es="Naan o Arroz">ナン または ライス</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Office Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Toffice-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="オフィスセット" data-en="Office Set" data-hi="ऑफिस सेट" data-ko="오피스 세트" data-es="Menú de Oficina">オフィスセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="ナン" data-en="Naan" data-hi="नान" data-ko="난" data-es="Pan naan">ナン</li><li data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="라이스" data-es="Arroz">ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,090</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ナン + ライス" data-en="Naan + Rice" data-hi="नान + चावल" data-ko="난 + 라이스" data-es="Naan + Arroz">ナン + ライス</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Sun Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tsun-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="サンセット" data-en="Sun Set" data-hi="सनसेट" data-ko="선셋" data-es="Menú Sunset">サンセット</h4>
+<ul class="includes"><li data-ja="サラダ" data-en="Salad" data-hi="सलाद" data-ko="샐러드" data-es="Ensalada">サラダ</li><li data-ja="ピクルス（漬物）" data-en="Pickle (Tsukemono)" data-hi="अचार" data-ko="피클 (츠케모노)" data-es="Encurtido">ピクルス（漬物）</li><li data-ja="ナン または ライス" data-en="Naan or Rice" data-hi="नान या चावल" data-ko="난 또는 라이스" data-es="Naan o Arroz">ナン または ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,090</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ナン または ライス" data-en="Naan or Rice" data-hi="नान या चावल" data-ko="난 또는 라이스" data-es="Naan o Arroz">ナン または ライス</span></div>
+</div>
+</div>
+</div>
+<div class="info-banner">
+<div class="info-banner-inner">
+<div class="info-icon">🌶</div>
+<div class="info-text">
+<strong data-ja="辛さの調整について" data-en="Spice Level Customisation" data-hi="मसाला स्तर अनुकूलन" data-ko="매운맛 조절" data-es="Nivel de Picante">辛さの調整について</strong>
+<p data-ja="すべてのカレーはお好みの辛さに調整可能です。ご注文時にお申し付けください。" data-en="All curries adjusted to your preference. Tell us when ordering." data-hi="सभी करी आपकी पसंद के अनुसार। ऑर्डर करते समय बताएं।" data-ko="모든 커리는 원하시는 맛으로 조절 가능합니다." data-es="Todos los currys ajustados a su preferencia.">すべてのカレーはお好みの辛さに調整可能です。ご注文時にお申し付けください。</p>
+</div>
+<div class="spice-levels"><span class="spice-level" data-ja="🍬 甘口" data-en="🍬 Mild" data-hi="🍬 हल्का" data-ko="🍬 순한맛" data-es="🍬 Suave">🍬 甘口</span><span class="spice-level" data-ja="🌶️ 中辛" data-en="🌶️ Medium" data-hi="🌶️ मध्यम" data-ko="🌶️ 중간맛" data-es="🌶️ Medio">🌶️ 中辛</span><span class="spice-level" data-ja="🌶️🌶️ 辛口" data-en="🌶️🌶️ Spicy" data-hi="🌶️🌶️ तीखा" data-ko="🌶️🌶️ 매운맛" data-es="🌶️🌶️ Picante">🌶️🌶️ 辛口</span><span class="spice-level" data-ja="🌶️🌶️🌶️ 激辛" data-en="🌶️🌶️🌶️ Hot" data-hi="🌶️🌶️🌶️ बहुत तीखा" data-ko="🌶️🌶️🌶️ 아주 매운맛" data-es="🌶️🌶️🌶️ Muy Picante">🌶️🌶️🌶️ 激辛</span><span class="spice-level" data-ja="🌶️🌶️🌶️🌶️ 超激辛" data-en="🌶️🌶️🌶️🌶️ Super Hot" data-hi="🌶️🌶️🌶️🌶️ बेहद तीखा" data-ko="🌶️🌶️🌶️🌶️ 매우 매운맛" data-es="🌶️🌶️🌶️🌶️ Súper Picante">🌶️🌶️🌶️🌶️ 超激辛</span></div>
+</div>
+</div>
 </div>
 
-<!-- ════════════════════════ TAB 2 — CURRY TAKEOUT ════════════════════════ -->
+<!-- TAB 2 — CURRY TAKEOUT -->
 <div class="tab-panel" id="curry-takeout">
-  <div class="section-header">
-    <div class="section-eyebrow" data-ja="カレー テイクアウト" data-en="Curry Takeout" data-hi="करी टेकआउट" data-ko="커리 테이크아웃" data-es="Curry Para Llevar">カレー テイクアウト</div>
-    <h2><span data-ja="カレー" data-en="Curry" data-hi="Curry" data-ko="커리" data-es="Curry">カレー</span> <em data-ja="テイクアウト" data-en="Takeout" data-hi="Takeout" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</em></h2>
-    <p data-ja="ランチタイム限定テイクアウトカレー — 11:00〜15:00。インドから直輸入したスパイスで毎日新鮮に。全品ライス付き。" data-en="Lunch-only takeout curries — available 11:00 – 15:00. Each curry is freshly made with imported Indian spices. All come with rice." data-hi="केवल लंच टेकआउट करी — 11:00 – 15:00 उपलब्ध। सभी चावल के साथ।" data-ko="런치 전용 테이크아웃 커리 — 11:00 – 15:00. 모두 라이스 포함." data-es="Currys para llevar solo en almuerzo — 11:00 – 15:00. Todos con arroz.">ランチタイム限定テイクアウトカレー — 11:00〜15:00。インドから直輸入したスパイスで毎日新鮮に。全品ライス付き。</p>
-  </div>
-  <div class="gold-divider"><div class="gold-divider-gem"></div></div>
-  <div class="category-section">
-    <div class="category-title">
-      <h3><span data-ja="テイクアウト" data-en="Takeout" data-hi="Takeout" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</span> <em data-ja="カレー" data-en="Curries" data-hi="Curries" data-ko="커리" data-es="Currys">カレー</em></h3>
-      <div class="category-title-line"></div>
-      <span class="category-title-count" data-ja="8品 · ライス付き" data-en="8 Items · With Rice" data-hi="8 Items · With Rice" data-ko="8 품목 · 라이스 포함" data-es="8 Artículos · Con Arroz">8品 · ライス付き</span>
-    </div>
-  </div>
-  <div class="menu-grid">
-    <div class="menu-item is-special">
-      <figure><img src="images/Ttodaysp-curry.jpg" alt="Today's Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="本日のカレー" data-en="Today's Curry" data-hi="Today's Curry" data-ko="Today's Curry" data-es="Today's Curry">本日のカレー</h4>
-        <p class="desc" data-ja="シェフの日替わりカレー — 旬の食材とオリジナルスパイスで毎日変わります。" data-en="Chef's daily special curry — changes every day with seasonal ingredients and house spices." data-hi="Chef's daily special curry — changes every day." data-ko="셰프의 일일 스페셜 커리 — 매일 바뀝니다." data-es="Curry especial del chef — cambia todos los días.">シェフの日替わりカレー — 旬の食材とオリジナルスパイスで毎日変わります。</p>
-        <div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="日替わり" data-en="Changes Daily" data-hi="Changes Daily" data-ko="매일 변경" data-es="Cambia Diariamente">日替わり</span></div>
-      </div>
-    </div>
-    <div class="menu-item is-popular">
-      <figure><img src="images/Tbutterchicken.jpeg" alt="Butter Chicken Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="バターチキンカレー" data-en="Butter Chicken Curry" data-hi="Butter Chicken Curry" data-ko="Butter Chicken Curry" data-es="Butter Chicken Curry">バターチキンカレー</h4>
-        <p class="desc" data-ja="カシューナッツ、バター、生クリームのリッチなトマトベースカレー。" data-en="Rich tomato-cashew sauce with butter and cream — India's most beloved curry, silky smooth." data-hi="Rich tomato-cashew sauce with butter and cream — silky smooth." data-ko="버터와 크림의 풍부한 토마토 캐슈 소스." data-es="Salsa rica de tomate y anacardo con mantequilla y crema.">カシューナッツ、バター、生クリームのリッチなトマトベースカレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Chicken</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tchicekn-curry.jpg" alt="Chicken Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="チキンカレー" data-en="Chicken Curry" data-hi="Chicken Curry" data-ko="Chicken Curry" data-es="Chicken Curry">チキンカレー</h4>
-        <p class="desc" data-ja="鶏もも肉を生姜、玉ねぎ、ガーリックでソテーした本格カレー。" data-en="Chicken thigh sautéed with ginger, onion and garlic — a wholesome, authentic house curry." data-hi="Chicken thigh sautéed with ginger, onion and garlic." data-ko="생강, 양파, 마늘로 볶은 닭 허벅지살 커리." data-es="Muslo de pollo salteado con jengibre, cebolla y ajo.">鶏もも肉を生姜、玉ねぎ、ガーリックでソテーした本格カレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Chicken</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tsaagchicken-curry.jpeg" alt="Saag Chicken Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="ほうれん草チキンカレー" data-en="Saag Chicken Curry" data-hi="Saag Chicken Curry" data-ko="Saag Chicken Curry" data-es="Saag Chicken Curry">ほうれん草チキンカレー</h4>
-        <p class="desc" data-ja="鶏肉とほうれん草、生姜、インドスパイスの栄養たっぷりカレー。" data-en="Tender chicken with vibrant spinach, ginger and aromatic Indian spices — nourishing and green." data-hi="Tender chicken with spinach and Indian spices." data-ko="시금치와 인도 향신료의 치킨 커리." data-es="Pollo tierno con espinacas y especias indias.">鶏肉とほうれん草、生姜、インドスパイスの栄養たっぷりカレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Chicken</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tkeema-curry.jpg" alt="Keema Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="キーマカレー" data-en="Keema Curry" data-hi="Keema Curry" data-ko="Keema Curry" data-es="Keema Curry">キーマカレー</h4>
-        <p class="desc" data-ja="鶏ひき肉を玉ねぎとスパイスで炒めた満足感のあるカレー。" data-en="Minced chicken sautéed with onion and aromatic spices — deeply satisfying and full of flavour." data-hi="Minced chicken sautéed with onion and spices." data-ko="양파와 향신료로 볶은 치킨 키마 커리." data-es="Pollo picado salteado con cebolla y especias.">鶏ひき肉を玉ねぎとスパイスで炒めた満足感のあるカレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Chicken</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tdal-curry.jpg" alt="Dal Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="ダルカレー" data-en="Dal Curry" data-hi="Dal Curry" data-ko="Dal Curry" data-es="Dal Curry">ダルカレー</h4>
-        <p class="desc" data-ja="豆を玉ねぎ、トマト、インドスパイスでじっくり煮込んだカレー。" data-en="Mixed lentils slow-simmered with onion, tomato and traditional Indian spices." data-hi="Mixed lentils with onion, tomato and spices." data-ko="양파, 토마토와 함께 끓인 렌즈콩 커리." data-es="Lentejas mixtas cocidas con cebolla, tomate y especias.">豆を玉ねぎ、トマト、インドスパイスでじっくり煮込んだカレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Veg</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tpork-curry.jpg" alt="Pork Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="ポークカレー" data-en="Pork Curry" data-hi="Pork Curry" data-ko="Pork Curry" data-es="Pork Curry">ポークカレー</h4>
-        <p class="desc" data-ja="骨なし豚肉を玉ねぎ、トマト、生姜ガーリックで仕上げたスパイシーカレー。" data-en="Boneless pork with onion, tomato and ginger-garlic paste — bold and deeply spiced." data-hi="Boneless pork with onion, tomato and ginger-garlic." data-ko="양파, 토마토, 생강 마늘의 돼지고기 커리." data-es="Cerdo deshuesado con cebolla, tomate y jengibre.">骨なし豚肉を玉ねぎ、トマト、生姜ガーリックで仕上げたスパイシーカレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Pork</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tmutton-curry.jpg" alt="Mutton Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="マトンカレー" data-en="Mutton Curry" data-hi="Mutton Curry" data-ko="Mutton Curry" data-es="Mutton Curry">マトンカレー</h4>
-        <p class="desc" data-ja="骨なしラムを生姜と玉ねぎでじっくり煮込んだ風味豊かなカレー。" data-en="Boneless lamb slow-cooked with ginger and onion into a mildly spiced, flavourful curry." data-hi="Boneless lamb slow-cooked with ginger and onion." data-ko="생강과 양파로 천천히 조리한 양고기 커리." data-es="Cordero deshuesado cocido lentamente con jengibre y cebolla.">骨なしラムを生姜と玉ねぎでじっくり煮込んだ風味豊かなカレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Lamb</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tseafood-curry.jpeg" alt="Seafood Curry"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="シーフードカレー" data-en="Seafood Curry" data-hi="Seafood Curry" data-ko="Seafood Curry" data-es="Seafood Curry">シーフードカレー</h4>
-        <p class="desc" data-ja="エビ・イカ・アサリをカシューナッツとココナッツで仕上げた甘くクリーミーなカレー。" data-en="Shrimp, squid and clams in a cashew-coconut curry — sweet, creamy and aromatic." data-hi="Shrimp, squid and clams in cashew-coconut curry." data-ko="캐슈넛 코코넛 커리의 새우, 오징어, 조개." data-es="Camarones, calamares y almejas en curry de anacardo y coco.">エビ・イカ・アサリをカシューナッツとココナッツで仕上げた甘くクリーミーなカレー。</p>
-        <div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="With Rice" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag">Seafood</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="info-banner">
-    <div class="info-banner-inner">
-      <div class="info-icon">🍚</div>
-      <div class="info-text">
-        <strong data-ja="全カレーテイクアウトにライス付き" data-en="All Curry Takeouts Include Rice" data-hi="सभी करी टेकआउट में चावल शामिल" data-ko="모든 커리 테이크아웃에 라이스 포함" data-es="Todos los Currys Incluyen Arroz">全カレーテイクアウトにライス付き</strong>
-        <p data-ja="ランチカレーテイクアウトは11:00〜15:00のみ。辛さ調整可能。" data-en="Lunch curry takeout is available 11:00 – 15:00 only. Spice level adjustable on request." data-hi="Lunch curry takeout 11:00 – 15:00 only." data-ko="런치 커리 테이크아웃은 11:00 – 15:00만." data-es="Curry para llevar disponible solo 11:00 – 15:00.">ランチカレーテイクアウトは11:00〜15:00のみ。辛さ調整可能。</p>
-      </div>
-      <div class="spice-levels"><span class="spice-level">🍬 Mild</span><span class="spice-level">🌶️ Medium</span><span class="spice-level">🌶️🌶️ Spicy</span><span class="spice-level">🌶️🌶️🌶️ Hot</span><span class="spice-level">🌶️🌶️🌶️🌶️ Super Hot</span></div>
-    </div>
-  </div>
+<div class="section-header">
+<div class="section-eyebrow" data-ja="カレー テイクアウト" data-en="Curry Takeout" data-hi="करी टेकआउट" data-ko="커리 테이크아웃" data-es="Curry Para Llevar">カレー テイクアウト</div>
+<h2><span data-ja="カレー" data-en="Curry" data-hi="करी" data-ko="커리" data-es="Curry">カレー</span> <em data-ja="テイクアウト" data-en="Takeout" data-hi="टेकआउट" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</em></h2>
+<p data-ja="ランチタイム限定テイクアウトカレー — 11:00〜15:00。インドから直輸入したスパイスで毎日新鮮に。全品ライス付き。" data-en="Lunch-only takeout curries — available 11:00 – 15:00. Each curry is freshly made with imported Indian spices. All come with rice." data-hi="केवल लंच टेकआउट करी — 11:00 – 15:00 उपलब्ध। सभी चावल के साथ।" data-ko="런치 전용 테이크아웃 커리 — 11:00 – 15:00. 모두 라이스 포함." data-es="Currys para llevar solo en almuerzo — 11:00 – 15:00. Todos con arroz.">ランチタイム限定テイクアウトカレー — 11:00〜15:00。インドから直輸入したスパイスで毎日新鮮に。全品ライス付き。</p>
+</div>
+<div class="gold-divider"><div class="gold-divider-gem"></div></div>
+<div class="category-section">
+<div class="category-title">
+<h3><span data-ja="テイクアウト" data-en="Takeout" data-hi="टेकआउट" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</span> <em data-ja="カレー" data-en="Curries" data-hi="करी" data-ko="커리" data-es="Currys">カレー</em></h3>
+<div class="category-title-line"></div>
+<span class="category-title-count" data-ja="8品 · ライス付き" data-en="8 Items · With Rice" data-hi="8 आइटम · चावल के साथ" data-ko="8개 메뉴 · 라이스 포함" data-es="8 Artículos · Con Arroz">8品 · ライス付き</span>
+</div>
+</div>
+<div class="menu-grid">
+<div class="menu-item is-special">
+<figure><img alt="Today's Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Ttodaysp-curry.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="本日のカレー" data-en="Today's Curry" data-hi="आज की करी" data-ko="오늘의 커리" data-es="Curry del Día">本日のカレー</h4>
+<p class="desc" data-ja="シェフの日替わりカレー — 旬の食材とオリジナルスパイスで毎日変わります。" data-en="Chef's daily special curry — changes every day with seasonal ingredients and house spices." data-hi="Chef's daily special curry — changes every day." data-ko="셰프의 일일 스페셜 커리 — 매일 바뀝니다." data-es="Curry especial del chef — cambia todos los días.">シェフの日替わりカレー — 旬の食材とオリジナルスパイスで毎日変わります。</p>
+<div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="日替わり" data-en="Changes Daily" data-hi="हर दिन बदलता है" data-ko="매일 변경" data-es="Cambia Cada Día">日替わり</span></div>
+</div>
+</div>
+<div class="menu-item is-popular">
+<figure><img alt="Butter Chicken Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tbutterchicken.jpeg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="バターチキンカレー" data-en="Butter Chicken Curry" data-hi="बटर चिकन करी" data-ko="버터 치킨 커리" data-es="Curry de Pollo con Mantequilla">バターチキンカレー</h4>
+<p class="desc" data-ja="カシューナッツ、バター、生クリームのリッチなトマトベースカレー。" data-en="Rich tomato-cashew sauce with butter and cream — India's most beloved curry, silky smooth." data-hi="Rich tomato-cashew sauce with butter and cream — silky smooth." data-ko="버터와 크림의 풍부한 토마토 캐슈 소스." data-es="Salsa rica de tomate y anacardo con mantequilla y crema.">カシューナッツ、バター、生クリームのリッチなトマトベースカレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="チキン" data-en="Chicken" data-hi="चिकन" data-ko="치킨" data-es="Pollo">チキン</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chicken Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tchicekn-curry.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="チキンカレー" data-en="Chicken Curry" data-hi="चिकन करी" data-ko="치킨 커리" data-es="Curry de Pollo">チキンカレー</h4>
+<p class="desc" data-ja="鶏もも肉を生姜、玉ねぎ、ガーリックでソテーした本格カレー。" data-en="Chicken thigh sautéed with ginger, onion and garlic — a wholesome, authentic house curry." data-hi="Chicken thigh sautéed with ginger, onion and garlic." data-ko="생강, 양파, 마늘로 볶은 닭 허벅지살 커리." data-es="Muslo de pollo salteado con jengibre, cebolla y ajo.">鶏もも肉を生姜、玉ねぎ、ガーリックでソテーした本格カレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="チキン" data-en="Chicken" data-hi="चिकन" data-ko="치킨" data-es="Pollo">チキン</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Saag Chicken Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tsaagchicken-curry.jpeg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="ほうれん草チキンカレー" data-en="Saag Chicken Curry" data-hi="पालक चिकन करी" data-ko="시금치 치킨 커리" data-es="Curry de Pollo con Espinacas">ほうれん草チキンカレー</h4>
+<p class="desc" data-ja="鶏肉とほうれん草、生姜、インドスパイスの栄養たっぷりカレー。" data-en="Tender chicken with vibrant spinach, ginger and aromatic Indian spices — nourishing and green." data-hi="Tender chicken with spinach and Indian spices." data-ko="시금치와 인도 향신료의 치킨 커리." data-es="Pollo tierno con espinacas y especias indias.">鶏肉とほうれん草、生姜、インドスパイスの栄養たっぷりカレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="チキン" data-en="Chicken" data-hi="चिकन" data-ko="치킨" data-es="Pollo">チキン</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Keema Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tkeema-curry.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="キーマカレー" data-en="Keema Curry" data-hi="कीमा करी" data-ko="키마 커리" data-es="Curry de Keema">キーマカレー</h4>
+<p class="desc" data-ja="鶏ひき肉を玉ねぎとスパイスで炒めた満足感のあるカレー。" data-en="Minced chicken sautéed with onion and aromatic spices — deeply satisfying and full of flavour." data-hi="Minced chicken sautéed with onion and spices." data-ko="양파와 향신료로 볶은 치킨 키마 커리." data-es="Pollo picado salteado con cebolla y especias.">鶏ひき肉を玉ねぎとスパイスで炒めた満足感のあるカレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="チキン" data-en="Chicken" data-hi="चिकन" data-ko="치킨" data-es="Pollo">チキン</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Dal Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tdal-curry.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="ダルカレー" data-en="Dal Curry" data-hi="दाल करी" data-ko="달 커리" data-es="Curry de Dal">ダルカレー</h4>
+<p class="desc" data-ja="豆を玉ねぎ、トマト、インドスパイスでじっくり煮込んだカレー。" data-en="Mixed lentils slow-simmered with onion, tomato and traditional Indian spices." data-hi="Mixed lentils with onion, tomato and spices." data-ko="양파, 토마토와 함께 끓인 렌즈콩 커리." data-es="Lentejas mixtas cocidas con cebolla, tomate y especias.">豆を玉ねぎ、トマト、インドスパイスでじっくり煮込んだカレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="ベジ" data-en="Veg" data-hi="शाकाहारी" data-ko="채식" data-es="Vegetal">ベジ</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Pork Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tpork-curry.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="ポークカレー" data-en="Pork Curry" data-hi="पोर्क करी" data-ko="포크 커리" data-es="Curry de Cerdo">ポークカレー</h4>
+<p class="desc" data-ja="骨なし豚肉を玉ねぎ、トマト、生姜ガーリックで仕上げたスパイシーカレー。" data-en="Boneless pork with onion, tomato and ginger-garlic paste — bold and deeply spiced." data-hi="Boneless pork with onion, tomato and ginger-garlic." data-ko="양파, 토마토, 생강 마늘의 돼지고기 커리." data-es="Cerdo deshuesado con cebolla, tomate y jengibre.">骨なし豚肉を玉ねぎ、トマト、生姜ガーリックで仕上げたスパイシーカレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥890</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="ポーク" data-en="Pork" data-hi="पोर्क" data-ko="돼지고기" data-es="Cerdo">ポーク</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Mutton Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tmutton-curry.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="マトンカレー" data-en="Mutton Curry" data-hi="मटन करी" data-ko="머튼 커리" data-es="Curry de Cordero">マトンカレー</h4>
+<p class="desc" data-ja="骨なしラムを生姜と玉ねぎでじっくり煮込んだ風味豊かなカレー。" data-en="Boneless lamb slow-cooked with ginger and onion into a mildly spiced, flavourful curry." data-hi="Boneless lamb slow-cooked with ginger and onion." data-ko="생강과 양파로 천천히 조리한 양고기 커리." data-es="Cordero deshuesado cocido lentamente con jengibre y cebolla.">骨なしラムを生姜と玉ねぎでじっくり煮込んだ風味豊かなカレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="ラム" data-en="Lamb" data-hi="लैम्ब" data-ko="양고기" data-es="Cordero">ラム</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Seafood Curry" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tseafood-curry.jpeg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="シーフードカレー" data-en="Seafood Curry" data-hi="सीफूड करी" data-ko="해산물 커리" data-es="Curry de Mariscos">シーフードカレー</h4>
+<p class="desc" data-ja="エビ・イカ・アサリをカシューナッツとココナッツで仕上げた甘くクリーミーなカレー。" data-en="Shrimp, squid and clams in a cashew-coconut curry — sweet, creamy and aromatic." data-hi="Shrimp, squid and clams in cashew-coconut curry." data-ko="캐슈넛 코코넛 커리의 새우, 오징어, 조개." data-es="Camarones, calamares y almejas en curry de anacardo y coco.">エビ・イカ・アサリをカシューナッツとココナッツで仕上げた甘くクリーミーなカレー。</p>
+<div class="menu-item-footer"><div><div class="price">¥990</div><div class="price-note" data-ja="ライス付き" data-en="With Rice" data-hi="चावल के साथ" data-ko="라이스 포함" data-es="Con Arroz">ライス付き</div></div><span class="includes-tag" data-ja="シーフード" data-en="Seafood" data-hi="सीफूड" data-ko="해산물" data-es="Mariscos">シーフード</span></div>
+</div>
+</div>
+</div>
+<div class="info-banner">
+<div class="info-banner-inner">
+<div class="info-icon">🍚</div>
+<div class="info-text">
+<strong data-ja="全カレーテイクアウトにライス付き" data-en="All Curry Takeouts Include Rice" data-hi="सभी करी टेकआउट में चावल शामिल" data-ko="모든 커리 테이크아웃에 라이스 포함" data-es="Todos los Currys Incluyen Arroz">全カレーテイクアウトにライス付き</strong>
+<p data-ja="ランチカレーテイクアウトは11:00〜15:00のみ。辛さ調整可能。" data-en="Lunch curry takeout is available 11:00 – 15:00 only. Spice level adjustable on request." data-hi="Lunch curry takeout 11:00 – 15:00 only." data-ko="런치 커리 테이크아웃은 11:00 – 15:00만." data-es="Curry para llevar disponible solo 11:00 – 15:00.">ランチカレーテイクアウトは11:00〜15:00のみ。辛さ調整可能。</p>
+</div>
+<div class="spice-levels"><span class="spice-level" data-ja="🍬 甘口" data-en="🍬 Mild" data-hi="🍬 हल्का" data-ko="🍬 순한맛" data-es="🍬 Suave">🍬 甘口</span><span class="spice-level" data-ja="🌶️ 中辛" data-en="🌶️ Medium" data-hi="🌶️ मध्यम" data-ko="🌶️ 중간맛" data-es="🌶️ Medio">🌶️ 中辛</span><span class="spice-level" data-ja="🌶️🌶️ 辛口" data-en="🌶️🌶️ Spicy" data-hi="🌶️🌶️ तीखा" data-ko="🌶️🌶️ 매운맛" data-es="🌶️🌶️ Picante">🌶️🌶️ 辛口</span><span class="spice-level" data-ja="🌶️🌶️🌶️ 激辛" data-en="🌶️🌶️🌶️ Hot" data-hi="🌶️🌶️🌶️ बहुत तीखा" data-ko="🌶️🌶️🌶️ 아주 매운맛" data-es="🌶️🌶️🌶️ Muy Picante">🌶️🌶️🌶️ 激辛</span><span class="spice-level" data-ja="🌶️🌶️🌶️🌶️ 超激辛" data-en="🌶️🌶️🌶️🌶️ Super Hot" data-hi="🌶️🌶️🌶️🌶️ बेहद तीखा" data-ko="🌶️🌶️🌶️🌶️ 매우 매운맛" data-es="🌶️🌶️🌶️🌶️ Súper Picante">🌶️🌶️🌶️🌶️ 超激辛</span></div>
+</div>
+</div>
 </div>
 
-<!-- ════════════════════════ TAB 3 — DINNER TAKEOUT ════════════════════════ -->
+<!-- TAB 3 — DINNER TAKEOUT -->
 <div class="tab-panel" id="dinner-takeout">
-  <div class="section-header">
-    <div class="section-eyebrow" data-ja="ディナー テイクアウト" data-en="Dinner Takeout" data-hi="डिनर टेकआउट" data-ko="디너 테이크아웃" data-es="Cena Para Llevar">ディナー テイクアウト</div>
-    <h2><span data-ja="ディナー" data-en="Dinner" data-hi="Dinner" data-ko="디너" data-es="Cena">ディナー</span> <em data-ja="テイクアウト" data-en="Takeout" data-hi="Takeout" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</em></h2>
-    <p data-ja="毎日17:00〜22:00にご利用いただけます。ご自宅でディナーをお楽しみください。" data-en="Available daily 17:00 – 22:00. Enjoy our full dinner experience from the comfort of your home." data-hi="प्रतिदिन 17:00 – 22:00 उपलब्ध।" data-ko="매일 17:00 – 22:00 이용 가능." data-es="Disponible diariamente 17:00 – 22:00.">毎日17:00〜22:00にご利用いただけます。ご自宅でディナーをお楽しみください。</p>
-  </div>
-  <div class="gold-divider"><div class="gold-divider-gem"></div></div>
-  <div class="category-section">
-    <div class="category-title">
-      <h3><span data-ja="ディナー" data-en="Dinner" data-hi="Dinner" data-ko="디너" data-es="Cena">ディナー</span> <em data-ja="セット" data-en="Sets" data-hi="Sets" data-ko="세트" data-es="Sets">セット</em></h3>
-      <div class="category-title-line"></div>
-      <span class="category-title-count" data-ja="10品" data-en="10 Items" data-hi="10 Items" data-ko="10 품목" data-es="10 Artículos">10品</span>
-    </div>
-  </div>
-  <div class="menu-grid">
-    <div class="menu-item">
-      <figure><img src="images/Tsun-set.jpg" alt="Sun Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="サンセット" data-en="Sun Set" data-hi="Sun Set" data-ko="Sun Set" data-es="Sun Set">サンセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Pickle (Tsukemono)</li><li>Naan or Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,590</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Naan or Rice</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Toffice-set.jpg" alt="Office Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="オフィスセット" data-en="Office Set" data-hi="Office Set" data-ko="Office Set" data-es="Office Set">オフィスセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Naan</li><li>Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,690</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Naan + Rice</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tgarlicnan-set.jpg" alt="Garlic Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="ガーリックセット" data-en="Garlic Set" data-hi="Garlic Set" data-ko="Garlic Set" data-es="Garlic Set">ガーリックセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Garlic Naan</li><li>Tandoori Chicken</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Garlic Naan</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tchocnan-set.jpg" alt="Chocolate Naan Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="チョコレートナンセット" data-en="Chocolate Naan Set" data-hi="Chocolate Naan Set" data-ko="Chocolate Naan Set" data-es="Chocolate Naan Set">チョコレートナンセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Chicken Tikka</li><li>Chocolate Naan</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥1,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Choco Naan</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Trose-set.jpg" alt="Rose Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="ローズセット" data-en="Rose Set" data-hi="Rose Set" data-ko="Rose Set" data-es="Rose Set">ローズセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Pickle (Tsukemono)</li><li>Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥2,090</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Rice</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tchillichicken-set.jpg" alt="Chili Chicken Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="チリチキン セット" data-en="Chili Chicken Set" data-hi="Chili Chicken Set" data-ko="Chili Chicken Set" data-es="Chili Chicken Set">チリチキン セット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Chili Chicken</li><li>Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥2,190</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Chili Chicken</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tchillibrown-set.jpg" alt="Chili Prawn Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="チリブラウン セット" data-en="Chili Prawn Set" data-hi="Chili Prawn Set" data-ko="Chili Prawn Set" data-es="Chili Prawn Set">チリブラウン セット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Chili Prawn</li><li>Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥2,290</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Chili Prawn</span></div>
-      </div>
-    </div>
-    <div class="menu-item is-popular">
-      <figure><img src="images/Tosusume-set.jpg" alt="Recommended Set"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="おすすめセット" data-en="Recommended Set" data-hi="Recommended Set" data-ko="Recommended Set" data-es="Recommended Set">おすすめセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Thick-cut Roast Pork</li><li>Rice</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥2,390</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Roast Pork</span></div>
-      </div>
-    </div>
-    <div class="menu-item">
-      <figure><img src="images/Tsunrose-set.jpg" alt="Sunrose Set Dinner"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="サンローズセット" data-en="Sunrose Set" data-hi="Sunrose Set" data-ko="Sunrose Set" data-es="Sunrose Set">サンローズセット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Naan or Rice</li><li>Tandoori Chicken</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥2,590</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Tandoori Chicken</span></div>
-      </div>
-    </div>
-    <div class="menu-item is-special">
-      <figure><img src="images/Tsunrosesp-set.jpg" alt="Sunrose Special Set Dinner"></figure>
-      <div class="menu-item-body">
-        <h4 data-ja="サンローズスペシャル セット" data-en="Sunrose Special Set" data-hi="Sunrose Special Set" data-ko="Sunrose Special Set" data-es="Sunrose Special Set">サンローズスペシャル セット</h4>
-        <ul class="includes"><li>Mini Salad</li><li>Cheese Naan or Garlic Naan</li><li>Tandoori Chicken</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="1 Curry of your choice" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
-<div class="menu-item-footer"><div><div class="price">¥2,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag">Cheese / Garlic Naan</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="info-banner">
-    <div class="info-banner-inner">
-      <div class="info-icon">🌶</div>
-      <div class="info-text">
-        <strong data-ja="選べるカレー一覧" data-en="Full Curry Selection Available" data-hi="Full Curry Selection Available" data-ko="전체 커리 선택 가능" data-es="Selección Completa de Curry Disponible">選べるカレー一覧</strong>
-        <p>Chicken · Butter Chicken · Chicken Masala · Chicken Bharta · Saag Chicken · Chicken Tikka Masala · Chicken Dopiaza · Saag Keema · Mutton · Saag Mutton · Pork · Saag Pork · Mixed Veg · Aloo Baingan · Aloo Gobi · Chana Masala · Saag Paneer · Butter Paneer · Dal · Seafood · Saag Seafood · Prawn · Saag Prawn</p>
-      </div>
-    </div>
-  </div>
+<div class="section-header">
+<div class="section-eyebrow" data-ja="ディナー テイクアウト" data-en="Dinner Takeout" data-hi="डिनर टेकआउट" data-ko="디너 테이크아웃" data-es="Cena Para Llevar">ディナー テイクアウト</div>
+<h2><span data-ja="ディナー" data-en="Dinner" data-hi="Dinner" data-ko="디너" data-es="Cena">ディナー</span> <em data-ja="テイクアウト" data-en="Takeout" data-hi="टेकआउट" data-ko="테이크아웃" data-es="Para Llevar">テイクアウト</em></h2>
+<p data-ja="毎日17:00〜22:00にご利用いただけます。ご自宅でディナーをお楽しみください。" data-en="Available daily 17:00 – 22:00. Enjoy our full dinner experience from the comfort of your home." data-hi="प्रतिदिन 17:00 – 22:00 उपलब्ध।" data-ko="매일 17:00 – 22:00 이용 가능." data-es="Disponible diariamente 17:00 – 22:00.">毎日17:00〜22:00にご利用いただけます。ご自宅でディナーをお楽しみください。</p>
 </div>
-
-
+<div class="gold-divider"><div class="gold-divider-gem"></div></div>
+<div class="category-section">
+<div class="category-title">
+<h3><span data-ja="ディナー" data-en="Dinner" data-hi="Dinner" data-ko="디너" data-es="Cena">ディナー</span> <em data-ja="セット" data-en="Sets" data-hi="सेट" data-ko="세트" data-es="Menús">セット</em></h3>
+<div class="category-title-line"></div>
+<span class="category-title-count" data-ja="10品" data-en="10 Items" data-hi="10 आइटम" data-ko="10개 메뉴" data-es="10 Artículos">10品</span>
+</div>
+</div>
+<div class="menu-grid">
+<div class="menu-item">
+<figure><img alt="Sun Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tsun-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="サンセット" data-en="Sun Set" data-hi="सनसेट" data-ko="선셋" data-es="Menú Sunset">サンセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="ピクルス（漬物）" data-en="Pickle (Tsukemono)" data-hi="अचार" data-ko="피클 (츠케모노)" data-es="Encurtido">ピクルス（漬物）</li><li data-ja="ナン または ライス" data-en="Naan or Rice" data-hi="नान या चावल" data-ko="난 또는 라이스" data-es="Naan o Arroz">ナン または ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,590</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ナン または ライス" data-en="Naan or Rice" data-hi="नान या चावल" data-ko="난 또는 라이스" data-es="Naan o Arroz">ナン または ライス</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Office Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Toffice-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="オフィスセット" data-en="Office Set" data-hi="ऑफिस सेट" data-ko="오피스 세트" data-es="Menú de Oficina">オフィスセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="ナン" data-en="Naan" data-hi="नान" data-ko="난" data-es="Pan naan">ナン</li><li data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="라이스" data-es="Arroz">ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,690</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ナン + ライス" data-en="Naan + Rice" data-hi="नान + चावल" data-ko="난 + 라이스" data-es="Naan + Arroz">ナン + ライス</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Garlic Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tgarlicnan-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="ガーリックセット" data-en="Garlic Set" data-hi="गार्लिक सेट" data-ko="갈릭 세트" data-es="Menú de Ajo">ガーリックセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="ガーリックナン" data-en="Garlic Naan" data-hi="गार्लिक नान" data-ko="갈릭 난" data-es="Naan de Ajo">ガーリックナン</li><li data-ja="タンドリーチキン" data-en="Tandoori Chicken" data-hi="तंदूरी चिकन" data-ko="탄두리 치킨" data-es="Pollo Tandoori">タンドリーチキン</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ガーリックナン" data-en="Garlic Naan" data-hi="गार्लिक नान" data-ko="갈릭 난" data-es="Naan de Ajo">ガーリックナン</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chocolate Naan Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tchocnan-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="チョコレートナンセット" data-en="Chocolate Naan Set" data-hi="चॉकलेट नान सेट" data-ko="초콜릿 난 세트" data-es="Menú de Naan de Chocolate">チョコレートナンセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="チキンティッカ" data-en="Chicken Tikka" data-hi="चिकन टिक्का" data-ko="치킨 티카" data-es="Pollo Tikka">チキンティッカ</li><li data-ja="チョコレートナン" data-en="Chocolate Naan" data-hi="चॉकलेट नान" data-ko="초콜릿 난" data-es="Naan de Chocolate">チョコレートナン</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥1,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="チョコナン" data-en="Choco Naan" data-hi="चॉकलेट नान" data-ko="초코 난" data-es="Naan de Chocolate">チョコナン</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Rose Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Trose-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="ローズセット" data-en="Rose Set" data-hi="रोज़ सेट" data-ko="로즈 세트" data-es="Menú Rose">ローズセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="ピクルス（漬物）" data-en="Pickle (Tsukemono)" data-hi="अचार" data-ko="피클 (츠케모노)" data-es="Encurtido">ピクルス（漬物）</li><li data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="라이스" data-es="Arroz">ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥2,090</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="라이스" data-es="Arroz">ライス</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chili Chicken Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tchillichicken-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="チリチキン セット" data-en="Chili Chicken Set" data-hi="चिली चिकन सेट" data-ko="칠리 치킨 세트" data-es="Menú de Pollo con Chile">チリチキン セット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="チリチキン" data-en="Chili Chicken" data-hi="चिली चिकन" data-ko="칠리 치킨" data-es="Pollo con Chile">チリチキン</li><li data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="라이스" data-es="Arroz">ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥2,190</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="チリチキン" data-en="Chili Chicken" data-hi="चिली चिकन" data-ko="칠리 치킨" data-es="Pollo con Chile">チリチキン</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Chili Prawn Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tchillibrown-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="チリブラウン セット" data-en="Chili Prawn Set" data-hi="चिली प्रॉन सेट" data-ko="칠리 새우 세트" data-es="Menú de Gambas con Chile">チリブラウン セット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="チリプラウン" data-en="Chili Prawn" data-hi="चिली प्रॉन" data-ko="칠리 새우" data-es="Gambas con Chile">チリプラウン</li><li data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="라이스" data-es="Arroz">ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥2,290</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="チリプラウン" data-en="Chili Prawn" data-hi="चिली प्रॉन" data-ko="칠리 새우" data-es="Gambas con Chile">チリプラウン</span></div>
+</div>
+</div>
+<div class="menu-item is-popular">
+<figure><img alt="Recommended Set" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tosusume-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="おすすめセット" data-en="Recommended Set" data-hi="अनुशंसित सेट" data-ko="추천 세트" data-es="Menú Recomendado">おすすめセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="厚切りローストポーク" data-en="Thick-cut Roast Pork" data-hi="मोटा कटा रोस्ट पोर्क" data-ko="두툼한 로스트 포크" data-es="Cerdo Asado en Rodajas Gruesas">厚切りローストポーク</li><li data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="라이스" data-es="Arroz">ライス</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥2,390</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="ローストポーク" data-en="Roast Pork" data-hi="रोस्ट पोर्क" data-ko="로스트 포크" data-es="Cerdo Asado">ローストポーク</span></div>
+</div>
+</div>
+<div class="menu-item">
+<figure><img alt="Sunrose Set Dinner" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tsunrose-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="サンローズセット" data-en="Sunrose Set" data-hi="सनरोज़ सेट" data-ko="선로즈 세트" data-es="Menú Sunrose">サンローズセット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="ナン または ライス" data-en="Naan or Rice" data-hi="नान या चावल" data-ko="난 또는 라이스" data-es="Naan o Arroz">ナン または ライス</li><li data-ja="タンドリーチキン" data-en="Tandoori Chicken" data-hi="तंदूरी चिकन" data-ko="탄두리 치킨" data-es="Pollo Tandoori">タンドリーチキン</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥2,590</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="タンドリーチキン" data-en="Tandoori Chicken" data-hi="तंदूरी चिकन" data-ko="탄두리 치킨" data-es="Pollo Tandoori">タンドリーチキン</span></div>
+</div>
+</div>
+<div class="menu-item is-special">
+<figure><img alt="Sunrose Special Set Dinner" src="https://pub-854433fbc85d46beb7ce22ddc1e712e9.r2.dev/seaside/images/Tsunrosesp-set.jpg"/></figure>
+<div class="menu-item-body">
+<h4 data-ja="サンローズスペシャル セット" data-en="Sunrose Special Set" data-hi="सनरोज़ स्पेशल सेट" data-ko="선로즈 스페셜 세트" data-es="Menú Especial Sunrose">サンローズスペシャル セット</h4>
+<ul class="includes"><li data-ja="ミニサラダ" data-en="Mini Salad" data-hi="मिनी सलाद" data-ko="미니 샐러드" data-es="Mini Ensalada">ミニサラダ</li><li data-ja="チーズナン または ガーリックナン" data-en="Cheese Naan or Garlic Naan" data-hi="चीज़ नान या गार्लिक नान" data-ko="치즈 난 또는 갈릭 난" data-es="Naan de Queso o Naan de Ajo">チーズナン または ガーリックナン</li><li data-ja="タンドリーチキン" data-en="Tandoori Chicken" data-hi="तंदूरी चिकन" data-ko="탄두리 치킨" data-es="Pollo Tandoori">タンドリーチキン</li><li data-ja="お好きなカレー1種" data-en="1 Curry of your choice" data-hi="अपनी पसंद की 1 करी" data-ko="원하는 커리 1종" data-es="1 Curry de su elección">お好きなカレー1種</li></ul>
+<div class="menu-item-footer"><div><div class="price">¥2,890</div><div class="price-note" data-ja="税込" data-en="Tax included" data-hi="कर सहित" data-ko="세금 포함" data-es="Imp. incluidos">税込</div></div><span class="includes-tag" data-ja="チーズ / ガーリックナン" data-en="Cheese / Garlic Naan" data-hi="चीज़ / गार्लिक नान" data-ko="치즈 / 갈릭 난" data-es="Naan de Queso / Ajo">チーズ / ガーリックナン</span></div>
+</div>
+</div>
+</div>
+<div class="info-banner">
+<div class="info-banner-inner">
+<div class="info-icon">🌶</div>
+<div class="info-text">
+<strong data-ja="選べるカレー一覧" data-en="Full Curry Selection Available" data-hi="पूरी करी सूची उपलब्ध है" data-ko="전체 커리 선택 가능" data-es="Selección Completa de Curry Disponible">選べるカレー一覧</strong>
+<p data-ja="チキン · バターチキン · チキンマサラ · チキンバルタ · サグチキン · チキンティッカマサラ · チキンドピアザ · サグキーマ · マトン · サグマトン · ポーク · サグポーク · ミックスベジ · アルーバイガン · アルーゴビ · チャナマサラ · サグパニール · バターパニール · ダル · シーフード · サグシーフード · プラウン · サグプラウン" data-en="Chicken · Butter Chicken · Chicken Masala · Chicken Bharta · Saag Chicken · Chicken Tikka Masala · Chicken Dopiaza · Saag Keema · Mutton · Saag Mutton · Pork · Saag Pork · Mixed Veg · Aloo Baingan · Aloo Gobi · Chana Masala · Saag Paneer · Butter Paneer · Dal · Seafood · Saag Seafood · Prawn · Saag Prawn" data-hi="चिकन · बटर चिकन · चिकन मसाला · चिकन भरता · साग चिकन · चिकन टिक्का मसाला · चिकन डोपियाज़ा · साग कीमा · मटन · साग मटन · पोर्क · साग पोर्क · मिक्स्ड वेज · आलू बैंगन · आलू गोभी · चना मसाला · साग पनीर · बटर पनीर · दाल · सीफूड · साग सीफूड · प्रॉन · साग प्रॉन" data-ko="치킨 · 버터 치킨 · 치킨 마살라 · 치킨 바르타 · 시금치 치킨 · 치킨 티카 마살라 · 치킨 도피아자 · 시금치 키마 · 머튼 · 시금치 머튼 · 포크 · 시금치 포크 · 믹스 베지 · 알루 바이간 · 알루 고비 · 차나 마살라 · 시금치 파니르 · 버터 파니르 · 달 · 해산물 · 시금치 해산물 · 새우 · 시금치 새우" data-es="Pollo · Pollo con Mantequilla · Pollo Masala · Pollo Bharta · Pollo con Espinacas · Pollo Tikka Masala · Pollo Dopiaza · Keema con Espinacas · Cordero · Cordero con Espinacas · Cerdo · Cerdo con Espinacas · Verduras Mixtas · Aloo Baingan · Aloo Gobi · Chana Masala · Saag Paneer · Paneer con Mantequilla · Dal · Mariscos · Mariscos con Espinacas · Gambas · Gambas con Espinacas">チキン · バターチキン · チキンマサラ · チキンバルタ · サグチキン · チキンティッカマサラ · チキンドピアザ · サグキーマ · マトン · サグマトン · ポーク · サグポーク · ミックスベジ · アルーバイガン · アルーゴビ · チャナマサラ · サグパニール · バターパニール · ダル · シーフード · サグシーフード · プラウン · サグプラウン</p>
+</div>
+</div>
+</div>
+</div>
 
 <!-- FINAL CURRY SELECTION -->
 <section class="final-curry-selection" id="curry-selection">
-  <div class="final-curry-inner">
-    <div class="final-curry-eyebrow" data-ja="カレーセレクション" data-en="CURRY SELECTION" data-hi="करी चयन" data-ko="커리 선택" data-es="SELECCIÓN DE CURRY">CURRY SELECTION</div>
-    <h2><span data-ja="お好きな" data-en="Choose Your" data-hi="अपनी पसंद की" data-ko="원하는" data-es="Elige tu">Choose Your</span> <em data-ja="カレー" data-en="Curry" data-hi="करी" data-ko="커리" data-es="Curry">Curry</em></h2>
-    <p class="final-curry-subtitle" data-ja="カレーをお選びください" data-en="Select Curry" data-hi="करी चुनें" data-ko="커리를 선택하세요" data-es="Seleccione su curry">カレーをお選びください · Select Curry</p>
-
-    <div class="final-curry-grid">
-      <button type="button" class="final-curry-block curry-chicken" data-ja="チキンカレー" data-en="Chicken Curry" data-hi="चिकन करी" data-ko="치킨 커리" data-es="Curry de Pollo">Chicken Curry</button>
-      <button type="button" class="final-curry-block curry-keema" data-ja="キーマカレー" data-en="Keema Curry" data-hi="कीमा करी" data-ko="키마 커리" data-es="Curry de Keema">Keema Curry</button>
-      <button type="button" class="final-curry-block curry-butter" data-ja="バターチキンカレー" data-en="Butter Chicken Curry" data-hi="बटर चिकन करी" data-ko="버터 치킨 커리" data-es="Curry de Pollo con Mantequilla">Butter Chicken Curry</button>
-      <button type="button" class="final-curry-block curry-dal" data-ja="ダルカレー" data-en="Dal Curry" data-hi="दाल करी" data-ko="달 커리" data-es="Curry de Dal">Dal Curry</button>
-      <button type="button" class="final-curry-block curry-saag-chicken" data-ja="ほうれん草チキンカレー" data-en="Saag Chicken Curry" data-hi="पालक चिकन करी" data-ko="시금치 치킨 커리" data-es="Curry de Pollo con Espinacas">Saag Chicken Curry</button>
-      <button type="button" class="final-curry-block curry-pork" data-ja="ポークカレー" data-en="Pork Curry" data-hi="पोर्क करी" data-ko="포크 커리" data-es="Curry de Cerdo">Pork Curry</button>
-      <button type="button" class="final-curry-block curry-mutton" data-ja="マトンカレー" data-en="Mutton Curry" data-hi="मटन करी" data-ko="머튼 커리" data-es="Curry de Cordero">Mutton Curry</button>
-      <button type="button" class="final-curry-block curry-seafood" data-ja="シーフードカレー" data-en="Seafood Curry" data-hi="सीफूड करी" data-ko="해산물 커리" data-es="Curry de Mariscos">Seafood Curry</button>
-      <button type="button" class="final-curry-block curry-chicken" data-ja="ほうれん草ポークカレー" data-en="Saag Pork Curry" data-hi="पालक पोर्क करी" data-ko="시금치 포크 커리" data-es="Curry de Cerdo con Espinacas">Saag Pork Curry</button>
-      <button type="button" class="final-curry-block curry-keema" data-ja="ミックスベジタブルカレー" data-en="Mixed Vegetable Curry" data-hi="मिक्स वेजिटेबल करी" data-ko="믹스 베지터블 커리" data-es="Curry de Verduras Mixtas">Mixed Vegetable Curry</button>
-      <button type="button" class="final-curry-block curry-butter" data-ja="サグパニールカレー" data-en="Saag Paneer Curry" data-hi="साग पनीर करी" data-ko="사그 파니르 커리" data-es="Curry de Saag Paneer">Saag Paneer Curry</button>
-      <button type="button" class="final-curry-block curry-dal" data-ja="バターパニールカレー" data-en="Butter Paneer Curry" data-hi="बटर पनीर करी" data-ko="버터 파니르 커리" data-es="Curry de Paneer con Mantequilla">Butter Paneer Curry</button>
-      <button type="button" class="final-curry-block curry-saag-chicken" data-ja="チャナマサラカレー" data-en="Chana Masala Curry" data-hi="चना मसाला करी" data-ko="차나 마살라 커리" data-es="Curry de Chana Masala">Chana Masala Curry</button>
-      <button type="button" class="final-curry-block curry-pork" data-ja="プラウンカレー" data-en="Prawn Curry" data-hi="प्रॉन करी" data-ko="새우 커리" data-es="Curry de Gambas">Prawn Curry</button>
-      <button type="button" class="final-curry-block curry-mutton" data-ja="チキンマサラカレー" data-en="Chicken Masala Curry" data-hi="चिकन मसाला करी" data-ko="치킨 마살라 커리" data-es="Curry de Pollo Masala">Chicken Masala Curry</button>
-      <button type="button" class="final-curry-block curry-seafood" data-ja="サグプラウンカレー" data-en="Saag Prawn Curry" data-hi="पालक प्रॉन करी" data-ko="시금치 새우 커리" data-es="Curry de Gambas con Espinacas">Saag Prawn Curry</button>
-      <button type="button" class="final-curry-block curry-chicken" data-ja="チキンバルタカレー" data-en="Chicken Bharta Curry" data-hi="चिकन भरता करी" data-ko="치킨 바르타 커리" data-es="Curry de Pollo Bharta">Chicken Bharta Curry</button>
-      <button type="button" class="final-curry-block curry-keema" data-ja="チキンティッカマサラカレー" data-en="Chicken Tikka Masala Curry" data-hi="चिकन टिक्का मसाला करी" data-ko="치킨 티카 마살라 커리" data-es="Curry de Pollo Tikka Masala">Chicken Tikka Masala Curry</button>
-      <button type="button" class="final-curry-block curry-butter" data-ja="チキンドピアザカレー" data-en="Chicken Dopiaza Curry" data-hi="चिकन डोपियाज़ा करी" data-ko="치킨 도피아자 커리" data-es="Curry de Pollo Dopiaza">Chicken Dopiaza Curry</button>
-      <button type="button" class="final-curry-block curry-dal" data-ja="サグキーマカレー" data-en="Saag Keema Curry" data-hi="साग कीमा करी" data-ko="시금치 키마 커리" data-es="Curry de Keema con Espinacas">Saag Keema Curry</button>
-      <button type="button" class="final-curry-block curry-saag-chicken" data-ja="サグマトンカレー" data-en="Saag Mutton Curry" data-hi="साग मटन करी" data-ko="시금치 머튼 커리" data-es="Curry de Cordero con Espinacas">Saag Mutton Curry</button>
-      <button type="button" class="final-curry-block curry-pork" data-ja="アルーバイガンカレー" data-en="Aloo Baingan Curry" data-hi="आलू बैंगन करी" data-ko="알루 바이간 커리" data-es="Curry de Aloo Baingan">Aloo Baingan Curry</button>
-      <button type="button" class="final-curry-block curry-mutton" data-ja="アルーゴビカレー" data-en="Aloo Gobi Curry" data-hi="आलू गोभी करी" data-ko="알루 고비 커리" data-es="Curry de Aloo Gobi">Aloo Gobi Curry</button>
-      <button type="button" class="final-curry-block curry-seafood" data-ja="サグシーフードカレー" data-en="Saag Seafood Curry" data-hi="साग सीफूड करी" data-ko="시금치 해산물 커리" data-es="Curry de Mariscos con Espinacas">Saag Seafood Curry</button>
-    </div>
-
-    <div class="final-curry-note">
-      <span>✦</span>
-      <div>
-        <strong data-ja="すべてのカレーをテイクアウトできます。" data-en="All curries are available for takeout." data-hi="सभी करी टेकआउट के लिए उपलब्ध हैं।" data-ko="모든 커리는 테이크아웃 가능합니다." data-es="Todos los currys están disponibles para llevar.">All curries are available for takeout.</strong>
-        <p data-ja="すべてのカレーはテイクアウトできます。" data-en="All curries are available for takeout." data-hi="सभी करी टेकआउट के लिए उपलब्ध हैं।" data-ko="모든 커리는 테이크아웃 가능합니다." data-es="Todos los currys están disponibles para llevar.">すべてのカレーはテイクアウトできます。</p>
-      </div>
-    </div>
-  </div>
+<div class="final-curry-inner">
+<div class="final-curry-eyebrow" data-ja="カレーセレクション" data-en="CURRY SELECTION" data-hi="करी चयन" data-ko="커리 선택" data-es="SELECCIÓN DE CURRY">CURRY SELECTION</div>
+<h2><span data-ja="お好きな" data-en="Choose Your" data-hi="अपनी पसंद की" data-ko="원하는" data-es="Elige tu">お好きな</span> <em data-ja="カレー" data-en="Curry" data-hi="करी" data-ko="커리" data-es="Curry">カレー</em></h2>
+<p class="final-curry-subtitle" data-ja="カレーをお選びください" data-en="Select Curry" data-hi="करी चुनें" data-ko="커리를 선택하세요" data-es="Seleccione su curry">カレーをお選びください · Select Curry</p>
+<div class="final-curry-grid">
+<button class="final-curry-block curry-chicken" data-ja="チキンカレー" data-en="Chicken Curry" data-hi="चिकन करी" data-ko="치킨 커리" data-es="Curry de Pollo" type="button">Chicken Curry</button>
+<button class="final-curry-block curry-keema" data-ja="キーマカレー" data-en="Keema Curry" data-hi="कीमा करी" data-ko="키마 커리" data-es="Curry de Keema" type="button">Keema Curry</button>
+<button class="final-curry-block curry-butter" data-ja="バターチキンカレー" data-en="Butter Chicken Curry" data-hi="बटर चिकन करी" data-ko="버터 치킨 커리" data-es="Curry de Pollo con Mantequilla" type="button">Butter Chicken Curry</button>
+<button class="final-curry-block curry-dal" data-ja="ダルカレー" data-en="Dal Curry" data-hi="दाल करी" data-ko="달 커리" data-es="Curry de Dal" type="button">Dal Curry</button>
+<button class="final-curry-block curry-saag-chicken" data-ja="ほうれん草チキンカレー" data-en="Saag Chicken Curry" data-hi="पालक चिकन करी" data-ko="시금치 치킨 커리" data-es="Curry de Pollo con Espinacas" type="button">Saag Chicken Curry</button>
+<button class="final-curry-block curry-pork" data-ja="ポークカレー" data-en="Pork Curry" data-hi="पोर्क करी" data-ko="포크 커리" data-es="Curry de Cerdo" type="button">Pork Curry</button>
+<button class="final-curry-block curry-mutton" data-ja="マトンカレー" data-en="Mutton Curry" data-hi="मटन करी" data-ko="머튼 커리" data-es="Curry de Cordero" type="button">Mutton Curry</button>
+<button class="final-curry-block curry-seafood" data-ja="シーフードカレー" data-en="Seafood Curry" data-hi="सीफूड करी" data-ko="해산물 커리" data-es="Curry de Mariscos" type="button">Seafood Curry</button>
+<button class="final-curry-block curry-chicken" data-ja="ほうれん草ポークカレー" data-en="Saag Pork Curry" data-hi="पालक पोर्क करी" data-ko="시금치 포크 커리" data-es="Curry de Cerdo con Espinacas" type="button">Saag Pork Curry</button>
+<button class="final-curry-block curry-keema" data-ja="ミックスベジタブルカレー" data-en="Mixed Vegetable Curry" data-hi="मिक्स वेजिटेबल करी" data-ko="믹스 베지터블 커리" data-es="Curry de Verduras Mixtas" type="button">Mixed Vegetable Curry</button>
+<button class="final-curry-block curry-butter" data-ja="サグパニールカレー" data-en="Saag Paneer Curry" data-hi="साग पनीर करी" data-ko="사그 파니르 커리" data-es="Curry de Saag Paneer" type="button">Saag Paneer Curry</button>
+<button class="final-curry-block curry-dal" data-ja="バターパニールカレー" data-en="Butter Paneer Curry" data-hi="बटर पनीर करी" data-ko="버터 파니르 커리" data-es="Curry de Paneer con Mantequilla" type="button">Butter Paneer Curry</button>
+<button class="final-curry-block curry-saag-chicken" data-ja="チャナマサラカレー" data-en="Chana Masala Curry" data-hi="चना मसाला करी" data-ko="차나 마살라 커리" data-es="Curry de Chana Masala" type="button">Chana Masala Curry</button>
+<button class="final-curry-block curry-pork" data-ja="プラウンカレー" data-en="Prawn Curry" data-hi="प्रॉन करी" data-ko="새우 커리" data-es="Curry de Gambas" type="button">Prawn Curry</button>
+<button class="final-curry-block curry-mutton" data-ja="チキンマサラカレー" data-en="Chicken Masala Curry" data-hi="चिकन मसाला करी" data-ko="치킨 마살라 커리" data-es="Curry de Pollo Masala" type="button">Chicken Masala Curry</button>
+<button class="final-curry-block curry-seafood" data-ja="サグプラウンカレー" data-en="Saag Prawn Curry" data-hi="पालक प्रॉन करी" data-ko="시금치 새우 커리" data-es="Curry de Gambas con Espinacas" type="button">Saag Prawn Curry</button>
+<button class="final-curry-block curry-chicken" data-ja="チキンバルタカレー" data-en="Chicken Bharta Curry" data-hi="चिकन भरता करी" data-ko="치킨 바르타 커리" data-es="Curry de Pollo Bharta" type="button">Chicken Bharta Curry</button>
+<button class="final-curry-block curry-keema" data-ja="チキンティッカマサラカレー" data-en="Chicken Tikka Masala Curry" data-hi="चिकन टिक्का मसाला करी" data-ko="치킨 티카 마살라 커리" data-es="Curry de Pollo Tikka Masala" type="button">Chicken Tikka Masala Curry</button>
+<button class="final-curry-block curry-butter" data-ja="チキンドピアザカレー" data-en="Chicken Dopiaza Curry" data-hi="चिकन डोपियाज़ा करी" data-ko="치킨 도피아자 커리" data-es="Curry de Pollo Dopiaza" type="button">Chicken Dopiaza Curry</button>
+<button class="final-curry-block curry-dal" data-ja="サグキーマカレー" data-en="Saag Keema Curry" data-hi="साग कीमा करी" data-ko="시금치 키마 커리" data-es="Curry de Keema con Espinacas" type="button">Saag Keema Curry</button>
+<button class="final-curry-block curry-saag-chicken" data-ja="サグマトンカレー" data-en="Saag Mutton Curry" data-hi="साग मटन करी" data-ko="시금치 머튼 커리" data-es="Curry de Cordero con Espinacas" type="button">Saag Mutton Curry</button>
+<button class="final-curry-block curry-pork" data-ja="アルーバイガンカレー" data-en="Aloo Baingan Curry" data-hi="आलू बैंगन करी" data-ko="알루 바이간 커리" data-es="Curry de Aloo Baingan" type="button">Aloo Baingan Curry</button>
+<button class="final-curry-block curry-mutton" data-ja="アルーゴビカレー" data-en="Aloo Gobi Curry" data-hi="आलू गोभी करी" data-ko="알루 고비 커리" data-es="Curry de Aloo Gobi" type="button">Aloo Gobi Curry</button>
+<button class="final-curry-block curry-seafood" data-ja="サグシーフードカレー" data-en="Saag Seafood Curry" data-hi="साग सीफूड करी" data-ko="시금치 해산물 커리" data-es="Curry de Mariscos con Espinacas" type="button">Saag Seafood Curry</button>
+</div>
+<div class="final-curry-note">
+<span>✦</span>
+<div>
+<strong data-ja="すべてのカレーをテイクアウトできます。" data-en="All curries are available for takeout." data-hi="सभी करी टेकआउट के लिए उपलब्ध हैं।" data-ko="모든 커리는 테이크아웃 가능합니다." data-es="Todos los currys están disponibles para llevar.">All curries are available for takeout.</strong>
+<p data-ja="すべてのカレーはテイクアウトできます。" data-en="All curries are available for takeout." data-hi="सभी करी टेकआउट के लिए उपलब्ध हैं।" data-ko="모든 커리는 테이크아웃 가능합니다." data-es="Todos los currys están disponibles para llevar.">すべてのカレーはテイクアウトできます。</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- ═══════════════════════════ BACK TO TOP ═══════════════════════════ -->
-<button id="backToTop" title="Back to top">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+<button id="backToTop" title="Back to top" data-ja="トップへ戻る" data-en="Back to top" data-hi="ऊपर जाएँ" data-ko="맨 위로" data-es="Volver arriba">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer class="footer">
-  <p>© 2025 <a href="index.html">Sunrose Japan</a> &nbsp;·&nbsp; 株式会社BAL BISHNU &nbsp;·&nbsp; All Rights Reserved.</p>
+<p><span data-ja="© 2025 Sunrose Japan · 株式会社BAL BISHNU · All Rights Reserved." data-en="© 2025 Sunrose Japan · BAL BISHNU Co., Ltd. · All Rights Reserved." data-hi="© 2025 Sunrose Japan · BAL BISHNU Co., Ltd. · सर्वाधिकार सुरक्षित।" data-ko="© 2025 Sunrose Japan · BAL BISHNU Co., Ltd. · All Rights Reserved." data-es="© 2025 Sunrose Japan · BAL BISHNU Co., Ltd. · Todos los derechos reservados.">© 2025 Sunrose Japan · 株式会社BAL BISHNU · All Rights Reserved.</span></p>
 </footer>
 
 <script>
-  document.getElementById('exploreBtn').addEventListener('click', () => {
-    document.querySelector('.tab-nav').scrollIntoView({ behavior: 'smooth' });
-  });
-  const topBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => { topBtn.style.display = window.scrollY > 300 ? "flex" : "none"; });
-  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const topBtn=document.getElementById("backToTop");
+  window.addEventListener("scroll",()=>{topBtn.style.display=window.scrollY>300?"flex":"none"});
+  topBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+
+  const tabLinks=document.querySelectorAll(".tab-nav-btn");
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting) tabLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id)); });
+  },{rootMargin:"-30% 0px -60% 0px"});
+  document.querySelectorAll(".tab-panel").forEach(p=>io.observe(p));
+</script>
+<script>
+(function(){const header=document.getElementById('header');const hamburger=document.getElementById('hamburger');const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':''});nav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');nav.classList.remove('open');document.body.style.overflow=''})});header.classList.toggle('scrolled',window.scrollY>40)})();
 </script>
 <script src="lang.js"></script>
-
+<script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
 </body>
 </html>

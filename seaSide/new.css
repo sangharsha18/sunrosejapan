@@ -56,7 +56,106 @@ img
   width: 100%;
   display: block;
 }
+/* ================================
+   SEASIDE MENU HEADER
+   ================================ */
 
+.seaside-page-header {
+  width: 100%;
+  height: 118px;
+  background: #171008;
+  border-bottom: 1px solid rgba(190, 150, 70, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+  box-sizing: border-box;
+}
+
+/* Brand */
+
+.seaside-brand {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.seaside-brand-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 43px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #f4ead8;
+}
+
+.seaside-brand-branch {
+  margin-top: 9px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #c89b3c;
+}
+
+/* Navigation */
+
+.seaside-main-nav {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.seaside-main-nav a {
+  text-decoration: none;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  color: #e8e0d5;
+
+  transition: color 0.25s ease;
+}
+
+.seaside-main-nav a:hover {
+  color: #c89b3c;
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 700px) {
+
+  .seaside-page-header {
+    height: 100px;
+    padding: 0 25px;
+  }
+
+  .seaside-brand-name {
+    font-size: 34px;
+  }
+
+  .seaside-brand-branch {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .seaside-main-nav {
+    gap: 20px;
+  }
+
+  .seaside-main-nav a {
+    font-size: 13px;
+  }
+}
 
 /* ===================== HERO ===================== */
 .menu-hero
