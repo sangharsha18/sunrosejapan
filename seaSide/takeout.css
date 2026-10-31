@@ -468,3 +468,141 @@ img { width: 100%; display: block; }
   .hero-deco::before { width: 320px; height: 320px; }
   .hero-deco::after  { width: 220px; height: 220px; }
 }
+
+/* ===================== FINAL CURRY BLOCKS ===================== */
+.final-curry-selection {
+  max-width: var(--max);
+  margin: 40px auto 90px;
+  padding: 0 40px;
+}
+
+.final-curry-inner {
+  position: relative;
+  overflow: hidden;
+  padding: 54px 56px 50px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #fffaf0 0%, #f7efe0 100%);
+  box-shadow: 0 18px 50px rgba(60,40,20,.08);
+}
+
+.final-curry-eyebrow {
+  text-align: center;
+  color: #9b702f;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  margin-bottom: 8px;
+}
+
+.final-curry-inner h2 {
+  margin: 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1;
+  color: #241c16;
+}
+
+.final-curry-inner h2 em {
+  color: #8f2c20;
+  font-style: normal;
+}
+
+.final-curry-subtitle {
+  text-align: center;
+  margin: 18px 0 30px;
+  color: #806d55;
+  font-size: 15px;
+  letter-spacing: .06em;
+}
+
+.final-curry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.final-curry-block {
+  min-height: 108px;
+  padding: 22px 20px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 20px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(40,25,15,.12);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.final-curry-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(40,25,15,.18);
+  filter: brightness(1.06);
+}
+
+.final-curry-block:focus-visible {
+  outline: 3px solid #d5a84d;
+  outline-offset: 3px;
+}
+
+.curry-chicken { background: linear-gradient(135deg,#d66a17,#a94408); }
+.curry-keema { background: linear-gradient(135deg,#4f8050,#285b30); }
+.curry-butter { background: linear-gradient(135deg,#c93636,#921b1f); }
+.curry-dal { background: linear-gradient(135deg,#2b918d,#116d69); }
+.curry-saag-chicken { background: linear-gradient(135deg,#356da1,#1f4d76); }
+.curry-pork { background: linear-gradient(135deg,#c13a55,#9e2843); }
+.curry-mutton { background: linear-gradient(135deg,#865039,#60311f); }
+.curry-seafood { background: linear-gradient(135deg,#e0a313,#c48605); }
+
+.final-curry-note {
+  max-width: 680px;
+  margin: 22px auto 0;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid rgba(170,130,60,.2);
+  border-radius: 18px;
+  background: rgba(255,255,255,.62);
+}
+
+.final-curry-note > span {
+  font-size: 28px;
+  color: #a77b36;
+}
+
+.final-curry-note strong {
+  display: block;
+  color: #2d251e;
+  font-family: var(--serif);
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.final-curry-note p {
+  margin: 0;
+  color: #987e58;
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  .final-curry-selection { padding: 0 20px; }
+  .final-curry-inner { padding: 40px 24px; }
+  .final-curry-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .final-curry-block { min-height: 88px; font-size: 18px; padding: 18px 16px; }
+}
+
+@media (max-width: 480px) {
+  .final-curry-grid { grid-template-columns: 1fr; }
+  .final-curry-inner h2 { font-size: 38px; }
+}
+
+/* Larger full curry selection */
+.final-curry-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.final-curry-block { min-height: 92px; display:flex; align-items:center; }
+@media (max-width: 800px) { .final-curry-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .final-curry-grid { grid-template-columns: 1fr; } }

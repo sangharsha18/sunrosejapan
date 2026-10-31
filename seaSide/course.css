@@ -1150,3 +1150,486 @@ img
     height: 220px;
   }
 }
+/* =========================================================
+   SUNROSE LUXURY TYPOGRAPHY + EDITORIAL REDESIGN
+   Keep the existing HTML/content. This layer intentionally
+   makes the page feel like a premium restaurant menu.
+   ========================================================= */
+
+:root{
+  --luxury-brown:#24180f;
+  --luxury-brown-2:#382719;
+  --luxury-ink:#17120e;
+  --luxury-cream:#fbf7ef;
+  --luxury-line:rgba(112,82,35,.22);
+}
+
+html{background:var(--luxury-cream);}
+
+body{
+  font-size:16px;
+  line-height:1.75;
+  padding:0;
+  background:var(--luxury-cream);
+  color:var(--luxury-ink);
+}
+
+/* ---------- HERO ---------- */
+.menu-hero{
+  min-height:760px;
+  background:var(--luxury-brown);
+}
+
+.hero-bg{
+  background:
+    radial-gradient(circle at 50% 42%,rgba(234,173,6,.18),transparent 34%),
+    radial-gradient(circle at 18% 72%,rgba(232,201,122,.08),transparent 30%),
+    linear-gradient(135deg,#17100b 0%,#2b1d13 48%,#4a321d 100%);
+}
+
+.hero-deco::before{
+  width:780px;
+  height:780px;
+  border-color:rgba(234,173,6,.09);
+}
+
+.hero-deco::after{
+  width:540px;
+  height:540px;
+  border-color:rgba(234,173,6,.15);
+}
+
+.menu-hero-content{
+  height:auto;
+  min-height:700px;
+  padding:120px 28px 100px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-eyebrow{
+  font-size:14px;
+  letter-spacing:.42em;
+  margin-bottom:30px;
+}
+
+.menu-hero-content h1{
+  font-size:clamp(4rem,7vw,7rem);
+  line-height:.98;
+  letter-spacing:.015em;
+  margin-bottom:28px;
+  text-shadow:0 8px 35px rgba(0,0,0,.28);
+}
+
+.menu-hero-content p{
+  font-size:21px;
+  line-height:1.7;
+  max-width:700px;
+  color:#e6d2a4;
+}
+
+.hero-badges{
+  height:auto;
+  gap:12px;
+  margin:32px 0 42px;
+}
+
+.hero-badge{
+  padding:11px 20px;
+  font-size:13px;
+  letter-spacing:.08em;
+}
+
+.menu-hero-btn{
+  margin-top:8px;
+  padding:17px 46px;
+  font-size:14px;
+  letter-spacing:.18em;
+}
+
+/* ---------- NAV ---------- */
+.menu-nav{
+  padding:13px 24px;
+  gap:6px;
+  background:rgba(28,19,12,.98);
+}
+
+.menu-nav a{
+  font-size:13px;
+  letter-spacing:.1em;
+  padding:10px 20px;
+  color:rgba(255,255,255,.72);
+  background:transparent;
+  border-color:rgba(234,173,6,.12);
+}
+
+.menu-nav a:hover{
+  color:#f3d98f;
+  background:rgba(234,173,6,.08);
+  border-color:rgba(234,173,6,.35);
+}
+
+/* ---------- SECTION HEADERS ---------- */
+.section-header{
+  padding:110px 40px 70px;
+}
+
+.section-eyebrow{
+  font-size:13px;
+  letter-spacing:.42em;
+  margin-bottom:22px;
+}
+
+.section-header h2{
+  font-size:clamp(3rem,5vw,4.6rem);
+  line-height:1;
+  letter-spacing:.01em;
+  margin-bottom:22px;
+}
+
+.section-header p{
+  font-size:18px;
+  line-height:1.8;
+  max-width:680px;
+}
+
+.gold-divider{
+  max-width:360px;
+  margin-bottom:78px;
+}
+
+/* ---------- NOTICE ---------- */
+.notice-banner{margin-bottom:70px;}
+
+.notice-banner-inner{
+  padding:30px 38px;
+  border-radius:2px;
+  box-shadow:0 18px 50px rgba(60,42,18,.06);
+}
+
+.notice-icon{font-size:2rem;}
+.notice-text{font-size:16px;line-height:1.8;}
+
+/* ---------- COURSE CARDS ---------- */
+.course-grid{
+  gap:28px;
+  padding-bottom:110px;
+}
+
+.course-card{
+  border-radius:2px;
+  box-shadow:0 12px 40px rgba(48,33,16,.055);
+}
+
+.course-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 70px rgba(48,33,16,.13);
+}
+
+.course-header{
+  padding:42px 32px 34px;
+  background:linear-gradient(145deg,#17100b,#302116);
+}
+
+.course-letter{
+  font-size:4.4rem;
+  margin-bottom:8px;
+}
+
+.course-name-jp{
+  font-size:13px;
+  letter-spacing:.22em;
+  margin-bottom:20px;
+}
+
+.course-price{
+  font-size:3rem;
+}
+
+.course-price small{font-size:.85rem;}
+
+.course-badge{
+  font-size:11px;
+  padding:6px 12px;
+}
+
+.course-body{padding:34px;}
+
+.course-section-label{
+  font-size:12px;
+  letter-spacing:.19em;
+  margin-top:26px;
+  padding-bottom:9px;
+}
+
+.course-item-list{gap:12px;}
+
+.course-item-list li{
+  font-size:17px;
+  line-height:1.65;
+  gap:12px;
+}
+
+.course-item-list li::before{
+  width:6px;
+  height:6px;
+  margin-top:9px;
+}
+
+.course-item-list li .item-jp{font-size:13px;}
+
+.naan-tags{gap:8px;}
+.naan-tag{font-size:13px;padding:5px 12px;}
+
+.course-drink-note{
+  font-size:14px;
+  line-height:1.6;
+}
+.course-drink-note strong{font-size:15px;}
+
+/* ---------- CURRY ---------- */
+.curry-section{
+  padding:110px 40px 120px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(234,173,6,.08),transparent 38%),
+    linear-gradient(145deg,#17110d,#24180f 55%,#17110d);
+}
+
+.curry-section .section-header{padding:0 0 65px;}
+.curry-rule{
+  padding:24px 30px;
+  font-size:16px;
+  line-height:1.8;
+}
+
+.spice-tag{font-size:14px;padding:8px 18px;}
+.curry-cat{padding:30px 24px;border-radius:2px;}
+.curry-cat-title{font-size:12px;letter-spacing:.19em;}
+.curry-cat ul{gap:13px;}
+.curry-cat ul li{font-size:15px;line-height:1.5;}
+.curry-cat ul li .jp{font-size:12px;}
+
+/* ---------- FREE DRINK: MAIN LUXURY FOCUS ---------- */
+#free-drink{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(234,173,6,.09),transparent 28%),
+    linear-gradient(180deg,#fbf7ef 0%,#f7efdf 100%);
+}
+
+#free-drink::before{
+  content:'';
+  position:absolute;
+  width:620px;
+  height:620px;
+  border:1px solid rgba(234,173,6,.10);
+  border-radius:50%;
+  left:50%;
+  top:170px;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+
+#free-drink .drink-inner{position:relative;z-index:1;}
+
+#free-drink .section-header{padding-top:110px;}
+
+.drink-plans{
+  gap:28px;
+  align-items:stretch;
+  margin-bottom:55px;
+}
+
+.drink-plan{
+  min-height:360px;
+  padding:55px 34px 38px;
+  border-radius:2px;
+  box-shadow:0 18px 55px rgba(48,33,16,.07);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.drink-plan.is-popular{
+  transform:translateY(-12px) scale(1.025);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(234,173,6,.13),transparent 42%),
+    linear-gradient(145deg,#17100b,#302116);
+  box-shadow:0 30px 75px rgba(28,19,11,.22);
+}
+
+.drink-plan.is-popular:hover{
+  transform:translateY(-17px) scale(1.025);
+}
+
+.plan-badge{
+  font-size:11px;
+  padding:7px 18px;
+  letter-spacing:.16em;
+}
+
+.plan-duration{
+  font-size:4.1rem;
+  margin-bottom:8px;
+}
+
+.plan-duration-label{
+  font-size:13px;
+  letter-spacing:.15em;
+  margin-bottom:26px;
+}
+
+.plan-beer-note{
+  font-size:14px;
+  line-height:1.6;
+  padding:12px 16px;
+}
+
+.plan-price{
+  font-size:3.8rem;
+  margin-bottom:10px;
+}
+
+.plan-price-note{font-size:13px;}
+
+.plan-lo{
+  margin-top:22px;
+  padding-top:18px;
+  font-size:13px;
+}
+
+.extension-note{
+  margin-bottom:80px;
+}
+
+.extension-note strong{
+  font-size:16px;
+  padding:13px 28px;
+  letter-spacing:.04em;
+}
+
+/* ---------- DRINK MENU: EDITORIAL, NOT A GRID OF TINY BOXES ---------- */
+#drink-list{
+  background:#fffdf8;
+  border-top:1px solid rgba(112,82,35,.08);
+}
+
+#drink-list .section-header{padding-bottom:80px;}
+
+#drink-list .drink-category-title{
+  gap:24px;
+  margin:0 0 22px;
+  padding-top:22px;
+}
+
+#drink-list .drink-category-title h3{
+  font-size:clamp(2rem,3vw,2.6rem);
+  font-weight:400;
+  letter-spacing:.01em;
+}
+
+#drink-list .drink-cat-line{
+  background:linear-gradient(to right,rgba(201,168,76,.55),transparent);
+}
+
+#drink-list .drink-list{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 55px;
+  margin-bottom:58px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(112,82,35,.12);
+}
+
+#drink-list .drink-item{
+  background:transparent;
+  border:0;
+  border-bottom:1px solid rgba(112,82,35,.12);
+  border-radius:0;
+  padding:18px 4px 17px;
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  font-family:var(--serif);
+  font-size:21px;
+  color:#20170f;
+  transition:padding-left .3s ease,color .3s ease,background .3s ease;
+}
+
+#drink-list .drink-item:hover{
+  transform:none;
+  box-shadow:none;
+  border-color:rgba(112,82,35,.22);
+  padding-left:12px;
+  color:#9a6b08;
+  background:linear-gradient(90deg,rgba(234,173,6,.055),transparent);
+}
+
+#drink-list .drink-item::before{
+  content:'✦';
+  color:var(--gold);
+  font-family:var(--sans);
+  font-size:9px;
+  margin-right:14px;
+  opacity:.75;
+}
+
+/* The current JS replaces the text inside .drink-item, so keep
+   the typography large without depending on extra HTML wrappers. */
+#drink-list .drink-item[data-en]{
+  letter-spacing:.015em;
+}
+
+/* ---------- BACK TO TOP / FOOTER ---------- */
+#backToTop{
+  width:52px;
+  height:52px;
+  right:28px;
+  bottom:28px;
+}
+
+.footer{
+  padding:52px 30px;
+  font-size:14px;
+}
+
+/* ---------- RESPONSIVE LUXURY SCALE ---------- */
+@media (max-width:960px){
+  .menu-hero{min-height:680px;}
+  .menu-hero-content{min-height:620px;padding:100px 24px 80px;}
+  .menu-hero-content h1{font-size:clamp(3.5rem,9vw,5.5rem);}
+  .course-grid{padding-left:24px;padding-right:24px;}
+  .drink-plans{padding:0 24px;}
+  #drink-list .drink-list{grid-template-columns:1fr;gap:0;}
+}
+
+@media (max-width:600px){
+  body{font-size:15px;}
+  .menu-hero{min-height:620px;}
+  .menu-hero-content{min-height:560px;padding:85px 20px 70px;}
+  .hero-eyebrow{font-size:11px;letter-spacing:.28em;}
+  .menu-hero-content h1{font-size:clamp(3rem,14vw,4.3rem);}
+  .menu-hero-content p{font-size:17px;}
+  .hero-badge{font-size:11px;padding:9px 14px;}
+  .menu-nav{overflow-x:auto;justify-content:flex-start;flex-wrap:nowrap;padding:11px 14px;}
+  .menu-nav a{font-size:11px;white-space:nowrap;padding:9px 14px;}
+  .section-header{padding:78px 22px 50px;}
+  .section-eyebrow{font-size:10px;}
+  .section-header h2{font-size:clamp(2.6rem,12vw,3.5rem);}
+  .section-header p{font-size:16px;}
+  .course-grid{padding-left:20px;padding-right:20px;}
+  .course-body{padding:28px 24px;}
+  .course-item-list li{font-size:16px;}
+  .curry-section{padding-left:20px;padding-right:20px;}
+  .drink-section{padding-left:20px;padding-right:20px;}
+  .drink-plans{padding:0;}
+  .drink-plan{min-height:320px;}
+  .drink-plan.is-popular{transform:none;}
+  .drink-plan.is-popular:hover{transform:translateY(-5px);}
+  .plan-duration{font-size:3.5rem;}
+  .plan-price{font-size:3.3rem;}
+  #drink-list .drink-category-title h3{font-size:2rem;}
+  #drink-list .drink-item{font-size:19px;padding:16px 2px;}
+}
