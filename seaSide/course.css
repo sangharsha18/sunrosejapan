@@ -1,13 +1,8 @@
 /* ===================== RESET & VARIABLES ===================== */
-*, *::before, *::after
-{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root
-{
+:root {
+  --header-h: 72px;
   --gold: #eaad06;
   --gold-light: #E8C97A;
   --gold-pale: #FAF3E0;
@@ -18,1717 +13,256 @@
   --text-dark: #111111;
   --text-mid: #5A4A2A;
   --text-muted: #9A8A6A;
-  --border: rgba(201, 168, 76, 0.2);
-  --border-strong: rgba(201, 168, 76, 0.5);
+  --border: rgba(201,168,76,0.2);
+  --border-strong: rgba(201,168,76,0.5);
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'DM Sans', sans-serif;
   --max: 1140px;
   --radius: 4px;
   --radius-lg: 12px;
   --transition: 0.35s ease;
-    --text-size: 25px; 
 }
 
-html
-{
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; background: var(--off-white); }
 
-body
-{
+body {
   font-family: var(--sans);
   background: var(--off-white);
   color: var(--text-dark);
-  font-size: 25px;
+  font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
-  padding: 0 6rem;
+  padding: 0;
 }
 
-a
-{
-  text-decoration: none;
-  color: inherit;
+a { text-decoration: none; color: inherit; }
+
+/* ===================== HEADER + HEADING (same as Lunch / Dinner) ===================== */
+.header { font-size: 16px; line-height: 1.5; }
+
+.lunch-head { max-width: 860px; margin: 0 auto; padding: 150px 20px 40px; text-align: center; }
+.lunch-head .gold-line { margin: 0 auto 18px; }
+.lunch-head h1 {
+  font-family: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #2b2418;
 }
+.lunch-sub { color: #7a6f5c; font-size: 1rem; font-weight: 300; max-width: 640px; margin: 12px auto 0; }
 
-img
-{
-  width: 100%;
-  display: block;
+.hours-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin: 22px 0 14px; padding: 8px 20px;
+  background: #fffdf7; border: 1px solid #c9961a; border-radius: 40px;
+  font-size: 13px; font-weight: 400; letter-spacing: 0.06em; color: #8a6a10;
 }
-/* ================================
-   SEASIDE MENU HEADER
-   ================================ */
+.hours-badge svg { opacity: 0.8; }
+.lunch-note { font-size: 14px; color: #7a6f5c; letter-spacing: 0.02em; margin: 6px auto 0; }
 
-.seaside-page-header {
-  width: 100%;
-  height: 118px;
-  background: #171008;
-  border-bottom: 1px solid rgba(190, 150, 70, 0.25);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 7%;
-  box-sizing: border-box;
-}
-
-/* Brand */
-
-.seaside-brand {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
-}
-
-.seaside-brand-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 43px;
-  font-weight: 400;
-  letter-spacing: 4px;
-  color: #f4ead8;
-}
-
-.seaside-brand-branch {
-  margin-top: 9px;
-
-  font-family: "DM Sans", sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  color: #c89b3c;
-}
-
-/* Navigation */
-
-.seaside-main-nav {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-}
-
-.seaside-main-nav a {
-  text-decoration: none;
-
-  font-family: "DM Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 1px;
-
-  color: #e8e0d5;
-
-  transition: color 0.25s ease;
-}
-
-.seaside-main-nav a:hover {
-  color: #c89b3c;
-}
-
-
-/* ================================
-   MOBILE
-   ================================ */
-
-@media (max-width: 700px) {
-
-  .seaside-page-header {
-    height: 100px;
-    padding: 0 25px;
-  }
-
-  .seaside-brand-name {
-    font-size: 34px;
-  }
-
-  .seaside-brand-branch {
-    font-size: 9px;
-    letter-spacing: 3px;
-  }
-
-  .seaside-main-nav {
-    gap: 20px;
-  }
-
-  .seaside-main-nav a {
-    font-size: 13px;
-  }
-}
-
-/* ====== HERO ====== */
-.menu-hero
-{
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--text-dark);
-}
-
-.hero-bg
-{
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(234,173,6,0.14) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(234,173,6,0.07) 0%, transparent 60%),
-    linear-gradient(160deg, #1A1208 0%, #2e1c06 50%, #1A1208 100%);
-}
-
-.hero-grain
-{
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.5;
-}
-
-.hero-deco
-{
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-deco::before
-{
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  border: 1px solid rgba(234,173,6,0.07);
-  border-radius: 50%;
-}
-
-.hero-deco::after
-{
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 480px;
-  height: 480px;
-  border: 1px solid rgba(234,173,6,0.11);
-  border-radius: 50%;
-}
-
-.menu-hero-content
-{
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 80px 24px;
-  animation: fadeUp 1s ease both;
-  height: 700px;
- 
-}
-
-.hero-eyebrow
-{
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-
-.hero-eyebrow::before,
-.hero-eyebrow::after
-{
-  content: '';
-  width: 44px;
-  height: 1px;
-  background: var(--gold-dim);
-  opacity: 0.55;
-}
-
-.menu-hero-content h1
-{
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-
-.menu-hero-content h1 em
-{
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.menu-hero-content p
-{
-  font-size: 30px;
-  font-weight: 300;
-  color: var(--gold-dim);
-  letter-spacing: 0.04em;
-  max-width: 500px;
-  margin: 0 auto 16px;
-}
-
-.hero-badges
-{
+/* ===================== STICKY CATEGORY NAV (cream, full width) ===================== */
+.menu-nav {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 90;
+  background: var(--cream);
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 28px 0 40px;
-  height: 20px;
+  gap: 6px;
+  padding: 14px 24px;
+  margin-top: 20px;
 }
-
-.hero-badge
-{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(234,173,6,0.08);
-  border: 1px solid rgba(234,173,6,0.28);
-  border-radius: 40px;
-  padding: 8px 20px;
-  font-size: 12px;
-  color: var(--gold-light);
-  font-weight: 400;
-  letter-spacing: 0.06em;
-}
-
-.menu-hero-btn
-{
-  margin-top: 50px;
-  display: inline-block;
-  padding: 14px 42px;
-  background: var(--gold);
-  color: var(--text-dark);
-  font-family: var(--sans);
+.menu-nav a {
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: var(--radius);
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-
-.menu-hero-btn:hover
-{
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(234,173,6,0.28);
-}
-
-
-/* ====== STICKY NAV ====== */
-.menu-nav
-{
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: rgba(26,18,8,0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,168,76,0.15);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  padding: 14px 4px;
-  
-
-}
-
-
-
-.menu-nav a
-{
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  padding: 8px 18px;
+  color: var(--text-mid);
+  padding: 9px 20px;
   border-radius: 30px;
   border: 1px solid transparent;
   transition: all var(--transition);
-  background-color: #eaad06;
-   color: #111111;
 }
+.menu-nav a:hover { color: var(--text-dark); border-color: var(--border-strong); background: rgba(234,173,6,0.12); }
+.menu-nav a.active { color: var(--text-dark); background: var(--gold); border-color: var(--gold); }
 
-.menu-nav a:hover
-{
-  color: var(--gold-light);
-  border-color: rgba(234,173,6,0.3);
-  background: rgba(234,173,6,0.06);
+/* ===================== SECTION HEADERS ===================== */
+.section-header { text-align: center; padding: 90px 40px 56px; max-width: var(--max); margin: 0 auto; scroll-margin-top: calc(var(--header-h) + 70px); }
+#curry-menu, #free-drink, #drink-list { scroll-margin-top: calc(var(--header-h) + 70px); }
+
+.section-eyebrow {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 18px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
 }
+.section-eyebrow::before, .section-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--gold-dim); }
 
+.section-header h2 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.05; color: var(--text-dark); margin-bottom: 18px; }
+.section-header h2 em { font-style: italic; color: var(--gold); }
+.section-header p { font-size: 18px; line-height: 1.8; color: var(--text-muted); font-weight: 300; max-width: 680px; margin: 0 auto; }
 
-/* ====== SECTION HEADER ====== */
-.section-header
-{
-  text-align: center;
-  padding: 80px 40px 56px;
-  max-width: var(--max);
-  margin: 0 auto;
-}
+.gold-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 0 auto 64px; max-width: 320px; }
+.gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--gold-dim)); }
+.gold-divider::after { background: linear-gradient(to left, transparent, var(--gold-dim)); }
+.gold-divider-gem { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); border-radius: 1px; }
 
-.section-eyebrow
-{
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-}
-
-.section-eyebrow::before,
-.section-eyebrow::after
-{
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--gold-dim);
-}
-
-.section-header h2
-{
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 400;
-  color: var(--text-dark);
-  margin-bottom: 14px;
-}
-
-.section-header h2 em
-{
-  font-style: italic;
-  color: var(--gold);
-}
-
-.section-header p
-{
-  font-size: 30px;
-  color: var(--text-muted);
-  font-weight: 300;
-  max-width: 560px;
-  margin: 0 auto;
-}
-
-
-/* ====== GOLD DIVIDER ====== */
-.gold-divider
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 0 auto 64px;
-  max-width: 300px;
-}
-
-.gold-divider::before,
-.gold-divider::after
-{
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold-dim));
-}
-
-.gold-divider::after
-{
-  background: linear-gradient(to left, transparent, var(--gold-dim));
-}
-
-.gold-divider-gem
-{
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  border-radius: 1px;
-}
-
-
-/* ====== NOTICE BANNER ====== */
-.notice-banner
-{
-  max-width: var(--max);
-  margin: 0 auto 56px;
-  padding: 0 40px;
-}
-
-.notice-banner-inner
-{
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+/* ===================== NOTICE ===================== */
+.notice-banner { max-width: var(--max); margin: 0 auto 56px; padding: 0 40px; }
+.notice-banner-inner {
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
   background: linear-gradient(135deg, var(--gold-pale), var(--off-white));
-  padding: 24px 36px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  padding: 26px 36px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
 }
+.notice-icon { font-size: 1.8rem; flex-shrink: 0; }
+.notice-text { flex: 1; font-size: 16px; color: var(--text-mid); line-height: 1.8; }
+.notice-text strong { color: var(--text-dark); font-weight: 500; }
 
-.notice-icon
-{
-  font-size: 1.6rem;
-  flex-shrink: 0;
-}
+/* ===================== COURSE CARDS ===================== */
+.course-grid { max-width: var(--max); margin: 0 auto; padding: 0 40px 100px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 
-.notice-text
-{
-  flex: 1;
-  font-size: 14px;
-  color: var(--text-mid);
-  line-height: 1.7;
-}
-
-.notice-text strong
-{
-  color: var(--text-dark);
-  font-weight: 500;
-}
-
-
-/* ====== COURSE CARDS ====== */
-.course-grid
-{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 40px 80px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.course-card
-{
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.course-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  overflow: hidden; display: flex; flex-direction: column; position: relative;
+  box-shadow: 0 12px 40px rgba(48,33,16,0.055);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   animation: fadeUp 0.6s ease both;
-  position: relative;
 }
-
-.course-card::before
-{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-}
-
-.course-card:hover
-{
-  transform: translateY(-6px);
-  box-shadow: 0 24px 60px rgba(26,18,8,0.1), 0 0 0 1px var(--border-strong);
-  border-color: var(--border-strong);
-}
-
-.course-card:nth-child(1) { animation-delay: 0.05s; }
+.course-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+.course-card:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(48,33,16,0.13); border-color: var(--border-strong); }
 .course-card:nth-child(2) { animation-delay: 0.12s; }
 .course-card:nth-child(3) { animation-delay: 0.19s; }
 
-.course-header
-{
-  padding: 32px 28px 24px;
-  background: var(--text-dark);
-  text-align: center;
-  position: relative;
-}
+.course-header { padding: 42px 32px 34px; background: linear-gradient(145deg, var(--gold-pale), var(--cream)); border-bottom: 1px solid var(--border-strong); text-align: center; position: relative; }
+.course-letter { font-family: var(--serif); font-size: 4.4rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.course-name-jp { font-size: 13px; letter-spacing: 0.22em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 20px; }
+.course-price { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; }
+.course-price small { font-size: 0.85rem; color: var(--text-muted); font-family: var(--sans); font-weight: 300; display: block; margin-top: 4px; letter-spacing: 0.06em; }
+.course-badge { position: absolute; top: 14px; right: 14px; background: var(--gold); color: var(--text-dark); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; padding: 6px 12px; border-radius: 20px; }
 
-.course-letter
-{
-  font-family: var(--serif);
-  font-size: 3.5rem;
-  font-weight: 300;
-  color: var(--gold-light);
-  line-height: 1;
-  margin-bottom: 4px;
-}
+.course-body { padding: 34px; flex: 1; display: flex; flex-direction: column; }
+.course-section-label { font-size: 12px; font-weight: 500; letter-spacing: 0.19em; text-transform: uppercase; color: var(--gold); margin: 26px 0 12px; padding-bottom: 9px; border-bottom: 1px solid var(--border); }
+.course-section-label:first-child { margin-top: 0; }
 
-.course-name-jp
-{
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.4);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
+.course-item-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.course-item-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 17px; line-height: 1.65; color: var(--text-dark); }
+.course-item-list li::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 11px; }
 
-.course-price
-{
-  font-family: var(--serif);
-  font-size: 2.2rem;
-  font-weight: 300;
-  color: var(--gold);
-  line-height: 1;
-}
+.naan-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.naan-tag { background: var(--gold-pale); border: 1px solid var(--border-strong); border-radius: 20px; padding: 5px 12px; font-size: 13px; color: var(--text-mid); }
 
-.course-price small
-{
-  font-size: 0.75rem;
-  color: var(--gold-dim);
-  font-family: var(--sans);
-  font-weight: 300;
-  display: block;
-  margin-top: 4px;
-  letter-spacing: 0.06em;
-}
+.course-drink-note { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); font-size: 14px; line-height: 1.6; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+.course-drink-note { margin-top: 20px; }
+.course-drink-note strong { color: var(--gold); font-size: 15px; }
 
-.course-badge
-{
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: var(--gold);
-  color: var(--text-dark);
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
+/* ===================== CURRY SECTION (dark) ===================== */
+.curry-section { background: linear-gradient(180deg, var(--gold-pale), var(--cream)); padding: 100px 40px 110px; }
+.curry-inner { max-width: var(--max); margin: 0 auto; }
+.curry-section .section-header { padding: 0 0 60px; }
+.curry-section .section-header h2 { color: var(--text-dark); }
+.curry-section .section-eyebrow { color: var(--gold); }
+.curry-section .section-header p { color: var(--text-muted); }
 
-.course-body
-{
-  padding: 28px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+.curry-rule { background: var(--white); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: 24px 30px; margin-bottom: 36px; font-size: 16px; color: var(--text-mid); line-height: 1.8; text-align: center; }
+.curry-rule strong { color: var(--text-dark); }
 
-.course-section-label
-{
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
-  margin-top: 20px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--border);
-}
+.spice-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
+.spice-tag { background: var(--white); border: 1px solid var(--border-strong); border-radius: 30px; padding: 8px 18px; font-size: 14px; color: var(--text-mid); }
 
-.course-section-label:first-child
-{
-  margin-top: 0;
-}
+.curry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.curry-cat { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 22px; animation: fadeUp 0.5s ease both; }
+.curry-cat-title { font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border-strong); }
+.curry-cat ul { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+.curry-cat ul li { font-size: 15px; color: var(--text-mid); line-height: 1.5; }
 
-.course-item-list
-{
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+/* ===================== FREE DRINK PLAN ===================== */
+.drink-section { padding: 0 40px 80px; background: var(--off-white); }
+.drink-inner { max-width: var(--max); margin: 0 auto; }
 
-.course-item-list li
-{
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 1rem;
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-.course-item-list li::before
-{
-  content: '';
-  width: 5px;
-  height: 5px;
-  background: var(--gold);
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 6px;
-}
-
-.course-item-list li .item-jp
-{
-  display: block;
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 1px;
-}
-
-.naan-tags
-{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
-}
-
-.naan-tag
-{
-  background: var(--gold-pale);
-  border: 1px solid var(--border-strong);
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 11px;
-  color: var(--text-mid);
-}
-
-.course-drink-note
-{
-   margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.course-drink-note strong
-{
-  color: var(--gold);
-  font-size: 13px;
-}
-
-
-/* ====== CURRY SECTION ====== */
-.curry-section
-{
-  background: var(--text-dark);
-  padding: 80px 40px;
-}
-
-.curry-inner
-{
-  max-width: var(--max);
-  margin: 0 auto;
-}
-
-.curry-section .section-header
-{
-  padding: 0 0 48px;
-}
-
-.curry-section .section-header h2
-{
-  color: var(--white);
-}
-
-.curry-section .section-eyebrow
-{
-  color: var(--gold-light);
-}
-
-.curry-section .section-header p
-{
-  color: rgba(255,255,255,0.5);
-}
-
-.curry-rule
-{
-  background: rgba(234,173,6,0.08);
-  border: 1px solid rgba(234,173,6,0.25);
-  border-radius: var(--radius-lg);
-  padding: 20px 28px;
-  margin-bottom: 36px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.7;
-  text-align: center;
-}
-
-.curry-rule strong
-{
-  color: var(--gold-light);
-}
-
-.spice-row
-{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 48px;
-}
-
-.spice-tag
-{
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(201,168,76,0.25);
-  border-radius: 30px;
-  padding: 6px 16px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.65);
-}
-
-.curry-grid
-{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.curry-cat
-{
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  animation: fadeUp 0.5s ease both;
-}
-
-.curry-cat:nth-child(1) { animation-delay: 0.05s; }
-.curry-cat:nth-child(2) { animation-delay: 0.10s; }
-.curry-cat:nth-child(3) { animation-delay: 0.15s; }
-.curry-cat:nth-child(4) { animation-delay: 0.20s; }
-
-.curry-cat-title
-{
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-}
-
-.curry-cat ul
-{
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.curry-cat ul li
-{
-  font-size: 13px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.3;
-}
-
-.curry-cat ul li .jp
-{
-  font-size: 11px;
-  color: rgba(255,255,255,0.35);
-  margin-top: 1px;
-  display: block;
-}
-
-
-/* ====== FREE DRINK PLAN ====== */
-.drink-section
-{
-  padding: 80px 40px;
-  background: var(--off-white);
-}
-
-.drink-inner
-{
-  max-width: var(--max);
-  margin: 0 auto;
-}
-
-.drink-plans
-{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
-}
-
-.drink-plan
-{
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 44px 28px 32px;
-  text-align: center;
-  position: relative;
+.drink-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: stretch; margin-bottom: 55px; }
+.drink-plan {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  min-height: 360px; padding: 55px 34px 38px; text-align: center; position: relative;
+  display: flex; flex-direction: column; justify-content: center;
+  box-shadow: 0 18px 55px rgba(48,33,16,0.07);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   animation: fadeUp 0.6s ease both;
 }
-
-.drink-plan::before
-{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 40px;
-  right: 40px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-}
-
-.drink-plan:hover
-{
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(26,18,8,0.09), 0 0 0 1px var(--border-strong);
-  border-color: var(--border-strong);
-}
-
-.drink-plan:nth-child(1) { animation-delay: 0.05s; }
-.drink-plan:nth-child(2) { animation-delay: 0.12s; }
-.drink-plan:nth-child(3) { animation-delay: 0.19s; }
-
-.drink-plan.is-popular
-{
-  background: var(--text-dark);
-  border-color: rgba(201,168,76,0.4);
-}
-
-.drink-plan.is-popular::before
-{
-  background: linear-gradient(to right, transparent, var(--gold-light), transparent);
-}
-
-.plan-badge
-{
-  position: absolute;
-  top: -13px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--text-dark);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-
-.plan-duration
-{
-  font-family: var(--serif);
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--text-dark);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-
-.drink-plan.is-popular .plan-duration
-{
-  color: var(--gold-light);
-}
-
-.plan-duration-label
-{
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-
-.drink-plan.is-popular .plan-duration-label
-{
-  color: rgba(255,255,255,0.4);
-}
-
-.plan-beer-note
-{
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  line-height: 1.5;
-  padding: 10px 16px;
-  background: var(--gold-pale);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-}
-
-.drink-plan.is-popular .plan-beer-note
-{
-  background: rgba(234,173,6,0.1);
-  border-color: rgba(234,173,6,0.25);
-  color: rgba(255,255,255,0.55);
-}
-
-.plan-price
-{
-  font-family: var(--serif);
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.drink-plan.is-popular .plan-price
-{
-  color: var(--gold-light);
-}
-
-.plan-price-note
-{
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-}
-
-.drink-plan.is-popular .plan-price-note
-{
-  color: rgba(255,255,255,0.3);
-}
-
-.plan-lo
-{
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.drink-plan.is-popular .plan-lo
-{
-  border-color: rgba(201,168,76,0.15);
-  color: rgba(255,255,255,0.35);
-}
-
-.extension-note
-{
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-.extension-note strong
-{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--white);
-  border: 1px solid var(--border-strong);
-  border-radius: 30px;
-  padding: 10px 24px;
-  font-weight: 500;
-  color: var(--gold);
-  font-size: 30px;
-}
-
-
-/* ====== DRINK LIST ====== */
-.drink-category-title
-{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.drink-category-title h3
-{
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  font-weight: 300;
-  color: var(--text-dark);
-  white-space: nowrap;
-}
-
-.drink-category-title h3 em
-{
-  font-style: italic;
-  color: var(--gold);
-}
-
-.drink-cat-line
-{
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, var(--border-strong), transparent);
-}
-
-.drink-list
-{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 48px;
-}
-
-.drink-item
-{
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 14px 18px;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-
-.drink-item:hover
-{
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(26,18,8,0.07);
-  border-color: var(--border-strong);
-}
-
-.drink-jp
-{
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  line-height: 1.3;
-  margin-bottom: 3px;
-}
-
-.drink-en
-{
-  font-size: 12px;
-  color: var(--text-muted);
-  font-weight: 300;
-}
-
-
-/* ====== BACK TO TOP ====== */
-#backToTop
-{
-  position: fixed;
-  bottom: 36px;
-  right: 36px;
-  width: 48px;
-  height: 48px;
-  background: var(--gold);
-  color: var(--text-dark);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 24px rgba(234,173,6,0.45);
-  transition: transform var(--transition);
-  z-index: 99;
-}
-
-#backToTop:hover
-{
-  transform: translateY(-3px);
-}
-
-
-/* ====== FOOTER ====== */
-.footer
-{
-  background: var(--text-dark);
-  color: var(--gold-dim);
-  text-align: center;
-  padding: 40px;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  font-weight: 300;
-  border-top: 1px solid rgba(234,173,6,0.15);
-}
-
-.footer a
-{
-  color: var(--gold);
-}
-
-
-/* ====== ANIMATIONS ====== */
-@keyframes fadeUp
-{
-  from
-  {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to
-  {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* ====== RESPONSIVE ====== */
-@media (max-width: 960px)
-{
-  .course-grid
-  {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .curry-grid
-  {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .drink-plans
-  {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .drink-list
-  {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px)
-{
- body {
-         padding-left: 20px!important;
-        padding-right: 20px!important;
-    }
-
-
-  .course-grid,
-  .drink-section,
-  .curry-section
-  {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .curry-grid
-  {
-    grid-template-columns: 1fr;
-  }
-
-  .drink-list
-  {
-    grid-template-columns: 1fr;
-  }
-
-  .notice-banner
-  {
-    padding: 0 20px;
-  }
-
-  .section-header
-  {
-    padding: 60px 24px 40px;
-  }
-
-  .hero-deco::before
-  {
-    width: 320px;
-    height: 320px;
-  }
-
-  .hero-deco::after
-  {
-    width: 220px;
-    height: 220px;
-  }
-}
-/* =========================================================
-   SUNROSE LUXURY TYPOGRAPHY + EDITORIAL REDESIGN
-   Keep the existing HTML/content. This layer intentionally
-   makes the page feel like a premium restaurant menu.
-   ========================================================= */
-
-:root{
-  --luxury-brown:#24180f;
-  --luxury-brown-2:#382719;
-  --luxury-ink:#17120e;
-  --luxury-cream:#fbf7ef;
-  --luxury-line:rgba(112,82,35,.22);
-}
-
-html{background:var(--luxury-cream);}
-
-body{
-  font-size:16px;
-  line-height:1.75;
-  padding:0;
-  background:var(--luxury-cream);
-  color:var(--luxury-ink);
-}
-
-/* ---------- HERO ---------- */
-.menu-hero{
-  min-height:760px;
-  background:var(--luxury-brown);
-}
-
-.hero-bg{
-  background:
-    radial-gradient(circle at 50% 42%,rgba(234,173,6,.18),transparent 34%),
-    radial-gradient(circle at 18% 72%,rgba(232,201,122,.08),transparent 30%),
-    linear-gradient(135deg,#17100b 0%,#2b1d13 48%,#4a321d 100%);
-}
-
-.hero-deco::before{
-  width:780px;
-  height:780px;
-  border-color:rgba(234,173,6,.09);
-}
-
-.hero-deco::after{
-  width:540px;
-  height:540px;
-  border-color:rgba(234,173,6,.15);
-}
-
-.menu-hero-content{
-  height:auto;
-  min-height:700px;
-  padding:120px 28px 100px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
-
-.hero-eyebrow{
-  font-size:14px;
-  letter-spacing:.42em;
-  margin-bottom:30px;
-}
-
-.menu-hero-content h1{
-  font-size:clamp(4rem,7vw,7rem);
-  line-height:.98;
-  letter-spacing:.015em;
-  margin-bottom:28px;
-  text-shadow:0 8px 35px rgba(0,0,0,.28);
-}
-
-.menu-hero-content p{
-  font-size:21px;
-  line-height:1.7;
-  max-width:700px;
-  color:#e6d2a4;
-}
-
-.hero-badges{
-  height:auto;
-  gap:12px;
-  margin:32px 0 42px;
-}
-
-.hero-badge{
-  padding:11px 20px;
-  font-size:13px;
-  letter-spacing:.08em;
-}
-
-.menu-hero-btn{
-  margin-top:8px;
-  padding:17px 46px;
-  font-size:14px;
-  letter-spacing:.18em;
-}
-
-/* ---------- NAV ---------- */
-.menu-nav{
-  padding:13px 24px;
-  gap:6px;
-  background:rgba(28,19,12,.98);
-}
-
-.menu-nav a{
-  font-size:13px;
-  letter-spacing:.1em;
-  padding:10px 20px;
-  color:rgba(255,255,255,.72);
-  background:transparent;
-  border-color:rgba(234,173,6,.12);
-}
-
-.menu-nav a:hover{
-  color:#f3d98f;
-  background:rgba(234,173,6,.08);
-  border-color:rgba(234,173,6,.35);
-}
-
-/* ---------- SECTION HEADERS ---------- */
-.section-header{
-  padding:110px 40px 70px;
-}
-
-.section-eyebrow{
-  font-size:13px;
-  letter-spacing:.42em;
-  margin-bottom:22px;
-}
-
-.section-header h2{
-  font-size:clamp(3rem,5vw,4.6rem);
-  line-height:1;
-  letter-spacing:.01em;
-  margin-bottom:22px;
-}
-
-.section-header p{
-  font-size:18px;
-  line-height:1.8;
-  max-width:680px;
-}
-
-.gold-divider{
-  max-width:360px;
-  margin-bottom:78px;
-}
-
-/* ---------- NOTICE ---------- */
-.notice-banner{margin-bottom:70px;}
-
-.notice-banner-inner{
-  padding:30px 38px;
-  border-radius:2px;
-  box-shadow:0 18px 50px rgba(60,42,18,.06);
-}
-
-.notice-icon{font-size:2rem;}
-.notice-text{font-size:16px;line-height:1.8;}
-
-/* ---------- COURSE CARDS ---------- */
-.course-grid{
-  gap:28px;
-  padding-bottom:110px;
-}
-
-.course-card{
-  border-radius:2px;
-  box-shadow:0 12px 40px rgba(48,33,16,.055);
-}
-
-.course-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 30px 70px rgba(48,33,16,.13);
-}
-
-.course-header{
-  padding:42px 32px 34px;
-  background:linear-gradient(145deg,#17100b,#302116);
-}
-
-.course-letter{
-  font-size:4.4rem;
-  margin-bottom:8px;
-}
-
-.course-name-jp{
-  font-size:13px;
-  letter-spacing:.22em;
-  margin-bottom:20px;
-}
-
-.course-price{
-  font-size:3rem;
-}
-
-.course-price small{font-size:.85rem;}
-
-.course-badge{
-  font-size:11px;
-  padding:6px 12px;
-}
-
-.course-body{padding:34px;}
-
-.course-section-label{
-  font-size:12px;
-  letter-spacing:.19em;
-  margin-top:26px;
-  padding-bottom:9px;
-}
-
-.course-item-list{gap:12px;}
-
-.course-item-list li{
-  font-size:17px;
-  line-height:1.65;
-  gap:12px;
-}
-
-.course-item-list li::before{
-  width:6px;
-  height:6px;
-  margin-top:9px;
-}
-
-.course-item-list li .item-jp{font-size:13px;}
-
-.naan-tags{gap:8px;}
-.naan-tag{font-size:13px;padding:5px 12px;}
-
-.course-drink-note{
-  font-size:14px;
-  line-height:1.6;
-}
-.course-drink-note strong{font-size:15px;}
-
-/* ---------- CURRY ---------- */
-.curry-section{
-  padding:110px 40px 120px;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(234,173,6,.08),transparent 38%),
-    linear-gradient(145deg,#17110d,#24180f 55%,#17110d);
-}
-
-.curry-section .section-header{padding:0 0 65px;}
-.curry-rule{
-  padding:24px 30px;
-  font-size:16px;
-  line-height:1.8;
-}
-
-.spice-tag{font-size:14px;padding:8px 18px;}
-.curry-cat{padding:30px 24px;border-radius:2px;}
-.curry-cat-title{font-size:12px;letter-spacing:.19em;}
-.curry-cat ul{gap:13px;}
-.curry-cat ul li{font-size:15px;line-height:1.5;}
-.curry-cat ul li .jp{font-size:12px;}
-
-/* ---------- FREE DRINK: MAIN LUXURY FOCUS ---------- */
-#free-drink{
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(234,173,6,.09),transparent 28%),
-    linear-gradient(180deg,#fbf7ef 0%,#f7efdf 100%);
-}
-
-#free-drink::before{
-  content:'';
-  position:absolute;
-  width:620px;
-  height:620px;
-  border:1px solid rgba(234,173,6,.10);
-  border-radius:50%;
-  left:50%;
-  top:170px;
-  transform:translateX(-50%);
-  pointer-events:none;
-}
-
-#free-drink .drink-inner{position:relative;z-index:1;}
-
-#free-drink .section-header{padding-top:110px;}
-
-.drink-plans{
-  gap:28px;
-  align-items:stretch;
-  margin-bottom:55px;
-}
-
-.drink-plan{
-  min-height:360px;
-  padding:55px 34px 38px;
-  border-radius:2px;
-  box-shadow:0 18px 55px rgba(48,33,16,.07);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.drink-plan.is-popular{
-  transform:translateY(-12px) scale(1.025);
-  background:
-    radial-gradient(circle at 50% 0%,rgba(234,173,6,.13),transparent 42%),
-    linear-gradient(145deg,#17100b,#302116);
-  box-shadow:0 30px 75px rgba(28,19,11,.22);
-}
-
-.drink-plan.is-popular:hover{
-  transform:translateY(-17px) scale(1.025);
-}
-
-.plan-badge{
-  font-size:11px;
-  padding:7px 18px;
-  letter-spacing:.16em;
-}
-
-.plan-duration{
-  font-size:4.1rem;
-  margin-bottom:8px;
-}
-
-.plan-duration-label{
-  font-size:13px;
-  letter-spacing:.15em;
-  margin-bottom:26px;
-}
-
-.plan-beer-note{
-  font-size:14px;
-  line-height:1.6;
-  padding:12px 16px;
-}
-
-.plan-price{
-  font-size:3.8rem;
-  margin-bottom:10px;
-}
-
-.plan-price-note{font-size:13px;}
-
-.plan-lo{
-  margin-top:22px;
-  padding-top:18px;
-  font-size:13px;
-}
-
-.extension-note{
-  margin-bottom:80px;
-}
-
-.extension-note strong{
-  font-size:16px;
-  padding:13px 28px;
-  letter-spacing:.04em;
-}
-
-/* ---------- DRINK MENU: EDITORIAL, NOT A GRID OF TINY BOXES ---------- */
-#drink-list{
-  background:#fffdf8;
-  border-top:1px solid rgba(112,82,35,.08);
-}
-
-#drink-list .section-header{padding-bottom:80px;}
-
-#drink-list .drink-category-title{
-  gap:24px;
-  margin:0 0 22px;
-  padding-top:22px;
-}
-
-#drink-list .drink-category-title h3{
-  font-size:clamp(2rem,3vw,2.6rem);
-  font-weight:400;
-  letter-spacing:.01em;
-}
-
-#drink-list .drink-cat-line{
-  background:linear-gradient(to right,rgba(201,168,76,.55),transparent);
-}
-
-#drink-list .drink-list{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:0 55px;
-  margin-bottom:58px;
-  padding-bottom:12px;
-  border-bottom:1px solid rgba(112,82,35,.12);
-}
-
-#drink-list .drink-item{
-  background:transparent;
-  border:0;
-  border-bottom:1px solid rgba(112,82,35,.12);
-  border-radius:0;
-  padding:18px 4px 17px;
-  min-height:66px;
-  display:flex;
-  align-items:center;
-  font-family:var(--serif);
-  font-size:21px;
-  color:#20170f;
-  transition:padding-left .3s ease,color .3s ease,background .3s ease;
-}
-
-#drink-list .drink-item:hover{
-  transform:none;
-  box-shadow:none;
-  border-color:rgba(112,82,35,.22);
-  padding-left:12px;
-  color:#9a6b08;
-  background:linear-gradient(90deg,rgba(234,173,6,.055),transparent);
-}
-
-#drink-list .drink-item::before{
-  content:'✦';
-  color:var(--gold);
-  font-family:var(--sans);
-  font-size:9px;
-  margin-right:14px;
-  opacity:.75;
-}
-
-/* The current JS replaces the text inside .drink-item, so keep
-   the typography large without depending on extra HTML wrappers. */
-#drink-list .drink-item[data-en]{
-  letter-spacing:.015em;
-}
-
-/* ---------- BACK TO TOP / FOOTER ---------- */
-#backToTop{
-  width:52px;
-  height:52px;
-  right:28px;
-  bottom:28px;
-}
-
-.footer{
-  padding:52px 30px;
-  font-size:14px;
-}
-
-/* ---------- RESPONSIVE LUXURY SCALE ---------- */
-@media (max-width:960px){
-  .menu-hero{min-height:680px;}
-  .menu-hero-content{min-height:620px;padding:100px 24px 80px;}
-  .menu-hero-content h1{font-size:clamp(3.5rem,9vw,5.5rem);}
-  .course-grid{padding-left:24px;padding-right:24px;}
-  .drink-plans{padding:0 24px;}
-  #drink-list .drink-list{grid-template-columns:1fr;gap:0;}
-}
-
-@media (max-width:600px){
-  body{font-size:15px;}
-  .menu-hero{min-height:620px;}
-  .menu-hero-content{min-height:560px;padding:85px 20px 70px;}
-  .hero-eyebrow{font-size:11px;letter-spacing:.28em;}
-  .menu-hero-content h1{font-size:clamp(3rem,14vw,4.3rem);}
-  .menu-hero-content p{font-size:17px;}
-  .hero-badge{font-size:11px;padding:9px 14px;}
-  .menu-nav{overflow-x:auto;justify-content:flex-start;flex-wrap:nowrap;padding:11px 14px;}
-  .menu-nav a{font-size:11px;white-space:nowrap;padding:9px 14px;}
-  .section-header{padding:78px 22px 50px;}
-  .section-eyebrow{font-size:10px;}
-  .section-header h2{font-size:clamp(2.6rem,12vw,3.5rem);}
-  .section-header p{font-size:16px;}
-  .course-grid{padding-left:20px;padding-right:20px;}
-  .course-body{padding:28px 24px;}
-  .course-item-list li{font-size:16px;}
-  .curry-section{padding-left:20px;padding-right:20px;}
-  .drink-section{padding-left:20px;padding-right:20px;}
-  .drink-plans{padding:0;}
-  .drink-plan{min-height:320px;}
-  .drink-plan.is-popular{transform:none;}
-  .drink-plan.is-popular:hover{transform:translateY(-5px);}
-  .plan-duration{font-size:3.5rem;}
-  .plan-price{font-size:3.3rem;}
-  #drink-list .drink-category-title h3{font-size:2rem;}
-  #drink-list .drink-item{font-size:19px;padding:16px 2px;}
+.drink-plan::before { content: ''; position: absolute; top: 0; left: 40px; right: 40px; height: 2px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+.drink-plan:hover { transform: translateY(-5px); border-color: var(--border-strong); }
+.drink-plan.is-popular { transform: translateY(-12px); background: linear-gradient(145deg, var(--gold-pale), var(--cream)); border-color: var(--gold); box-shadow: 0 30px 75px rgba(201,150,26,0.18); }
+.drink-plan.is-popular:hover { transform: translateY(-17px); }
+
+.plan-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--text-dark); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 7px 18px; border-radius: 20px; white-space: nowrap; }
+.plan-duration { font-family: var(--serif); font-size: 4.1rem; font-weight: 300; color: var(--text-dark); line-height: 1; margin-bottom: 8px; }
+.plan-min { font-size: 1.4rem; font-family: var(--sans); font-weight: 300; }
+.plan-duration-label { font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 26px; }
+.plan-beer-note { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; padding: 12px 16px; background: var(--gold-pale); border-radius: var(--radius); border: 1px solid var(--border); }
+.plan-price { font-family: var(--serif); font-size: 3.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+.plan-price-note { font-size: 13px; color: var(--text-muted); letter-spacing: 0.05em; }
+.plan-lo { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); }
+
+
+.extension-note { text-align: center; margin-bottom: 70px; }
+.extension-note strong { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid var(--border-strong); border-radius: 30px; padding: 13px 28px; font-weight: 500; color: var(--gold); font-size: 16px; letter-spacing: 0.04em; }
+
+/* ===================== DRINK LIST ===================== */
+#drink-list { background: #fffdf8; border-top: 1px solid rgba(112,82,35,0.08); }
+#drink-list .section-header { padding-bottom: 70px; }
+
+.drink-category-title { display: flex; align-items: center; gap: 24px; margin: 0 0 22px; padding-top: 22px; }
+.drink-category-title h3 { font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 400; color: var(--text-dark); white-space: nowrap; }
+.drink-category-title h3 em { font-style: italic; color: var(--gold); }
+.drink-cat-line { flex: 1; height: 1px; background: linear-gradient(to right, rgba(201,168,76,0.55), transparent); }
+
+.drink-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 55px; margin-bottom: 58px; padding-bottom: 12px; border-bottom: 1px solid rgba(112,82,35,0.12); }
+.drink-item {
+  display: flex; align-items: center; min-height: 66px; padding: 18px 4px 17px;
+  border-bottom: 1px solid rgba(112,82,35,0.12);
+  font-family: var(--serif); font-size: 21px; letter-spacing: 0.015em; color: #20170f;
+  transition: padding-left 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+.drink-item::before { content: '✦'; color: var(--gold); font-family: var(--sans); font-size: 9px; margin-right: 14px; opacity: 0.75; }
+.drink-item:hover { padding-left: 12px; color: #9a6b08; background: linear-gradient(90deg, rgba(234,173,6,0.055), transparent); }
+
+/* ===================== BACK TO TOP + FOOTER ===================== */
+#backToTop { position: fixed; bottom: 28px; right: 28px; width: 52px; height: 52px; background: var(--gold); color: var(--text-dark); border: none; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(234,173,6,0.45); transition: transform var(--transition); z-index: 99; }
+#backToTop:hover { transform: translateY(-3px); }
+#backToTop svg { pointer-events: none; }
+
+.footer { width: 100%; background: var(--cream); color: var(--text-mid); text-align: center; padding: 40px 20px; font-size: 13px; letter-spacing: 0.08em; font-weight: 300; border-top: 1px solid var(--border-strong); }
+.footer a { color: #a97c10; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 960px) {
+  .course-grid { grid-template-columns: 1fr; max-width: 560px; }
+  .curry-grid { grid-template-columns: repeat(2, 1fr); }
+  .drink-plans { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .drink-list { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 600px) {
+  .lunch-head { padding: 130px 20px 32px; }
+  .menu-nav { overflow-x: auto; justify-content: flex-start; flex-wrap: nowrap; padding: 11px 14px; }
+  .menu-nav a { font-size: 11px; white-space: nowrap; padding: 9px 14px; }
+  .section-header { padding: 70px 22px 44px; }
+  .section-header p { font-size: 16px; }
+  .notice-banner { padding: 0 20px; }
+  .course-grid { padding: 0 20px 80px; }
+  .course-body { padding: 28px 24px; }
+  .course-item-list li { font-size: 16px; }
+  .curry-section { padding: 80px 20px 90px; }
+  .curry-grid { grid-template-columns: 1fr; }
+  .drink-section { padding-left: 20px; padding-right: 20px; }
+  .drink-plan { min-height: 320px; }
+  .drink-plan.is-popular { transform: none; }
+  .drink-plan.is-popular:hover { transform: translateY(-5px); }
+  .plan-duration { font-size: 3.5rem; }
+  .plan-price { font-size: 3.3rem; }
+  .drink-category-title h3 { font-size: 2rem; }
+  .drink-item { font-size: 19px; padding: 16px 2px; }
 }

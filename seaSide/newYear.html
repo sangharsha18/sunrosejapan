@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忘年会・新年会 | SUNROSE Seaside</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme-cream.css">
+    <style>
+  /* New Year page: scoped to .ny so it cannot change the rest of your site */
+  .ny{padding:150px 20px 60px;background:#fbf8f0;color:#2b2418;font-family:"DM Sans","Noto Sans JP",Arial,sans-serif;line-height:1.7}
+  .ny-wrap{max-width:860px;margin:0 auto}
+  .ny-back{display:inline-block;margin-bottom:20px;color:#8a6a10;text-decoration:none;font-size:14px}
+  .ny-head{text-align:center;padding-bottom:28px;border-bottom:1px solid #e6dcc3}
+  .ny-head .gold-line{margin:0 auto 18px}
+  .ny-title{font-family:"Cormorant Garamond","Noto Serif JP",Georgia,serif;font-size:clamp(28px,6vw,44px);font-weight:600;line-height:1.25}
+  .ny-sub{color:#7a6f5c;margin-top:10px}
+  .ny-price{margin:32px 0;padding:26px 18px;text-align:center;background:#fffdf7;border:2px solid #c9961a;border-radius:10px}
+  .ny-big{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(44px,10vw,68px);color:#c9961a;line-height:1.1}
+  .ny-small{color:#7a6f5c;font-size:14px}
+  .ny-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:36px}
+  .ny-facts div{background:#fffdf7;border:1px solid #e6dcc3;border-radius:10px;padding:14px 16px}
+  .ny-facts b{display:block;font-size:13px;color:#7a6f5c;font-weight:500}
+  .ny h2{font-family:"Cormorant Garamond","Noto Serif JP",Georgia,serif;font-size:26px;margin:38px 0 14px;padding-left:12px;border-left:4px solid #c9961a}
+  .ny-items{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0}
+  .ny-items li{background:#fffdf7;border:1px solid #e6dcc3;border-radius:20px;padding:5px 14px;font-size:15px}
+  .ny-group{margin-bottom:16px}
+  .ny-group h3{font-size:15px;color:#a97c10;margin:0 0 6px}
+  .ny-note-sm{margin-bottom:14px;color:#7a6f5c;font-size:14px}
+  .ny-note{background:#f3e3b0;border-radius:10px;padding:16px 18px;font-size:14px}
+  .ny-note ul{margin:0;padding:0 0 0 18px}
+  .ny-cta{text-align:center;margin-top:44px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .ny-cta a{display:inline-block;text-decoration:none}
+  .ny-cta p{flex-basis:100%;margin-top:8px;color:#7a6f5c;font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+    <a href="index.html#home" class="logo">SUNROSE<span>Seaside</span></a>
+    <ul class="nav" id="nav">
+        <li><a href="index.html#home" data-ja="ホーム" data-en="Home" data-hi="होम" data-ko="홈" data-es="Inicio">ホーム</a></li>
+        <li><a href="index.html#menus" data-ja="メニュー" data-en="Menus" data-hi="मेनू" data-ko="메뉴" data-es="Menús">メニュー</a></li>
+        <li><a href="index.html#about" data-ja="私たちについて" data-en="About" data-hi="हमारे बारे में" data-ko="소개" data-es="Acerca de">私たちについて</a></li>
+        <li><a href="index.html#access" data-ja="アクセス" data-en="Access" data-hi="पता" data-ko="오시는 길" data-es="Acceso">アクセス</a></li>
+        <li><a href="index.html#contact" data-ja="お問い合わせ" data-en="Contact" data-hi="संपर्क" data-ko="연락처" data-es="Contacto">お問い合わせ</a></li>
+        <li><a href="index.html#reservation" class="nav-cta" data-ja="ご予約" data-en="Reservation" data-hi="आरक्षण" data-ko="예약" data-es="Reservación">ご予約</a></li>
+        <li>
+            <span class="glf-button" style="cursor:pointer;"
+                  data-glf-cuid="6c1f116c-383f-40d3-8a31-cc3b4ed49a7d"
+                  data-glf-ruid="2ed272cc-7d51-4f42-bbae-b2866d3f5039"
+                  data-ja="注文" data-en="Order" data-hi="ऑर्डर" data-ko="주문" data-es="Pedir">注文</span>
+        </li>
+        <li class="lang-dropdown" style="display:none" aria-hidden="true"><!-- hidden on purpose: language is chosen on the landing page / Seaside index; kept so lang.js finds its elements -->
+            <button class="lang-btn" id="langBtn">🌐 <span>Language</span></button>
+            <div class="lang-menu" id="langMenu">
+                <button onclick="setLang('ja')">🇯🇵 日本語</button>
+                <button onclick="setLang('en')">🇬🇧 English</button>
+                <button onclick="setLang('hi')">🇮🇳 हिंदी</button>
+                <button onclick="setLang('ko')">🇰🇷 한국어</button>
+                <button onclick="setLang('es')">🇪🇸 Español</button>
+            </div>
+        </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+</header>
+
+<main class="ny">
+  <div class="ny-wrap">
+    <a href="index.html#menus" class="ny-back" data-ja="← トップに戻る" data-en="← Back to Home" data-hi="← होम पर वापस" data-ko="← 홈으로 돌아가기" data-es="← Volver al inicio">← トップに戻る</a>
+    <div class="ny-head">
+      <div class="gold-line"></div>
+      <h1 class="ny-title" data-ja="忘年会・新年会 食べ放題・飲み放題" data-en="Year-End &amp; New Year Party Course" data-hi="साल-अंत और नववर्ष पार्टी कोर्स" data-ko="송년회・신년회 무제한 코스" data-es="Curso de Fiesta de Fin de Año y Año Nuevo">忘年会・新年会 食べ放題・飲み放題</h1>
+      <p class="ny-sub" data-ja="サンローズ 品川シーサイド店 ／ 2時間 食べ放題＆飲み放題" data-en="Sunrose Shinagawa Seaside / 2-hour all you can eat &amp; drink" data-hi="सनरोज़ शिनागावा सीसाइड / 2 घंटे ऑल-यू-कैन-ईट और ड्रिंक" data-ko="선로즈 시나가와 시사이드점 / 2시간 음식・음료 무제한" data-es="Sunrose Shinagawa Seaside / 2 horas de comida y bebida libre">サンローズ 品川シーサイド店 ／ 2時間 食べ放題＆飲み放題</p>
+    </div>
+
+    <section class="ny-price">
+      <div class="ny-big">&yen;5,500</div>
+      <div class="ny-small" data-ja="お一人様・税込" data-en="per person, tax included" data-hi="प्रति व्यक्ति, कर सहित" data-ko="1인 (세금 포함)" data-es="por persona, impuestos incluidos">お一人様・税込</div>
+    </section>
+
+    <section class="ny-facts">
+      <div><b data-ja="人数" data-en="Group size" data-hi="समूह का आकार" data-ko="인원" data-es="Tamaño del grupo">人数</b><span data-ja="4名様〜74名様" data-en="4 to 74 people" data-hi="4 से 74 लोग" data-ko="4명 ~ 74명" data-es="De 4 a 74 personas">4名様〜74名様</span></div>
+      <div><b data-ja="制限時間" data-en="Time limit" data-hi="समय सीमा" data-ko="이용 시간" data-es="Límite de tiempo">制限時間</b><span data-ja="120分制" data-en="120 minutes" data-hi="120 मिनट" data-ko="120분" data-es="120 minutos">120分制</span></div>
+      <div><b data-ja="ラストオーダー" data-en="Last order" data-hi="अंतिम ऑर्डर" data-ko="라스트 오더" data-es="Último pedido">ラストオーダー</b><span data-ja="終了30分前" data-en="30 minutes before the end" data-hi="समाप्ति से 30 मिनट पहले" data-ko="종료 30분 전" data-es="30 minutos antes del final">終了30分前</span></div>
+    </section>
+
+    <h2 data-ja="お料理" data-en="Food" data-hi="खाना" data-ko="요리" data-es="Comida">お料理</h2>
+    <ul class="ny-items"><li data-ja="ローズサラダ" data-en="Rose Salad" data-hi="Rose Salad" data-ko="Rose Salad" data-es="Rose Salad">ローズサラダ</li><li data-ja="シークカバブ" data-en="Sheekh Kabab" data-hi="Sheekh Kabab" data-ko="Sheekh Kabab" data-es="Sheekh Kabab">シークカバブ</li><li data-ja="ソーセージグリル" data-en="Sausage Grill" data-hi="Sausage Grill" data-ko="Sausage Grill" data-es="Sausage Grill">ソーセージグリル</li><li data-ja="チリフライ" data-en="Chili Fries" data-hi="Chili Fries" data-ko="Chili Fries" data-es="Chili Fries">チリフライ</li><li data-ja="チョウメン" data-en="Chowmein" data-hi="Chowmein" data-ko="Chowmein" data-es="Chowmein">チョウメン</li></ul>
+
+    <h2 data-ja="カレー食べ放題" data-en="Unlimited curry" data-hi="अनलिमिटेड करी" data-ko="카레 무제한" data-es="Curry ilimitado">カレー食べ放題</h2>
+    <p class="ny-note-sm" data-ja="4名様につき1種類、おかわり自由。辛さはマイルド／ノーマル／ミディアム／スパイシー／エクストラスパイシーからお選びいただけます。" data-en="1 type per 4 people, unlimited refills. Spice level: Mild / Normal / Medium / Spicy / Extra Spicy." data-hi="4 लोगों के लिए 1 प्रकार, जितनी चाहें उतनी रिफिल। तीखापन: Mild / Normal / Medium / Spicy / Extra Spicy।" data-ko="4명당 1종류, 리필 무제한. 맵기: Mild / Normal / Medium / Spicy / Extra Spicy." data-es="1 tipo por cada 4 personas, repetición ilimitada. Nivel de picante: Mild / Normal / Medium / Spicy / Extra Spicy.">4名様につき1種類、おかわり自由。辛さはマイルド／ノーマル／ミディアム／スパイシー／エクストラスパイシーからお選びいただけます。</p>
+    <div class="ny-group"><h3 data-ja="ベジタブル" data-en="Vegetable" data-hi="शाकाहारी" data-ko="채소" data-es="Vegetales">ベジタブル</h3><ul class="ny-items"><li data-ja="ベジタブルカレー" data-en="Vegetable Curry" data-hi="Vegetable Curry" data-ko="Vegetable Curry" data-es="Vegetable Curry">ベジタブルカレー</li><li data-ja="アルーベガンカレー" data-en="Aloo Began Curry" data-hi="Aloo Began Curry" data-ko="Aloo Began Curry" data-es="Aloo Began Curry">アルーベガンカレー</li><li data-ja="アルーゴビカレー" data-en="Aloo Gobi Curry" data-hi="Aloo Gobi Curry" data-ko="Aloo Gobi Curry" data-es="Aloo Gobi Curry">アルーゴビカレー</li><li data-ja="ミックスベジタブルカレー" data-en="Mixed Vegetable Curry" data-hi="Mixed Vegetable Curry" data-ko="Mixed Vegetable Curry" data-es="Mixed Vegetable Curry">ミックスベジタブルカレー</li><li data-ja="ダルカレー" data-en="Dal Curry" data-hi="Dal Curry" data-ko="Dal Curry" data-es="Dal Curry">ダルカレー</li><li data-ja="サグパニール" data-en="Sag Paneer" data-hi="Sag Paneer" data-ko="Sag Paneer" data-es="Sag Paneer">サグパニール</li><li data-ja="バターパニール" data-en="Butter Paneer" data-hi="Butter Paneer" data-ko="Butter Paneer" data-es="Butter Paneer">バターパニール</li></ul></div>
+    <div class="ny-group"><h3 data-ja="シーフード" data-en="Seafood" data-hi="सीफ़ूड" data-ko="해산물" data-es="Mariscos">シーフード</h3><ul class="ny-items"><li data-ja="シーフードカレー" data-en="Seafood Curry" data-hi="Seafood Curry" data-ko="Seafood Curry" data-es="Seafood Curry">シーフードカレー</li><li data-ja="サグシーフードカレー" data-en="Sag Seafood Curry" data-hi="Sag Seafood Curry" data-ko="Sag Seafood Curry" data-es="Sag Seafood Curry">サグシーフードカレー</li><li data-ja="プローンカレー" data-en="Prawn Curry" data-hi="Prawn Curry" data-ko="Prawn Curry" data-es="Prawn Curry">プローンカレー</li><li data-ja="サグプローンカレー" data-en="Sag Prawn Curry" data-hi="Sag Prawn Curry" data-ko="Sag Prawn Curry" data-es="Sag Prawn Curry">サグプローンカレー</li></ul></div>
+    <div class="ny-group"><h3 data-ja="マトン・ポーク" data-en="Mutton &amp; Pork" data-hi="मटन और पोर्क" data-ko="양고기・돼지고기" data-es="Cordero y cerdo">マトン・ポーク</h3><ul class="ny-items"><li data-ja="マトンカレー" data-en="Mutton Curry" data-hi="Mutton Curry" data-ko="Mutton Curry" data-es="Mutton Curry">マトンカレー</li><li data-ja="サグマトンカレー" data-en="Sag Mutton Curry" data-hi="Sag Mutton Curry" data-ko="Sag Mutton Curry" data-es="Sag Mutton Curry">サグマトンカレー</li><li data-ja="ポークカレー" data-en="Pork Curry" data-hi="Pork Curry" data-ko="Pork Curry" data-es="Pork Curry">ポークカレー</li><li data-ja="サグポークカレー" data-en="Sag Pork Curry" data-hi="Sag Pork Curry" data-ko="Sag Pork Curry" data-es="Sag Pork Curry">サグポークカレー</li></ul></div>
+    <div class="ny-group"><h3 data-ja="チキン" data-en="Chicken" data-hi="चिकन" data-ko="치킨" data-es="Pollo">チキン</h3><ul class="ny-items"><li data-ja="チキンカレー" data-en="Chicken Curry" data-hi="Chicken Curry" data-ko="Chicken Curry" data-es="Chicken Curry">チキンカレー</li><li data-ja="キーマカレー" data-en="Keema Curry" data-hi="Keema Curry" data-ko="Keema Curry" data-es="Keema Curry">キーマカレー</li><li data-ja="バターチキン" data-en="Butter Chicken" data-hi="Butter Chicken" data-ko="Butter Chicken" data-es="Butter Chicken">バターチキン</li><li data-ja="サグチキン" data-en="Sag Chicken" data-hi="Sag Chicken" data-ko="Sag Chicken" data-es="Sag Chicken">サグチキン</li><li data-ja="サグキーマカレー" data-en="Sag Keema Curry" data-hi="Sag Keema Curry" data-ko="Sag Keema Curry" data-es="Sag Keema Curry">サグキーマカレー</li><li data-ja="チキンバルタ" data-en="Chicken Bharta" data-hi="Chicken Bharta" data-ko="Chicken Bharta" data-es="Chicken Bharta">チキンバルタ</li><li data-ja="本日のスペシャル" data-en="Today&#x27;s Special" data-hi="आज की स्पेशल" data-ko="오늘의 스페셜" data-es="Especial del día">本日のスペシャル</li></ul></div>
+
+    <h2 data-ja="ナン・ライス食べ放題" data-en="Unlimited naan &amp; rice" data-hi="अनलिमिटेड नान और चावल" data-ko="난・밥 무제한" data-es="Naan y arroz ilimitados">ナン・ライス食べ放題</h2>
+    <ul class="ny-items"><li data-ja="ナン" data-en="Naan" data-hi="Naan" data-ko="Naan" data-es="Naan">ナン</li><li data-ja="チーズナン" data-en="Cheese Naan" data-hi="Cheese Naan" data-ko="Cheese Naan" data-es="Cheese Naan">チーズナン</li><li data-ja="ライス" data-en="Rice" data-hi="चावल" data-ko="밥" data-es="Arroz">ライス</li></ul>
+
+    <h2 data-ja="飲み放題" data-en="All you can drink" data-hi="ऑल-यू-कैन-ड्रिंक" data-ko="음료 무제한" data-es="Bebida libre">飲み放題</h2>
+    <ul class="ny-items"><li data-ja="サントリー プレミアムモルツ" data-en="Suntory Premium Malts" data-hi="Suntory Premium Malts" data-ko="Suntory Premium Malts" data-es="Suntory Premium Malts">サントリー プレミアムモルツ</li><li data-ja="サワー各種" data-en="Sours" data-hi="सॉर (विभिन्न)" data-ko="사워 각종" data-es="Sours variados">サワー各種</li><li data-ja="ハイボール" data-en="Highball" data-hi="Highball" data-ko="Highball" data-es="Highball">ハイボール</li><li data-ja="ワイン（赤・白）" data-en="Wine (red / white)" data-hi="वाइन (रेड / व्हाइट)" data-ko="와인 (레드 / 화이트)" data-es="Vino (tinto / blanco)">ワイン（赤・白）</li><li data-ja="ウォッカ" data-en="Vodka" data-hi="Vodka" data-ko="Vodka" data-es="Vodka">ウォッカ</li><li data-ja="テキーラ" data-en="Tequila" data-hi="Tequila" data-ko="Tequila" data-es="Tequila">テキーラ</li><li data-ja="ジン" data-en="Gin" data-hi="Gin" data-ko="Gin" data-es="Gin">ジン</li><li data-ja="ラム" data-en="Rum" data-hi="Rum" data-ko="Rum" data-es="Rum">ラム</li><li data-ja="焼酎" data-en="Shochu" data-hi="शोचू" data-ko="소주(쇼츄)" data-es="Shochu">焼酎</li><li data-ja="パライソ" data-en="Paraiso" data-hi="Paraiso" data-ko="Paraiso" data-es="Paraiso">パライソ</li><li data-ja="カシス" data-en="Cassis" data-hi="Cassis" data-ko="Cassis" data-es="Cassis">カシス</li><li data-ja="ラッシー／マンゴーラッシー" data-en="Lassi / Mango Lassi" data-hi="Lassi / Mango Lassi" data-ko="Lassi / Mango Lassi" data-es="Lassi / Mango Lassi">ラッシー／マンゴーラッシー</li><li data-ja="ソフトドリンク各種" data-en="Soft drinks" data-hi="सॉफ़्ट ड्रिंक्स" data-ko="소프트드링크 각종" data-es="Refrescos">ソフトドリンク各種</li></ul>
+
+    <h2 data-ja="ご注意" data-en="Please note" data-hi="ज़रूरी बातें" data-ko="안내 사항" data-es="Importante">ご注意</h2>
+    <div class="ny-note"><ul><li data-ja="コースは4名様以上でご利用いただけます。" data-en="The course is for groups of 4 or more." data-hi="यह कोर्स 4 या अधिक लोगों के समूह के लिए है।" data-ko="코스는 4명 이상부터 이용 가능합니다." data-es="El curso es para grupos de 4 o más personas.">コースは4名様以上でご利用いただけます。</li><li data-ja="食べ残しが多い場合は追加料金がかかります。" data-en="An extra charge applies for large amounts of leftover food." data-hi="खाना ज़्यादा बचने पर अतिरिक्त शुल्क लगेगा।" data-ko="음식을 많이 남기시면 추가 요금이 부과됩니다." data-es="Se cobrará un cargo extra si sobra mucha comida.">食べ残しが多い場合は追加料金がかかります。</li><li data-ja="キャンセル料なし" data-en="No cancellation fee." data-hi="रद्द करने का कोई शुल्क नहीं।" data-ko="취소 수수료 없음" data-es="Sin cargo por cancelación.">キャンセル料なし</li><li data-ja="写真はイメージです。" data-en="Photos are for illustration only." data-hi="तस्वीरें केवल उदाहरण के लिए हैं।" data-ko="사진은 이미지입니다." data-es="Las fotos son solo ilustrativas.">写真はイメージです。</li></ul></div>
+    <div class="ny-cta">
+      <a href="tel:0367184433" class="btn-gold"><span data-ja="お電話で予約" data-en="Reserve by phone" data-hi="फ़ोन से बुकिंग" data-ko="전화 예약" data-es="Reservar por teléfono">お電話で予約</span> 03-6718-4433</a>
+      <a href="https://foodbooking.com/api/res/1dj_r_x" class="btn-outline" data-ja="今すぐ予約" data-en="Book Now" data-hi="अभी बुक करें" data-ko="지금 예약" data-es="Reservar Ahora">今すぐ予約</a>
+      <p data-ja="品川区東品川4-12-8 品川シーサイドイーストタワー 1F" data-en="1F Shinagawa Seaside East Tower, 4-12-8 Higashi-Shinagawa, Shinagawa-ku" data-hi="1F शिनागावा सीसाइड ईस्ट टॉवर, 4-12-8 हिगाशी-शिनागावा, शिनागावा-कु" data-ko="시나가와구 히가시시나가와 4-12-8 시나가와 시사이드 이스트 타워 1층" data-es="1F Shinagawa Seaside East Tower, 4-12-8 Higashi-Shinagawa, Shinagawa-ku">品川区東品川4-12-8 品川シーサイドイーストタワー 1F</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo">SUN<span>ROSE</span></div>
+        <div class="footer-info">
+            <div class="footer-divider"><span>✦</span></div>
+<p data-ja="株式会社BAL BISHNU<br>品川シーサイド、東京 140-0002<br>TEL 03-6718-4433" data-en="BAL BISHNU Co., Ltd.<br>Shinagawa Seaside, Tokyo 140-0002<br>TEL 03-6718-4433" data-hi="BAL BISHNU कं., लि.<br>शिनागावा सीसाइड, टोक्यो 140-0002<br>TEL 03-6718-4433" data-ko="주식회사 BAL BISHNU<br>시나가와 씨사이드, 도쿄 140-0002<br>TEL 03-6718-4433" data-es="BAL BISHNU Co., Ltd.<br>Shinagawa Seaside, Tokio 140-0002<br>TEL 03-6718-4433">株式会社BAL BISHNU<br>品川シーサイド、東京 140-0002<br>TEL 03-6718-4433</p>
+        </div>
+        <div class="footer-links-col">
+            <a href="company.html" target="_blank" class="footer-link" data-ja="会社概要" data-en="Company" data-hi="कंपनी" data-ko="회사 소개" data-es="Empresa">会社概要</a>
+            <a href="privacy.html" target="_blank" class="footer-link" data-ja="プライバシーポリシー" data-en="Privacy Policy" data-hi="गोपनीयता नीति" data-ko="개인정보 처리방침" data-es="Política de Privacidad">プライバシーポリシー</a>
+        </div>
+    </div>
+    <p class="footer-bottom">© 2025 Sunrose Japan · 株式会社BAL BISHNU · All Rights Reserved.</p>
+</footer>
+
+<script>
+(function(){const header=document.getElementById('header');const hamburger=document.getElementById('hamburger');const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');nav.classList.toggle('open');document.body.style.overflow=nav.classList.contains('open')?'hidden':''});nav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');nav.classList.remove('open');document.body.style.overflow=''})});header.classList.toggle('scrolled',window.scrollY>40)})();
+</script>
+<script src="lang.js"></script>
+<script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+</body>
+</html>
