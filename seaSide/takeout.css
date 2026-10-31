@@ -22,9 +22,12 @@
   --transition: 0.35s ease;
     --text-size: 25px; 
 }
-
+ 
 html { scroll-behavior: smooth; }
-
+ 
+.lunch-head {
+  text-align: center;
+}
 body {
   font-family: var(--sans);
   background: var(--off-white);
@@ -217,7 +220,7 @@ img { width: 100%; display: block; }
 
 .hero-info-row {
   display: flex; align-items: center; justify-content: center;
-  flex-wrap: wrap; gap: 20px; margin-bottom: 44px; margin-top: 8px;
+  flex-wrap: wrap; gap: 20px; margin-bottom: 44px; margin-top: 15px;
 }
 
 .hours-badge {
@@ -225,7 +228,7 @@ img { width: 100%; display: block; }
   background: rgba(234,173,6,0.08);
   border: 1px solid rgba(234,173,6,0.28);
   border-radius: 40px; padding: 9px 22px;
-  font-size: 13px; color: var(--gold-light);
+  font-size: 18px; color: black;
   font-weight: 400; letter-spacing: 0.06em;
 }
 
@@ -262,7 +265,7 @@ img { width: 100%; display: block; }
 /* ===================== STICKY TAB NAV ===================== */
 .tab-nav {
   position: sticky; top: 0; z-index: 200;
-  background: rgba(26,18,8,0.97);
+  background: rgba(249, 224, 175, 0.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201,168,76,0.15);
   display: flex; justify-content: center; gap: 4px;
@@ -270,9 +273,9 @@ img { width: 100%; display: block; }
 }
 
 .tab-nav-btn {
-  font-family: var(--sans); font-size: 11px;
+  font-family: var(--sans); font-size: 17px;
   font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(22, 2, 2, 0.985);
   padding: 10px 28px; border-radius: 30px;
   border: 1px solid transparent;
   background: transparent; cursor: pointer;

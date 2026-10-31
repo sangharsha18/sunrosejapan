@@ -1,7 +1,9 @@
 /* ===================== RESET & VARIABLES ===================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+
 :root {
+
   --text-size: 20px; 
   --gold: #eaad06;
   --gold-light: #E8C97A;
@@ -21,6 +23,10 @@
   --radius: 4px;
   --radius-lg: 12px;
   --transition: 0.35s ease;
+    
+  --serif: 'Cormorant Garamond', 'Noto Sans JP', serif;
+  --sans: 'DM Sans', 'Noto Sans JP', sans-serif;
+
 }
 
 html { scroll-behavior: smooth; }
@@ -32,136 +38,22 @@ body {
   font-size: 18px;
   line-height: 1.8;
   overflow-x: hidden;
-  padding: 0 24px;
+  padding: 0;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 48px;
-  background: rgba(26, 18, 8, 0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-  box-shadow: 0 1px 0 rgba(201,168,76,0.1);
+/* OVERRIDE HEADER BLACK BACKGROUND */
+body.light-header .header {
+  background: rgba(26, 18, 8, 0.97) !important; /* Keep original dark nav bar or replace with light background below */
 }
 
-.logo {
-  font-family: var(--serif);
-  font-size: 26px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  color: var(--white);
-}
-.logo span { color: var(--gold-light); }
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  list-style: none;
-}
-
-.nav a {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  color: rgba(255,255,255,0.65);
-  padding: 7px 16px;
-  border-radius: 30px;
-  border: 1px solid transparent;
-  transition: all var(--transition);
-}
-.nav a:hover {
-  color: var(--gold-light);
-  border-color: rgba(234,173,6,0.3);
-  background: rgba(234,173,6,0.06);
-}
-.nav .nav-cta {
-  background: var(--gold);
-  color: var(--text-dark) !important;
-  border-color: var(--gold);
-}
-.nav .nav-cta:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-}
-
-/* ===================== HERO BANNER ===================== */
-.page-hero {
-  position: relative;
-  padding-top: 80px;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--text-dark);
-  text-align: center;
-}
-
-.page-hero-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 40%, rgba(234,173,6,0.12) 0%, transparent 70%),
-    linear-gradient(160deg, #1A1208 0%, #2e1c06 60%, #1A1208 100%);
-}
-
-.page-hero-grain {
-  position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.5;
-}
-
-.page-hero-content {
-  position: relative; z-index: 2;
-  padding: 60px 24px;
-  animation: fadeUp 0.9s ease both;
-}
-
-.page-hero-eyebrow {
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 20px;
-  display: flex; align-items: center; justify-content: center; gap: 16px;
-}
-.page-hero-eyebrow::before, .page-hero-eyebrow::after {
-  content: ''; width: 40px; height: 1px;
-  background: var(--gold-dim); opacity: 0.55;
-}
-
-.page-hero-content h1 {
-  font-family: var(--serif);
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 300; color: var(--white); line-height: 1.1;
-}
-.page-hero-content h1 em { font-style: italic; color: var(--gold-light); }
-
-.page-hero-content p {
-  margin-top: 14px;
-  font-size: 14px; font-weight: 300;
-  color: var(--gold-dim); letter-spacing: 0.05em;
-}
-
-/* ===================== MAIN CONTENT ===================== */
+/* MAIN CONTAINER */
 .page-content {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 80px 40px 100px;
+  padding: 40px 40px 100px;
 }
 
-/* ===================== SECTION EYEBROW ===================== */
-.section-eyebrow {
-  font-size: 10.5px; font-weight: 500;
-  letter-spacing: 0.38em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 18px;
-  display: flex; align-items: center; gap: 14px;
-}
-.section-eyebrow::after {
-  content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold-dim);
-}
-
-/* ===================== GOLD DIVIDER ===================== */
+/* GOLD DIVIDER */
 .gold-divider {
   display: flex; align-items: center; gap: 16px;
   margin: 48px 0;
@@ -176,187 +68,15 @@ body {
   transform: rotate(45deg); border-radius: 1px; flex-shrink: 0;
 }
 
-/* ========================
-   COMPANY PAGE
-======================== */
-
-/* ── Milestone banner ── */
-.milestone-banner {
-  background: var(--text-dark);
-  border: 1px solid rgba(201,168,76,0.35);
-  border-radius: var(--radius-lg);
-  padding: 48px 40px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 64px;
-  animation: fadeUp 0.7s ease both;
-}
-
-.milestone-banner::before {
-  content: '';
-  position: absolute; top: 0; left: 40px; right: 40px; height: 2px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-}
-
-.milestone-confetti {
-  font-size: 2rem;
-  margin-bottom: 16px;
-  display: block;
-  letter-spacing: 8px;
-}
-
-.milestone-years {
-  font-family: var(--serif);
-  font-size: clamp(4rem, 10vw, 7rem);
-  font-weight: 300;
-  color: var(--gold-light);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.milestone-years span {
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  color: var(--gold-dim);
-  font-style: italic;
-  display: block;
-  margin-top: 4px;
-}
-
-.milestone-tagline {
-  font-size: 14px; font-weight: 300;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.1em; margin-top: 16px;
-}
-
-.milestone-badge {
-  display: inline-flex;
-  align-items: center; gap: 8px;
-  background: var(--gold);
-  color: var(--text-dark);
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  padding: 8px 20px; border-radius: 30px;
-  margin-top: 20px;
-}
-
-/* ── Story paragraphs ── */
-.company-story {
-  margin-bottom: 56px;
-  animation: fadeUp 0.7s ease 0.1s both;
-}
-
-.company-story h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 300; color: var(--text-dark);
-  margin-bottom: 24px;
-}
-.company-story h2 em { font-style: italic; color: var(--gold); }
-
-.company-story p {
-  font-size: 18px; color: var(--text-mid);
-  line-height: 1.9; margin-bottom: 16px;
-}
-
-/* ── Feature pills ── */
-.company-features {
-  display: flex; flex-wrap: wrap; gap: 10px;
-  margin: 28px 0 40px;
-}
-.company-feature {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  padding: 8px 18px;
-  font-size: 13px; color: var(--text-mid);
-  font-weight: 400;
-}
-.company-feature::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--gold); border-radius: 50%; flex-shrink: 0;
-}
-
-/* ── Stats row ── */
-.company-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 56px;
-  animation: fadeUp 0.7s ease 0.15s both;
-}
-
-.stat-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  text-align: center;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(26,18,8,0.08);
-  border-color: var(--border-strong);
-}
-
-.stat-number {
-  font-family: var(--serif);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 300; color: var(--gold);
-  line-height: 1; margin-bottom: 8px;
-}
-.stat-label {
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-/* ── Company table ── */
-.company-table {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  animation: fadeUp 0.7s ease 0.2s both;
-}
-
-.company-row {
-  display: flex; gap: 0;
-  border-bottom: 1px solid var(--border);
-}
-.company-row:last-child { border-bottom: none; }
-
-.company-label {
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--gold);
-  background: var(--gold-pale);
-  min-width: 180px; padding: 18px 24px;
-  display: flex; align-items: center;
-  border-right: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
-.company-value {
-  font-size: 14px; 
-  line-height: 1.7; padding: 18px 28px;
-  background: var(--white);
-  display: flex; align-items: center;
-}
-
-/* ========================
-   PRIVACY PAGE
-======================== */
+/* PRIVACY PAGE CONTENT */
 .policy-intro {
-  font-size: 23px; color: var(--text-mid);
-  line-height: 1.9; margin-bottom: 48px;
+  font-size: 18px; color: var(--text-dark);
+  line-height: 1.8; margin-bottom: 48px;
   padding: 28px 32px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  border-left: 3px solid var(--gold);
+  border-left: 4px solid var(--gold);
   animation: fadeUp 0.6s ease both;
 }
 
@@ -369,40 +89,40 @@ body {
   display: flex; flex-direction: column; gap: 4px;
 }
 .policy-meta-label {
-  font-size: 23px; font-weight: 500;
+  font-size: 13px; font-weight: 500;
   letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--gold);
 }
 .policy-meta-value {
-  font-size: 18px; color: var(--text-mid); font-weight: 400;
+  font-size: 16px; color: var(--text-dark); font-weight: 400;
 }
 
 .policy-section {
   margin-bottom: 40px;
   animation: fadeUp 0.6s ease both;
 }
-.policy-section:nth-child(1) { animation-delay: 0.05s; }
-.policy-section:nth-child(2) { animation-delay: 0.10s; }
-.policy-section:nth-child(3) { animation-delay: 0.15s; }
-.policy-section:nth-child(4) { animation-delay: 0.20s; }
-.policy-section:nth-child(5) { animation-delay: 0.25s; }
-.policy-section:nth-child(6) { animation-delay: 0.30s; }
 
 .policy-section h2 {
   font-family: var(--serif);
-  font-size: 30px; font-weight: 700; 
-  color: var(--gold); 
-  color : var(rgb(248, 211, 0));
-
-
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-size: 39px; 
+  font-weight: 700; /* Increased font weight to make it bold */
+  color: #111111; /* Made dark/bold to stand out clearly */
   margin-bottom: 14px;
-  display: flex; align-items: center; gap: 14px;
+  display: flex; 
+  align-items: center; 
+  gap: 14px;
 }
+
 .policy-section h2::after {
-  content: ''; flex: 1; height: 1px;
+  flex: 1; 
+  height: 1px;
   background: var(--border);
+}
+
+.policy-section h2 span[data-ja],
+.policy-section h2 span[data-en] {
+  font-weight: 900;
+  color: #111111;
 }
 
 .policy-number {
@@ -412,104 +132,754 @@ body {
   border: 1px solid var(--border-strong);
   border-radius: 50%;
   font-family: var(--serif);
-  font-size: 23px; color: var(--gold);
+  font-size: 0.95rem; color: var(--gold);
   flex-shrink: 0;
 }
 
 .policy-section p {
-  font-size: 23px; color: var(--text-mid);
-  line-height: 1.9;
+  font-size: 1.05rem; color: var(--text-dark);
+  font-weight: 300;
+  line-height: 1.7;
 }
 
+/* CONTACT CARD (Clean Cream/Gold look without dark background) */
 .policy-contact-card {
-  background: var(--text-dark);
-  border: 1px solid rgba(201,168,76,0.3);
+  background: var(--white);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   padding: 36px 40px;
   position: relative; overflow: hidden;
   margin-top: 48px;
+  box-shadow: 0 4px 20px rgba(26,18,8,0.03);
   animation: fadeUp 0.6s ease 0.3s both;
 }
 .policy-contact-card::before {
   content: '';
-  position: absolute; top: 0; left: 40px; right: 40px; height: 2px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--gold-pale), var(--gold), var(--gold-pale));
 }
 
 .policy-contact-card h3 {
   font-family: var(--serif);
-  font-size: 1.4rem; font-weight: 300;
-  color: var(--white); margin-bottom: 20px;
+  font-size: 1.4rem; font-weight: 600;
+  color: var(--text-dark); margin-bottom: 20px;
 }
-.policy-contact-card h3 em { font-style: italic; color: var(--gold-light); }
+.policy-contact-card h3 em { font-style: italic; color: var(--gold); }
 
 .contact-row {
   display: flex; gap: 16px; margin-bottom: 12px; align-items: center;
 }
 .contact-icon { font-size: 1rem; width: 24px; text-align: center; }
 .contact-text {
-  font-size: 14px; color: rgba(255,255,255,0.65); font-weight: 300;
+  font-size: 14px; color: var(--text-mid); font-weight: 400;
 }
-.contact-text a { color: var(--gold-light); }
-.contact-text a:hover { color: var(--gold); }
+.contact-text a { color: var(--gold); text-decoration: none; font-weight: 500; }
+.contact-text a:hover { text-decoration: underline; }
 
-/* ===================== FOOTER ===================== */
+/* FOOTER (Matched with Lunch Page) */
 .footer {
-  background: var(--text-dark); color: var(--gold-dim);
-  text-align: center; padding: 32px 40px;
-  font-size: 13px; letter-spacing: 0.08em; font-weight: 300;
-  border-top: 1px solid rgba(234,173,6,0.15);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  background: var(--cream);
+  color: var(--text-mid);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-weight: 300;
+  border-top: 1px solid var(--border-strong);
 }
-.footer a { color: var(--gold); }
+.footer a { color: #a97c10; text-decoration: none; }
 
-/* ===================== BACK TO TOP ===================== */
+/* BACK TO TOP */
 #backToTop {
   position: fixed; bottom: 36px; right: 36px;
   width: 48px; height: 48px;
   background: var(--gold); color: var(--text-dark);
   border: none; border-radius: 50%; cursor: pointer;
   display: none; align-items: center; justify-content: center;
-  box-shadow: 0 4px 24px rgba(234,173,6,0.45);
+  box-shadow: 0 4px 24px rgba(234,173,6,0.4);
   transition: transform var(--transition), box-shadow var(--transition);
   z-index: 99;
 }
 #backToTop:hover { transform: translateY(-3px); }
 
-/* ===================== ANIMATIONS ===================== */
+/* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ===================== RESPONSIVE ===================== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .header { padding: 16px 24px; }
-  .page-content { padding: 60px 20px 80px; }
-  .company-stats { grid-template-columns: repeat(2, 1fr); }
-  .company-label { min-width: 120px; font-size: 10px; padding: 14px 16px; }
-  .company-value { padding: 14px 18px; font-size: 13px; }
-  .milestone-banner { padding: 36px 20px; }
+  .page-content { padding: 40px 20px 80px; }
   .policy-contact-card { padding: 28px 20px; }
-  .policy-section h2 { font-size: 22px; }
-  .policy-section p { font-size: 18px; }
-  .policy-number { width: 24px; height: 24px; font-size: 18px; }
-  .nav { display: none; }
-  body { font-size: 16px; padding: 0 !important; }
+  .policy-section h2 { font-size: 1.35rem; }
+  .policy-section p { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
-  body { font-size: 14px; padding: 0 !important; }
-  .header { padding: 14px 16px; }
-  .page-content { padding: 40px 16px 60px; }
-  .page-hero-content { padding: 40px 16px; }
-  .company-stats { grid-template-columns: repeat(2, 1fr); }
-  .company-row { flex-direction: column; }
-  .company-label { min-width: unset; border-right: none; border-bottom: 1px solid var(--border); }
-  .milestone-banner { padding: 24px 16px; }
+  .page-content { padding: 30px 16px 60px; }
   .policy-contact-card { padding: 20px 16px; }
   .policy-meta { gap: 12px; flex-direction: column; }
-  .policy-section h2 { font-size: 18px; }
-  .policy-section p { font-size: 16px; }
-  .policy-number { width: 22px; height: 22px; font-size: 16px; }
-  .policy-intro { font-size: 13px; }
+}
+
+
+/* ===================== HEADER (Matched with Lunch Page) ===================== */
+/* ===================== LIGHT STICKY HEADER ===================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: rgba(253, 251, 247, 0.92) !important; /* Translucent off-white/cream */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  width: 100%;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #111111;
+  text-decoration: none;
+}
+.logo span {
+  color: #eaad06;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+}
+
+.nav a, 
+.nav .glf-button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b2418;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  color: #eaad06;
+  background: rgba(234, 173, 6, 0.08);
+}
+
+/* Reservation CTA Button (Gold Pill) */
+.nav .nav-cta {
+  background: #f5b81b;
+  color: #111111 !important;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 40px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(245, 184, 27, 0.35);
+}
+.nav .nav-cta:hover {
+  background: #e0a716;
+  transform: translateY(-1px);
+}
+
+/* Order CTA Button (Orange Pill) */
+.nav .glf-button {
+  background: #f96324;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 40px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(249, 99, 36, 0.35);
+}
+.nav .glf-button:hover {
+  background: #e05317;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .header { padding: 14px 20px; }
+  .nav { display: none; }
+}
+
+
+/* =====================================================
+   SUNROSE — COMPANY PROFILE PAGE
+   Scoped styling: does not modify Privacy Policy
+   or shared.css
+===================================================== */
+
+/* Remove shared body padding ONLY on Company page */
+body:has(.company-story) {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ===================== HERO ===================== */
+
+.page-hero {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FDFBF7, #F5EDD6);
+  color: #111111;
+  padding: 65px 24px;
+}
+
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(234,173,6,0.10),
+    transparent 70%
+  );
+}
+
+.page-hero h1 {
+  color: #111111;
+}
+
+.page-hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.025) 3px,
+    rgba(255,255,255,0.025) 4px
+  );
+  pointer-events: none;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 850px;
+}
+
+.page-hero-eyebrow {
+  color: #e8c97a;
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.page-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 64px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.page-hero h1 em {
+  color: #e8c97a;
+  font-weight: 400;
+}
+
+.page-hero-content > p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.04em;
+}
+
+.page-hero h1 {
+  color: #111111;
+}
+
+.page-hero h1 em {
+  color: #b4871c;
+}
+
+.page-hero-eyebrow {
+  color: #a77c13;
+}
+
+.page-hero-content > p {
+  color: #6b6254;
+}
+
+/* ===================== MAIN CONTENT ===================== */
+
+.page-content {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 65px 40px 100px;
+}
+
+/* ===================== MILESTONE ===================== */
+
+.milestone-banner {
+  position: relative;
+  text-align: center;
+  padding: 34px 25px;
+  margin-bottom: 65px;
+  background: linear-gradient(135deg, #fff, #faf5e9);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(26,18,8,0.035);
+  overflow: hidden;
+}
+
+.milestone-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold),
+    #e8c97a,
+    var(--gold),
+    transparent
+  );
+}
+
+.milestone-confetti {
+  display: block;
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.milestone-years {
+  font-family: var(--serif);
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 1;
+  color: #b9850a;
+}
+
+.milestone-years span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-top: 12px;
+}
+
+.milestone-tagline {
+  font-size: 15px;
+  color: var(--text-mid);
+  margin-top: 17px;
+}
+
+.milestone-badge {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 7px 17px;
+  border-radius: 30px;
+  background: var(--gold-pale);
+  border: 1px solid var(--border-strong);
+  color: #98700e;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+/* ===================== OUR STORY ===================== */
+
+.company-story {
+  max-width: 850px;
+  margin: 0 auto 65px;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #b4871c;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.company-story h2 {
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 43px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1a1208;
+  margin-bottom: 25px;
+}
+
+.company-story h2 em {
+  color: #b4871c;
+  font-weight: 400;
+}
+
+.company-story p {
+  font-size: 16px;
+  line-height: 1.95;
+  font-weight: 400;
+  color: #50483d;
+  margin-bottom: 17px;
+}
+
+/* ===================== FEATURES ===================== */
+
+.company-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 55px 0;
+}
+
+.company-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 65px;
+  padding: 16px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #51442e;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.company-feature:hover {
+  border-color: var(--gold);
+  background: #fffaf0;
+  transform: translateY(-2px);
+}
+
+/* ===================== STATISTICS ===================== */
+
+.company-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 55px 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 27px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.stat-number {
+  font-family: var(--serif);
+  font-size: 43px;
+  font-weight: 600;
+  color: #b4871c;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-mid);
+  margin-top: 9px;
+  letter-spacing: 0.04em;
+}
+
+/* ===================== COMPANY DETAILS TABLE ===================== */
+
+.company-table {
+  width: 100%;
+  margin-top: 25px;
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(26,18,8,0.035);
+}
+
+.company-row {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  border-bottom: 1px solid #eee8dc;
+  min-height: 64px;
+  transition: background 0.2s ease;
+}
+
+.company-row:last-child {
+  border-bottom: none;
+}
+
+.company-row:hover {
+  background: #fffcf5;
+}
+
+.company-label {
+  display: flex;
+  align-items: center;
+  padding: 19px 24px;
+  background: #faf6ec;
+  border-right: 1px solid #eee5d3;
+  color: #80621f;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+}
+
+.company-value {
+  display: flex;
+  align-items: center;
+  padding: 18px 26px;
+  color: #37312a;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 400;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.company-value a {
+  color: #a77c13;
+  text-decoration: none;
+}
+
+.company-value a:hover {
+  text-decoration: underline;
+}
+
+/* ===================== DIVIDER ===================== */
+
+.gold-divider {
+  margin: 60px 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 768px) {
+
+  .page-hero {
+    min-height: 240px;
+    padding: 50px 20px;
+  }
+
+  .page-content {
+    padding: 45px 22px 75px;
+  }
+
+  .company-row {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+
+  .company-label {
+    padding: 16px;
+  }
+
+  .company-value {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .company-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .company-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .company-story p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .page-content {
+    padding: 35px 15px 60px;
+  }
+
+  .milestone-banner {
+    padding: 28px 15px;
+    margin-bottom: 45px;
+  }
+
+  .milestone-years {
+    font-size: 55px;
+  }
+
+  .company-row {
+    grid-template-columns: 1fr;
+  }
+
+  .company-label {
+    border-right: none;
+    border-bottom: 1px solid #eee5d3;
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .company-value {
+    padding: 13px 16px 17px;
+    font-size: 13px;
+  }
+
+  .company-features {
+    gap: 9px;
+  }
+
+  .company-feature {
+    font-size: 12px;
+    padding: 12px 8px;
+  }
+
+  .company-story h2 {
+    font-size: 34px;
+  }
+
+  .company-story p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .gold-divider {
+    margin: 40px 0;
+  }
+}
+
+
+/* =========================================
+   COMPANY PAGE — GLOBAL FONT SIZE BOOST
+========================================= */
+
+body:has(.company-story) {
+  font-size: 20px;
+}
+
+/* Hero */
+.page-hero-eyebrow {
+  font-size: 16px;
+}
+
+.page-hero h1 {
+  font-size: clamp(48px, 6vw, 72px);
+}
+
+.page-hero-content > p {
+  font-size: 19px;
+}
+
+/* Milestone */
+.milestone-years {
+  font-size: 76px;
+}
+
+.milestone-years span {
+  font-size: 16px;
+}
+
+.milestone-tagline {
+  font-size: 18px;
+}
+
+.milestone-badge {
+  font-size: 15px;
+}
+
+/* Story */
+.section-eyebrow {
+  font-size: 15px;
+}
+
+.company-story h2 {
+  font-size: 48px;
+}
+
+.company-story p {
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+/* Features */
+.company-feature {
+  font-size: 16px;
+}
+
+/* Statistics */
+.stat-number {
+  font-size: 52px;
+}
+
+.stat-label {
+  font-size: 15px;
+}
+
+/* Company details table */
+.company-label {
+  font-size: 16px;
+  padding: 22px 26px;
+}
+
+.company-value {
+  font-size: 17px;
+  line-height: 1.9;
+  padding: 21px 28px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 46px;
+  }
+
+  .company-story h2 {
+    font-size: 38px;
+  }
+
+  .company-story p {
+    font-size: 17px;
+  }
+
+  .company-label {
+    font-size: 15px;
+  }
+
+  .company-value {
+    font-size: 16px;
+  }
 }
