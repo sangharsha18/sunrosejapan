@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="theme-cream.css">
 </head>
 <body>
+    
 
 <!-- ================= HEADER ================= -->
 <header class="header" id="header">
@@ -274,7 +275,7 @@
             </a>
             
 
-                            <a href="newyear.html" class="menu-card reveal reveal-delay-4">
+                  <a href="newYear.html" class="menu-card reveal reveal-delay-4">
                     <img src="images/newYear.jpg"  alt="Year-End and New Year party course">
                    
                 <div class="menu-card-overlay"></div>
@@ -444,6 +445,12 @@
 
 
 
+<!-- WEBSITE VIEW COUNTER -->
+<div class="site-views">
+    <span class="views-icon">▥</span>
+    <span>Views (ビュー):</span>
+    <strong id="viewCount">48,151</strong>
+</div>
 
 <!-- =================== FOOTER =================== -->
 <footer class="footer">
@@ -460,7 +467,7 @@
     <p class="footer-bottom" data-ja="インドレストラン 品川シーサイド、東京" data-en="Indian Restaurant Shinagawa Seaside, Tokyo" data-hi="इंडियन रेस्टोरेंट शिनागावा सीसाइड, टोक्यो" data-ko="인도 레스토랑 시나가와 씨사이드, 도쿄" data-es="Restaurante Indio Shinagawa Seaside, Tokio">インドレストラン 品川シーサイド、東京</p>
 <p class="footer-bottom">© 2025 Sunrose Japan · 株式会社BAL BISHNU · All Rights Reserved.</p>
 </footer>
-
+ 
 <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;justify-content:center;align-items:center;" onclick="this.style.display='none'"><img id="lightbox-img" style="max-width:90%;max-height:90%;border-radius:8px;"></div>
 
 <script>
@@ -470,5 +477,27 @@ function openImage(src){document.getElementById('lightbox').style.display='flex'
 <script src="lang.js"></script>
 <!-- NEW: Gloria script (loaded once) -->
 <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    fetch("views.php", { cache: "no-store" })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Counter request failed");
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById("viewCount").textContent =
+                Number(data.views).toLocaleString("en-US");
+        })
+        .catch(error => {
+            console.error("View counter error:", error);
+        });
+
+});
+</script>
+
 </body>
 </html>

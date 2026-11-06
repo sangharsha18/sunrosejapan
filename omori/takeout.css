@@ -426,7 +426,7 @@ main{max-width:var(--max);margin:auto;padding:34px 22px 70px}
   text-align: center;
 
   color: #c9a95a;
-  background: #17100b;
+  background: #efe2d8;
   border-top: 1px solid rgba(234,173,6,.08);
 }
 
@@ -455,6 +455,47 @@ main{max-width:var(--max);margin:auto;padding:34px 22px 70px}
     letter-spacing: .055em;
   }
 }
+
+
+
+
+/* second row of sets, below the original four */
+.sub-heading{display:flex;align-items:center;gap:14px;margin:38px 0 18px}
+.sub-heading small{color:var(--gold-dim);font-size:10px;font-weight:800;letter-spacing:.2em}
+.sub-heading h3{margin:0;font-family:var(--serif);font-size:28px;font-weight:500}
+.sub-heading:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.featured-grid.more{grid-template-columns:repeat(3,1fr)}
+
+/* new photos are transparent cut-outs, so give them a warm backdrop */
+.featured-card.new .set-photo{
+  display:grid;place-items:center;padding:12px;
+  background:radial-gradient(circle at 50% 45%,#fff8e6 0%,#f3e3bd 100%)
+}
+.featured-card.new .set-photo img{width:100%;height:100%;object-fit:contain}
+
+/* curry section: 11 items + price note */
+.curry-note{
+  display:inline-block;margin:0 0 18px;padding:7px 16px;border-radius:999px;
+  background:rgba(240,200,91,.16);border:1px solid rgba(240,200,91,.4);
+  color:var(--gold-light);font-size:13px;font-weight:500;letter-spacing:.04em
+}
+.curry-grid{grid-template-columns:repeat(6,1fr)}
+.curry-chip.bpaneer{background:#c4512f}
+.curry-chip.spaneer{background:#3f6b4a}
+.curry-chip.today{background:#c9882a}
+
+@media(max-width:1000px){
+  .featured-grid.more{grid-template-columns:repeat(2,1fr)}
+  .curry-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:650px){
+  .featured-grid.more{grid-template-columns:1fr}
+  .curry-grid{grid-template-columns:repeat(2,1fr)}
+  .sub-heading h3{font-size:24px}
+  .sub-heading:after{display:none}
+}
+
+
 
 /* ANIMATION */
 @keyframes fadeUp{

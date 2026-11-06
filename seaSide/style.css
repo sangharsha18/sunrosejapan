@@ -1738,6 +1738,35 @@ section { padding: var(--section-pad); }
   font-weight: 700;
 }
 
+
+/* Website View Counter */
+.site-views {
+    width: 100%;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #faf9f6;
+    color: #333;
+
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+
+    box-sizing: border-box;
+}
+
+.site-views strong {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.views-icon {
+    font-size: 19px;
+    color: #333;
+}
 /* ---------- NAV: roomier ---------- */
 .nav{ gap: 8px !important; }
 .nav a,
