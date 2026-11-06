@@ -497,7 +497,12 @@
 </section>
 
 
-
+<!-- WEBSITE VIEW COUNTER -->
+<div class="site-views">
+    <span class="views-icon">▥</span>
+    <span>Views (ビュー):</span>
+    <strong id="viewCount">0</strong>
+</div>
 
 
 
@@ -526,5 +531,28 @@
 function openImage(src){document.getElementById('lightbox').style.display='flex';document.getElementById('lightbox-img').src=src}
 </script>
 <script src="lang.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    fetch("views.php", { cache: "no-store" })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Counter request failed");
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById("viewCount").textContent =
+                Number(data.views).toLocaleString("en-US");
+        })
+        .catch(error => {
+            console.error("View counter error:", error);
+        });
+
+});
+</script>
+
+
 </body>
 </html>

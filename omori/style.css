@@ -1778,6 +1778,29 @@
     grid-column: 4 / span 2 !important;
 }
 
+/* WEBSITE VIEW COUNTER */
+.site-views {
+    width: 100%;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #faf9f6;
+    color: #555;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.site-views strong {
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.views-icon {
+    font-size: 16px;
+}
 /* Every card has exactly the same height */
 #menus .menus-grid .menu-card {
     height: 480px !important;
